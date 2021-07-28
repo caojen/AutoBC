@@ -35,7 +35,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::next() const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
     LTLGenerator ret = *this;
     ret.preOps.push_front(op::next);
@@ -45,7 +45,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::finally() const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     LTLGenerator ret = *this;
@@ -56,7 +56,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::global() const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     LTLGenerator ret = *this;
@@ -67,7 +67,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::nnot() const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     LTLGenerator ret = *this;
@@ -78,7 +78,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::until(const LTLGenerator& ltl) const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
@@ -95,7 +95,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::release(const LTLGenerator& ltl) const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
@@ -112,7 +112,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::aand(const LTLGenerator& ltl) const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
@@ -129,7 +129,7 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::oor(const LTLGenerator& ltl) const {
     if(this->empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
@@ -268,7 +268,7 @@ namespace autobc {
         stack.push(i);
       } else if(splits[i] == ")") {
         if(stack.empty()) {
-          throw new not_a_ltl();
+          throw not_a_ltl();
         } else {
           unsigned matched = stack.top(); stack.pop();
           map[i] = matched;
@@ -278,7 +278,7 @@ namespace autobc {
     }
 
     if(!stack.empty()) {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
     auto ret = LTL();
     ret.root = LTL::GenPart(splits, map, 0, splits.size());
@@ -288,7 +288,7 @@ namespace autobc {
   // 将[begin, end)的数据进行格式化
   std::shared_ptr<LTL::LTLNode> LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
     if (begin >= end || s[begin] == "&" || s[begin] == "|" || s[begin] == "U" || s[begin] == "R") {
-      throw new not_a_ltl();
+      throw not_a_ltl();
     }
 
     LTLNode* ret = new LTLNode();
@@ -302,7 +302,7 @@ namespace autobc {
         goto output;
       }
       if (s[cur] != "&" && s[cur] != "|" && s[cur] != "U" && s[cur] != "R") {
-        throw new not_a_ltl();
+        throw not_a_ltl();
       } else {
         if(s[cur] == "&") {
           ret->op = op::aand;
@@ -344,7 +344,7 @@ namespace autobc {
         }
         ret->right = LTL::GenPart(s, map, cur + 1, end);
       } else if(cur < end) {
-        throw new not_a_ltl();
+        throw not_a_ltl();
       }
     }
 
