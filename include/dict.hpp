@@ -9,7 +9,7 @@
 namespace autobc {
   class Dict {
     public:
-      std::map<Literal, std::shared_ptr<Literal>> map;
+      std::map<std::string, std::shared_ptr<Literal>> map;
       std::shared_ptr<Literal> get(const Literal& li);
   };
 }

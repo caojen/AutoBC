@@ -78,18 +78,76 @@ namespace autobc{
 
   class LTL {
     public:
+
+      class LTLNode;
+      class PreNode;
+
+      std::shared_ptr<LTLNode> ltlroot;
+      std::shared_ptr<PreNode> preroot;
+
       class PreNode {
-        
+        public:
+          std::list<std::shared_ptr<Op1>> ops;        // 顺序存放所有前缀符号
+          std::shared_ptr<LTLNode>        to;         // 指向该操作数
+
+          std::string serialize() const {
+            std::string ret = "";
+            for(auto& op: this->ops) {
+              ret += op->str();
+            }
+            ret += to->serialize();
+            return ret;
+          }
+
       };
 
       class LTLNode {
         public:
-          std::shared_ptr<LTLNode>        left;
-          std::shared_ptr<Op2>            op;
-          std::shared_ptr<LTLNode>        right;
+          std::shared_ptr<LTLNode>        left    = nullptr;          // 指向第一个操作数
+          std::shared_ptr<Op2>            op      = nullptr;          // 指向运算符
+          std::shared_ptr<LTLNode>        right   = nullptr;          // 指向第二个操作数
 
-          std::shared_ptr<PreNode>        pre;
-          std::shared_ptr<Literal>        li;
+          std::shared_ptr<PreNode>        pre     = nullptr;          // 指向前缀符号
+          std::shared_ptr<Literal>        li      = nullptr;          // 指向文字
+
+          LTLNode(std::shared_ptr<Literal> li) {
+            this->li = li;
+          }
+
+          LTLNode(std::shared_ptr<PreNode> pre) {
+            this->pre = pre;
+          }
+
+          // 判断这个LTLNode是不是一个文字（如果是，代表这是个终结符）
+          inline bool is_literal() const {
+            return *this->li == "";
+          }
+
+          // 判断这个LTL是否指向一个PreNode
+          inline bool is_pre() const {
+            return this->pre != nullptr;
+          }
+
+          std::string serialize() const {
+            std::string ret = "(";
+            if(this->is_literal()) {
+              // 只是一个文字
+              ret += this->li->serialize();
+            } else if(this->is_pre()) {
+              // 是一个PreNode
+              ret += this->pre->serialize();
+            } else {
+              // 是一个 x 或 x op y 形式的LTL
+              ret += this->left->serialize();  // x 需要确保不是nullptr
+              if(this->op != nullptr) {
+                ret += this->op->str();           // 在op存在的情况下
+                ret += this->right->serialize();  // right需要确保不是nullptr
+              }
+            }
+
+            ret += ")";
+            return ret;
+          }
       };
   };
 }

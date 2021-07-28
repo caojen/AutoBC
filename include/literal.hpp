@@ -17,6 +17,7 @@ namespace autobc {
       bool operator!=(const Literal& other) const;
       
       friend std::ostream& operator<<(std::ostream& o, const Literal& li);
+      std::string serialize() const;
 
     private:
       std::string s = "";

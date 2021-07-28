@@ -2,11 +2,12 @@
 
 namespace autobc {
   std::shared_ptr<Literal> Dict::get(const Literal& li) {
-    auto iter = this->map.find(li);
+    auto s = li.serialize();
+    auto iter = this->map.find(s);
     if(iter == this->map.end()) {
-      this->map[li] = std::make_shared<Literal>(li);
+      this->map[s] = std::make_shared<Literal>(li);
     }
 
-    return this->map[li];
+    return this->map[s];
   }
 }

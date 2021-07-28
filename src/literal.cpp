@@ -36,4 +36,8 @@ namespace autobc {
     o << li.s;
     return o;
   }
+
+  std::string Literal::serialize() const {
+    return this->s;
+  }
 }
