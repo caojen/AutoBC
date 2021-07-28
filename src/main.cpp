@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include "ltl.hpp"
 
@@ -17,9 +18,19 @@ int main() {
 
     std::cout << f << std::endl;
 
-    std::string input = "X((!(d)) & (G(!(G((1) U ((d) U (e)))))))";
+    std::string input;
 
-    LTL ltl = LTLGenerator::parse(input);
-    std::cout << ltl.serialize() << std::endl;
+    std::cout << "Provide the file, input ltl line by line..." << std::endl;
+    std::string path;
+    std::cin >> path;
+
+    std::ifstream ifs;
+    ifs.open(path);
+
+    while(std::getline(ifs, input)) {
+      std::cout << input << std::endl;
+      LTL ltl = LTLGenerator::parse(input);
+      std::cout << ltl.serialize() << "(result)" <<std::endl;
+    }
   }
 }
