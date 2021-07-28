@@ -4,6 +4,7 @@
 #include <deque>
 #include <list>
 #include <memory>
+#include <string>
 
 #include "literal.hpp"
 #include "operator.hpp"
@@ -85,6 +86,8 @@ namespace autobc{
       std::shared_ptr<LTLNode> ltlroot;
       std::shared_ptr<PreNode> preroot;
 
+      static LTL Gen(const std::string& s);
+
       class PreNode {
         public:
           std::list<std::shared_ptr<Op1>> ops;        // 顺序存放所有前缀符号
@@ -149,5 +152,8 @@ namespace autobc{
             return ret;
           }
       };
+  
+    private:
+      static LTL GenPart(const std::vector<std::string>& s, unsigned begin, unsigned end);
   };
 }

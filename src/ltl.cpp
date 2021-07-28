@@ -1,5 +1,7 @@
 #include <sstream>
 #include <iostream>
+#include <vector>
+#include <string>
 
 #include "ltl.hpp"
 #include "error.hpp"
@@ -204,5 +206,68 @@ namespace autobc {
 
   LTLGenerator LTLGenerator::Gen(const LTLGenerator& ltl) {
     return ltl;
+  }
+
+  LTL LTLGenerator::parse(const std::string& s) {
+    return LTL::Gen(s);
+  }
+
+  LTL LTL::Gen(const std::string& s) {
+    // remove all ' '
+
+    std::string x = s;
+    auto iter = x.begin();
+    while(iter != x.end()) {
+      if(*iter == ' ') {
+        iter = x.erase(iter);
+      } else {
+        ++iter;
+      }
+    }
+
+    // split x into splits
+    std::cout << x << std::endl;
+
+    std::vector<std::string> splits;
+
+    auto is_special = [](const char ch) -> bool {
+      return ch == '(' || ch == ')' || ch == '&' || ch == '|' || ch == '!';
+    };
+
+    auto might_special = [](const char ch) -> bool {
+      return ch == 'X' || ch == 'U' || ch == 'R' || ch == 'F' || ch == 'G';
+    };
+
+    iter = x.begin();
+    while(iter != x.end()) {
+      if(is_special(*iter)) {
+        splits.push_back(std::string(1, *iter));
+        ++iter;
+        continue;
+      } else if(might_special(*iter) && (std::next(iter) == x.end() || is_special(*std::next(iter)))) {
+        splits.push_back(std::string(1, *iter));
+        ++iter;
+        continue;
+      } else {
+        auto n = std::next(iter);
+        while(n != x.end() && !is_special(*n)) {
+          ++n;
+        }
+
+        splits.push_back(x.substr(iter - x.begin(), n - iter));
+        iter = n;
+      }
+    }
+
+    for(auto a: splits) {
+      std::cout << a << ", ";
+    }
+    std::cout << std::endl;
+
+    return LTL::GenPart(splits, 0, splits.size());
+  }
+
+  LTL LTL::GenPart(const std::vector<std::string>& s, unsigned begin, unsigned end) {
+    return LTL();
   }
 }

@@ -16,5 +16,7 @@ int main() {
     std::cout << LTLGenerator::Gen(f3).global() << std::endl;
 
     std::cout << f << std::endl;
+
+    LTL ltl = LTLGenerator::parse("(((((f1)&(f2))|(f3))&(f4))&G(f3))|X(f3|f2)&G(f1)&!f2");
   }
 }
