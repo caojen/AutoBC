@@ -10,4 +10,9 @@ namespace autobc::op {
   std::shared_ptr<Not> nnot = std::make_shared<Not>();
   std::shared_ptr<And> aand = std::make_shared<And>();
   std::shared_ptr<Or> oor = std::make_shared<Or>();
+
+  std::ostream& operator<<(std::ostream& o, const Operator& ope) {
+    o << ope.str();
+    return o;
+  }
 }
