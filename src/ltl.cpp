@@ -1,3 +1,5 @@
+#include <sstream>
+
 #include "ltl.hpp"
 #include "error.hpp"
 
@@ -138,4 +140,42 @@ namespace autobc {
   }
 
   LTL::~LTL() {}
+
+  std::ostream& operator<<(std::ostream& o, const LTL& ltl) {
+    o << ltl.serialize();
+
+    return o;
+  }
+
+  std::string LTL::serialize() const {
+    std::ostringstream o;
+
+    o << "(";
+
+    // 输出所有前缀运算符
+    for(auto& op: this->preOps) {
+      o << ' ';
+      o << *op;
+    }
+
+    // 判断这是不是一个文字，如果是，那么直接输出这个文字
+    if(this->singal()) {
+      o << ' ';
+      o << this->li;
+    } else {
+      // 递归地输出第一部分:
+      o << this->left->serialize();
+      // 如果存在第二部分:
+      if(this->mid != nullptr) {
+        // 输出中间的运算符
+        o << this->mid;
+        if(this->right != nullptr) {
+          // 递归地输出第二部分
+          o << this->right->serialize();
+        }
+      }
+    }
+    o << " )";
+    return o.str();
+  }
 }

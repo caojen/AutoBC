@@ -38,12 +38,16 @@ namespace autobc{
 
       // 重写流
       friend std::ostream& operator<<(std::ostream& o, const LTL& ltl);
+      std::string serialize() const;
 
       // 比较两个LTL公式是否完全一样
       bool operator==(const LTL& other) const;
 
       // 判断这个LTL是不是空的(没有任何文字)
       bool empty() const;
+
+      // 判断这个LTL是不是只是一个文字
+      bool singal() const;
 
     private:
       // 该公式 “前缀” 一元运算符
