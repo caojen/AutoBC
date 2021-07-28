@@ -7,10 +7,12 @@ namespace autobc {
   class Literal {
     public:
       Literal();
-      explicit Literal(const char& ch);
-      explicit Literal(const std::string& str);
+      Literal(const char& ch);
+      Literal(const char* str);
+      Literal(const std::string& str);
       Literal(const Literal& other);
 
+      bool empty() const;
       bool operator==(const Literal& other) const;
       bool operator!=(const Literal& other) const;
       

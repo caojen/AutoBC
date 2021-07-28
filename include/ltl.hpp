@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <deque>
 #include <list>
-#include <vector>
 #include <memory>
 
 #include "literal.hpp"
@@ -23,18 +23,18 @@ namespace autobc{
 
       // 一元算子应用于自身:
       // f1 & f2 ===op===> op(f1 & f2)
-      virtual LTL next() const;
-      virtual LTL finally() const;
-      virtual LTL global() const;
-      virtual LTL nnot() const;
+      LTL next() const;
+      LTL finally() const;
+      LTL global() const;
+      LTL nnot() const;
 
       // 二元算子需要一个额外的操作数
-      virtual LTL until(const LTL& ltl) const;
-      virtual LTL release(const LTL& ltl) const;
-      virtual LTL aand(const LTL& ltl) const;
-      virtual LTL oor(const LTL& ltl) const;
+      LTL until(const LTL& ltl) const;
+      LTL release(const LTL& ltl) const;
+      LTL aand(const LTL& ltl) const;
+      LTL oor(const LTL& ltl) const;
 
-      virtual ~LTL();
+      ~LTL();
 
       // 重写流
       friend std::ostream& operator<<(std::ostream& o, const LTL& ltl);
@@ -42,9 +42,16 @@ namespace autobc{
       // 比较两个LTL公式是否完全一样
       bool operator==(const LTL& other) const;
 
+      // 判断这个LTL是不是空的(没有任何文字)
+      bool empty() const;
+
     private:
       // 该公式 “前缀” 一元运算符
-      std::vector<Operator> preOps;
+      std::list<std::shared_ptr<Operator>> preOps;
+
+      // 表明该公式只是一个简单的文字:
+      Literal               li;
+      
       // 如果该公式只有一部分，或者该公式有两部分:
       std::shared_ptr<LTL>  left;
       // 如果该公式只有一部分，那么中间的运算符号应该是EmptyOp

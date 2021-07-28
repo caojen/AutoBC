@@ -8,6 +8,10 @@ namespace autobc {
     this->s += ch;
   }
 
+  Literal::Literal(const char* str) {
+    this->s = std::string(str);
+  }
+
   Literal::Literal(const std::string& str) {
     this->s = str;
   }
@@ -16,6 +20,10 @@ namespace autobc {
     this->s = other.s;
   }
 
+  bool Literal::empty() const {
+    return this->s == "";
+  }
+ 
   bool Literal::operator==(const Literal& other) const {
     return this->s == other.s;
   }

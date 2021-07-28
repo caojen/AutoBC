@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 
 namespace autobc {
   class Operator {};
@@ -9,7 +10,7 @@ namespace autobc {
 
   class Op2: public Operator {};
 
-  class EmptyOp: public Op1, public Op2 {};
+  class EmptyOp: public Op1 {};
 
   class LTLOp1: public Op1 {};
 
@@ -34,4 +35,18 @@ namespace autobc {
   class And: public ProOp2 {};
 
   class Or: public ProOp2 {};
+
+  namespace op {
+
+    extern std::shared_ptr<EmptyOp> emptyOp;
+    extern std::shared_ptr<Next> next;
+    extern std::shared_ptr<Finally> finally;
+    extern std::shared_ptr<Global> global;
+    extern std::shared_ptr<Until> until;
+    extern std::shared_ptr<Release> release;
+    extern std::shared_ptr<Not> nnot;
+    extern std::shared_ptr<And> aand;
+    extern std::shared_ptr<Or> oor;
+
+  }
 }
