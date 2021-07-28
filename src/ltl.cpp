@@ -22,7 +22,7 @@ namespace autobc {
   }
 
   LTL::LTL(const LTL& pro) {
-    this->preOps.clear();
+    this->preOps = pro.preOps;
     this->li = pro.li;
     this->left = pro.left;
     this->mid = pro.mid;
@@ -151,17 +151,15 @@ namespace autobc {
   std::string LTL::serialize() const {
     std::ostringstream o;
 
-    o << "(";
-
     // 输出所有前缀运算符
     for(auto& op: this->preOps) {
-      o << ' ';
       o << op->str();
     }
 
+    o << "(";
+
     // 判断这是不是一个文字，如果是，那么直接输出这个文字
     if(this->singal()) {
-      o << ' ';
       o << this->li;
     } else {
       // 递归地输出第一部分:
@@ -176,8 +174,19 @@ namespace autobc {
         }
       }
     }
-    o << " )";
-    return o.str();
+    o << ")";
+    std::string ret = o.str();
+    // 清除中的所有空格
+    auto iter = ret.begin();
+    while(iter != ret.end()) {
+      if(*iter == ' ') {
+        iter = ret.erase(iter);
+      } else {
+        ++iter;
+      }
+    }
+
+    return ret;
   }
 
   bool LTL::operator==(const LTL& other) const {
