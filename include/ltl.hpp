@@ -85,21 +85,21 @@ namespace autobc{
       class LTLNode;
       class PreNode;
 
-      std::shared_ptr<LTLNode> ltlroot;
-      std::shared_ptr<PreNode> preroot;
+      typedef LTL::LTLNode LTLNode;
+      typedef LTL::PreNode PreNode;
+
+      std::shared_ptr<LTLNode> root;
 
       static LTL Gen(const std::string& s);
+      std::string serialize() const;
 
       class PreNode {
         public:
-          std::list<std::shared_ptr<Op1>> ops;        // 顺序存放所有前缀符号
-          std::shared_ptr<LTLNode>        to;         // 指向该操作数
+          std::shared_ptr<Op1>      op;
+          std::shared_ptr<LTLNode>  to;         // 指向该操作数
 
           std::string serialize() const {
-            std::string ret = "";
-            for(auto& op: this->ops) {
-              ret += op->str();
-            }
+            std::string ret = op->str();
             ret += to->serialize();
             return ret;
           }
@@ -115,6 +115,8 @@ namespace autobc{
           std::shared_ptr<PreNode>        pre     = nullptr;          // 指向前缀符号
           std::shared_ptr<Literal>        li      = nullptr;          // 指向文字
 
+          LTLNode() {}
+
           LTLNode(std::shared_ptr<Literal> li) {
             this->li = li;
           }
@@ -125,7 +127,7 @@ namespace autobc{
 
           // 判断这个LTLNode是不是一个文字（如果是，代表这是个终结符）
           inline bool is_literal() const {
-            return *this->li == "";
+            return this->li && *this->li != "";
           }
 
           // 判断这个LTL是否指向一个PreNode
@@ -156,6 +158,6 @@ namespace autobc{
       };
   
     private:
-      static LTL GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end);
+      static std::shared_ptr<LTLNode> GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end);
   };
 }

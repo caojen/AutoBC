@@ -17,6 +17,9 @@ int main() {
 
     std::cout << f << std::endl;
 
-    LTL ltl = LTLGenerator::parse("(((((f1)&(f2))|(f3))&(f4))&G(f3))|X(f3|f2)&G(f1)&!f2");
+    std::string input = "X((!(d)) & (G(!(G((1) U ((d) U (e)))))))";
+
+    LTL ltl = LTLGenerator::parse(input);
+    std::cout << ltl.serialize() << std::endl;
   }
 }

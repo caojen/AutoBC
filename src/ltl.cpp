@@ -2,9 +2,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <set>
 
 #include "ltl.hpp"
 #include "error.hpp"
+#include "dict.hpp"
 
 namespace autobc {
   LTLGenerator::LTLGenerator() {
@@ -226,7 +228,6 @@ namespace autobc {
     }
 
     // split x into splits
-    std::cout << x << std::endl;
 
     std::vector<std::string> splits;
 
@@ -259,11 +260,6 @@ namespace autobc {
       }
     }
 
-    for(auto a: splits) {
-      std::cout << a << ", ";
-    }
-    std::cout << std::endl;
-
     std::stack<int> stack;
     std::map<unsigned, unsigned> map;
 
@@ -284,11 +280,110 @@ namespace autobc {
     if(!stack.empty()) {
       throw new not_a_ltl();
     }
-
-    return LTL::GenPart(splits, map, 0, splits.size());
+    auto ret = LTL();
+    ret.root = LTL::GenPart(splits, map, 0, splits.size());
+    return ret;
   }
 
-  LTL LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
-    return LTL();
+  // 将[begin, end)的数据进行格式化
+  std::shared_ptr<LTL::LTLNode> LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
+    if (begin >= end || s[begin] == "&" || s[begin] == "|" || s[begin] == "U" || s[begin] == "R") {
+      throw new not_a_ltl();
+    }
+
+    LTLNode* ret = new LTLNode();
+
+    unsigned cur = begin;
+    if(s[cur] == "(") {
+      unsigned matched = map.at(cur);
+      ret->left = LTL::GenPart(s, map, cur + 1, matched);
+      cur = matched + 1;
+      if(cur >= end) {
+        goto output;
+      }
+      if (s[cur] != "&" && s[cur] != "|" && s[cur] != "U" && s[cur] != "R") {
+        throw new not_a_ltl();
+      } else {
+        if(s[cur] == "&") {
+          ret->op = op::aand;
+        } else if(s[cur] == "|") {
+          ret->op = op::oor;
+        } else if(s[cur] == "U") {
+          ret->op = op::until;
+        } else if(s[cur] == "R") {
+          ret->op = op::release;
+        }
+        ret->right = LTL::GenPart(s, map, cur + 1, end);
+        goto output;
+      }
+    } else if(s[cur] == "X" || s[cur] == "G" || s[cur] == "F" || s[cur] == "!") {
+      ret->pre = std::make_shared<PreNode>();
+      if(s[cur] == "X") {
+        ret->pre->op = op::next;
+      } else if(s[cur] == "G") {
+        ret->pre->op = op::global;
+      } else if(s[cur] == "F") {
+        ret->pre->op = op::finally;
+      } else if(s[cur] == "!") {
+        ret->pre->op = op::nnot;
+      }
+      ret->pre->to = LTL::GenPart(s, map, cur + 1, end);
+      goto output;
+    } else {
+      ret->left = std::make_shared<LTLNode>(dict.get(s[cur]));
+      cur ++;
+      if(s[cur] == "&" || s[cur] == "|" || s[cur] == "U" || s[cur] == "R") {
+        if(s[cur] == "&") {
+          ret->op = op::aand;
+        } else if(s[cur] == "|") {
+          ret->op = op::oor;
+        } else if(s[cur] == "U") {
+          ret->op = op::until;
+        } else if(s[cur] == "R") {
+          ret->op = op::release;
+        }
+        ret->right = LTL::GenPart(s, map, cur + 1, end);
+      } else if(cur < end) {
+        throw new not_a_ltl();
+      }
+    }
+
+    output:
+      return std::shared_ptr<LTLNode>(ret);
+  }
+
+  std::string LTL::serialize() const {
+    std::string ret = this->root->serialize();
+
+    // 去除ret中多余的括号
+    std::stack<unsigned> stack;
+    std::set<unsigned> removed;
+    std::map<unsigned, unsigned> label;
+
+
+    for(unsigned i = 0; i < ret.size(); i++) {
+      if(ret[i] == '(') {
+        stack.push(i);
+        label[i] = 0;
+      } else if(ret[i] == ')') {
+        if(label[stack.top()] == 0) {
+          removed.insert(stack.top());
+          removed.insert(i);
+        }
+        stack.pop();
+      } else {
+        if(!stack.empty()) {
+          label[stack.top()]++;
+        }
+      }
+    }
+
+    std::string r = "";
+    for(unsigned i = 0; i < ret.size(); i++) {
+      if(removed.find(i) == removed.end()) {
+        r += std::string(1, ret[i]);
+      }
+    }
+    return r;
   }
 }

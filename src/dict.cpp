@@ -10,4 +10,6 @@ namespace autobc {
 
     return this->map[s];
   }
+
+  Dict dict;
 }

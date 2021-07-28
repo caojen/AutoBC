@@ -12,4 +12,6 @@ namespace autobc {
       std::map<std::string, std::shared_ptr<Literal>> map;
       std::shared_ptr<Literal> get(const Literal& li);
   };
+
+  extern Dict dict;
 }
