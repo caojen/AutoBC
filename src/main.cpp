@@ -11,9 +11,9 @@ int main() {
     auto f2 = Literal("f2");
     auto f3 = Literal("f3");
     auto f4 = Literal("f4");
-    LTL f = LTL::Gen(f1).aand(f2).oor(f3).aand(f4).aand(LTL::Gen(f3).global());
+    LTLGenerator f = LTLGenerator::Gen(f1).aand(f2).oor(f3).aand(f4).aand(LTLGenerator::Gen(f3).global());
 
-    std::cout << LTL::Gen(f3).global() << std::endl;
+    std::cout << LTLGenerator::Gen(f3).global() << std::endl;
 
     std::cout << f << std::endl;
   }

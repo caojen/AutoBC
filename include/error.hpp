@@ -25,7 +25,7 @@ namespace autobc {
   class not_a_ltl: public std::exception {
     public:
       char const * what() const noexcept {
-        return "程序逻辑错误，似乎对一个空语句调用了LTL的时态算子";
+        return "不是一个有效的ltl";
       }
   };
 }

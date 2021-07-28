@@ -5,7 +5,7 @@
 #include "error.hpp"
 
 namespace autobc {
-  LTL::LTL() {
+  LTLGenerator::LTLGenerator() {
     this->preOps.clear();
     this->li = "";
     this->left = nullptr;
@@ -13,7 +13,7 @@ namespace autobc {
     this->right = nullptr;
   }
 
-  LTL::LTL(const Literal& li) {
+  LTLGenerator::LTLGenerator(const Literal& li) {
     this->preOps.clear();
     this->li = li;
     this->left = nullptr;
@@ -21,7 +21,7 @@ namespace autobc {
     this->right = nullptr;
   }
 
-  LTL::LTL(const LTL& pro) {
+  LTLGenerator::LTLGenerator(const LTLGenerator& pro) {
     this->preOps = pro.preOps;
     this->li = pro.li;
     this->left = pro.left;
@@ -29,59 +29,59 @@ namespace autobc {
     this->right = pro.right;
   }
 
-  LTL LTL::next() const {
+  LTLGenerator LTLGenerator::next() const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
-    LTL ret = *this;
+    LTLGenerator ret = *this;
     ret.preOps.push_front(op::next);
 
     return ret;
   }
 
-  LTL LTL::finally() const {
+  LTLGenerator LTLGenerator::finally() const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    LTL ret = *this;
+    LTLGenerator ret = *this;
     ret.preOps.push_front(op::finally);
 
     return ret;
   }
 
-  LTL LTL::global() const {
+  LTLGenerator LTLGenerator::global() const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    LTL ret = *this;
+    LTLGenerator ret = *this;
     ret.preOps.push_front(op::global);
 
     return ret;
   }
 
-  LTL LTL::nnot() const {
+  LTLGenerator LTLGenerator::nnot() const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    LTL ret = *this;
+    LTLGenerator ret = *this;
     ret.preOps.push_front(op::nnot);
 
     return ret;
   }
 
-  LTL LTL::until(const LTL& ltl) const {
+  LTLGenerator LTLGenerator::until(const LTLGenerator& ltl) const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    std::shared_ptr<LTL> left(new LTL(*this));
+    std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
     std::shared_ptr<Op2> mid = op::until;
-    std::shared_ptr<LTL> right(new LTL(ltl));
+    std::shared_ptr<LTLGenerator> right(new LTLGenerator(ltl));
 
-    LTL ret;
+    LTLGenerator ret;
     ret.left = left;
     ret.mid = mid;
     ret.right = right;
@@ -89,16 +89,16 @@ namespace autobc {
     return ret;
   }
 
-  LTL LTL::release(const LTL& ltl) const {
+  LTLGenerator LTLGenerator::release(const LTLGenerator& ltl) const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    std::shared_ptr<LTL> left(new LTL(*this));
+    std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
     std::shared_ptr<Op2> mid = op::release;
-    std::shared_ptr<LTL> right(new LTL(ltl));
+    std::shared_ptr<LTLGenerator> right(new LTLGenerator(ltl));
 
-    LTL ret;
+    LTLGenerator ret;
     ret.left = left;
     ret.mid = mid;
     ret.right = right;
@@ -106,16 +106,16 @@ namespace autobc {
     return ret;
   }
 
-  LTL LTL::aand(const LTL& ltl) const {
+  LTLGenerator LTLGenerator::aand(const LTLGenerator& ltl) const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    std::shared_ptr<LTL> left(new LTL(*this));
+    std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
     std::shared_ptr<Op2> mid = op::aand;
-    std::shared_ptr<LTL> right(new LTL(ltl));
+    std::shared_ptr<LTLGenerator> right(new LTLGenerator(ltl));
 
-    LTL ret;
+    LTLGenerator ret;
     ret.left = left;
     ret.mid = mid;
     ret.right = right;
@@ -123,16 +123,16 @@ namespace autobc {
     return ret;
   }
 
-  LTL LTL::oor(const LTL& ltl) const {
+  LTLGenerator LTLGenerator::oor(const LTLGenerator& ltl) const {
     if(this->empty()) {
       throw new not_a_ltl();
     }
 
-    std::shared_ptr<LTL> left(new LTL(*this));
+    std::shared_ptr<LTLGenerator> left(new LTLGenerator(*this));
     std::shared_ptr<Op2> mid = op::oor;
-    std::shared_ptr<LTL> right(new LTL(ltl));
+    std::shared_ptr<LTLGenerator> right(new LTLGenerator(ltl));
 
-    LTL ret;
+    LTLGenerator ret;
     ret.left = left;
     ret.mid = mid;
     ret.right = right;
@@ -140,15 +140,15 @@ namespace autobc {
     return ret;
   }
 
-  LTL::~LTL() {}
+  LTLGenerator::~LTLGenerator() {}
 
-  std::ostream& operator<<(std::ostream& o, const LTL& ltl) {
+  std::ostream& operator<<(std::ostream& o, const LTLGenerator& ltl) {
     o << ltl.serialize();
 
     return o;
   }
 
-  std::string LTL::serialize() const {
+  std::string LTLGenerator::serialize() const {
     std::ostringstream o;
 
     // 输出所有前缀运算符
@@ -189,20 +189,20 @@ namespace autobc {
     return ret;
   }
 
-  bool LTL::operator==(const LTL& other) const {
+  bool LTLGenerator::operator==(const LTLGenerator& other) const {
     return this->serialize() == other.serialize();
   }
 
-  bool LTL::empty() const {
+  bool LTLGenerator::empty() const {
     return this->li == "" && this->left == nullptr &&
       this->mid == nullptr && this->right == nullptr;
   }
 
-  bool LTL::singal() const {
+  bool LTLGenerator::singal() const {
     return !this->empty() && this->li != "";
   }
 
-  LTL LTL::Gen(const LTL& ltl) {
+  LTLGenerator LTLGenerator::Gen(const LTLGenerator& ltl) {
     return ltl;
   }
 }
