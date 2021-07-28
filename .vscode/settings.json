@@ -71,6 +71,7 @@
     "vector": "cpp",
     "codecvt": "cpp",
     "stack": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "filesystem": "cpp"
   }
 }

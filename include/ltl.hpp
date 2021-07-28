@@ -92,6 +92,7 @@ namespace autobc{
 
       static LTL Gen(const std::string& s);
       std::string serialize() const;
+      bool operator<(const LTL& other) const;
 
       class PreNode {
         public:

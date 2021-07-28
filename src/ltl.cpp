@@ -285,6 +285,10 @@ namespace autobc {
     return ret;
   }
 
+  bool LTL::operator<(const LTL& other) const {
+    return this->serialize() < other.serialize();
+  }
+
   // 将[begin, end)的数据进行格式化
   std::shared_ptr<LTL::LTLNode> LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
     if (begin >= end || s[begin] == "&" || s[begin] == "|" || s[begin] == "U" || s[begin] == "R") {
