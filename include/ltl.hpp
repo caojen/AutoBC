@@ -5,6 +5,8 @@
 #include <list>
 #include <memory>
 #include <string>
+#include <map>
+#include <stack>
 
 #include "literal.hpp"
 #include "operator.hpp"
@@ -154,6 +156,6 @@ namespace autobc{
       };
   
     private:
-      static LTL GenPart(const std::vector<std::string>& s, unsigned begin, unsigned end);
+      static LTL GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end);
   };
 }

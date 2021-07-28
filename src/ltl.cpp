@@ -264,10 +264,31 @@ namespace autobc {
     }
     std::cout << std::endl;
 
-    return LTL::GenPart(splits, 0, splits.size());
+    std::stack<int> stack;
+    std::map<unsigned, unsigned> map;
+
+    for(unsigned i = 0; i < splits.size(); i++) {
+      if(splits[i] == "(") {
+        stack.push(i);
+      } else if(splits[i] == ")") {
+        if(stack.empty()) {
+          throw new not_a_ltl();
+        } else {
+          unsigned matched = stack.top(); stack.pop();
+          map[i] = matched;
+          map[matched] = i;
+        }
+      }
+    }
+
+    if(!stack.empty()) {
+      throw new not_a_ltl();
+    }
+
+    return LTL::GenPart(splits, map, 0, splits.size());
   }
 
-  LTL LTL::GenPart(const std::vector<std::string>& s, unsigned begin, unsigned end) {
+  LTL LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
     return LTL();
   }
 }
