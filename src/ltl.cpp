@@ -1,4 +1,5 @@
 #include <sstream>
+#include <iostream>
 
 #include "ltl.hpp"
 #include "error.hpp"
@@ -155,7 +156,7 @@ namespace autobc {
     // 输出所有前缀运算符
     for(auto& op: this->preOps) {
       o << ' ';
-      o << *op;
+      o << op->str();
     }
 
     // 判断这是不是一个文字，如果是，那么直接输出这个文字
@@ -168,7 +169,7 @@ namespace autobc {
       // 如果存在第二部分:
       if(this->mid != nullptr) {
         // 输出中间的运算符
-        o << this->mid;
+        o << this->mid->str();
         if(this->right != nullptr) {
           // 递归地输出第二部分
           o << this->right->serialize();
@@ -177,5 +178,22 @@ namespace autobc {
     }
     o << " )";
     return o.str();
+  }
+
+  bool LTL::operator==(const LTL& other) const {
+    return this->serialize() == other.serialize();
+  }
+
+  bool LTL::empty() const {
+    return this->li == "" && this->left == nullptr &&
+      this->mid == nullptr && this->right == nullptr;
+  }
+
+  bool LTL::singal() const {
+    return !this->empty() && this->li != "";
+  }
+
+  LTL LTL::Gen(const LTL& ltl) {
+    return ltl;
   }
 }

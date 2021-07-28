@@ -3,6 +3,7 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <sstream>
 
 namespace autobc {
   class Operator {

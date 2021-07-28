@@ -49,6 +49,9 @@ namespace autobc{
       // 判断这个LTL是不是只是一个文字
       bool singal() const;
 
+      // 辅助构造函数
+      static LTL Gen(const LTL&);
+
     private:
       // 该公式 “前缀” 一元运算符
       std::list<std::shared_ptr<Operator>> preOps;
