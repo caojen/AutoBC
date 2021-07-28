@@ -78,8 +78,18 @@ namespace autobc{
 
   class LTL {
     public:
-      class LTLNode {
+      class PreNode {
+        
+      };
 
+      class LTLNode {
+        public:
+          std::shared_ptr<LTLNode>        left;
+          std::shared_ptr<Op2>            op;
+          std::shared_ptr<LTLNode>        right;
+
+          std::shared_ptr<PreNode>        pre;
+          std::shared_ptr<Literal>        li;
       };
   };
 }
