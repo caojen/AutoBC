@@ -100,7 +100,7 @@ namespace ltl{
           std::string serialize() const;
 
           // 构造函数
-          LTLNode() {};
+          LTLNode() {}
           // 该LTLNode是一个文字
           LTLNode(const Literal& literal) {
             this->literal = dict.get(literal);
@@ -145,8 +145,10 @@ namespace ltl{
         this->root = ltl.root;
       }
 
+      // 保存LTLNode的指针
       std::shared_ptr<LTLNode> root;
 
+      // 格式化与流输出
       friend std::ostream& operator<<(std::ostream& o, const LTL& ltl);
       std::string serialize() const;
 
@@ -154,6 +156,17 @@ namespace ltl{
       // 错误时抛出not_a_ltl错误
       static LTL parse(const std::string& s);
 
+      // 使LTL产生偏序
       bool operator<(const LTL& other) const;
+
+      // 提供LTL的直接运算接口。这类运算会进行深拷贝而不影响已有的
+      LTL aand(const LTL& other) const;
+      LTL oor(const LTL& other) const;
+      LTL nnot() const;
+      LTL global() const;
+      LTL next() const;
+      LTL finally() const;
+      LTL release(const LTL& other) const;
+      LTL until(const LTL& other) const;
   };
 }

@@ -456,4 +456,36 @@ not_special:
   bool LTL::operator<(const LTL& other) const {
     return this->serialize() < other.serialize();
   }
+
+  #define ops1(ops) LTL LTL::ops() const {    \
+    LTL ret;                                  \
+    ret.root = std::make_shared<LTLNode>(     \
+      op::ops,                                \
+      this->root                              \
+    );                                        \
+    return std::move(ret);                    \
+  }
+
+  #define ops2(ops) LTL LTL::ops              \
+      (const LTL& other) const {              \
+    LTL ret;                                  \
+    ret.root = std::make_shared<LTLNode>(     \
+      this->root,                             \
+      op::ops,                                \
+      other.root                              \
+    );                                        \
+    return std::move(ret);                    \
+  }
+
+  ops2(aand)
+  ops2(oor)
+  ops1(nnot)
+  ops1(global)
+  ops1(next)
+  ops1(finally)
+  ops2(release)
+  ops2(until)
+
+  #undef ops2;
+  #undef ops1;
 }
