@@ -140,6 +140,11 @@ namespace ltl{
         this->root = std::make_shared<LTLNode>(*ltl.root);
       }
 
+      // 移动构造函数
+      LTL(LTL&& ltl) {
+        this->root = ltl.root;
+      }
+
       std::shared_ptr<LTLNode> root;
 
       friend std::ostream& operator<<(std::ostream& o, const LTL& ltl);
