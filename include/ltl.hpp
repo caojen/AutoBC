@@ -167,7 +167,7 @@ namespace autobc{
           }
 
           std::string serialize() const {
-            std::string ret = "(";
+            std::string ret = "";
             if(this->is_literal()) {
               // 只是一个文字
               ret += this->li->serialize();
@@ -176,14 +176,16 @@ namespace autobc{
               ret += this->pre->serialize();
             } else {
               // 是一个 x 或 x op y 形式的LTL
+              ret += "(";
               ret += this->left->serialize();  // x 需要确保不是nullptr
+              ret += ")";
               if(this->op != nullptr) {
                 ret += this->op->str();           // 在op存在的情况下
+                ret += "(";
                 ret += this->right->serialize();  // right需要确保不是nullptr
+                ret += ")";
               }
             }
-
-            ret += ")";
             return ret;
           }
       };
