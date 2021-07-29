@@ -10,6 +10,7 @@ namespace autobc {
     public:
       friend std::ostream& operator<<(std::ostream& o, const Operator& ope);
       virtual std::string str() const = 0;
+      virtual ~Operator() = default;
   };
 
   class Op1: public Operator {

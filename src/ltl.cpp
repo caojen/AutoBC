@@ -289,6 +289,14 @@ namespace autobc {
     return this->serialize() < other.serialize();
   }
 
+  LTL::LTL(const LTL& other) {
+    if(other.root == nullptr) {
+      this->root = nullptr;
+    } else {
+      this->root = std::make_shared<LTLNode>(*this->root);
+    }
+  }
+
   // 将[begin, end)的数据进行格式化
   std::shared_ptr<LTL::LTLNode> LTL::GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end) {
     if (begin >= end || s[begin] == "&" || s[begin] == "|" || s[begin] == "U" || s[begin] == "R") {

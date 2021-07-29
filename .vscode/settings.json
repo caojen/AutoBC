@@ -72,6 +72,7 @@
     "codecvt": "cpp",
     "stack": "cpp",
     "thread": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "fstream": "cpp"
   }
 }

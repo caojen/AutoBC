@@ -88,11 +88,16 @@ namespace autobc{
       typedef LTL::LTLNode LTLNode;
       typedef LTL::PreNode PreNode;
 
-      std::shared_ptr<LTLNode> root;
+      std::shared_ptr<LTLNode> root = nullptr;
 
       static LTL Gen(const std::string& s);
       std::string serialize() const;
       bool operator<(const LTL& other) const;
+
+      // 深复制一个LTL，包括内部所有的LTLNode和PreNode都被深复制
+      // 符号仍然直接浅复制
+      LTL() = default;
+      LTL(const LTL& other);
 
       class PreNode {
         public:
@@ -103,6 +108,16 @@ namespace autobc{
             std::string ret = op->str();
             ret += to->serialize();
             return ret;
+          }
+
+          PreNode() {}
+          PreNode(const PreNode& pre) {
+            this->op = pre.op;
+            if(pre.to != nullptr) {
+              this->to = std::make_shared<LTLNode>(*pre.to);
+            } else {
+              this->to = nullptr;
+            }
           }
 
       };
@@ -116,7 +131,30 @@ namespace autobc{
           std::shared_ptr<PreNode>        pre     = nullptr;          // 指向前缀符号
           std::shared_ptr<Literal>        li      = nullptr;          // 指向文字
 
-          LTLNode() {}
+          LTLNode() = default;
+
+          // 深复制一个LTLNode
+          LTLNode(const LTLNode& other) {
+            if(other.left == nullptr) {
+              this->left = nullptr; 
+            } else {
+              this->left = std::make_shared<LTLNode>(*other.left);
+            }
+
+            this->op = other.op;
+            if(this->right == nullptr) {
+              this->right = nullptr;
+            } else {
+              this->right = std::make_shared<LTLNode>(*other.right);
+            }
+
+            if(this->pre == nullptr) {
+              this->pre = nullptr;
+            } else {
+              this->pre = std::make_shared<PreNode>(*other.pre);
+            }
+            this->li = other.li;
+          }
 
           LTLNode(std::shared_ptr<Literal> li) {
             this->li = li;
