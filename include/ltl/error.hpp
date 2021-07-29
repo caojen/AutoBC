@@ -8,4 +8,11 @@ namespace ltl {
         return "Not a valid LTL";
       }
   };
+
+  class unreachable: public std::exception {
+    public:
+      char const * what() const noexcept {
+        return "Code reaches unreachable area";
+      }  
+  };
 }

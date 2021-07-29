@@ -3,5 +3,6 @@
 using namespace ltl;
 
 int main() {
-  LTL ltl = LTL::parse("(f) & (X((G(a)) U (X(X(j)))))");
+  LTL ltl = LTL::parse("XXFXGXa&s");
+  std::cout << ltl.serialize() << std::endl;
 }

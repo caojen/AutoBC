@@ -142,7 +142,7 @@ namespace ltl{
 
       std::shared_ptr<LTLNode> root;
 
-      friend std::ostream& operator<<(std::ostream& o, const LTLNode& ltlNode);
+      friend std::ostream& operator<<(std::ostream& o, const LTL& ltl);
       std::string serialize() const;
 
       // 根据字符串来返回对应的LTL公式

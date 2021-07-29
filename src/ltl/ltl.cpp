@@ -134,7 +134,48 @@ not_special:
   }
 
   static LTL gen_from_post_order(const std::vector<std::string>& postorder) {
+    // 使用LTLNode而不是LTL来减少拷贝构造函数的深复制次数
+    std::stack<std::shared_ptr<LTL::LTLNode>> stack;
+    for(auto& s: postorder) {
+      // 如果s是个Operator:
+      auto op = Operator::gen(s);
+      if(op != op::emptyOp) {
+        // 判断s是几元运算符
+        if(dynamic_cast<Op1*>(op.get()) != nullptr) {
+          // 一元运算符
+          // 尝试从stack中获取一个操作数
+          if(stack.empty()) {
+            throw not_a_ltl();
+          }
+          std::shared_ptr<LTL::LTLNode> a = stack.top();
+          stack.pop();
+          stack.push(std::make_shared<LTL::LTLNode>(op, a));
+        } else if(dynamic_cast<Op2*>(op.get()) != nullptr) {
+          // 二元运算符
+          // 尝试从stack中获取两个操作数
+          if(stack.size() < 2) {
+            throw not_a_ltl();
+          }
+          std::shared_ptr<LTL::LTLNode> a = stack.top();
+          stack.pop();
+          std::shared_ptr<LTL::LTLNode> b = stack.top();
+          stack.pop();
+          stack.push(std::make_shared<LTL::LTLNode>(b, op, a));
+        } else {
+          throw unreachable();
+        }
+      } else {
+        // op是一个符号（一个文字），直接入栈
+        stack.push(std::make_shared<LTL::LTLNode>(Literal(s)));
+      }
+    }
+    if(stack.size() != 1) {
+      throw not_a_ltl();
+    }
 
+    LTL ret;
+    ret.root = stack.top();
+    return ret;
   }
 
   LTLGenerator::LTLGenerator() {
@@ -343,7 +384,7 @@ not_special:
   }
 
   bool LTL::LTLNode::is_literal() const {
-    return this->op == op::emptyOp;
+    return this->op.get() == nullptr;
   }
 
   bool LTL::LTLNode::is_op1() const {
@@ -387,6 +428,11 @@ not_special:
       throw not_a_ltl();
     }
     return ostr.str();
+  }
+
+  std::ostream& operator<<(std::ostream& o, const LTL& ltl) {
+    o << ltl.serialize();
+    return o;
   }
 
   std::string LTL::serialize() const {
