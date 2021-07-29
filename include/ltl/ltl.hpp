@@ -82,37 +82,62 @@ namespace ltl{
   class LTL {
     public:
       class LTLNode {
-        // 当op为EmptyOp时，该节点为一个literal，left和right无效
-        // 当op为Op1时，该节点的right有效，literal和left无效
-        // 否则（op为Op2），该节点的left和right有效，literal无效
-        std::shared_ptr<Operator>           op;
-        std::shared_ptr<Literal>            literal;
-        std::shared_ptr<LTLNode>            left;
-        std::shared_ptr<LTLNode>            right;
+        public:
+          // 当op为EmptyOp时，该节点为一个literal，left和right无效
+          // 当op为Op1时，该节点的right有效，literal和left无效
+          // 否则（op为Op2），该节点的left和right有效，literal无效
+          std::shared_ptr<Operator>           op;
+          std::shared_ptr<Literal>            literal;
+          std::shared_ptr<LTLNode>            left;
+          std::shared_ptr<LTLNode>            right;
 
-        bool is_literal() const;
-        bool is_op1() const;
-        bool is_op2() const;
+          bool is_literal() const;
+          bool is_op1() const;
+          bool is_op2() const;
 
-        friend std::ostream& operator<<(std::ostream& o, const LTLNode& ltlNode);
-        std::string serialize() const;
+          friend std::ostream& operator<<(std::ostream& o, const LTLNode& ltlNode);
+          std::string serialize() const;
 
-        // 构造函数
-        LTLNode() = delete;
-        // 该LTLNode是一个文字
-        LTLNode(const Literal& literal);
-        // 该LTL是一个一元运算符控制的，深复制right而不改变其指针的内容
-        LTLNode(std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right);
-        // 该LTL是一个二元运算符控制的，深复制left和right而不改变其指针的内容
-        LTLNode(const std::shared_ptr<LTLNode>& left, std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right);
-        // 深复制拷贝构造函数
-        LTLNode(const LTLNode& other);
+          // 构造函数
+          LTLNode() {};
+          // 该LTLNode是一个文字
+          LTLNode(const Literal& literal) {
+            this->literal = dict.get(literal);
+          }
+          // 该LTL是一个一元运算符控制的，深复制right而不改变其指针的内容
+          LTLNode(std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right) {
+            this->op = op;
+            this->right = std::make_shared<LTLNode>(*right);
+          }
+          // 该LTL是一个二元运算符控制的，深复制left和right而不改变其指针的内容
+          LTLNode(const std::shared_ptr<LTLNode>& left, std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right) {
+            this->left = std::make_shared<LTLNode>(*left);
+            this->op = op;
+            this->right = std::make_shared<LTLNode>(*right);
+          }
+          // 深复制拷贝构造函数
+          LTLNode(const LTLNode& other) {
+            if(other.op) {
+              this->op = other.op;
+            }
+            if(other.literal) {
+              this->literal = other.literal;
+            }
+            if(other.left) {
+              this->left = std::make_shared<LTLNode>(*other.left);
+            }
+            if(other.right) {
+              this->right = std::make_shared<LTLNode>(*other.right);
+            }
+          }
       };
 
       LTL() = default;
 
       // 深复制拷贝构造函数
-      LTL(const LTL& ltl);
+      LTL(const LTL& ltl) {
+        this->root = std::make_shared<LTLNode>(*ltl.root);
+      }
 
       std::shared_ptr<LTLNode> root;
 

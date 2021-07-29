@@ -259,4 +259,34 @@ namespace ltl {
       throw not_a_ltl();
     }
   }
+
+  std::ostream& operator<<(std::ostream& o, const LTL::LTLNode& ltlNode) {
+    o << ltlNode.serialize();
+    return o;
+  }
+
+  std::string LTL::serialize() const {
+    return this->root->serialize();
+  }
+
+  LTL LTL::parse(const std::string& _s) {
+    // 删除s中所有的空格
+    std::string s = _s;
+    auto iter = s.begin();
+    while(iter != s.end()) {
+      if(*iter == ' ') {
+        iter = s.erase(iter);
+      } else {
+        ++iter;
+      }
+    }
+
+    // 
+    
+    return LTL();
+  }
+
+  bool LTL::operator<(const LTL& other) const {
+    return this->serialize() < other.serialize();
+  }
 }

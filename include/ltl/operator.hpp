@@ -11,81 +11,97 @@ namespace ltl {
       friend std::ostream& operator<<(std::ostream& o, const Operator& ope);
       virtual std::string str() const = 0;
       virtual ~Operator() = default;
+      virtual unsigned weight() const = 0;
   };
 
   class Op1: public Operator {
     public:
       std::string str() const { return "Op1"; }
+      unsigned weight() const { return 0; }
   };
 
   class Op2: public Operator {
     public:
       std::string str() const { return "Op2"; }
+      unsigned weight() const { return 0; }
   };
 
   class EmptyOp: public Op1 {
     public:
       std::string str() const { return "EmptyOp"; }
+      unsigned weight() const { return 0; }
   };
 
   class LTLOp1: public Op1 {
     public:
       std::string str() const { return "LTLOp1"; }
+      unsigned weight() const { return 0; }
   };
 
   class LTLOp2: public Op2 {
     public:
       std::string str() const { return "LTLOp2"; }
+      unsigned weight() const { return 0; }
   };
 
   class ProOp1: public Op1 {
     public:
       std::string str() const { return "ProOp1"; }
+      unsigned weight() const { return 0; }
   };
 
   class ProOp2: public Op2 {
     public:
       std::string str() const { return "ProOp2"; }
+      unsigned weight() const { return 0; }
   };
 
   class Next: public LTLOp1 {
     public:
       std::string str() const { return "X"; }
+      unsigned weight() const { return 1; }
   };
 
   class Finally: public LTLOp1 {
     public:
       std::string str() const { return "F"; }
+      unsigned weight() const { return 1; }
   };
 
   class Global: public LTLOp1 {
     public:
       std::string str() const { return "G"; }
+      unsigned weight() const { return 1; }
   };
 
   class Until: public LTLOp2 {
     public:
       std::string str() const { return "U"; }
+      unsigned weight() const { return 1; }
   };
 
   class Release: public LTLOp2 {
     public:
       std::string str() const { return "R"; }
+      unsigned weight() const { return 1; }
   };
 
   class Not: public ProOp1 {
     public:
       std::string str() const { return "!"; }
+      unsigned weight() const { return 1; }
   };
 
   class And: public ProOp2 {
     public:
       std::string str() const { return "&"; }
+      unsigned weight() const { return 1; }
   };
 
   class Or: public ProOp2 {
     public:
       std::string str() const { return "|"; }
+      unsigned weight() const { return 1; }
   };
 
   namespace op {
