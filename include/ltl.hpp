@@ -113,10 +113,8 @@ namespace autobc{
           PreNode() {}
           PreNode(const PreNode& pre) {
             this->op = pre.op;
-            if(pre.to != nullptr) {
+            if(pre.to.get()) {
               this->to = std::make_shared<LTLNode>(*pre.to);
-            } else {
-              this->to = nullptr;
             }
           }
 
@@ -135,23 +133,17 @@ namespace autobc{
 
           // 深复制一个LTLNode
           LTLNode(const LTLNode& other) {
-            if(other.left == nullptr) {
-              this->left = nullptr; 
-            } else {
-              this->left = std::make_shared<LTLNode>(*other.left);
+            if(other.left.get()) {
+              this->left = std::make_shared<LTLNode>(*other.left);; 
             }
 
             this->op = other.op;
-            if(this->right == nullptr) {
-              this->right = nullptr;
-            } else {
+            if(other.right.get()) {
               this->right = std::make_shared<LTLNode>(*other.right);
             }
 
-            if(this->pre == nullptr) {
-              this->pre = nullptr;
-            } else {
-              this->pre = std::make_shared<PreNode>(*other.pre);
+            if(other.pre.get()) {
+              this->pre = std::make_shared<PreNode>(*other.pre);;
             }
             this->li = other.li;
           }

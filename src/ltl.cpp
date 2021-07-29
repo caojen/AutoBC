@@ -198,8 +198,8 @@ namespace autobc {
   }
 
   bool LTLGenerator::empty() const {
-    return this->li == "" && this->left == nullptr &&
-      this->mid == nullptr && this->right == nullptr;
+    return this->li == "" && this->left &&
+      this->mid && this->right;
   }
 
   bool LTLGenerator::singal() const {
@@ -290,10 +290,8 @@ namespace autobc {
   }
 
   LTL::LTL(const LTL& other) {
-    if(other.root == nullptr) {
-      this->root = nullptr;
-    } else {
-      this->root = std::make_shared<LTLNode>(*this->root);
+    if(other.root.get()) {
+      this->root = std::make_shared<LTLNode>(*other.root);
     }
   }
 
