@@ -17,4 +17,26 @@ namespace ltl {
       return o;
     }
   }
+
+  std::shared_ptr<Operator> Operator::gen(const std::string& s) {
+    if(s == "X") {
+      return op::next;
+    } else if(s == "F") {
+      return op::finally;
+    } else if(s == "G") {
+      return op::global;
+    } else if(s == "U") {
+      return op::until;
+    } else if(s == "R") {
+      return op::release;
+    } else if(s == "!") {
+      return op::nnot;
+    } else if(s == "&") {
+      return op::aand;
+    } else if(s == "|") {
+      return op::oor;
+    } {
+      return op::emptyOp;
+    }
+  }
 }

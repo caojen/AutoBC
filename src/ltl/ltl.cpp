@@ -3,12 +3,140 @@
 #include <vector>
 #include <string>
 #include <set>
+#include <stack>
 
 #include "ltl.hpp"
 #include "error.hpp"
 #include "dict.hpp"
 
 namespace ltl {
+  static std::string remove_blank(const std::string& _s) {
+    std::string s = _s;
+    auto iter = s.begin();
+    while(iter != s.end()) {
+      if(*iter == ' ') {
+        iter = s.erase(iter);
+      } else {
+        ++iter;
+      }
+    }
+    return s;
+  }
+
+  static std::vector<std::string> split_into_in_order(const std::string& s) {
+    std::string special = "()|&!";
+    std::string pre = "XGURF";
+    // 分隔成vector
+    std::vector<std::string> splits;
+    for(unsigned i = 0; i < s.size();) {
+      std::string str = std::string(1, s[i]);
+      if(special.find(s[i]) != std::string::npos) {
+        splits.push_back(std::string(1, s[i]));
+        i++;
+        continue;
+      } else if(pre.find(s[i]) != std::string::npos) {
+        unsigned j = i + 1;
+        bool is_special = j < s.size();
+        while(j < s.size() && is_special) {
+          if(special.find(s[j]) != std::string::npos) {
+            break;
+          }
+          if(pre.find(s[j]) != std::string::npos) {
+            if(j + 1 == s.size()) {
+              is_special = false;
+            }
+            j++;
+          } else {
+            break;
+          }
+        }
+        if(is_special) {
+          splits.push_back(std::string(1, s[i]));
+          i++;
+        } else {
+          goto not_special;
+        }
+      } else {
+not_special:
+        unsigned j = i;
+        while(j < s.size() && special.find(s[j]) == std::string::npos) {
+          ++j;
+        }
+        splits.push_back(s.substr(i, j-i));
+        i = j;
+      }
+    }
+
+    return splits;
+  }
+
+  static std::vector<std::string> in_order_to_post_order(const std::vector<std::string>& inorder) {
+    std::stack<std::string> stack;
+    std::vector<std::string> ret;
+
+    for(auto& ch: inorder) {
+      if(ch == "(") {
+        stack.push("(");
+      } else if(ch == ")") {
+        bool matched = false;
+        while(!stack.empty()) {
+          std::string t = std::move(stack.top()); stack.pop();
+          if(t != "(") {
+            ret.push_back(std::move(t));
+          } else {
+            matched = true;
+            break;
+          }
+        }
+        if(matched == false) {
+          throw not_a_ltl();
+        }
+      } else {
+        auto op = Operator::gen(ch);
+        if(op == op::emptyOp) {
+          // 不是一个操作符
+          ret.push_back(ch);
+        } else {
+          // 是一个操作符
+          if(stack.empty()) {
+            stack.push(ch);
+          } else {
+            auto last = Operator::gen(stack.top());
+            if(last->weight() <= op->weight()) {
+              stack.push(ch);
+            } else {
+              while(stack.empty() == false && stack.top() != "(") {
+                auto last = Operator::gen(stack.top());
+                if(last->weight() <= op->weight()) {
+                  break;
+                } else {
+                  ret.push_back(stack.top());
+                  stack.pop();
+                }
+              }
+              stack.push(ch);
+            }
+          }
+        }
+      }
+    }
+
+    while(!stack.empty()) {
+      auto item = stack.top(); stack.pop();
+      if(item == "(") {
+        throw not_a_ltl();
+      } else {
+        ret.push_back(item);
+      }
+    }
+
+    return ret;
+  }
+
+  static LTL gen_from_post_order(const std::vector<std::string>& postorder) {
+
+  }
+
   LTLGenerator::LTLGenerator() {
     this->preOps.clear();
     this->li = "";
@@ -258,11 +386,7 @@ namespace ltl {
     } else {
       throw not_a_ltl();
     }
-  }
-
-  std::ostream& operator<<(std::ostream& o, const LTL::LTLNode& ltlNode) {
-    o << ltlNode.serialize();
-    return o;
+    return ostr.str();
   }
 
   std::string LTL::serialize() const {
@@ -271,19 +395,16 @@ namespace ltl {
 
   LTL LTL::parse(const std::string& _s) {
     // 删除s中所有的空格
-    std::string s = _s;
-    auto iter = s.begin();
-    while(iter != s.end()) {
-      if(*iter == ' ') {
-        iter = s.erase(iter);
-      } else {
-        ++iter;
-      }
-    }
-
-    // 
+    std::string s = remove_blank(_s);
     
-    return LTL();
+    std::vector<std::string> inorder = split_into_in_order(s);
+    // inorder 是一个中缀表达式，将其转为后缀表达式
+
+    std::vector<std::string> postorder = in_order_to_post_order(inorder);
+
+    // 根据后缀表达式构造LTL树
+    
+    return gen_from_post_order(postorder);
   }
 
   bool LTL::operator<(const LTL& other) const {

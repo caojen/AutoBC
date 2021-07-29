@@ -12,6 +12,7 @@ namespace ltl {
       virtual std::string str() const = 0;
       virtual ~Operator() = default;
       virtual unsigned weight() const = 0;
+      static std::shared_ptr<Operator> gen(const std::string& s);
   };
 
   class Op1: public Operator {
@@ -59,19 +60,19 @@ namespace ltl {
   class Next: public LTLOp1 {
     public:
       std::string str() const { return "X"; }
-      unsigned weight() const { return 1; }
+      unsigned weight() const { return 3; }
   };
 
   class Finally: public LTLOp1 {
     public:
       std::string str() const { return "F"; }
-      unsigned weight() const { return 1; }
+      unsigned weight() const { return 3; }
   };
 
   class Global: public LTLOp1 {
     public:
       std::string str() const { return "G"; }
-      unsigned weight() const { return 1; }
+      unsigned weight() const { return 3; }
   };
 
   class Until: public LTLOp2 {
@@ -89,13 +90,13 @@ namespace ltl {
   class Not: public ProOp1 {
     public:
       std::string str() const { return "!"; }
-      unsigned weight() const { return 1; }
+      unsigned weight() const { return 3; }
   };
 
   class And: public ProOp2 {
     public:
       std::string str() const { return "&"; }
-      unsigned weight() const { return 1; }
+      unsigned weight() const { return 2; }
   };
 
   class Or: public ProOp2 {

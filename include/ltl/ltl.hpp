@@ -10,6 +10,7 @@
 
 #include "literal.hpp"
 #include "operator.hpp"
+#include "dict.hpp"
 
 namespace ltl{
   class LTL;
