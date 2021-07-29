@@ -1,6 +1,6 @@
 #include "literal.hpp"
 
-namespace autobc {
+namespace ltl {
   Literal::Literal() {}
 
   Literal::Literal(const char& ch) {

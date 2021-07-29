@@ -1,6 +1,6 @@
 #include "operator.hpp"
 
-namespace autobc {
+namespace ltl {
   namespace op {
     std::shared_ptr<EmptyOp> emptyOp = std::make_shared<EmptyOp>();
     std::shared_ptr<Next> next = std::make_shared<Next>();

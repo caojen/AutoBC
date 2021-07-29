@@ -11,7 +11,7 @@
 #include "literal.hpp"
 #include "operator.hpp"
 
-namespace autobc{
+namespace ltl{
   class LTL;
   
   // LTL语句生成器
@@ -81,116 +81,48 @@ namespace autobc{
 
   class LTL {
     public:
-
-      class LTLNode;
-      class PreNode;
-
-      typedef LTL::LTLNode LTLNode;
-      typedef LTL::PreNode PreNode;
-
-      std::shared_ptr<LTLNode> root = nullptr;
-
-      static LTL Gen(const std::string& s);
-      std::string serialize() const;
-      bool operator<(const LTL& other) const;
-
-      // 深复制一个LTL，包括内部所有的LTLNode和PreNode都被深复制
-      // 符号仍然直接浅复制
-      LTL() = default;
-      LTL(const LTL& other);
-
-      class PreNode {
-        public:
-          std::shared_ptr<Op1>      op;
-          std::shared_ptr<LTLNode>  to;         // 指向该操作数
-
-          std::string serialize() const {
-            std::string ret = op->str();
-            ret += to->serialize();
-            return ret;
-          }
-
-          PreNode() {}
-          PreNode(const PreNode& pre) {
-            this->op = pre.op;
-            if(pre.to.get()) {
-              this->to = std::make_shared<LTLNode>(*pre.to);
-            }
-          }
-
-      };
-
       class LTLNode {
-        public:
-          std::shared_ptr<LTLNode>        left    = nullptr;          // 指向第一个操作数
-          std::shared_ptr<Op2>            op      = nullptr;          // 指向运算符
-          std::shared_ptr<LTLNode>        right   = nullptr;          // 指向第二个操作数
+        // 当op为EmptyOp时，该节点为一个literal，left和right无效
+        // 当op为Op1时，该节点的right有效，literal和left无效
+        // 否则（op为Op2），该节点的left和right有效，literal无效
+        std::shared_ptr<Operator>           op;
+        std::shared_ptr<Literal>            literal;
+        std::shared_ptr<LTLNode>            left;
+        std::shared_ptr<LTLNode>            right;
 
-          std::shared_ptr<PreNode>        pre     = nullptr;          // 指向前缀符号
-          std::shared_ptr<Literal>        li      = nullptr;          // 指向文字
+        bool is_literal() const;
+        bool is_op1() const;
+        bool is_op2() const;
 
-          LTLNode() = default;
+        friend std::ostream& operator<<(std::ostream& o, const LTLNode& ltlNode);
+        std::string serialize() const;
 
-          // 深复制一个LTLNode
-          LTLNode(const LTLNode& other) {
-            if(other.left.get()) {
-              this->left = std::make_shared<LTLNode>(*other.left);; 
-            }
-
-            this->op = other.op;
-            if(other.right.get()) {
-              this->right = std::make_shared<LTLNode>(*other.right);
-            }
-
-            if(other.pre.get()) {
-              this->pre = std::make_shared<PreNode>(*other.pre);;
-            }
-            this->li = other.li;
-          }
-
-          LTLNode(std::shared_ptr<Literal> li) {
-            this->li = li;
-          }
-
-          LTLNode(std::shared_ptr<PreNode> pre) {
-            this->pre = pre;
-          }
-
-          // 判断这个LTLNode是不是一个文字（如果是，代表这是个终结符）
-          inline bool is_literal() const {
-            return this->li && *this->li != "";
-          }
-
-          // 判断这个LTL是否指向一个PreNode
-          inline bool is_pre() const {
-            return this->pre != nullptr;
-          }
-
-          std::string serialize() const {
-            std::string ret = "";
-            if(this->is_literal()) {
-              // 只是一个文字
-              ret += this->li->serialize();
-            } else if(this->is_pre()) {
-              // 是一个PreNode
-              ret += this->pre->serialize();
-            } else {
-              // 是一个 x 或 x op y 形式的LTL
-              ret += "(";
-              ret += this->left->serialize();  // x 需要确保不是nullptr
-              ret += ")";
-              if(this->op != nullptr) {
-                ret += this->op->str();           // 在op存在的情况下
-                ret += "(";
-                ret += this->right->serialize();  // right需要确保不是nullptr
-                ret += ")";
-              }
-            }
-            return ret;
-          }
+        // 构造函数
+        LTLNode() = delete;
+        // 该LTLNode是一个文字
+        LTLNode(const Literal& literal);
+        // 该LTL是一个一元运算符控制的，深复制right而不改变其指针的内容
+        LTLNode(std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right);
+        // 该LTL是一个二元运算符控制的，深复制left和right而不改变其指针的内容
+        LTLNode(const std::shared_ptr<LTLNode>& left, std::shared_ptr<Operator> op, const std::shared_ptr<LTLNode>& right);
+        // 深复制拷贝构造函数
+        LTLNode(const LTLNode& other);
       };
-  
-    private:
-      static std::shared_ptr<LTLNode> GenPart(const std::vector<std::string>& s, const std::map<unsigned, unsigned>& map, unsigned begin, unsigned end);
+
+      LTL() = default;
+
+      // 深复制拷贝构造函数
+      LTL(const LTL& ltl);
+
+      std::shared_ptr<LTLNode> root;
+
+      friend std::ostream& operator<<(std::ostream& o, const LTLNode& ltlNode);
+      std::string serialize() const;
+
+      // 根据字符串来返回对应的LTL公式
+      // 错误时抛出not_a_ltl错误
+      static LTL parse(const std::string& s);
+
+      bool operator<(const LTL& other) const;
   };
 }

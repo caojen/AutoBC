@@ -6,7 +6,7 @@
 
 #include "literal.hpp"
 
-namespace autobc {
+namespace ltl {
   class Dict {
     public:
       std::map<std::string, std::shared_ptr<Literal>> map;

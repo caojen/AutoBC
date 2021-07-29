@@ -1,7 +1,7 @@
 #include <exception>
 #include <string>
 
-namespace autobc {
+namespace ltl {
   class not_a_ltl: public std::exception {
     public:
       char const * what() const noexcept {

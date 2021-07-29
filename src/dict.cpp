@@ -1,6 +1,6 @@
 #include "dict.hpp"
 
-namespace autobc {
+namespace ltl {
   std::shared_ptr<Literal> Dict::get(const Literal& li) {
     auto s = li.serialize();
     auto iter = this->map.find(s);

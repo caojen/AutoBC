@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace autobc {
+namespace ltl {
   class Operator {
     public:
       friend std::ostream& operator<<(std::ostream& o, const Operator& ope);

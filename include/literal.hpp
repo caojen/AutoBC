@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-namespace autobc {
+namespace ltl {
   class Literal {
     public:
       Literal();
