@@ -463,7 +463,7 @@ not_special:
       op::ops,                                \
       this->root                              \
     );                                        \
-    return std::move(ret);                    \
+    return ret;                               \
   }
 
   #define ops2(ops) LTL LTL::ops              \
@@ -474,7 +474,7 @@ not_special:
       op::ops,                                \
       other.root                              \
     );                                        \
-    return std::move(ret);                    \
+    return ret;                               \
   }
 
   ops2(aand)
@@ -486,6 +486,6 @@ not_special:
   ops2(release)
   ops2(until)
 
-  #undef ops2;
-  #undef ops1;
+  #undef ops2
+  #undef ops1
 }
