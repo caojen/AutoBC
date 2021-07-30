@@ -1,8 +1,6 @@
 #include <sstream>
-#include <iostream>
 #include <vector>
 #include <string>
-#include <set>
 #include <stack>
 
 #include "ltl.hpp"
@@ -51,7 +49,7 @@ namespace ltl {
           }
         }
         if(is_special) {
-          splits.push_back(std::string(1, s[i]));
+          splits.emplace_back(1, s[i]);
           i++;
         } else {
           goto not_special;
@@ -88,7 +86,7 @@ not_special:
             break;
           }
         }
-        if(matched == false) {
+        if(!matched) {
           throw not_a_ltl();
         }
       } else {
@@ -105,7 +103,7 @@ not_special:
             if(last->weight() <= op->weight()) {
               stack.push(ch);
             } else {
-              while(stack.empty() == false && stack.top() != "(") {
+              while(!stack.empty() && stack.top() != "(") {
                 auto last = Operator::gen(stack.top());
                 if(last->weight() <= op->weight()) {
                   break;
