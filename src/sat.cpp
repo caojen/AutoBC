@@ -49,6 +49,7 @@ namespace ltl {
         while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
           output.append(buffer);
         }
+        fclose(pipe);
         // 判断ret的某一行中是否存在specification
 
         std::istringstream ret_stream(output);
