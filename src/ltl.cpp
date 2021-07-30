@@ -190,7 +190,7 @@ not_special:
   bool LTL::LTLNode::is_op2() const {
     return this->op == op::aand ||
       this->op == op::oor ||
-      this->op == op::release ||
+//      this->op == op::release ||
       this->op == op::until;
   }
 
@@ -276,7 +276,7 @@ not_special:
   ops1(global)
   ops1(next)
   ops1(finally)
-  ops2(release)
+//  ops2(release)
   ops2(until)
 
   #undef ops2

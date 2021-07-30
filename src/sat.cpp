@@ -1,7 +1,6 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
-#include <sstream>
 #include <cstdio>
 
 #include "sat.hpp"
@@ -66,6 +65,10 @@ namespace ltl {
     }
   }
 
+  bool SatSolver::checkSAT(const LTL &ltl) {
+    return (*this)(ltl);
+  }
+
   std::string ltl2smv(const std::string& s, const std::set<std::string>& vocab) {
     std::ostringstream ostr("");
     ostr << "MODULE main" << std::endl << "VAR" << std::endl;
@@ -96,6 +99,6 @@ namespace ltl {
   }
 
   SmvFile::~SmvFile() {
-    remove(this->filename.c_str());
+//    remove(this->filename.c_str());
   }
 }

@@ -12,7 +12,7 @@
 // 除非调用clear
 
 namespace rnd {
-  typedef std::pair<ltl::LTL, ltl::LTL> LTLPair;
+  typedef std::pair<std::string, std::string> LTLPair;
   typedef std::chrono::duration<long long> RanderTime;
 
   class Range {
