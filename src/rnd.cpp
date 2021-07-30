@@ -206,10 +206,22 @@ namespace rnd {
         if(found) {   // 成功找到了SAT，推到结果中，然后将SAT应用到LTL中继续寻找
           SAT = ltl.serialize();
           std::cout << step << ": Found SAT: " << SAT << std::endl;
-          ret.insert(std::pair<std::string, std::string>(SAT, unSAT));
+          auto depth = ltl.depth();
+          if(depth >= r.left && depth < r.right) {
+            auto before = this->ltls.size();
+            this->ltls.insert(std::pair<std::string, std::string>(SAT, unSAT));
+            auto after = this->ltls.size();
+            if(before != after) {
+              ret.insert(std::pair<std::string, std::string>(SAT, unSAT));
+            } else {
+              std::cout << "Existed. Skipped..." << std::endl;
+            }
+          }
           leaves.push(subClause);
         } else {      // 没有找到任何替换的可能性
-          throw unreachable();    // TODO: 没有任何替换的可能性时，寻找一种方法来继续算法
+          // throw unreachable();    // TODO: 没有任何替换的可能性时，寻找一种方法来继续算法
+          // 目前，只退出即可
+          break;
         }
       } else {
 //        std::cout << step << ": LTL is SAT" << std::endl;
