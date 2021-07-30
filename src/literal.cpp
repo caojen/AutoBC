@@ -40,4 +40,8 @@ namespace ltl {
   std::string Literal::serialize() const {
     return this->s;
   }
+
+  void Literal::set(const Literal &other) {
+    this->s = other.s;
+  }
 }

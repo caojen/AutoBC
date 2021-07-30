@@ -12,6 +12,8 @@ namespace ltl {
       Literal(const std::string& str);
       Literal(const Literal& other);
 
+      void set(const Literal& other);
+
       bool empty() const;
       bool operator==(const Literal& other) const;
       bool operator!=(const Literal& other) const;
