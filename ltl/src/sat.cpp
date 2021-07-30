@@ -1,3 +1,8 @@
+#include <spot/tl/parse.hh>
+#include <spot/tl/print.hh>
+#include <spot/tl/formula.hh>
+#include <spot/tl/simplify.hh>
+
 #include "sat.hpp"
 
 namespace ltl {
@@ -9,6 +14,7 @@ namespace ltl {
       return iter->second;
     } else {
       // TODO: call solver
+      spot::formula formula = spot::parse_formula(ltl.serialize());
     }
   }
 }
