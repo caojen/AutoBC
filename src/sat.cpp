@@ -99,6 +99,6 @@ namespace ltl {
   }
 
   SmvFile::~SmvFile() {
-//    remove(this->filename.c_str());
+    remove(this->filename.c_str());
   }
 }
