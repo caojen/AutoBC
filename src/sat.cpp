@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <cstdio>
+#include <thread>
 
 #include "sat.hpp"
 
@@ -30,18 +31,27 @@ namespace ltl {
       auto file = SmvFile(smv);
       auto filename = file.sync();
 
-      // 将filename喂给nuXmv
-      std::ostringstream cmd("");
-      cmd << "/bin/bash -c '" << this->path << " " << filename << " 2>&1'";
+      feed_nuXmv:
+      try {
+        // 将filename喂给nuXmv
+        std::ostringstream cmd("");
+        cmd << "/bin/bash -c '" << this->path << " " << filename << " 2>&1'";
 
-      FILE* pipe = popen(cmd.str().c_str(), "r");
-      if(!pipe) {
-        throw std::runtime_error("popen() failed");
-      }
-      std::string output;
-      char buffer[128] = { 0 };
-      while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
-        output.append(buffer);
+        FILE* pipe = popen(cmd.str().c_str(), "r");
+        if(!pipe) {
+          throw std::runtime_error("popen() failed");
+        }
+        std::string output;
+        char buffer[128] = { 0 };
+        while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
+          output.append(buffer);
+        }
+      } catch(std::runtime_error& re) {
+        std::cout << "SatSolver Popen Error!" << std::endl;
+        std::cout << re.what() << std::endl;
+        std::cout << "Sleep 1s and Retry..." << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        goto feed_nuXmv;
       }
       // 判断ret的某一行中是否存在specification
 
