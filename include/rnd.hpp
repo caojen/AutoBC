@@ -30,7 +30,7 @@ namespace rnd {
 
   class Rander {
     public:
-      Rander(const RanderTime& rt);
+      Rander(const RanderTime& rt, int vocabLen);
 
       // 重设单次生成限制时间
       virtual void set_limit(const RanderTime& rt);
@@ -54,7 +54,7 @@ namespace rnd {
 
   class RanderCNF: public Rander {
   public:
-    RanderCNF(const RanderTime& rt);
+    RanderCNF(const RanderTime& rt, int vocabLen);
     std::set<LTLPair> operator()(unsigned k, const Range& r);
   };
 }

@@ -14,14 +14,21 @@ namespace rnd {
     this->right = right;
   }
 
-  Rander::Rander(const RanderTime& rt) {
+  Rander::Rander(const RanderTime& rt, int vocabLen) {
     this->rt = rt;
-    for(unsigned i = 0; i < 3; i++) {
-      char ch = 'f' + i;
+    vocabLen = std::min(vocabLen, 25);
+    for(unsigned i = 0; i < vocabLen; i++) {
+      char ch = 'b' + i;
       this->charset.emplace_back(1, ch);
     }
     this->charset.emplace_back("1");
     this->charset.emplace_back("0");
+
+    std::cout << "Rander Charset:" << std::endl;
+    for(auto i: this->charset) {
+      std::cout << i << ", ";
+    }
+    std::cout << std::endl;
   }
 
   void Rander::set_limit(const RanderTime &rt) {
@@ -36,7 +43,7 @@ namespace rnd {
 
   Rander::~Rander() {}
 
-  RanderCNF::RanderCNF(const RanderTime &rt): Rander(rt) {}
+  RanderCNF::RanderCNF(const RanderTime &rt, int vocabLen): Rander(rt, vocabLen) {}
 
   std::set<LTLPair> RanderCNF::operator()(unsigned k, const Range& r) {
     std::cout << "RanderCNF started. Limited " << this->rt.count() << "s to generate " << k << " LTL pairs ";
