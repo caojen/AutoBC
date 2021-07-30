@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <thread>
 #include <cerrno>
+#include <cstring>
 
 #include "sat.hpp"
 

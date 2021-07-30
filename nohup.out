@@ -1,0 +1,125 @@
+RanderCNF started. Limited 20s to generate 10000 LTL pairs in depth [3, 100).
+1: Found UnSAT: 0 (depth:1)
+1: Found SAT: g
+40: Found UnSAT: (g)&(0) (depth:2)
+40: Found SAT: (g)&(f)
+51: Found UnSAT: ((0)&(0))&(f) (depth:3)
+51: Found SAT: (F(f))&(f)
+68: Found UnSAT: (X(0))&(h) (depth:3)
+68: Found SAT: (G(1))&(h)
+100: Found Pairs = 2
+121: Found UnSAT: ((0)|(f))&((G(0))&(G(1))) (depth:4)
+121: Found SAT: ((0)|(f))&((G(g))&(G(1)))
+166: Found UnSAT: (((0)|(g))|((0)|(h)))&((!(f))&(G((0)|((0)&(f))))) (depth:6)
+166: Found SAT: (((0)|(g))|((0)|(h)))&((!(f))&(G((0)|((h)|(0)))))
+200: Found Pairs = 4
+300: Found Pairs = 4
+400: Found Pairs = 4
+500: Found Pairs = 4
+600: Found Pairs = 4
+700: Found Pairs = 4
+Expire at Step: 738
+RanderCNF Done. Return Size = 4
+Loop 1 Found 4 Total: 4/10000
+RanderCNF started. Limited 20s to generate 10000 LTL pairs in depth [3, 100).
+2: Found UnSAT: F(0) (depth:2)
+2: Found SAT: F(h)
+19: Found UnSAT: F(((f)&(h))&(0)) (depth:4)
+19: Found SAT: F(((f)&(h))&(h))
+27: Found UnSAT: F(((!(1))&(h))&(h)) (depth:5)
+27: Found SAT: F(((G(g))&(h))&(h))
+41: Found UnSAT: F(((G(g))&(!(g)))&(F(1))) (depth:5)
+41: Found SAT: F(((G(g))&((f)U(f)))&(F(1)))
+56: Found UnSAT: F(((G(f))&((h)&(0)))&(G(h))) (depth:5)
+56: Found SAT: F(((G(f))&((g)&(h)))&(G(h)))
+100: Found Pairs = 4
+137: Found UnSAT: F(((G((X((0)U(g)))|(f)))&(X(h)))&(G(!(!(0))))) (depth:8)
+137: Found SAT: F(((G((X((0)U(g)))|(f)))&(X(h)))&(G(!((0)&(g)))))
+200: Found Pairs = 5
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
+SatSolver Popen Error!
+popen() failed
+Sleep 1s and Retry...
