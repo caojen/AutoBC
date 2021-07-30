@@ -33,7 +33,12 @@ namespace rnd {
 
   RanderCNF::RanderCNF(const RanderTime &rt): Rander(rt) {}
 
-  std::set<LTLPair> RanderCNF::operator()(const Range& r) {
+  std::set<LTLPair> RanderCNF::operator()(unsigned k, const Range& r) {
+    std::cout << "RanderCNF started. Limited " << this->rt.count() << "s to generate " << k << " LTL pairs ";
+    std::cout << "in depth [" << r.left << ", " << r.right << ")." << std::endl;
 
+    std::set<LTLPair> ret;
+
+    return ret;
   }
 }

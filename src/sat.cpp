@@ -10,8 +10,6 @@ namespace ltl {
 
   static std::string ltl2smv(const std::string& s, const std::set<std::string>& vocab);
 
-  static std::string smvfile(const std::string& s);
-
   SatSolver * satSolver = nullptr;
 
   SatSolver::SatSolver(const std::string& path) {

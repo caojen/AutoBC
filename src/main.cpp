@@ -1,15 +1,18 @@
 #include "ltl.hpp"
 #include "sat.hpp"
+#include "rnd.hpp"
 
 using namespace ltl;
+using namespace rnd;
 
 int main() {
-  LTL ltl = LTL::parse("X(X((X((0))) & ((X(!(X(X(!((1) U (G(d)))))))) U (G(X(X(a)))))))");
-  std::cout << ltl.serialize() << std::endl;
+  auto s15 = std::chrono::seconds(15);
+  Rander& rander = *(new RanderCNF(s15));
 
-  satSolver = new SatSolver();
+  auto res = rander(10, Range(3, 20));
 
-  bool issat = (*satSolver)(ltl);
-  std::cout << issat << std::endl;
-  std::cout << ltl.serialize() << std::endl;
+  for(auto& pair: res) {
+    std::cout << "sat: " << pair.first << std::endl;
+    std::cout << "uns: " << pair.second << std::endl;
+  }
 }

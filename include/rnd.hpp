@@ -36,7 +36,7 @@ namespace rnd {
       virtual void set_limit(const RanderTime& rt);
 
       // 生成器随机生成k个深度在r范围内的LTL公式
-      virtual std::set<LTLPair> operator()(const Range& r) = 0;
+      virtual std::set<LTLPair> operator()(unsigned k, const Range& r) = 0;
 
       // 清空生成器的所有LTL公式，并将这些公式返回
       virtual std::set<LTLPair> clear();
@@ -55,6 +55,6 @@ namespace rnd {
   class RanderCNF: public Rander {
   public:
     RanderCNF(const RanderTime& rt);
-    std::set<LTLPair> operator()(const Range& r);
+    std::set<LTLPair> operator()(unsigned k, const Range& r);
   };
 }
