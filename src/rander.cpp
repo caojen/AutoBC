@@ -40,6 +40,7 @@ int main(int argc, char** argv) {
       ofstream << pair.first << std::endl;
       ofstream << pair.second << std::endl;
     }
+    ++loop;
     std::cout << "Loop " << loop << " Found " << res.size() << " Total: " << solved << "/" << target << std::endl;
     if(solved >= target) {
       break;
