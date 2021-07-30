@@ -30,6 +30,7 @@ namespace ltl {
       auto smv = ltl2smv(ltl.serialize(), vocab);
       auto file = SmvFile(smv);
       auto filename = file.sync();
+      bool result = false;
 
       feed_nuXmv:
       try {
@@ -46,26 +47,25 @@ namespace ltl {
         while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
           output.append(buffer);
         }
+        // 判断ret的某一行中是否存在specification
+
+        std::istringstream ret_stream(output);
+        std::string line;
+
+        while(std::getline(ret_stream, line)) {
+          if(line.find("specification") != std::string::npos) {
+            if(line.find("is false") != std::string::npos) {
+              result = true;
+            }
+            break;
+          }
+        }
       } catch(std::runtime_error& re) {
         std::cout << "SatSolver Popen Error!" << std::endl;
         std::cout << re.what() << std::endl;
         std::cout << "Sleep 1s and Retry..." << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
         goto feed_nuXmv;
-      }
-      // 判断ret的某一行中是否存在specification
-
-      std::istringstream ret_stream(output);
-      std::string line;
-
-      bool result = false;
-      while(std::getline(ret_stream, line)) {
-        if(line.find("specification") != std::string::npos) {
-          if(line.find("is false") != std::string::npos) {
-            result = true;
-          }
-          break;
-        }
       }
 
       // 恢复字典
