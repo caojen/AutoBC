@@ -40,7 +40,7 @@ namespace ltl {
 
         FILE* pipe = popen(cmd.str().c_str(), "r");
         if(!pipe) {
-          throw std::runtime_error("popen() failed");
+          throw std::runtime_error(std::strerror(errno));
         }
         std::string output;
         char buffer[128] = { 0 };
