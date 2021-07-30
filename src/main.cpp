@@ -11,4 +11,5 @@ int main() {
 
   bool issat = (*satSolver)(ltl);
   std::cout << issat << std::endl;
+  std::cout << ltl.serialize() << std::endl;
 }
