@@ -30,10 +30,18 @@ int main(int argc, char** argv) {
 
   Rander& rander = *(new RanderCNF(std::chrono::seconds(stime)));
 
-  auto res = rander(target, Range(3, mdepth));
-  for(auto& pair: res) {
-    ofstream << pair.first << std::endl;
-    ofstream << pair.second << std::endl;
+  unsigned solved = 0;
+
+  while(true) {
+    auto res = rander(target, Range(3, mdepth));
+    for(auto& pair: res) {
+      ++solved;
+      ofstream << pair.first << std::endl;
+      ofstream << pair.second << std::endl;
+    }
+    if(solved >= target) {
+      break;
+    }
   }
 
   ofstream.close();
