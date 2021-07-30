@@ -6,6 +6,9 @@ using namespace ltl;
 using namespace rnd;
 
 int main() {
+  LTL ltl = LTL::parse("XXXXFa&s");
+  std::cout << "depth: " << ltl.depth() << std::endl;
+
   auto s15 = std::chrono::seconds(15);
   Rander& rander = *(new RanderCNF(s15));
 

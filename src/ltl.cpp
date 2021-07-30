@@ -283,4 +283,12 @@ not_special:
 
   #undef ops2
   #undef ops1
+
+  unsigned LTL::depth() const {
+    if(this->root.get() == nullptr) {
+      return 0;
+    } else {
+      return this->root->depth();
+    }
+  }
 }

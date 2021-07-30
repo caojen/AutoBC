@@ -11,6 +11,7 @@
 #include "literal.hpp"
 #include "operator.hpp"
 #include "dict.hpp"
+#include "error.hpp"
 
 namespace ltl{
   class LTL {
@@ -62,6 +63,20 @@ namespace ltl{
             }
             if(other.right) {
               this->right = std::make_shared<LTLNode>(*other.right);
+            }
+          }
+
+          unsigned depth() const {
+            if(this->is_literal()) {
+              return 1;
+            } else if(this->is_op1()) {
+              return 1 + this->right->depth();
+            } else if(this->is_op2()) {
+              auto nleft = this->left->depth();
+              auto nright = this->right->depth();
+              return 1 + std::max(nleft, nright);
+            } else {
+              throw ltl::unreachable();
             }
           }
       };
