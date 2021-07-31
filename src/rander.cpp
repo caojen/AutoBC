@@ -17,6 +17,8 @@ int main(int argc, char** argv) {
     abort();
   }
 
+  auto start    = std::chrono::system_clock::now();
+
   std::string   nuXmv(argv[1]);
   unsigned      target = atoi(argv[2]);
   unsigned      mdepth = atoi(argv[3]);
@@ -43,7 +45,10 @@ int main(int argc, char** argv) {
       ofstream << pair.second << std::endl;
     }
     ++loop;
-    std::cout << "Loop " << loop << " Found " << res.size() << " Total: " << solved << "/" << target << std::endl;
+    std::cout << "Loop " << loop << " Found " << res.size() << " Total: " << solved << "/" << target << " ";
+    auto end = std::chrono::system_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+    std::cout << "[" << duration.count() << "s]" << std::endl;
     if(solved >= target) {
       break;
     }

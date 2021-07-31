@@ -237,15 +237,12 @@ namespace rnd {
       } else {
 //        std::cout << step << ": LTL is SAT" << std::endl;
       }
-      if(step % 100 == 0) {
-        std::cout << step << ": Found Pairs = " << ret.size() << std::endl;
-      }
 
       // 检查是否超时
       auto end = std::chrono::system_clock::now();
       auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start);
       if(duration.count() > this->rt.count()) {
-        std::cout << "Expire at Step: " << step << std::endl;
+        std::cout << "Timeout at Step: " << step << std::endl;
         break;
       }
     }
