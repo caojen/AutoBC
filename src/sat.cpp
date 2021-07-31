@@ -49,6 +49,7 @@ namespace ltl {
         // 将filename喂给nuXmv
         std::ostringstream cmd("");
         cmd << "/bin/bash -c '" << this->path << " " << filename << " 2>&1'";
+        std::cout << cmd.str() << std::endl;
         FILE* pipe = popen(cmd.str().c_str(), "r");
         if(!pipe) {
           throw std::runtime_error(strerror(errno));
