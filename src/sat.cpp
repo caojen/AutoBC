@@ -59,6 +59,7 @@ namespace ltl {
         while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
           output.append(buffer);
         }
+        cmd << "done" << std::endl;
         fclose(pipe);
         // 判断ret的某一行中是否存在specification
 
