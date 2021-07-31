@@ -49,7 +49,6 @@ namespace ltl {
         // 将filename喂给nuXmv
         std::ostringstream cmd("");
         cmd << this->path << " " << filename << " 2>&1";
-        std::cout << cmd.str() << std::endl;
         FILE* pipe = popen(cmd.str().c_str(), "r");
         if(!pipe) {
           throw std::runtime_error(strerror(errno));
@@ -59,7 +58,6 @@ namespace ltl {
         while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
           output.append(buffer);
         }
-        cmd << "done" << std::endl;
         pclose(pipe);
         // 判断ret的某一行中是否存在specification
 
