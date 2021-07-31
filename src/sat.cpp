@@ -48,7 +48,7 @@ namespace ltl {
       try {
         // 将filename喂给nuXmv
         std::ostringstream cmd("");
-        cmd << "/bin/bash -c '" << this->path << " " << filename << " 2>&1'";
+        cmd << this->path << " " << filename << " 2>&1";
         std::cout << cmd.str() << std::endl;
         FILE* pipe = popen(cmd.str().c_str(), "r");
         if(!pipe) {
@@ -60,7 +60,7 @@ namespace ltl {
           output.append(buffer);
         }
         cmd << "done" << std::endl;
-        fclose(pipe);
+        pclose(pipe);
         // 判断ret的某一行中是否存在specification
 
         std::istringstream ret_stream(output);
