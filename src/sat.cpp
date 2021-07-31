@@ -19,10 +19,6 @@ namespace ltl {
   }
 
   bool SatSolver::operator()(const LTL& ltl) {
-    auto iter = cache.find(ltl);
-    if(iter != cache.end()) {
-      return iter->second;
-    } else {
       // 将1设置为a | !a, 0 设置为 a&!a
       dict.set("1", "((a)|(!(a)))");
       dict.set("0", "((a)&(!(a)))");
@@ -75,7 +71,6 @@ namespace ltl {
       dict.set("1", "1");
       dict.set("0", "0");
       return result;
-    }
   }
 
   bool SatSolver::checkSAT(const LTL &ltl) {

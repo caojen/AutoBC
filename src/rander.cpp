@@ -11,6 +11,7 @@ using namespace rnd;
 void usage(int argc, char** argv);
 
 int main(int argc, char** argv) {
+
   if(argc < 7) {
     usage(argc, argv);
     abort();

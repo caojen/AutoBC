@@ -14,7 +14,6 @@ namespace ltl {
       bool checkSAT(const LTL& ltl);
 
     private:
-      std::map<LTL, bool> cache;
       std::string         path;
   };
 
