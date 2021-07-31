@@ -29,9 +29,15 @@ namespace ltl {
       dict.set("1", "((a)|(!(a)))");
       dict.set("0", "((a)&(!(a)))");
 
+      auto str_ltl = ltl.serialize();
+      auto iter = this->cache.find(str_ltl);
+      if(iter != this->cache.end()) {
+        return iter->second;
+      }
+
       auto vocab = dict.get_vocab();
 
-      auto smv = ltl2smv(ltl.serialize(), vocab);
+      auto smv = ltl2smv(str_ltl, vocab);
       auto file = SmvFile(this->solverName, std::to_string(this->idx), smv);
       ++this->idx;
       auto filename = file.sync();
@@ -81,6 +87,7 @@ namespace ltl {
         goto feed_nuXmv;
       }
 
+      this->cache[str_ltl] = result;
       // 恢复字典
       dict.set("1", "1");
       dict.set("0", "0");

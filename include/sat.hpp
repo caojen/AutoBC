@@ -17,6 +17,7 @@ namespace ltl {
       std::string         path;
       std::string         solverName;
       int                 idx = 0;
+      std::map<std::string, bool>  cache;
   };
 
   extern SatSolver* satSolver;
