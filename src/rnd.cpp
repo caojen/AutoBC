@@ -17,7 +17,7 @@ namespace rnd {
   Rander::Rander(const RanderTime& rt, int vocabLen) {
     this->rt = rt;
     vocabLen = std::min(vocabLen, 25);
-    for(unsigned i = 0; i < vocabLen; i++) {
+    for(int i = 0; i < vocabLen; i++) {
       char ch = 'b' + i;
       this->charset.emplace_back(1, ch);
     }
