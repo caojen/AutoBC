@@ -12,6 +12,7 @@
 #include "operator.hpp"
 #include "dict.hpp"
 #include "error.hpp"
+#include "sat.hpp"
 
 namespace ltl{
   class LTL {
