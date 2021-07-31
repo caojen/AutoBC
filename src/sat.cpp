@@ -33,6 +33,8 @@ namespace ltl {
       auto str_ltl = ltl.serialize();
       auto iter = this->cache.find(str_ltl);
       if(iter != this->cache.end()) {
+        dict.set("1", "1");
+        dict.set("0", "0");
         return iter->second;
       }
 
