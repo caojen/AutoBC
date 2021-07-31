@@ -232,6 +232,7 @@ namespace rnd {
         } else {      // 没有找到任何替换的可能性
           // throw unreachable();    // TODO: 没有任何替换的可能性时，寻找一种方法来继续算法
           // 目前，只退出即可
+          std::cout << "Break because cannot found a sat" << std::endl;
           break;
         }
       } else {
