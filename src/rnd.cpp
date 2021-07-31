@@ -220,6 +220,10 @@ namespace rnd {
             auto after = this->ltls.size();
             if(before != after) {
               ret.insert(std::pair<std::string, std::string>(SAT, unSAT));
+              if(SAT == unSAT) {
+                std::cout << "找到了两个相同的LTL，但是标记不同" << std::endl;
+                throw std::runtime_error("Fatal");
+              }
             } else {
               std::cout << "Existed. Skipped..." << std::endl;
             }
