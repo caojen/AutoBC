@@ -113,7 +113,7 @@ namespace ltl {
   const std::string& SmvFile::sync() {
     std::ostringstream ostr("");
     time_t t = time(nullptr);
-    ostr << "tmp-sat-" << t << ".smv";
+    ostr << "tmp-sat-" << this->prefix << "-" << t << this->append << ".smv";
 
     this->filename = ostr.str();
     std::ofstream ofstream;
