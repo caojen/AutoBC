@@ -15,6 +15,8 @@ namespace ltl {
 
     private:
       std::string         path;
+      std::string         solverName;
+      int                 idx = 0;
   };
 
   extern SatSolver* satSolver;
@@ -24,7 +26,7 @@ namespace ltl {
       SmvFile() = default;
 
       // 将s移动到本身
-      SmvFile(std::string& s);
+      SmvFile(const std::string& prefix, const std::string& append, std::string& s);
 
       // 将content保存到文件中，返回文件名
       const std::string& sync();
@@ -34,5 +36,7 @@ namespace ltl {
   private:
       std::string content;
       std::string filename;
+      std::string prefix;
+      std::string append;
   };
 }

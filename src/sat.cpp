@@ -16,6 +16,12 @@ namespace ltl {
 
   SatSolver::SatSolver(const std::string& path) {
     this->path = path;
+    const char charset[] = "abcdefghijklmnopqrstuvwxyz";
+    const int len = 16;
+    this->solverName = "";
+    for(int i = 0; i < len; i++) {
+      this->solverName.append(std::string(1, charset[std::rand() % sizeof(charset)]));
+    }
   }
 
   bool SatSolver::operator()(const LTL& ltl) {
@@ -26,7 +32,8 @@ namespace ltl {
       auto vocab = dict.get_vocab();
 
       auto smv = ltl2smv(ltl.serialize(), vocab);
-      auto file = SmvFile(smv);
+      auto file = SmvFile(this->solverName, std::to_string(this->idx), smv);
+      ++this->idx;
       auto filename = file.sync();
       std::cout << "FileName:" << filename << std::endl;
       bool result = false;
@@ -97,7 +104,9 @@ namespace ltl {
     return ostr.str();
   }
 
-  SmvFile::SmvFile(std::string& s) {
+  SmvFile::SmvFile(const std::string& prefix, const std::string& append, std::string& s) {
+    this->prefix = prefix;
+    this->append = append;
     this->content = std::move(s);
   }
 
