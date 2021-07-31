@@ -28,6 +28,7 @@ namespace ltl {
       auto smv = ltl2smv(ltl.serialize(), vocab);
       auto file = SmvFile(smv);
       auto filename = file.sync();
+      std::cout << "FileName:" << filename << std::endl;
       bool result = false;
 
       feed_nuXmv:
@@ -114,6 +115,6 @@ namespace ltl {
   }
 
   SmvFile::~SmvFile() {
-    remove(this->filename.c_str());
+//    remove(this->filename.c_str());
   }
 }
