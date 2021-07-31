@@ -41,7 +41,7 @@ namespace ltl {
           throw std::runtime_error(strerror(errno));
         }
         std::string output;
-        char buffer[128] = { 0 };
+        char buffer[10240] = { 0 };
         while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
           output.append(buffer);
         }
@@ -55,6 +55,13 @@ namespace ltl {
           if(line.find("specification") != std::string::npos) {
             if(line.find("is false") != std::string::npos) {
               result = true;
+            } else if(line.find("is true") != std::string::npos) {
+              result = false;
+            } else {
+              // unreachable.
+              std::cout << "Fatal: SatSolver catches specification, but no 'is true' or 'is false' exists. Abort." << std::endl;
+              std::cout << "Fatal: Line: " << line << std::endl;
+              abort();
             }
             break;
           }
