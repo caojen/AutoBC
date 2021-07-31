@@ -35,7 +35,6 @@ namespace ltl {
       auto file = SmvFile(this->solverName, std::to_string(this->idx), smv);
       ++this->idx;
       auto filename = file.sync();
-      std::cout << "FileName:" << filename << std::endl;
       bool result = false;
 
       feed_nuXmv:
