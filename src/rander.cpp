@@ -12,7 +12,7 @@ void usage(int argc, char** argv);
 
 int main(int argc, char** argv) {
 
-  if(argc < 7) {
+  if(argc < 8) {
     usage(argc, argv);
     abort();
   }
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 }
 
 void usage(int argc, char** argv) {
-  std::cout << "Usage: " << argv[0] << " $1 $2 $3 $4 $5 $6" << std::endl << std::endl;
+  std::cout << "Usage: " << argv[0] << " $1 $2 $3 $4 $5 $6 $7" << std::endl << std::endl;
   std::cout << "- 程序说明：" << std::endl;
   std::cout << "- 程序将会自动生成多对不同的LTL公式，每一对中包含一个SAT和一个UnSAT" << std::endl;
   std::cout << "- 程序算法：" << std::endl;
@@ -70,13 +70,13 @@ void usage(int argc, char** argv) {
   std::cout << "      项目中已经包含了linux版本的nuXmv，存放在./bin中。其他版本请到官网下载" << std::endl;
   std::cout << "- $2: 指明需要生成的LTL公式的数量，例如 10000 代表生成 10000 对" << std::endl;
   std::cout << "- $3: 指明所生成的LTL公式的最低深度，例如 5" << std::endl;
-  std::cout << "- $3: 指明所生成的LTL公式的最高深度，例如 20" << std::endl;
-  std::cout << "- $4: 指明每次搜索时间（秒），例如 20" << std::endl;
-  std::cout << "- $5: 指明字典中的变量数。变量从小写b开始，到小写z结束。例如 3 代表可用的变量数为 b, c, d" << std::endl;
-  std::cout << "- $6: 指明最终输出的结果存放位置。生成的LTL公式会逐步添加到该文件中，如果该文件已经存在，那么重新创建该文件" << std::endl;
+  std::cout << "- $4: 指明所生成的LTL公式的最高深度，例如 20" << std::endl;
+  std::cout << "- $5: 指明每次搜索时间（秒），例如 20" << std::endl;
+  std::cout << "- $6: 指明字典中的变量数。变量从小写b开始，到小写z结束。例如 3 代表可用的变量数为 b, c, d" << std::endl;
+  std::cout << "- $7: 指明最终输出的结果存放位置。生成的LTL公式会逐步添加到该文件中，如果该文件已经存在，那么重新创建该文件" << std::endl;
   std::cout << "-     其中，文件中奇数行是SAT的LTL公式，偶数行则是对应的UnSAT公式" << std::endl;
   std::cout << std::endl;
   std::cout << "- 例子：" << std::endl;
-  std::cout << "- " << argv[0] << " /usr/local/bin/nuXmv 10000 100 20 3 ./output.txt" << std::endl;
-  std::cout << "- " << argv[0] << " ../bin/nuXmv-Linux-2.0.0 30000 30 15 15 ./output.txt" << std::endl;
+  std::cout << "- " << argv[0] << " /usr/local/bin/nuXmv 10000 50 100 20 3 ./output.txt" << std::endl;
+  std::cout << "- " << argv[0] << " ../bin/nuXmv-Linux-2.0.0 30000 15 30 15 15 ./output.txt" << std::endl;
 }

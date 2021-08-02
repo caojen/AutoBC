@@ -7,6 +7,8 @@
 #include <string>
 #include <map>
 #include <stack>
+#include <vector>
+#include <queue>
 
 #include "literal.hpp"
 #include "operator.hpp"
@@ -80,6 +82,26 @@ namespace ltl{
               throw ltl::unreachable();
             }
           }
+
+          std::vector<LTLNode*> get_level_order() {
+            std::vector<LTLNode*> ret;
+
+            std::queue<LTLNode*> queue;
+            queue.push(this);
+            while(!queue.empty()) {
+              auto node = queue.front(); queue.pop();
+              ret.push_back(node);
+              if(node->is_op1()) {
+                queue.push(node->right.get());
+              } else if(node->is_op2()) {
+                queue.push(node->left.get());
+                queue.push(node->right.get());
+              } else if(!node->is_literal()) {
+                throw unreachable();
+              }
+            }
+            return ret;
+          };
       };
 
       LTL() = default;
@@ -120,5 +142,9 @@ namespace ltl{
 
       // 计算这个LTL深度
       unsigned depth() const;
+
+      // 获取这个LTL的层序遍历的LTLNode，不拷贝，直接返回节点的指针
+      std::vector<LTLNode*>
+        get_level_order();
   };
 }

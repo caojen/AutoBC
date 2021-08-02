@@ -1,4 +1,6 @@
 #include <queue>
+#include <algorithm>
+#include <random>
 
 #include "rnd.hpp"
 #include "sat.hpp"
@@ -21,8 +23,8 @@ namespace rnd {
       char ch = 'b' + i;
       this->charset.emplace_back(1, ch);
     }
-    this->charset.emplace_back("1");
-    this->charset.emplace_back("0");
+//    this->charset.emplace_back("1");
+//    this->charset.emplace_back("0");
 
     std::cout << "Rander Charset:" << std::endl;
     for(auto i: this->charset) {
@@ -125,16 +127,13 @@ namespace rnd {
       }
     }
 
-//    std::cout << "Initialize LTL: " << ltl.serialize() << std::endl;
     unsigned step = 0;
     while(ret.size() < k && !leaves.empty() && ++step) {
-//      std::cout << step<< ": Remaining leaves size = " << leaves.size() << std::endl;
       std::shared_ptr<LTL::LTLNode> subClause = leaves.front(); leaves.pop();
-//      std::cout << step << ": Dealing with sub clause: " << subClause->serialize() << std::endl;
 
       // 判断是要替换op还是操作数
       if(next_li()) {
-//         std::cout << step << ": Replace Literal" << std::endl;
+        // 随机找一个文字来替换
          std::string li;
          do {
            li = randLiteral();
@@ -142,7 +141,6 @@ namespace rnd {
          subClause->literal = dict.get(li);
          leaves.push(subClause);
       } else {
-//        std::cout << step << ": Replace Operator" << std::endl;
         subClause->literal = nullptr;
         // 随机一个op并替换到当前的子句中
         std::shared_ptr<Operator> op = randOperator();
@@ -163,8 +161,6 @@ namespace rnd {
           throw unreachable();
         }
       }
-//      std::cout << step << ": Sub Clause Changed to " << subClause->serialize() << std::endl;
-//      std::cout << step << ": LTL Changed to " << ltl.serialize() << " (depth: " << ltl.depth() << ")" << std::endl;
 
       // 判断新的LTL是不是SAT
       if(!satSolver->checkSAT(ltl)) {
@@ -173,41 +169,80 @@ namespace rnd {
         std::cout << step << ": Found UnSAT: " << unSAT << " (depth:" << ltl.depth() << ")" << std::endl;
         std::string SAT;
         bool found = false;
-        unsigned try_time = 100;        // 最多尝试100次
-        if(subClause->is_literal()) {   // 如果子句只是一个字符，那么替换这个字符，尝试获得一个SAT
-          do {
-            std::shared_ptr<Literal> li = subClause->literal;
-            std::string nl;
-            do {
-              nl = randLiteral();
-            } while(nl == li->serialize());
-            subClause->literal = dict.get(nl);
-            if(satSolver->checkSAT((ltl))) {
-              found = true;
+
+        // 找到这个LTL的层序遍历
+        auto level_order = ltl.get_level_order();
+        std::random_shuffle(level_order.begin(), level_order.end());
+        for(auto &node: level_order) {
+          if(node->is_literal()) {
+            auto old_li = node->literal;
+            std::vector<std::string> literals;
+            for(auto& ch: this->charset) {
+              if(dict.get(ch) != node->literal) {
+                literals.push_back(ch);
+              }
             }
-          } while(!found && try_time--);
-        } else if(subClause->is_op1() || subClause->is_op2()) { // 子句是运算符，那么重构这个运算符
-          do {
-            // 随机一个运算符，可以与当前重复
-            subClause->op = randOperator();
-            if(dynamic_cast<Op1*>(subClause->op.get()) != nullptr) {
-              subClause->left = nullptr;
-              std::string s = randLiteral();
-              subClause->right = std::make_shared<LTL::LTLNode>(s);
-            } else if(dynamic_cast<Op2*>(subClause->op.get()) != nullptr) {
-              std::string s1 = randLiteral();
-              std::string s2 = randLiteral();
-              subClause->left = std::make_shared<LTL::LTLNode>(s1);
-              subClause->right = std::make_shared<LTL::LTLNode>(s2);
-            } else {
-              throw unreachable();
+            std::random_shuffle(literals.begin(), literals.end());
+            for(auto& literal: literals) {
+              node->literal = dict.get(literal);
+              if(satSolver->checkSAT(ltl)) {
+                found = true;
+                break;
+              } else {
+                node->literal = old_li;
+              }
             }
-            if(satSolver->checkSAT(ltl)) {
-              found = true;
+          } else if(node->is_op1()) {
+
+            auto old_op = node->op;
+            std::vector<std::shared_ptr<ltl::Operator>> ops;
+            if(node->op != op::nnot) {
+              ops.push_back(op::nnot);
+            } else if(node->op != op::next) {
+              ops.push_back(op::next);
+            } else if(node->op != op::global) {
+              ops.push_back(op::global);
+            } else if(node->op != op::finally) {
+              ops.push_back(op::global);
             }
-          } while(!found && try_time--);
-        } else {
-          throw unreachable();
+            std::random_shuffle(ops.begin(), ops.end());
+
+            for(auto& op: ops) {
+              node->op = op;
+              if(satSolver->checkSAT(ltl)) {
+                found = true;
+                break;
+              } else {
+                node->op = old_op;
+              }
+            }
+          } else if(node->is_op2()) {
+            auto old_op = node->op;
+            std::vector<std::shared_ptr<ltl::Operator>> ops;
+            if(node->op != op::until) {
+              ops.push_back(op::until);
+            } else if(node->op != op::oor) {
+              ops.push_back(op::oor);
+            } else if(node->op != op::aand) {
+              ops.push_back(op::aand);
+            }
+            std::random_shuffle(ops.begin(), ops.end());
+            for(auto& op: ops) {
+              node->op = op;
+              if(satSolver->checkSAT(ltl)) {
+                found = true;
+                break;
+              } else {
+                node->op = old_op;
+              }
+            }
+
+          } else {
+            throw unreachable();
+          }
+          if(found) {
+            break;
+          }
         }
 
         if(found) {   // 成功找到了SAT，推到结果中，然后将SAT应用到LTL中继续寻找
@@ -229,14 +264,11 @@ namespace rnd {
             }
           }
           leaves.push(subClause);
-        } else {      // 没有找到任何替换的可能性
-          // throw unreachable();    // TODO: 没有任何替换的可能性时，寻找一种方法来继续算法
-          // 目前，只退出即可
+        } else {
           std::cout << "Break because cannot found a sat" << std::endl;
-          break;
+          std::cout << "在第一层替换中没有找到可替换的内容" << std::endl;
+          abort();
         }
-      } else {
-//        std::cout << step << ": LTL is SAT" << std::endl;
       }
 
       // 检查是否超时

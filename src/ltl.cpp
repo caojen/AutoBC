@@ -276,7 +276,7 @@ not_special:
   ops1(global)
   ops1(next)
   ops1(finally)
-//  ops2(release)
+  ops2(release)
   ops2(until)
 
   #undef ops2
@@ -291,5 +291,12 @@ not_special:
       }
     }
     return res;
+  }
+
+  std::vector<LTL::LTLNode*>
+    LTL::get_level_order() {
+    std::vector<LTL::LTLNode*> ret = this->root->get_level_order();
+
+    return ret;
   }
 }
