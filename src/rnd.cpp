@@ -270,7 +270,9 @@ namespace rnd {
           abort();
         }
       }
-
+      else {
+        std::cout << step << " SAT " << ltl << std::endl;
+      }
       // 检查是否超时
       auto end = std::chrono::system_clock::now();
       auto duration = std::chrono::duration_cast<std::chrono::seconds>(end - start);
