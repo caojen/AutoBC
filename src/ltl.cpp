@@ -283,10 +283,13 @@ not_special:
   #undef ops1
 
   unsigned LTL::depth() const {
-    if(this->root.get() == nullptr) {
-      return 0;
-    } else {
-      return this->root->depth();
+    std::string s = this->serialize();
+    unsigned res = 0;
+    for(auto& ch: s) {
+      if(ch != '(' && ch != ')') {
+        ++res;
+      }
     }
+    return res;
   }
 }
