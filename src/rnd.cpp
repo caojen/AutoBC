@@ -271,7 +271,7 @@ namespace rnd {
         }
       }
       else {
-        std::cout << step << " SAT " << ltl << std::endl;
+//        std::cout << step << " SAT " << ltl << std::endl;
       }
       // 检查是否超时
       auto end = std::chrono::system_clock::now();
