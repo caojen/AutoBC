@@ -5,6 +5,7 @@
 #include "ltl.hpp"
 
 namespace ltl {
+  class LTL;
   class SatSolver {
     public:
       SatSolver(const std::string& path = "/usr/local/bin/nuXmv");
