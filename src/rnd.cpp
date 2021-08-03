@@ -280,6 +280,10 @@ namespace rnd {
         std::cout << "Timeout at Step: " << step << std::endl;
         break;
       }
+      if(ltl.depth() > r.right) {
+        std::cout << "Depth Limit at Step: " << step << std::endl;
+        break;
+      }
     }
 
     std::cout << "RanderCNF Done. Return Size = " << ret.size() << std::endl;
