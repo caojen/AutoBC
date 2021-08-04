@@ -8,7 +8,7 @@
 #include "dict.hpp"
 
 namespace ltl {
-  static std::string remove_blank(const std::string& _s) {
+  std::string remove_blank(const std::string& _s) {
     std::string s = _s;
     auto iter = s.begin();
     while(iter != s.end()) {
@@ -21,7 +21,7 @@ namespace ltl {
     return s;
   }
 
-  static std::vector<std::string> split_into_in_order(const std::string& s) {
+  std::vector<std::string> split_into_in_order(const std::string& s) {
     std::string special = "()|&!";
     std::string pre = "XGURF";
     // 分隔成vector
@@ -68,7 +68,7 @@ not_special:
     return splits;
   }
 
-  static std::vector<std::string> in_order_to_post_order(const std::vector<std::string>& inorder) {
+  std::vector<std::string> in_order_to_post_order(const std::vector<std::string>& inorder) {
     std::stack<std::string> stack;
     std::vector<std::string> ret;
 

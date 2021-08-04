@@ -148,3 +148,9 @@ namespace ltl{
         get_level_order();
   };
 }
+
+namespace ltl {
+    std::string remove_blank(const std::string&);
+    std::vector<std::string> split_into_in_order(const std::string& s);
+    std::vector<std::string> in_order_to_post_order(const std::vector<std::string>& inorder);
+}

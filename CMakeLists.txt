@@ -11,3 +11,7 @@ set(LTL_BASIC src/dict.cpp src/literal.cpp src/ltl.cpp src/operator.cpp src/sat.
 add_compile_options(-Wall -g)
 
 add_executable(rander ${LTL_BASIC} src/rnd.cpp src/rander.cpp)
+
+project(ltlin2post)
+
+add_executable(ltlin2post ${LTL_BASIC} src/ltlin2post.cpp)
