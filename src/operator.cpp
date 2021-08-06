@@ -32,9 +32,9 @@ namespace ltl {
       return op::release;
     } else if(s == "!") {
       return op::nnot;
-    } else if(s == "&") {
+    } else if(s == "&" || s == "&&") {
       return op::aand;
-    } else if(s == "|") {
+    } else if(s == "|" || s == "||") {
       return op::oor;
     } else if(s == "->") {
       return op::imply;

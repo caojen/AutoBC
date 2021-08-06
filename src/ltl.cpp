@@ -22,11 +22,40 @@ namespace ltl {
   }
 
   std::vector<std::string> split_into_in_order(const std::string& s) {
-    std::vector<std::string> special = { "(", ")", "|", "&", "!", "->" };
-    std::vector<std::string> pre = { "X", "G", "U", "R", "F" };
+    std::vector<std::string> specials = { "->", "&&", "||", "(", ")", "|", "&", "!", "X", "G", "U", "R", "F" };
     // 分隔成vector
     std::vector<std::string> splits;
 
+    // 从origin的at开始，尝试获得与pattern长度相同的字符，并且以std::string的形式返回
+    auto get_string_with_same_size = [](const std::string& origin, unsigned at, const std::string& pattern) -> std::string {
+      auto size = origin.size();
+      auto pattern_size = pattern.size();
+      if(at >= size) {
+        return "";
+      } else {
+        return origin.substr(at, pattern_size);
+      }
+    };
+
+    unsigned idx = 0;
+    unsigned size = s.size();
+    while(idx < size) {
+      for(const auto& special: specials) {
+        auto detect = get_string_with_same_size(s, idx, special);
+        if(detect == special) {
+          splits.push_back(detect);
+          idx += detect.size();
+          continue;
+        }
+      }
+      splits.emplace_back(std::string(1, s[idx]));
+      idx++;
+    }
+
+    for(auto &split: splits) {
+      std::cout << split << ",";
+    }
+    std::cout << std::endl;
 
     return splits;
   }
@@ -153,8 +182,9 @@ namespace ltl {
   bool LTL::LTLNode::is_op2() const {
     return this->op == op::aand ||
       this->op == op::oor ||
-//      this->op == op::release ||
-      this->op == op::until;
+      this->op == op::release ||
+      this->op == op::until ||
+      this->op == op::imply;
   }
 
   std::ostream& operator<<(std::ostream& o, const LTL::LTLNode& ltlNode) {
