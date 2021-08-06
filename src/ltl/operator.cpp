@@ -1,4 +1,4 @@
-#include "operator.hpp"
+#include "ltl/operator.hpp"
 
 namespace ltl {
   namespace op {

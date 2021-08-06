@@ -1,4 +1,4 @@
-#include "dict.hpp"
+#include "ltl/dict.hpp"
 
 namespace ltl {
   std::shared_ptr<Literal> Dict::get(const Literal& li) {

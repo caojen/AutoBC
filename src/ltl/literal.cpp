@@ -1,4 +1,4 @@
-#include "literal.hpp"
+#include "ltl/literal.hpp"
 
 namespace ltl {
   Literal::Literal() {}

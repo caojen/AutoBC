@@ -5,7 +5,7 @@
 #include <chrono>
 #include <vector>
 
-#include "ltl.hpp"
+#include "ltl/ltl.hpp"
 
 // 随机生成 不同的 k 个 深度范围为[range.left, range.right) 的 sat-unsat LTL公式组合
 // 重复调用同一个对象不会生成已生成过的公式

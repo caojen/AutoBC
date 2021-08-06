@@ -1,9 +1,9 @@
 #include <fstream>
 #include <iostream>
 
-#include "ltl.hpp"
-#include "sat.hpp"
-#include "rnd.hpp"
+#include "ltl/ltl.hpp"
+#include "ltl/sat.hpp"
+#include "rander/rnd.hpp"
 
 using namespace ltl;
 using namespace rnd;

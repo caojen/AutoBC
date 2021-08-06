@@ -2,8 +2,8 @@
 #include <algorithm>
 #include <random>
 
-#include "rnd.hpp"
-#include "sat.hpp"
+#include "rander/rnd.hpp"
+#include "ltl/sat.hpp"
 
 namespace rnd {
   Range::Range(unsigned int right) {

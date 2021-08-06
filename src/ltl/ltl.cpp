@@ -3,9 +3,9 @@
 #include <string>
 #include <stack>
 
-#include "ltl.hpp"
-#include "error.hpp"
-#include "dict.hpp"
+#include "ltl/ltl.hpp"
+#include "ltl/error.hpp"
+#include "ltl/dict.hpp"
 
 namespace ltl {
   std::string remove_blank(const std::string& _s) {

@@ -6,7 +6,7 @@
 #include <cerrno>
 #include <cstring>
 
-#include "sat.hpp"
+#include "ltl/sat.hpp"
 
 namespace ltl {
 

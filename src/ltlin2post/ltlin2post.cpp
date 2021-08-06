@@ -1,8 +1,8 @@
-// 属于LTL中序表达式，转换成后序表达式
+// LTL中序表达式，转换成后序表达式
 
 #include <iostream>
 
-#include "ltl.hpp"
+#include "ltl/ltl.hpp"
 
 int main(int argc, char** argv) {
   if(argc != 2) {
