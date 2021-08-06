@@ -105,6 +105,12 @@ namespace ltl {
       unsigned weight() const { return 1; }
   };
 
+  class Imply: public ProOp2 {
+    public:
+      std::string str() const { return "->"; }
+      unsigned weight() const { return 1; }
+  };
+
   namespace op {
 
     extern std::shared_ptr<EmptyOp> emptyOp;
@@ -116,6 +122,7 @@ namespace ltl {
     extern std::shared_ptr<Not> nnot;
     extern std::shared_ptr<And> aand;
     extern std::shared_ptr<Or> oor;
+    extern std::shared_ptr<Imply> imply;
 
   }
 }

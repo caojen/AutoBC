@@ -22,48 +22,11 @@ namespace ltl {
   }
 
   std::vector<std::string> split_into_in_order(const std::string& s) {
-    std::string special = "()|&!";
-    std::string pre = "XGURF";
+    std::vector<std::string> special = { "(", ")", "|", "&", "!", "->" };
+    std::vector<std::string> pre = { "X", "G", "U", "R", "F" };
     // 分隔成vector
     std::vector<std::string> splits;
-    for(unsigned i = 0; i < s.size();) {
-      std::string str = std::string(1, s[i]);
-      if(special.find(s[i]) != std::string::npos) {
-        splits.push_back(std::string(1, s[i]));
-        i++;
-        continue;
-      } else if(pre.find(s[i]) != std::string::npos) {
-        unsigned j = i + 1;
-        bool is_special = j < s.size();
-        while(j < s.size() && is_special) {
-          if(special.find(s[j]) != std::string::npos) {
-            break;
-          }
-          if(pre.find(s[j]) != std::string::npos) {
-            if(j + 1 == s.size()) {
-              is_special = false;
-            }
-            j++;
-          } else {
-            break;
-          }
-        }
-        if(is_special) {
-          splits.emplace_back(1, s[i]);
-          i++;
-        } else {
-          goto not_special;
-        }
-      } else {
-not_special:
-        unsigned j = i;
-        while(j < s.size() && special.find(s[j]) == std::string::npos) {
-          ++j;
-        }
-        splits.push_back(s.substr(i, j-i));
-        i = j;
-      }
-    }
+
 
     return splits;
   }
