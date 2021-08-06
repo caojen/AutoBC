@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(include)
 include_directories(include/ltl)
 include_directories(include/rander)
+include_directories(include/autobc)
 
 set(LTL_BASIC src/ltl/dict.cpp src/ltl/literal.cpp src/ltl/ltl.cpp src/ltl/operator.cpp src/ltl/sat.cpp)
 
@@ -20,3 +21,7 @@ add_executable(ltlin2post ${LTL_BASIC} src/ltlin2post/ltlin2post.cpp)
 
 project(test)
 add_executable(test ${LTL_BASIC} src/test.cpp)
+
+project(autobc)
+
+add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/main.cpp)
