@@ -5,6 +5,7 @@
 #include <iostream>
 #include "ltl.hpp"
 #include "error.hpp"
+#include "autobc_error.hpp"
 
 namespace autobc {
   typedef ltl::LTL Domain;
@@ -28,5 +29,9 @@ namespace autobc {
     void bc_get();
     // 对目前已经有的bc进行排序
     void bc_sort();
+    // 输入已有的文件的内容，然后parse
+    // 文件内容错误的时候抛出file_not_valid错误
+    // 公式错误的时候抛出not_a_ltl错误
+    static AutoBC parse(const std::string& content);
   };
 }

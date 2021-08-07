@@ -47,4 +47,10 @@ namespace autobc {
 
   void AutoBC::bc_sort() {
   }
+
+  AutoBC AutoBC::parse(const std::string &content) {
+    std::cout << content << std::endl;
+
+    return {};
+  }
 }
