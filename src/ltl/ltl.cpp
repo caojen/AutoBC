@@ -271,6 +271,7 @@ namespace ltl {
   ops1(finally)
   ops2(release)
   ops2(until)
+  ops2(imply)
 
   #undef ops2
   #undef ops1

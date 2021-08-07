@@ -15,5 +15,8 @@ int main() {
   abc.add_goal(g1);
   abc.add_goal(g2);
 
+  abc.bc_get();
+  abc.bc_sort();
+
   std::cout << abc << std::endl;
 }

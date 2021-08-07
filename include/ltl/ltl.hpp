@@ -139,6 +139,7 @@ namespace ltl{
       LTL finally() const;
       LTL release(const LTL& other) const;
       LTL until(const LTL& other) const;
+      LTL imply(const LTL& other) const;
 
       // 计算这个LTL深度
       unsigned depth() const;
