@@ -22,7 +22,7 @@ namespace ltl {
   }
 
   std::vector<std::string> split_into_in_order(const std::string& s) {
-    std::vector<std::string> specials = { "<->", "->", "&&", "||",
+    std::vector<std::string> specials = { "<->", "->", "&&", "||", "[]", "<>",
                                           "(", ")", "|", "&", "!",
                                           "X", "G", "U", "R", "F" };
     // 分隔成vector
@@ -42,22 +42,21 @@ namespace ltl {
     unsigned idx = 0;
     unsigned size = s.size();
     while(idx < size) {
+      bool flag = false;
       for(const auto& special: specials) {
         auto detect = get_string_with_same_size(s, idx, special);
         if(detect == special) {
           splits.push_back(detect);
           idx += detect.size();
-          continue;
+          flag = true;
+          break;
         }
       }
-      splits.emplace_back(std::string(1, s[idx]));
-      idx++;
+      if(!flag) {
+        splits.emplace_back(std::string(1, s[idx]));
+        idx++;
+      }
     }
-
-    for(auto &split: splits) {
-      std::cout << split << ",";
-    }
-    std::cout << std::endl;
 
     return splits;
   }

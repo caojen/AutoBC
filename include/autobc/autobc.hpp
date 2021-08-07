@@ -35,3 +35,7 @@ namespace autobc {
     static AutoBC parse(const std::string& content);
   };
 }
+
+namespace autobc {
+  std::vector<std::string> split(const std::string& origin, const std::string& pattern);
+}

@@ -23,9 +23,9 @@ namespace ltl {
   std::shared_ptr<Operator> Operator::gen(const std::string& s) {
     if(s == "X") {
       return op::next;
-    } else if(s == "F") {
+    } else if(s == "F" || s == "<>") {
       return op::finally;
-    } else if(s == "G") {
+    } else if(s == "G" || s == "[]") {
       return op::global;
     } else if(s == "U") {
       return op::until;

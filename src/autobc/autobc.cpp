@@ -49,8 +49,57 @@ namespace autobc {
   }
 
   AutoBC AutoBC::parse(const std::string &content) {
-    std::cout << content << std::endl;
+    AutoBC ret;
+    auto lines = split(content, "\n");
 
-    return {};
+    for(auto &line: lines) {
+      if(line.empty()) continue;
+      std::size_t pos = 0;
+      while(pos < line.size() && line.at(pos) != ':') ++pos;
+      ++pos;
+
+      if(pos >= line.size()) {
+        throw file_not_valid();
+      }
+
+      auto ltls = split(line.substr(pos), ",");
+      auto prefix = line.substr(0, pos);
+      for(auto &ltl: ltls) {
+        if(prefix == "Domains:") {
+          ret.domains.emplace_back(ltl::LTL::parse(ltl));
+        } else if(prefix == "Goals:") {
+          ret.goals.emplace_back(ltl::LTL::parse(ltl));
+        } else {
+          throw file_not_valid();
+        }
+      }
+    }
+    return ret;
+  }
+}
+
+namespace autobc {
+  std::vector<std::string> split(const std::string& origin, const std::string& pattern) {
+    if(pattern.empty()) {
+      return { 1, origin };
+    } else {
+      std::vector<std::string> ret;
+      std::size_t pos = 0;
+      while(pos != std::string::npos) {
+        auto next = pos;
+        next = origin.find(pattern, pos);
+        if(next != std::string::npos && pos != next) {
+          ret.emplace_back(origin.substr(pos, next - pos));
+        } else if(next == std::string::npos) {
+          ret.emplace_back(origin.substr(pos));
+        }
+        if(next != std::string::npos) {
+          pos = next + pattern.size();
+        } else {
+          pos = std::string::npos;
+        }
+      }
+      return ret;
+    }
   }
 }
