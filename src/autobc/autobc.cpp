@@ -1,4 +1,5 @@
 #include <sstream>
+#include <fstream>
 #include "autobc.hpp"
 
 namespace autobc {
@@ -95,6 +96,15 @@ namespace autobc {
     }
     ltl::format_as_symbol = save;
     return ostr.str();
+  }
+
+  std::string AutoBC::into(const std::string &filename) const {
+    auto s = this->into();
+    std::ofstream ofstream;
+    ofstream.open(filename, std::ios::out | std::ios::trunc);
+    ofstream << s;
+    ofstream.close();
+    return s;
   }
 }
 

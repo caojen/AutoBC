@@ -36,6 +36,8 @@ namespace autobc {
 
     // 将Domain和Goal生成parse的文件形式
     std::string into() const;
+    // 将into()生成的字符串截断写入文件，返回字符串内容
+    std::string into(const std::string& filename) const;
   };
 }
 
