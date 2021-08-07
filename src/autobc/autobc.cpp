@@ -20,19 +20,16 @@ namespace autobc {
     for(auto& domain: this->domains) {
       ostr << '\t' << domain << std::endl;
     }
-    ostr << std::endl;
 
     ostr << "Goals:" << std::endl;
     for(auto& goal: this->goals) {
       ostr << '\t' << goal << std::endl;
     }
-    ostr << std::endl;
 
     ostr << "BCs:" << std::endl;
     for(auto& bc: this->bcs) {
       ostr << '\t' << bc << std::endl;
     }
-    ostr << std::endl;
 
     return ostr.str();
   }
