@@ -1,13 +1,11 @@
+#include "ltl.hpp"
 #include "autobc.hpp"
 
 using namespace ltl;
 using namespace autobc;
 
 int main() {
-  format_as_symbol = true;
-
-  std::string content = "Domains: [] (q -> s)\n"
-                        "Goals: [] (r -> [](!s)), [] (p -> <>(q))";
-  auto abc2 = AutoBC::parse(content);
-  std::cout << abc2 << std::endl;
+  auto abc = AutoBC::parse("Domains: [] (! hburst_0 || ! hburst_1), [] (<> hready), [] (hlock_1 -> hbusreq_1), [] (hmastlock && (! hburst_0 && ! hburst_1) -> X (<> (! busreq))), [] (hlock_0 -> hbusreq_0), ! hready && ! hbusreq_0 && ! hlock_0 && ! hbusreq_1 && ! hlock_1\n"
+                           "Goals: [] (true && ! hmaster_1 && ! hmaster_0 -> (busreq <-> hbusreq_0)), [](! hgrant_1 -> (! hgrant_1 U hbusreq_1 || [] (! hgrant_1))), [](X (! start) -> (true && ! hmaster_1 && ! hmaster_0 <-> X (true && ! hmaster_1 && ! hmaster_0) && (hmastlock <-> X hmastlock))), [](! decide -> (locked <-> X locked)), [](decide && X hgrant_1 -> (hlock_1 <-> X locked)), [](X (! start) -> (true && ! hmaster_1 && hmaster_0 <-> X (true && ! hmaster_1 && hmaster_0) && (hmastlock <-> X hmastlock))), [](decide && X hgrant_0 -> (hlock_0 <-> X locked)), [](! decide -> (hgrant_0 <-> X hgrant_0 && (hgrant_1 <-> X hgrant_1))), [](hready -> (hgrant_0 <-> X (true && ! hmaster_1 && ! hmaster_0))), [](! hbusreq_0 && ! hbusreq_1 && decide -> X hgrant_0), [] (! hready -> X (! start)), [](hbusreq_0 -> <> (! hbusreq_0 || (true && ! hmaster_1 && ! hmaster_0))), [](hready -> (locked <-> X hmastlock)), [] (true && ! hmaster_1 && hmaster_0 -> (busreq <-> hbusreq_1)), (decide && start && hgrant_0 && true && ! hmaster_1 && ! hmaster_0 && ! hmastlock && ! hgrant_1), [](hbusreq_1 -> <> (! hbusreq_1 || (true && ! hmaster_1 && hmaster_0))), [] (hmastlock && (! hburst_0 && ! hburst_1) && start -> X (! start U (! start && ! busreq) || [] (! start))), [](hmastlock && (hburst_0 && ! hburst_1) && start && hready -> X (! start U (! start && hready && X (! start U (! start && hready && X (! start U (! start && hready) || [] (! start))) || [] (! start))) || [] (! start))), [](hmastlock && (hburst_0 && ! hburst_1) && start && ! hready -> X (! start U (! start && hready && X (! start U (! start && hready && X (! start U (! start && hready && X (! start U (! start && hready) || [] (! start))) || [] (! start))) || [] (! start))) || [] (! start))), [](hready -> (hgrant_1 <-> X (true && ! hmaster_1 && hmaster_0))), [](hbusreq_0 && X hbusreq_1 -> X (X (hgrant_0 && hgrant_1)))");
+  std::cout << abc << std::endl;
 }

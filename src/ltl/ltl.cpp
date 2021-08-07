@@ -53,8 +53,26 @@ namespace ltl {
         }
       }
       if(!flag) {
-        splits.emplace_back(std::string(1, s[idx]));
-        idx++;
+//        splits.emplace_back(std::string(1, s[idx]));
+//        idx++;
+        // s[idx]是一个普通的字符，找到这个普通字符的结尾，即直至遇到一个特殊字符，或遇到结尾
+        auto end = idx + 1;
+        auto is_special = false;
+        while(end < size && !is_special) {
+          for(auto& special: specials) {
+            auto detect = get_string_with_same_size(s, end, special);
+            if(detect == special) {
+              is_special = true;
+              break;
+            }
+          }
+          if(!is_special) {
+            ++end;
+          }
+        }
+
+        splits.emplace_back(s.substr(idx, end - idx));
+        idx = end;
       }
     }
 

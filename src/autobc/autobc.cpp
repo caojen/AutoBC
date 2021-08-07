@@ -73,6 +73,29 @@ namespace autobc {
     }
     return ret;
   }
+
+  std::string AutoBC::into() const {
+    auto save = ltl::format_as_symbol;
+    ltl::format_as_symbol = true;
+    std::ostringstream ostr("");
+    ostr << "Domains:";
+    for(unsigned i = 0; i < this->domains.size(); i++) {
+      ostr << " " << this->domains[i].serialize();
+      if(i != this->domains.size() - 1) {
+        ostr << ",";
+      }
+    }
+    ostr << std::endl;
+    ostr << "Goals:";
+    for(unsigned i = 0; i < this->goals.size(); i++) {
+      ostr << " " << this->goals[i].serialize();
+      if(i != this->goals.size() - 1) {
+        ostr << ",";
+      }
+    }
+    ltl::format_as_symbol = save;
+    return ostr.str();
+  }
 }
 
 namespace autobc {

@@ -33,6 +33,9 @@ namespace autobc {
     // 文件内容错误的时候抛出file_not_valid错误
     // 公式错误的时候抛出not_a_ltl错误
     static AutoBC parse(const std::string& content);
+
+    // 将Domain和Goal生成parse的文件形式
+    std::string into() const;
   };
 }
 
