@@ -277,14 +277,11 @@ namespace ltl {
   #undef ops1
 
   unsigned LTL::depth() const {
-    std::string s = this->serialize();
-    unsigned res = 0;
-    for(auto& ch: s) {
-      if(ch != '(' && ch != ')') {
-        ++res;
-      }
+    if(!this->root) {
+      return 0;
+    } else {
+      return this->root->depth();
     }
-    return res;
   }
 
   std::vector<LTL::LTLNode*>
