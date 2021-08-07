@@ -6,6 +6,11 @@
 #include <sstream>
 
 namespace ltl {
+  // 当这个值为true时：G会格式化成为[]，F会格式化成为<>, & => &&, | => ||
+  // 否则，用字母输出
+  // 默认情况下是false
+  extern bool format_as_symbol;
+
   class Operator {
     public:
       friend std::ostream& operator<<(std::ostream& o, const Operator& ope);
@@ -65,13 +70,13 @@ namespace ltl {
 
   class Finally: public LTLOp1 {
     public:
-      std::string str() const { return "F"; }
+      std::string str() const { return format_as_symbol ? "<>": "F"; }
       unsigned weight() const { return 3; }
   };
 
   class Global: public LTLOp1 {
     public:
-      std::string str() const { return "G"; }
+      std::string str() const { return format_as_symbol ? "[]": "G"; }
       unsigned weight() const { return 3; }
   };
 
@@ -95,13 +100,13 @@ namespace ltl {
 
   class And: public ProOp2 {
     public:
-      std::string str() const { return "&"; }
+      std::string str() const { return format_as_symbol ? "&&": "&"; }
       unsigned weight() const { return 2; }
   };
 
   class Or: public ProOp2 {
     public:
-      std::string str() const { return "|"; }
+      std::string str() const { return format_as_symbol ? "||": "|"; }
       unsigned weight() const { return 1; }
   };
 
@@ -130,6 +135,5 @@ namespace ltl {
     extern std::shared_ptr<Or> oor;
     extern std::shared_ptr<Imply> imply;
     extern std::shared_ptr<Equal> equal;
-
   }
 }

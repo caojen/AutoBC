@@ -1,6 +1,8 @@
 #include "ltl/operator.hpp"
 
 namespace ltl {
+  bool format_as_symbol = false;
+
   namespace op {
     std::shared_ptr<EmptyOp> emptyOp = std::make_shared<EmptyOp>();
     std::shared_ptr<Next> next = std::make_shared<Next>();
