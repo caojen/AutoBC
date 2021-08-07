@@ -77,7 +77,7 @@ namespace ltl{
             } else if(this->is_op2()) {
               auto nleft = this->left->depth();
               auto nright = this->right->depth();
-              return 1 + std::max(nleft, nright);
+              return 1 + nleft + nright;
             } else {
               throw ltl::unreachable();
             }
