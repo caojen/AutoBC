@@ -12,6 +12,7 @@ namespace ltl {
     std::shared_ptr<And> aand = std::make_shared<And>();
     std::shared_ptr<Or> oor = std::make_shared<Or>();
     std::shared_ptr<Imply> imply = std::make_shared<Imply>();
+    std::shared_ptr<Equal> equal = std::make_shared<Equal>();
 
     std::ostream& operator<<(std::ostream& o, const Operator& ope) {
       o << ope.str();
@@ -38,8 +39,10 @@ namespace ltl {
       return op::oor;
     } else if(s == "->") {
       return op::imply;
-    } else {
-      return op::emptyOp;
+    } else if(s == "<->") {
+      return op::equal;
     }
+
+    return op::emptyOp;
   }
 }

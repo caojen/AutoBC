@@ -22,7 +22,9 @@ namespace ltl {
   }
 
   std::vector<std::string> split_into_in_order(const std::string& s) {
-    std::vector<std::string> specials = { "->", "&&", "||", "(", ")", "|", "&", "!", "X", "G", "U", "R", "F" };
+    std::vector<std::string> specials = { "<->", "->", "&&", "||",
+                                          "(", ")", "|", "&", "!",
+                                          "X", "G", "U", "R", "F" };
     // 分隔成vector
     std::vector<std::string> splits;
 
@@ -173,18 +175,27 @@ namespace ltl {
   }
 
   bool LTL::LTLNode::is_op1() const {
-    return this->op == op::finally ||
-      this->op == op::global ||
-      this->op == op::next ||
-      this->op == op::nnot;
+    if(!this->op) {
+      return false;
+    } else {
+      if(dynamic_cast<Op1*>(this->op.get()) != nullptr) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 
   bool LTL::LTLNode::is_op2() const {
-    return this->op == op::aand ||
-      this->op == op::oor ||
-      this->op == op::release ||
-      this->op == op::until ||
-      this->op == op::imply;
+    if(!this->op) {
+      return false;
+    } else {
+      if(dynamic_cast<Op2*>(this->op.get()) != nullptr) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 
   std::ostream& operator<<(std::ostream& o, const LTL::LTLNode& ltlNode) {

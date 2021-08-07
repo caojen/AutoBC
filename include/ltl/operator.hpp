@@ -111,6 +111,12 @@ namespace ltl {
       unsigned weight() const { return 1; }
   };
 
+  class Equal: public ProOp2 {
+    public:
+      std::string str() const { return "<->"; }
+      unsigned weight() const { return 1; }
+  };
+
   namespace op {
 
     extern std::shared_ptr<EmptyOp> emptyOp;
@@ -123,6 +129,7 @@ namespace ltl {
     extern std::shared_ptr<And> aand;
     extern std::shared_ptr<Or> oor;
     extern std::shared_ptr<Imply> imply;
+    extern std::shared_ptr<Equal> equal;
 
   }
 }

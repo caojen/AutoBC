@@ -39,11 +39,12 @@ namespace autobc {
 
   std::ostream& operator<<(std::ostream& o, const AutoBC& ab) {
     o << ab.serialize();
+    return o;
   }
 
-  void bc_get() {
+  void AutoBC::bc_get() {
   }
 
-  void bc_sort() {
+  void AutoBC::bc_sort() {
   }
 }
