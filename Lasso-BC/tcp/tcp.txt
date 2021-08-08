@@ -1,0 +1,2 @@
+Domains: 
+Goals: [] (delivered -> (!send U ack)), [](send -> (!ack U delivered))

@@ -1,0 +1,2 @@
+Domains: [](o -> ! c), [](c -> ! f), [](o -> ! f)
+Goals: [](c  -> (c  U (f || d)) ), [](c  -> (c  U (o || d)) )

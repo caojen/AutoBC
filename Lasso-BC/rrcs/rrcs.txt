@@ -1,0 +1,2 @@
+Domains: [] (ta <-> X(tc)), [] (X(cc) -> ca && go)
+Goals: [] (ta -> !go), [] (tc -> !cc)

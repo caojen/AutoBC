@@ -1,0 +1,2 @@
+Domains: []((p && X(p)) -> X(X(! h)))
+Goals: [](h -> X(p)), [](m -> X(! p))

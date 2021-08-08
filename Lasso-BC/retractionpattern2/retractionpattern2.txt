@@ -1,0 +1,2 @@
+Domains: 
+Goals: [] (p -> ((q U s) || [] q)), [] (q -> r)

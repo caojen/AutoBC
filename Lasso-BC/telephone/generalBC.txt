@@ -1,0 +1,11 @@
+telephone
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F( c & !d & X(G(!c & !d & !o | c & !d & !f & !o | !d))))
+(F( c & !d & X(G(!c & !d & !f | c & !d & !f & !o | !d))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F( c & !d & X(G(!c & !d & !o | c & !d & !f & !o | !d))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
+(F(c & !d & !f & !o & X(G(!c & !d ))))
