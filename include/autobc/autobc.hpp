@@ -17,6 +17,8 @@ namespace autobc {
     std::set<Domain>     domains;
     std::set<Goal>       goals;
     std::set<BC>         bcs;
+    std::vector<BC>      sorted_bcs;
+    bool                 sorted = false;
 
     void add_domain(const Domain& domain);
     void add_goal(const Goal& goal);
@@ -25,14 +27,17 @@ namespace autobc {
     std::string serialize() const;
     friend std::ostream& operator<<(std::ostream& o, const AutoBC& ab);
 
-    // 根据已有的domain和goal，获得bc
-    void bc_get();
     // 对目前已经有的bc进行排序
+    // 将bcs的内容存放到sorted_bcs当中
     void bc_sort();
     // 输入已有的文件的内容，然后parse
     // 文件内容错误的时候抛出file_not_valid错误
     // 公式错误的时候抛出not_a_ltl错误
     static AutoBC parse(const std::string& content);
+    // 输入已有bc文件的内容，然后parse
+    // 公式错误的时候抛出not_a_ltl错误
+    // 第二个参数说明是否忽略第一行的输入内容
+    void use_bcs(const std::string& content, bool use_first_line = false);
 
     // 将Domain和Goal生成parse的文件形式
     std::string into() const;

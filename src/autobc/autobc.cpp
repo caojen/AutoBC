@@ -26,10 +26,16 @@ namespace autobc {
     for(auto& goal: this->goals) {
       ostr << '\t' << goal << std::endl;
     }
-
-    ostr << "BCs:" << std::endl;
-    for(auto& bc: this->bcs) {
-      ostr << '\t' << bc << std::endl;
+    if(!this->sorted) {
+      ostr << "BCs:" << std::endl;
+      for(auto& bc: this->bcs) {
+        ostr << '\t' << bc << std::endl;
+      }
+    } else {
+      ostr << "BCs(sorted):" << std::endl;
+      for(auto& bc: this->sorted_bcs) {
+        ostr << '\t' << bc << std::endl;
+      }
     }
 
     return ostr.str();
@@ -38,9 +44,6 @@ namespace autobc {
   std::ostream& operator<<(std::ostream& o, const AutoBC& ab) {
     o << ab.serialize();
     return o;
-  }
-
-  void AutoBC::bc_get() {
   }
 
   void AutoBC::bc_sort() {
@@ -64,15 +67,25 @@ namespace autobc {
       auto prefix = line.substr(0, pos);
       for(auto &ltl: ltls) {
         if(prefix == "Domains:") {
-          ret.domains.insert(ltl::LTL::parse(ltl));
+          ret.add_domain(ltl::LTL::parse(ltl));
         } else if(prefix == "Goals:") {
-          ret.goals.insert(ltl::LTL::parse(ltl));
+          ret.add_goal(ltl::LTL::parse(ltl));
         } else {
           throw file_not_valid();
         }
       }
     }
     return ret;
+  }
+
+  void AutoBC::use_bcs(const std::string& content, bool use_first_line) {
+    const auto lines = split(content, "\n");
+    auto idx = use_first_line ? 0 : 1;
+    while(idx < lines.size()) {
+      const auto &line = lines.at(idx);
+      this->add_bc(ltl::LTL::parse(line));
+      idx++;
+    }
   }
 
   std::string AutoBC::into() const {

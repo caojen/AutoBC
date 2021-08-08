@@ -5,7 +5,46 @@ using namespace ltl;
 using namespace autobc;
 
 int main() {
-  auto abc = AutoBC::parse("Domains: [] (r0 && ! g0 -> X r0), [](<> (! (r1 && g1))), [] (! r0 && g0 -> X (! r0)), [] (! r1 && g1 -> X (! r1)), [](<> (! (r0 && g0))), [] (r1 && ! g1 -> X r1)\n"
-                           "Goals: [] (! g0 && true || (true && (! g1)) && (r0 && X r1 -> X (X (g0 && g1)))), [] (r0 -> <> g0), [] (r1 -> <> g1)");
-  std::cout << abc.into() << std::endl;
+  auto abc = AutoBC::parse("Domains: []((p && X(p)) -> X(X(! h)))\n"
+                           "Goals: [](h -> X(p)), [](m -> X(! p))");
+  abc.use_bcs("minepump\n"
+              "(F( h & m))\n"
+              "(F( p & X(G(h  & m & !p | m & p))))\n"
+              "(F(h & p & X(G(h  & !p | !h & m & p | h ))))\n"
+              "(F( !p & X(G(h  & m & !p | !h & m & p | h & p))))\n"
+              "(F(h & m))\n"
+              "(F(h & p & X(G(h  & !p | m & p))))\n"
+              "(F( !p & X(G( h & m | m & p))))\n"
+              "(F( p & X(G(h  & m & !p | !h & m & p | h & p))))\n"
+              "(F(h & m ))\n"
+              "(F( p & X(G(h  & m | m & p))))\n"
+              "(F(h & p & X(G(h  & !m | !h & m & p | h ))))\n"
+              "(F( !p & X(G(h  & m | !h & m & p | h & !m & p | h & p))))\n"
+              "(F(h & m))\n"
+              "(F( !p & X(G( h & m | m & p))))\n"
+              "(F(h & p & X(G(h  & !m | !h & m & p | h ))))\n"
+              "(F(h & m))\n"
+              "(F( !p & X(G( h & m & !p | m & p))))\n"
+              "(F( p & X(G(h  & m | m & p))))\n"
+              "(F(h & p & X(G(h  | m & p))))\n"
+              "(F( h & m))\n"
+              "(F(h & p & X(G(h  & !p | m & p))))\n"
+              "(F( !p & X(G(h  & m | !h & m & p | h & !m & p | h & p))))\n"
+              "(F( p & X(G(h  & m | m & p))))\n"
+              "(F( h & m ))\n"
+              "(F( !p & X(G( h & m | m & p))))\n"
+              "(F( p & X(G(h  & m & !p | !h & m & p | h & p))))\n"
+              "(F(h & p & X(G(h  & !m & !p | !h & m & p | h ))))\n"
+              "(F( h & m ))\n"
+              "(F( !p & X(G( h & m | m & p))))\n"
+              "(F(h & p & X(G(h  | m & p))))\n"
+              "(F(h & m ))\n"
+              "(F( !p & X(G( h & m & !p | m & p))))\n"
+              "(F(h & p & X(G(h  & !p | !h & m & p | h ))))\n"
+              "(F( p & X(G(h  & m | m & p))))\n"
+              "(F(h & m ))\n"
+              "(F( !p & X(G( h & m & !p | m & p))))\n"
+              "(F(h & p & X(G(h  | m & p))))\n"
+              "(F( p & X(G(h  & m | m & p))))");
+  std::cout << abc << std::endl;
 }
