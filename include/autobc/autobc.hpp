@@ -14,9 +14,9 @@ namespace autobc {
 
   class AutoBC {
   public:
-    std::vector<Domain>     domains;
-    std::vector<Goal>       goals;
-    std::vector<BC>         bcs;
+    std::set<Domain>     domains;
+    std::set<Goal>       goals;
+    std::set<BC>         bcs;
 
     void add_domain(const Domain& domain);
     void add_goal(const Goal& goal);

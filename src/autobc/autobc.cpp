@@ -4,15 +4,15 @@
 
 namespace autobc {
   void AutoBC::add_domain(const Domain &domain) {
-    this->domains.emplace_back(domain);
+    this->domains.insert(domain);
   }
 
   void AutoBC::add_bc(const BC &bc) {
-    this->bcs.emplace_back(bc);
+    this->bcs.insert(bc);
   }
 
   void AutoBC::add_goal(const Goal &goal) {
-    this->goals.emplace_back(goal);
+    this->goals.insert(goal);
   }
 
   std::string AutoBC::serialize() const {
@@ -64,9 +64,9 @@ namespace autobc {
       auto prefix = line.substr(0, pos);
       for(auto &ltl: ltls) {
         if(prefix == "Domains:") {
-          ret.domains.emplace_back(ltl::LTL::parse(ltl));
+          ret.domains.insert(ltl::LTL::parse(ltl));
         } else if(prefix == "Goals:") {
-          ret.goals.emplace_back(ltl::LTL::parse(ltl));
+          ret.goals.insert(ltl::LTL::parse(ltl));
         } else {
           throw file_not_valid();
         }
@@ -80,17 +80,17 @@ namespace autobc {
     ltl::format_as_symbol = true;
     std::ostringstream ostr("");
     ostr << "Domains:";
-    for(unsigned i = 0; i < this->domains.size(); i++) {
-      ostr << " " << this->domains[i].serialize();
-      if(i != this->domains.size() - 1) {
+    for(auto iter = this->domains.begin(); iter != this->domains.end(); ++iter) {
+      ostr << " " << iter->serialize();
+      if(std::next(iter) != this->domains.end()) {
         ostr << ",";
       }
     }
     ostr << std::endl;
     ostr << "Goals:";
-    for(unsigned i = 0; i < this->goals.size(); i++) {
-      ostr << " " << this->goals[i].serialize();
-      if(i != this->goals.size() - 1) {
+    for(auto iter = this->goals.begin(); iter != this->goals.end(); ++iter) {
+      ostr << " " << iter->serialize();
+      if(std::next(iter) != this->goals.end()) {
         ostr << ",";
       }
     }
