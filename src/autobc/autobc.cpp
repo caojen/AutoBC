@@ -6,15 +6,15 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <iostream>
+#include <utility>
 #include <string.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 #include "autobc.hpp"
 
 namespace autobc {
   AutoBC::AutoBC(std::string likelyhood) {
     std::srand(std::time(nullptr));
-    this->likelyhood = likelyhood;
+    this->likelyhood = std::move(likelyhood);
   }
 
   void AutoBC::add_domain(const Domain &domain) {
@@ -89,8 +89,8 @@ namespace autobc {
     // 生成命令行
     ltl::format_as_symbol = true;
     std::vector<std::string> args;
-    args.push_back("java");
-    args.push_back("-jar");
+    args.emplace_back("java");
+    args.emplace_back("-jar");
     args.push_back(this->likelyhood);
 
     for(auto& d: this->domains) {
@@ -101,7 +101,7 @@ namespace autobc {
     }
     args.push_back(std::string("--bcfile=") + input_tmp_file);
     args.push_back(std::string("--output=") + output_tmp_file);
-    args.push_back(">/dev/null");
+    args.emplace_back(">/dev/null");
 
     auto size = args.size();
     char** nargs = new char*[size + 1];
@@ -141,7 +141,7 @@ namespace autobc {
     ifstream.open(output_tmp_file);
     std::string line;
     while(std::getline(ifstream, line)) {
-      if(line != "") {
+      if(!line.empty()) {
         result += line + "\n";
       }
     }
