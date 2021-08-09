@@ -217,7 +217,7 @@ namespace autobc {
 
   void AutoBC::use_bcs(const std::string& content, bool use_first_line) {
     const auto lines = split(content, "\n");
-    auto idx = use_first_line ? 0 : 1;
+    unsigned idx = use_first_line ? 0 : 1;
     while(idx < lines.size()) {
       const auto &line = lines.at(idx);
       this->add_bc(ltl::LTL::parse(line));
