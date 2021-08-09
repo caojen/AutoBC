@@ -84,13 +84,13 @@ namespace autobc {
     std::ostringstream ostr("java -jar ");
     ostr << this->likelyhood << " ";
     for(auto& d: this->domains) {
-      ostr << "\"-d=" << d.serialize() << "\" ";
+      ostr << "'-d=" << d.serialize() << "' ";
     }
     for(auto& g: this->goals) {
-      ostr << "\"-g=" << g.serialize() << "\" ";
+      ostr << "'-g=" << g.serialize() << "' ";
     }
-    ostr << "\"--bcfile=" << input_tmp_file << "\" ";
-    ostr << "\"--output=" << output_tmp_file << "\"";
+    ostr << "'--bcfile=" << input_tmp_file << "' ";
+    ostr << "'--output=" << output_tmp_file << "'";
     auto cmd = ostr.str();
     ltl::format_as_symbol = format;
 
