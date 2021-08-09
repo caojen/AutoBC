@@ -115,9 +115,13 @@ namespace autobc {
     auto pid = fork();
     if(pid == 0) {
       execv("java", nargs);
-    } else {
-      wait(0);
+    } else if(pid > 0) {
+      std::cout << "child is " << pid << std::endl;
+      waitpid(pid, 0, 0);
+      std::cout << "child is quit" << std::endl;
       delete[] nargs;
+    } else if(pid < 0) {
+      std::cout << "fork failed" << std::endl;
     }
     remove(input_tmp_file.c_str());
     remove(output_tmp_file.c_str());
