@@ -1,7 +1,10 @@
 #include "ltl/operator.hpp"
 
 namespace ltl {
-  bool format_as_symbol = false;
+    bool format_double_and = false;
+    bool format_double_or = false;
+    bool format_symbol_F = false;
+    bool format_symbol_G = false;
 
   namespace op {
     std::shared_ptr<EmptyOp> emptyOp = std::make_shared<EmptyOp>();

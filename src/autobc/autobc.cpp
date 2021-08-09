@@ -78,8 +78,14 @@ namespace autobc {
     // 将所有bc以行的方式写入到input_tmp_file
     std::ofstream ofstream;
     ofstream.open(input_tmp_file, std::ios::out | std::ios::trunc);
-    auto format = ltl::format_as_symbol;
-    ltl::format_as_symbol = false;
+    auto format_double_and = ltl::format_double_and;
+    auto format_double_or = ltl::format_double_or;
+    auto format_symbol_F = ltl::format_symbol_F;
+    auto format_symbol_G = ltl::format_symbol_G;
+    ltl::format_double_and = true;
+    ltl::format_double_or = true;
+    ltl::format_symbol_F = true;
+    ltl::format_symbol_G = true;
     for(auto& bc: this->bcs) {
       ofstream << bc.serialize() << std::endl;
     }
@@ -87,7 +93,6 @@ namespace autobc {
     ofstream.close();
 
     // 生成命令行
-    ltl::format_as_symbol = true;
     std::vector<std::string> args;
     args.emplace_back("java");
     args.emplace_back("-jar");
@@ -183,7 +188,10 @@ namespace autobc {
     }
 
     this->sorted = true;
-    ltl::format_as_symbol = format;
+    ltl::format_double_and = format_double_and;
+    ltl::format_double_or = format_double_or;
+    ltl::format_symbol_F = format_symbol_F;
+    ltl::format_symbol_G = format_symbol_G;
   }
 
   AutoBC AutoBC::parse(const std::string &content) {
@@ -226,8 +234,15 @@ namespace autobc {
   }
 
   std::string AutoBC::into() const {
-    auto save = ltl::format_as_symbol;
-    ltl::format_as_symbol = true;
+    auto format_double_and = ltl::format_double_and;
+    auto format_double_or = ltl::format_double_or;
+    auto format_symbol_F = ltl::format_symbol_F;
+    auto format_symbol_G = ltl::format_symbol_G;
+    ltl::format_double_and = true;
+    ltl::format_double_or = true;
+    ltl::format_symbol_F = true;
+    ltl::format_symbol_G = true;
+
     std::ostringstream ostr("");
     ostr << "Domains:";
     for(auto iter = this->domains.begin(); iter != this->domains.end(); ++iter) {
@@ -244,7 +259,10 @@ namespace autobc {
         ostr << ",";
       }
     }
-    ltl::format_as_symbol = save;
+    ltl::format_double_and = format_double_and;
+    ltl::format_double_or = format_double_or;
+    ltl::format_symbol_F = format_symbol_F;
+    ltl::format_symbol_G = format_symbol_G;
     return ostr.str();
   }
 

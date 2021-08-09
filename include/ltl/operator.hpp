@@ -6,10 +6,11 @@
 #include <sstream>
 
 namespace ltl {
-  // 当这个值为true时：G会格式化成为[]，F会格式化成为<>, & => &&, | => ||
-  // 否则，用字母输出
-  // 默认情况下是false
-  extern bool format_as_symbol;
+  // 决定格式化的输出
+  extern bool format_double_and; // true: &&, false: ||, default: false
+  extern bool format_double_or;  // true: or, false: |, default: false
+  extern bool format_symbol_F;   // true: <>, false: F, default: false
+  extern bool format_symbol_G;   // true: [], false: G, default: false
 
   class Operator {
     public:
@@ -70,13 +71,13 @@ namespace ltl {
 
   class Finally: public LTLOp1 {
     public:
-      std::string str() const { return format_as_symbol ? "<>": "F"; }
+      std::string str() const { return format_symbol_F ? "<>": "F"; }
       unsigned weight() const { return 3; }
   };
 
   class Global: public LTLOp1 {
     public:
-      std::string str() const { return format_as_symbol ? "[]": "G"; }
+      std::string str() const { return format_symbol_G ? "[]": "G"; }
       unsigned weight() const { return 3; }
   };
 
@@ -100,13 +101,13 @@ namespace ltl {
 
   class And: public ProOp2 {
     public:
-      std::string str() const { return format_as_symbol ? "&&": "&"; }
+      std::string str() const { return format_double_and ? "&&": "&"; }
       unsigned weight() const { return 2; }
   };
 
   class Or: public ProOp2 {
     public:
-      std::string str() const { return format_as_symbol ? "||": "|"; }
+      std::string str() const { return format_double_or ? "||": "|"; }
       unsigned weight() const { return 1; }
   };
 
