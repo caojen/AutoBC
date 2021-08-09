@@ -1,8 +1,14 @@
 #include <sstream>
 #include <fstream>
+#include <unistd.h>
+#include <iostream>
 #include "autobc.hpp"
 
 namespace autobc {
+  AutoBC::AutoBC(std::string likelyhood) {
+    this->likelyhood = likelyhood;
+  }
+
   void AutoBC::add_domain(const Domain &domain) {
     this->domains.insert(domain);
   }
@@ -33,8 +39,8 @@ namespace autobc {
       }
     } else {
       ostr << "BCs(sorted):" << std::endl;
-      for(auto& bc: this->sorted_bcs) {
-        ostr << '\t' << bc << std::endl;
+      for(unsigned i = 0; i < this->sorted_bcs.size(); i++) {
+        ostr << '\t' << this->sorted_bcs[i] << '\t' << this->weight_bcs[i] << std::endl;
       }
     }
 
@@ -47,6 +53,91 @@ namespace autobc {
   }
 
   void AutoBC::bc_sort() {
+    auto rand_strings = [](unsigned length) -> std::string {
+      const char charset[] = "abcdefghijklmnopqrstuvwxyz";
+      const unsigned len = sizeof(charset) / sizeof(charset[0]);
+      std::string ret;
+      for(unsigned i = 0; i < length; i++) {
+        ret.append(std::string(1, charset[std::rand() % len]));
+      }
+      return ret;
+    };
+
+    std::string random_prefix = rand_string(16);
+    std::string input_tmp_file = random_prefix + rand_string(12);
+    std::string output_tmp_file = random_prefix + rand_string(12);
+
+    // 将所有bc以行的方式写入到input_tmp_file
+    std::ofstream ofstream;
+    ofstream.open(input_tmp_file, std::ios::out | std::ios::trunc);
+    auto format = ltl::format_as_symbol;
+    ltl::format_as_symbol = false;
+    for(auto& bc: this->bcs) {
+      ofstream << bc.serialize() << std::endl;
+    }
+
+    ofstream.close();
+
+    // 生成命令行
+    ltl::format_as_symbol = true;
+    std::ostringstream ostr("java -jar ");
+    ostr << this->likelyhood << " ";
+    for(auto& d: this->domains) {
+      ostr << "\"-d=" << d.serialize() << "\" ";
+    }
+    for(auto& g: this->goals) {
+      ostr << "\"-g=" << g.serialize() << "\" ";
+    }
+    ostr << "\"--bcfile=" << input_tmp_file << "\" ";
+    ostr << "\"--output=" << output_tmp_file << "\"";
+    auto cmd = ostr.str();
+    ltl::format_as_symbol = format;
+
+    // 运行cmd，直接从标准输出获取内容，不再读取output_tmp_file
+    FILE* pipe = popen(cmd.c_str(), "r");
+    if(!pipe) {
+      throw std::runtime_error(strerror(errno));
+    }
+    std::string result;
+    char buffer[10240] = { 0 };
+    while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
+      result.append(buffer);
+    }
+    pclose(pipe);
+    remove(input_tmp_file.c_str());
+    remove(output_tmp_file.c_str());
+    // 输出结果存放到result中
+    // 按行读取：
+    auto lines = split(result, "\n");
+    if(lines.size() != this->bcs.size()) {
+      throw output_line_too_less();
+    }
+    std::vector<double> weights;
+    std::vector<BC> before_sort;
+    for(auto& line: lines) {
+      // 每一行的内容：bc, <float>
+      auto parts = split(line, ", ");
+      if(parts.size() != 2) {
+        throw output_line_format_error();
+      }
+      auto formula = parts[0];
+      auto f = parts[1];
+      weights.push_back(atof(f));
+      before_sort.emplace_back(ltl::LTL::parse(formula));
+    }
+    // 选择排序
+    for(unsigned i = 0; i < weights.size(); i++) {
+      auto max_idx = 0;
+      for(unsigned j = 0; j < weights.size(); j++) {
+        if(weights[j] > weights[max_idx]) {
+          max_idx = j;
+        }
+      }
+      this->weight_bcs.push_back(weights[max_idx]);
+      weights.erase(weights.begin() + max_idx);
+      this->sorted_bcs.emplace_back(std::move(before_sort[max_idx]));
+      before_sort.erase(before_sort.begin() + max_idx);
+    }
   }
 
   AutoBC AutoBC::parse(const std::string &content) {

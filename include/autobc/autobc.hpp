@@ -18,7 +18,13 @@ namespace autobc {
     std::set<Goal>       goals;
     std::set<BC>         bcs;
     std::vector<BC>      sorted_bcs;
+    std::vector<double>  weight_bcs;
+
     bool                 sorted = false;
+
+    std::string          likelyhood;      // likelyhood.jar 的路径
+
+    AutoBC(std::string likelyhood = "./Lasso-BC/likelyhood.jar");
 
     void add_domain(const Domain& domain);
     void add_goal(const Goal& goal);

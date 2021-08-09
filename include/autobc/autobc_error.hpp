@@ -10,4 +10,15 @@ namespace autobc {
         }
     };
 
+    class output_line_too_less: public std::exception {
+        virtual char const * what() const noexcept {
+          return "Likelyhood.jar return too less lines";
+        }
+    };
+
+    class output_line_format_error: public std::exception {
+        virtual char const * what() const noexcept {
+          return "Line Format Unknown";
+        }
+    };
 }
