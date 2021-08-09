@@ -82,10 +82,10 @@ namespace autobc {
     auto format_double_or = ltl::format_double_or;
     auto format_symbol_F = ltl::format_symbol_F;
     auto format_symbol_G = ltl::format_symbol_G;
-    ltl::format_double_and = true;
-    ltl::format_double_or = true;
-    ltl::format_symbol_F = true;
-    ltl::format_symbol_G = true;
+    ltl::format_double_and = false;
+    ltl::format_double_or = false;
+    ltl::format_symbol_F = false;
+    ltl::format_symbol_G = false;
     for(auto& bc: this->bcs) {
       ofstream << bc.serialize() << std::endl;
     }
@@ -93,6 +93,10 @@ namespace autobc {
     ofstream.close();
 
     // 生成命令行
+    ltl::format_double_and = true;
+    ltl::format_double_or = true;
+    ltl::format_symbol_F = true;
+    ltl::format_symbol_G = true;
     std::vector<std::string> args;
     args.emplace_back("java");
     args.emplace_back("-jar");
