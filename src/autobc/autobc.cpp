@@ -138,11 +138,8 @@ namespace autobc {
     while(std::getline(ifstream, line)) {
       if(line != "") {
         result += line + "\n";
-        std::cout << "read line " << line << std::endl;
       }
     }
-    std::cout << "get result" << std::endl;
-    std::cout << result << std::endl;
 
 //    remove(input_tmp_file.c_str());
 //    remove(output_tmp_file.c_str());
@@ -153,6 +150,9 @@ namespace autobc {
     if(lines.size() != this->bcs.size()) {
       std::cout << "new: " << lines.size() << std::endl;
       std::cout << "expected: " << this->bcs.size() << std::endl;
+      for(auto& l: lines) {
+        std::cout << l << std::endl;
+      }
       throw output_line_too_less();
     }
     std::vector<double> weights;
