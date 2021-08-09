@@ -151,7 +151,7 @@ namespace autobc {
       std::cout << "new: " << lines.size() << std::endl;
       std::cout << "expected: " << this->bcs.size() << std::endl;
       for(auto& l: lines) {
-        std::cout << l << std::endl;
+        std::cout << "newline" << l << std::endl;
       }
       throw output_line_too_less();
     }
