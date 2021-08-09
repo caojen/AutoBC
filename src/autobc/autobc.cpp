@@ -118,6 +118,10 @@ namespace autobc {
 
     auto pid = fork();
     if(pid == 0) {
+      int fd = open("/dev/null", O_WRONLY);
+      dup2(fd, 1);
+      dup2(fd, 2);
+      close(fd);
       auto ret = execv(this->javapath.c_str(), nargs);
       std::cout << "fatal: child returned: " << ret << std::endl;
       std::cout << strerror(errno) << std::endl;
