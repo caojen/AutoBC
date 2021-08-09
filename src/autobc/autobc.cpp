@@ -134,6 +134,7 @@ namespace autobc {
     std::string line;
     while(std::getline(ifstream, line)) {
       result += line + "\n";
+      std::cout << "read line " << line << std::endl;
     }
     std::cout << "get result" << std::endl;
     std::cout << result << std::endl;
@@ -145,6 +146,8 @@ namespace autobc {
     auto lines = split(result, "\n");
     std::cout << result << std::endl;
     if(lines.size() != this->bcs.size()) {
+      std::cout << "new: " << lines.size() << std::endl;
+      std::cout << "expected: " << this->bcs.size() << std::endl;
       throw output_line_too_less();
     }
     std::vector<double> weights;
