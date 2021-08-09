@@ -19,8 +19,8 @@ project(ltlin2post)
 
 add_executable(ltlin2post ${LTL_BASIC} src/ltlin2post/ltlin2post.cpp)
 
-project(test)
-add_executable(test ${LTL_BASIC} src/test.cpp)
+project(mytest)
+add_executable(mytest ${LTL_BASIC} src/test.cpp)
 
 project(autobc)
 
