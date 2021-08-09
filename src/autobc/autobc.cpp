@@ -141,8 +141,8 @@ namespace autobc {
       }
     }
 
-//    remove(input_tmp_file.c_str());
-//    remove(output_tmp_file.c_str());
+    remove(input_tmp_file.c_str());
+    remove(output_tmp_file.c_str());
     // 输出结果存放到result中
     // 按行读取：
     auto lines = split(result, "\n");
@@ -183,6 +183,7 @@ namespace autobc {
     }
 
     this->sorted = true;
+    ltl::format_as_symbol = format;
   }
 
   AutoBC AutoBC::parse(const std::string &content) {
