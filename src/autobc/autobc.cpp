@@ -96,6 +96,7 @@ namespace autobc {
     }
     args.push_back(std::string("--bcfile=") + input_tmp_file);
     args.push_back(std::string("--output=") + output_tmp_file);
+    args.push_back(">/dev/null");
 
     auto size = args.size();
     char** nargs = new char*[size + 1];
@@ -127,6 +128,16 @@ namespace autobc {
       std::cout << "fork failed" << std::endl;
       exit(1);
     }
+
+    std::ifstream ifstream;
+    ifstream.open(output_tmp_file);
+    std::string line;
+    while(std::getline(ifstream, line)) {
+      result += line + "\n";
+    }
+
+    std::cout << result << std::endl;
+
     remove(input_tmp_file.c_str());
     remove(output_tmp_file.c_str());
     // 输出结果存放到result中
