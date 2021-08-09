@@ -1,3 +1,5 @@
+#include <ctime>
+#include <random>
 #include <sstream>
 #include <fstream>
 #include <unistd.h>
@@ -68,8 +70,8 @@ namespace autobc {
     };
 
     std::string random_prefix = rand_strings(16);
-    std::string input_tmp_file = random_prefix + rand_strings(12);
-    std::string output_tmp_file = random_prefix + rand_strings(12);
+    std::string input_tmp_file = random_prefix + "_input_" + rand_strings(12);
+    std::string output_tmp_file = random_prefix + "_output_" + rand_strings(12);
 
     // 将所有bc以行的方式写入到input_tmp_file
     std::ofstream ofstream;
@@ -142,8 +144,8 @@ namespace autobc {
     std::cout << "get result" << std::endl;
     std::cout << result << std::endl;
 
-    remove(input_tmp_file.c_str());
-    remove(output_tmp_file.c_str());
+//    remove(input_tmp_file.c_str());
+//    remove(output_tmp_file.c_str());
     // 输出结果存放到result中
     // 按行读取：
     auto lines = split(result, "\n");
