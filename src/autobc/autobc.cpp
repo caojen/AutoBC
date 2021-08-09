@@ -135,7 +135,7 @@ namespace autobc {
     while(std::getline(ifstream, line)) {
       result += line + "\n";
     }
-
+    std::cout << "get result" << std::endl;
     std::cout << result << std::endl;
 
     remove(input_tmp_file.c_str());
