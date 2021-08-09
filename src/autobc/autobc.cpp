@@ -112,7 +112,6 @@ namespace autobc {
       auto s = args[i].c_str();
       memcpy(nargs[i], s, args[i].size() * sizeof(char));
       nargs[i][args[i].size()] = 0;
-      std::cout << nargs[i] << std::endl;
     }
     nargs[size] = (char*)0;
 
@@ -152,13 +151,8 @@ namespace autobc {
     // 输出结果存放到result中
     // 按行读取：
     auto lines = split(result, "\n");
-    std::cout << result << std::endl;
+
     if(lines.size() != this->bcs.size()) {
-      std::cout << "new: " << lines.size() << std::endl;
-      std::cout << "expected: " << this->bcs.size() << std::endl;
-      for(auto& l: lines) {
-        std::cout << "newline" << l << "end" << std::endl;
-      }
       throw output_line_too_less();
     }
     std::vector<double> weights;
