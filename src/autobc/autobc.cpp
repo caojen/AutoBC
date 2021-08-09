@@ -169,11 +169,11 @@ namespace autobc {
       before_sort.push_back(formula);
     }
     // 选择排序
-    for(unsigned i = 0; i < weights.size(); i++) {
-      auto max_idx = 0;
-      for(unsigned j = 0; j < weights.size(); j++) {
-        if(weights[j] > weights[max_idx]) {
-          max_idx = j;
+    while(!weights.empty()) {
+      unsigned max_idx = 0;
+      for(unsigned i = 0; i < weights.size(); i++) {
+        if(weights[i] > weights[max_idx]) {
+          max_idx = i;
         }
       }
       this->weight_bcs.push_back(weights[max_idx]);
