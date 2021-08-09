@@ -7,6 +7,7 @@ using namespace autobc;
 int main() {
   auto abc = AutoBC::parse("Domains: []((p && X(p)) -> X(X(! h)))\n"
                            "Goals: [](h -> X(p)), [](m -> X(! p))");
+  abc.likelyhood = "../Lasso-BC/likelyhood.jar";
   abc.use_bcs("minepump\n"
               "(F( h & m))\n"
               "(F( p & X(G(h  & m & !p | m & p))))\n"

@@ -81,8 +81,8 @@ namespace autobc {
 
     // 生成命令行
     ltl::format_as_symbol = true;
-    std::ostringstream ostr("java -jar ");
-    ostr << this->likelyhood << " ";
+    std::ostringstream ostr("");
+    ostr << "java -jar " << this->likelyhood << " ";
     for(auto& d: this->domains) {
       ostr << "'-d=" << d.serialize() << "' ";
     }
@@ -110,6 +110,8 @@ namespace autobc {
     // 输出结果存放到result中
     // 按行读取：
     auto lines = split(result, "\n");
+    std::cout << cmd << std::endl;
+    std::cout << result << std::endl;
     if(lines.size() != this->bcs.size()) {
       throw output_line_too_less();
     }
