@@ -102,7 +102,10 @@ namespace autobc {
     memset(nargs, 0, sizeof(char*) * (size + 1));
 
     for(unsigned i = 0; i < size; i++) {
-      nargs[i] = args[i].c_str();
+      nargs[i] = new char[args[i].size() + 1];
+      auto s = args[i].c_str();
+      memcpy(nargs[i], s, args[i].size() * sizeof(char));
+      nargs[i][args[i].size()] = 0;
       std::cout << nargs[i] << std::endl;
     }
     nargs[size] = (char*)0;
@@ -113,7 +116,7 @@ namespace autobc {
     if(pid == 0) {
       execv("java", nargs);
     } else {
-      wait();
+      wait(0);
       delete[] nargs;
     }
     remove(input_tmp_file.c_str());
