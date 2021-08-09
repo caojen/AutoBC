@@ -3,6 +3,8 @@
 #include <sstream>
 #include <fstream>
 #include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 #include <iostream>
 #include <string.h>
 #include <sys/types.h>
