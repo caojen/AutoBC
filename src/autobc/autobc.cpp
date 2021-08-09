@@ -9,6 +9,7 @@
 
 namespace autobc {
   AutoBC::AutoBC(std::string likelyhood) {
+    std::srand(std::time(nullptr));
     this->likelyhood = likelyhood;
   }
 
