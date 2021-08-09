@@ -123,7 +123,7 @@ namespace autobc {
       }
       auto formula = parts[0];
       auto f = parts[1];
-      weights.push_back(atof(f));
+      weights.push_back(atof(f.c_str()));
       before_sort.push_back(formula);
     }
     // 选择排序
