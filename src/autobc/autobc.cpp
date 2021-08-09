@@ -120,7 +120,7 @@ namespace autobc {
     } else if(pid > 0) {
       waitpid(pid, 0, 0);
       for(unsigned i = 0; i < size; i++) {
-        delete[] args[i];
+        delete[] nargs[i];
       }
       delete[] nargs;
     } else if(pid < 0) {
