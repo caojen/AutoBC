@@ -22,7 +22,8 @@ namespace autobc {
 
     bool                 sorted = false;
 
-    std::string          likelyhood;      // likelyhood.jar 的路径
+    std::string          likelyhood;                        // likelyhood.jar 的路径
+    std::string          javapath = "/usr/bin/java";        // java的路径
 
     AutoBC(std::string likelyhood = "./Lasso-BC/likelyhood.jar");
 

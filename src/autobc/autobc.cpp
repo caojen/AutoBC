@@ -114,16 +114,18 @@ namespace autobc {
 
     auto pid = fork();
     if(pid == 0) {
-      auto ret = execv("/usr/bin/java", nargs);
-      std::cout << "child returned: " << ret << std::endl;
+      auto ret = execv(this->javapath.c_str(), nargs);
+      std::cout << "fatal: child returned: " << ret << std::endl;
       std::cout << strerror(errno) << std::endl;
     } else if(pid > 0) {
-      std::cout << "child is " << pid << std::endl;
       waitpid(pid, 0, 0);
-      std::cout << "child is quit" << std::endl;
+      for(unsigned i = 0; i < size; i++) {
+        delete[] args[i];
+      }
       delete[] nargs;
     } else if(pid < 0) {
       std::cout << "fork failed" << std::endl;
+      exit(1);
     }
     remove(input_tmp_file.c_str());
     remove(output_tmp_file.c_str());
