@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <iostream>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include "autobc.hpp"
 
 namespace autobc {
@@ -108,8 +110,8 @@ namespace autobc {
     std::string result;
 
     auto pid = fork();
-    if(pid > 0) {
-      execl("java", nargs);
+    if(pid == 0) {
+      execv("java", nargs);
     } else {
       wait();
       delete[] nargs;
@@ -119,7 +121,6 @@ namespace autobc {
     // 输出结果存放到result中
     // 按行读取：
     auto lines = split(result, "\n");
-    std::cout << cmd << std::endl;
     std::cout << result << std::endl;
     if(lines.size() != this->bcs.size()) {
       throw output_line_too_less();
