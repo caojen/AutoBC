@@ -61,6 +61,10 @@ namespace autobc {
   }
 
   void AutoBC::bc_sort() {
+    if(this->bcs.empty()) {
+      std::cout << "No BC specified. Ignored...";
+      return;
+    }
     auto rand_strings = [](unsigned length) -> std::string {
       const char charset[] = "abcdefghijklmnopqrstuvwxyz";
       const unsigned len = sizeof(charset) / sizeof(charset[0]);
