@@ -151,7 +151,6 @@ namespace autobc {
     if(lines.size() != this->bcs.size()) {
       std::cout << "new: " << lines.size() << std::endl;
       std::cout << "expected: " << this->bcs.size() << std::endl;
-      unsigned i =
       throw output_line_too_less();
     }
     std::vector<double> weights;
