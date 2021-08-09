@@ -47,4 +47,6 @@ int main() {
               "(F(h & p & X(G(h  | m & p))))\n"
               "(F( p & X(G(h  & m | m & p))))");
   std::cout << abc << std::endl;
+  abc.bc_sort();
+  std::cout << abc << std::endl;
 }
