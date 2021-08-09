@@ -81,30 +81,39 @@ namespace autobc {
 
     // 生成命令行
     ltl::format_as_symbol = true;
-    std::ostringstream ostr("");
-    ostr << "java -jar " << this->likelyhood << " ";
+    std::vector<std::string> args;
+    args.push_back("java");
+    args.push_back("-jar");
+    args.push_back(this->likelyhood);
+
     for(auto& d: this->domains) {
-      ostr << "'-d=" << d.serialize() << "' ";
+      args.push_back(std::string("-d=") + d.serialize());
     }
     for(auto& g: this->goals) {
-      ostr << "'-g=" << g.serialize() << "' ";
+      args.push_back(std::string("-g=") + g.serialize());
     }
-    ostr << "'--bcfile=" << input_tmp_file << "' ";
-    ostr << "'--output=" << output_tmp_file << "'";
-    auto cmd = ostr.str();
-    ltl::format_as_symbol = format;
+    args.push_back(std::string("--bcfile=") + input_tmp_file);
+    args.push_back(std::string("--output=") + output_tmp_file);
 
-    // 运行cmd，直接从标准输出获取内容，不再读取output_tmp_file
-    FILE* pipe = popen(cmd.c_str(), "r");
-    if(!pipe) {
-      throw std::runtime_error(strerror(errno));
+    auto size = args.size();
+    char** nargs = new char*[size + 1];
+    memset(nargs, 0, sizeof(char*) * (size + 1));
+
+    for(unsigned i = 0; i < size; i++) {
+      nargs[i] = args[i].c_str();
+      std::cout << nargs[i] << std::endl;
     }
+    nargs[size] = (char*)0;
+
     std::string result;
-    char buffer[10240] = { 0 };
-    while(fgets(buffer, sizeof(buffer), pipe) != NULL) {
-      result.append(buffer);
+
+    auto pid = fork();
+    if(pid > 0) {
+      execl("java", nargs);
+    } else {
+      wait();
+      delete[] nargs;
     }
-    pclose(pipe);
     remove(input_tmp_file.c_str());
     remove(output_tmp_file.c_str());
     // 输出结果存放到result中
