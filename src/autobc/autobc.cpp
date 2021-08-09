@@ -267,10 +267,14 @@ namespace autobc {
       while(pos != std::string::npos) {
         auto next = pos;
         next = origin.find(pattern, pos);
+        std::string s;
         if(next != std::string::npos && pos != next) {
-          ret.emplace_back(origin.substr(pos, next - pos));
+          s = origin.substr(pos, next - pos);
         } else if(next == std::string::npos) {
-          ret.emplace_back(origin.substr(pos));
+          s = origin.substr(pos);
+        }
+        if(!s.empty()) {
+          ret.push_back(s);
         }
         if(next != std::string::npos) {
           pos = next + pattern.size();
