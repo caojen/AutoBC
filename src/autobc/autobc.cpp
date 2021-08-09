@@ -2,6 +2,7 @@
 #include <fstream>
 #include <unistd.h>
 #include <iostream>
+#include <string.h>
 #include "autobc.hpp"
 
 namespace autobc {
@@ -63,9 +64,9 @@ namespace autobc {
       return ret;
     };
 
-    std::string random_prefix = rand_string(16);
-    std::string input_tmp_file = random_prefix + rand_string(12);
-    std::string output_tmp_file = random_prefix + rand_string(12);
+    std::string random_prefix = rand_strings(16);
+    std::string input_tmp_file = random_prefix + rand_strings(12);
+    std::string output_tmp_file = random_prefix + rand_strings(12);
 
     // 将所有bc以行的方式写入到input_tmp_file
     std::ofstream ofstream;
@@ -113,7 +114,7 @@ namespace autobc {
       throw output_line_too_less();
     }
     std::vector<double> weights;
-    std::vector<BC> before_sort;
+    std::vector<std::string> before_sort;
     for(auto& line: lines) {
       // 每一行的内容：bc, <float>
       auto parts = split(line, ", ");
@@ -123,7 +124,7 @@ namespace autobc {
       auto formula = parts[0];
       auto f = parts[1];
       weights.push_back(atof(f));
-      before_sort.emplace_back(ltl::LTL::parse(formula));
+      before_sort.push_back(formula);
     }
     // 选择排序
     for(unsigned i = 0; i < weights.size(); i++) {
@@ -135,7 +136,7 @@ namespace autobc {
       }
       this->weight_bcs.push_back(weights[max_idx]);
       weights.erase(weights.begin() + max_idx);
-      this->sorted_bcs.emplace_back(std::move(before_sort[max_idx]));
+      this->sorted_bcs.emplace_back(ltl::LTL::parse(before_sort[max_idx]));
       before_sort.erase(before_sort.begin() + max_idx);
     }
 
