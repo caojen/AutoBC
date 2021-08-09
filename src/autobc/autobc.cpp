@@ -138,6 +138,8 @@ namespace autobc {
       this->sorted_bcs.emplace_back(std::move(before_sort[max_idx]));
       before_sort.erase(before_sort.begin() + max_idx);
     }
+
+    this->sorted = true;
   }
 
   AutoBC AutoBC::parse(const std::string &content) {
