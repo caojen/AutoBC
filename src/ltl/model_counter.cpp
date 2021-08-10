@@ -299,7 +299,7 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   std::cout << std::endl;
 
   int fd[2];
-  if(!pipe(fd)) {
+  if(pipe(fd)) {
     std::cout << "Fatal: Cannot create pipe(use system call 'pipe()' failed.)" << std::endl;
     std::cout << strerror(errno) << std::endl;
   }
