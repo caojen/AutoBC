@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <unistd.h>
 #include <array>
+#include <sys/wait.h>
+#include <cstring>
 
 #include "model_counter.hpp"
 #include "error.hpp"
