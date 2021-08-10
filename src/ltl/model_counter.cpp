@@ -308,8 +308,12 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   if(pid == 0) {
     // child, call java
     // 写入fd[1]
+    std::cout << "i am child" << std::endl;
     dup2(fd[1], 1);
     dup2(fd[1], 2);
+    close(fd[1]);
+
+    std::cout << "generate nargs" << std::endl;
 
     char* nargs[7] = { nullptr };
     for(unsigned i = 0; i < 6; i++) {
@@ -318,6 +322,7 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
       memcpy(nargs[i], s, args[i].size() * sizeof(char));
       nargs[i][args[i].size()] = 0;
     }
+    std::cout << "done. call execv: " << this->javapath;
 
     auto ret = execv(this->javapath.c_str(), nargs);
     std::cout << "fatal: child returned: " << ret << std::endl;
