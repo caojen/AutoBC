@@ -113,9 +113,9 @@ namespace ltl{
       }
 
       // 移动构造函数
-      LTL(LTL&& ltl) {
-        this->root = ltl.root;
-      }
+//      LTL(LTL&& ltl) noexcept {
+//        this->root = ltl.root;
+//      }
 
       // 保存LTLNode的指针
       std::shared_ptr<LTLNode> root;

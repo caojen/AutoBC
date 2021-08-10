@@ -2,8 +2,11 @@
 
 #include <string>
 #include <iostream>
+#include <set>
+#include "ltl.hpp"
 
 namespace ltl {
+  class LTL;
   class BigInteger {
   public:
       BigInteger() = default;
@@ -27,5 +30,15 @@ namespace ltl {
   private:
       bool        op          = true ;     // 当op为true是表示是正数，否则是负数
       std::string data       = "0"  ;     // 保留绝对值的字符串形式
+  };
+
+  class ModelCounter {
+  public:
+      ModelCounter(const std::string& counter = "../jar/modelcounting.jar");
+
+      BigInteger count(const std::set<LTL>& ltls, unsigned bound);
+
+  private:
+      std::string     counter;
   };
 }

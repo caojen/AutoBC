@@ -235,3 +235,56 @@ bool BigInteger::operator<(const BigInteger& other) const {
 bool BigInteger::operator>(const BigInteger& other) const {
   return (*this) != other && !((*this) < other);
 }
+
+ModelCounter::ModelCounter(const std::string &counter) {
+  this->counter = counter;
+}
+
+BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
+  auto format_double_and = ltl::format_double_and;
+  auto format_double_or = ltl::format_double_or;
+  auto format_symbol_F = ltl::format_symbol_F;
+  auto format_symbol_G = ltl::format_symbol_G;
+  ltl::format_double_and = true;
+  ltl::format_double_or = true;
+  ltl::format_symbol_F = false;
+  ltl::format_symbol_G = false;
+
+  auto iter = ltls.begin();
+  LTL ltl;
+  while(iter != ltls.end()) {
+    std::cout << *iter << std::endl;
+    if(ltl.root == nullptr) {
+      ltl = *iter;
+    } else {
+      ltl = ltl.aand(*iter);
+    }
+  }
+  std::cout << ltl << std::endl;
+  auto f = ltl.serialize();
+  ltl::format_double_and = format_double_and;
+  ltl::format_double_or = format_double_or;
+  ltl::format_symbol_F = format_symbol_F;
+  ltl::format_symbol_G = format_symbol_G;
+  auto k = bound;
+  std::vector<std::string> vars;
+  for(auto & kv : ltl::dict.map) {
+    vars.push_back(kv.first);
+  }
+  std::string vars_str;
+  for(unsigned i = 0; i < vars.size(); i++) {
+    vars_str.append(vars[i]);
+    if(i != vars.size() - 1) {
+      vars_str.append(",");
+    }
+  }
+  std::vector<std::string> args = {
+          "java",
+          "-jar",
+          this->counter,
+          "-k=" + std::to_string(k),
+          "-vars=" + vars_str,
+          "-f=" + ltl.serialize()
+  };
+
+}
