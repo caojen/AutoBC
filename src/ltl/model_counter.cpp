@@ -308,7 +308,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   if(pid == 0) {
     // child, call java
     // 写入fd[1]
-    std::cout << "i am child" << std::endl;
     dup2(fd[1], 1);
     dup2(fd[1], 2);
     close(fd[1]);
@@ -329,18 +328,16 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     std::cout << "fork failed" << std::endl;
     exit(1);
   } else if(pid > 0) {
-    std::cout << "waiting pid " << std::endl;
     waitpid(pid, nullptr, 0);
   }
-  std::cout << "wait pid done" << std::endl;
   std::string result;
   char buf[1024] = { 0 };
   close(fd[1]);
   while(read(fd[0], buf, 1024)) {
-    std::cout << "read: " << buf << std::endl;
     result.append(buf);
   }
   close(fd[0]);
+  result = result.substr(0, result.size() - 1);
   std::cout << "get from pipe: " << result << std::endl;
   return { result };
 }
