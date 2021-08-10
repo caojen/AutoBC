@@ -9,7 +9,7 @@ include_directories(include/ltl)
 include_directories(include/rander)
 include_directories(include/autobc)
 
-set(LTL_BASIC src/ltl/dict.cpp src/ltl/literal.cpp src/ltl/ltl.cpp src/ltl/operator.cpp src/ltl/sat.cpp)
+set(LTL_BASIC src/ltl/dict.cpp src/ltl/literal.cpp src/ltl/ltl.cpp src/ltl/operator.cpp src/ltl/sat.cpp src/ltl/model_counter.cpp)
 
 add_compile_options(-Wall -g)
 

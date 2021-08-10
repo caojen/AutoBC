@@ -27,8 +27,16 @@ namespace ltl {
 
   bool SatSolver::operator()(const LTL& ltl) {
       // 将1设置为a | !a, 0 设置为 a&!a
-      dict.set("1", "((a)|(!(a)))");
-      dict.set("0", "((a)&(!(a)))");
+      if(ltl::format_double_or) {
+        dict.set("1", "((a)||(!(a)))");
+      } else {
+        dict.set("1", "((a)|(!(a)))");
+      }
+      if(ltl::format_double_and) {
+        dict.set("0", "((a)&&(!(a)))");
+      } else {
+        dict.set("0", "((a)&(!(a)))");
+      }
 
       auto str_ltl = ltl.serialize();
       auto iter = this->cache.find(str_ltl);

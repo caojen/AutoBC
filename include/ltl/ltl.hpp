@@ -15,6 +15,7 @@
 #include "dict.hpp"
 #include "error.hpp"
 #include "sat.hpp"
+#include "model_counter.hpp"
 
 namespace ltl{
   class LTL {

@@ -17,4 +17,11 @@ namespace ltl {
         return "Code reaches unreachable area";
       }  
   };
+
+  class not_an_integer: public std::exception {
+  public:
+      virtual char const * what() const noexcept {
+        return "BigInteger got a string that is not an integer";
+      }
+  };
 }
