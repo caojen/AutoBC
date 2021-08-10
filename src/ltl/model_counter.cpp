@@ -264,6 +264,7 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     } else {
       ltl = ltl.aand(*iter);
     }
+    ++iter;
   }
   std::cout << ltl << std::endl;
   auto f = ltl.serialize();
