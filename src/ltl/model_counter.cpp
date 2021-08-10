@@ -313,8 +313,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     dup2(fd[1], 2);
     close(fd[1]);
 
-    std::cout << "generate nargs" << std::endl;
-
     char* nargs[7] = { nullptr };
     for(unsigned i = 0; i < 6; i++) {
       nargs[i] = new char[args[i].size() + 1];
@@ -322,7 +320,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
       memcpy(nargs[i], s, args[i].size() * sizeof(char));
       nargs[i][args[i].size()] = 0;
     }
-    std::cout << "done. call execv: " << this->javapath;
 
     auto ret = execv(this->javapath.c_str(), nargs);
     std::cout << "fatal: child returned: " << ret << std::endl;
@@ -332,12 +329,14 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     std::cout << "fork failed" << std::endl;
     exit(1);
   } else if(pid > 0) {
+    std::cout << "waiting pid " << std::endl;
     waitpid(pid, nullptr, 0);
   }
-
+  std::cout << "wait pid done" << std::endl;
   std::string result;
   char buf[1024] = { 0 };
   while(read(fd[0], buf, 1024)) {
+    std::cout << "read: " << buf << std::endl;
     result.append(buf);
   }
   std::cout << "get from pipe: " << result << std::endl;
