@@ -285,9 +285,10 @@ namespace autobc {
     return s;
   }
 
-  const Goal &AutoBC::get_fix_goal(unsigned int bound) {
+  const Goal &AutoBC::get_fix_goal(unsigned int bound, const std::string& javapath) {
 
     ltl::ModelCounter mc;
+    mc.javapath = javapath;
     const Goal* ret = nullptr;
     ltl::BigInteger mbi;
 
@@ -295,7 +296,7 @@ namespace autobc {
       auto workspace = this->domains;
       workspace.insert(goal);
       workspace.insert(*this->target_bc);
-      auto tbi = mc.count(workspace, 3);
+      auto tbi = mc.count(workspace, bound);
       if(!ret || tbi > mbi) {
         ret = &goal;
         mbi = tbi;

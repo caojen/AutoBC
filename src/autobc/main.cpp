@@ -8,6 +8,7 @@ int main() {
   auto abc = AutoBC::parse("Domains: []((p && X(p)) -> X(X(! h)))\n"
                            "Goals: [](h -> X(p)), [](m -> X(! p))");
   abc.likelyhood = "../Lasso-BC/likelyhood.jar";
+  abc.javapath = "/usr/bin/java";
   abc.use_bcs("minepump\n"
               "(F( h & m))\n"
               "(F( p & X(G(h  & m & !p | m & p))))\n"
@@ -52,6 +53,6 @@ int main() {
 //  std::cout << abc << std::endl;
   std::cout << "use bc: " << abc.sorted_bcs[0] << std::endl;
   std::cout << "running model counting..." << std::endl;
-  auto goal = abc.get_fix_goal();
+  auto goal = abc.get_fix_goal(3, "/jdk-16.0.2+7/bin/java");
   std::cout << "get goal: " << goal << std::endl;
 }

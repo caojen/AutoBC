@@ -38,8 +38,7 @@ namespace ltl {
 
       BigInteger count(const std::set<LTL>& ltls, unsigned bound);
 
-  private:
       std::string     counter;
-      std::string     javapath;
+      std::string     javapath;           // java的路径，ModelCounter的jdk规定为16
   };
 }

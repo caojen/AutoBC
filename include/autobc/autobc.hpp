@@ -26,7 +26,7 @@ namespace autobc {
     bool                 sorted = false;
 
     std::string          likelyhood;                        // likelyhood.jar 的路径
-    std::string          javapath = "/usr/bin/java";        // java的路径
+    std::string          javapath = "/usr/bin/java";        // java的路径, AutoBC的java-jdk版本需要为8(1.8)
 
     AutoBC(std::string likelyhood = "./Lasso-BC/likelyhood.jar");
 
@@ -55,7 +55,8 @@ namespace autobc {
     std::string into(const std::string& filename) const;
 
     // 在生成排序的bc之后，根据第一个bc，返回应该需要修复的goal
-    const Goal& get_fix_goal(unsigned bound = 100);
+    // 使用的javapath需要传入到model counter里面，jdk应该是16
+    const Goal &get_fix_goal(unsigned int bound, const std::string& javapath = "/usr/local/bin");
 
     // 生成需要修复的goal之后，进行修复
     void fix(unsigned k);
