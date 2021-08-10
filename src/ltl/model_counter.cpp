@@ -1,4 +1,6 @@
 #include <algorithm>
+#include <unistd.h>
+#include <array>
 
 #include "model_counter.hpp"
 #include "error.hpp"
@@ -236,8 +238,9 @@ bool BigInteger::operator>(const BigInteger& other) const {
   return (*this) != other && !((*this) < other);
 }
 
-ModelCounter::ModelCounter(const std::string &counter) {
+ModelCounter::ModelCounter(const std::string &counter, const std::string& javapath) {
   this->counter = counter;
+  this->javapath = javapath;
 }
 
 BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
@@ -278,13 +281,57 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
       vars_str.append(",");
     }
   }
-  std::vector<std::string> args = {
+  std::array<std::string, 6> args = {
           "java",
           "-jar",
           this->counter,
           "-k=" + std::to_string(k),
           "-vars=" + vars_str,
-          "-f=" + ltl.serialize()
+          "-f=" + f
   };
+  std::cout << "running command: ";
+  for(auto &arg: args) {
+    std::cout << arg << " ";
+  }
+  std::cout << std::endl;
 
+  int fd[2];
+  if(!pipe(fd)) {
+    std::cout << "Fatal: Cannot create pipe(use system call 'pipe()' failed.)" << std::endl;
+    std::cout << strerror(errno) << std::endl;
+  }
+
+  int pid = fork();
+  if(pid == 0) {
+    // child, call java
+    // 写入fd[1]
+    dup2(fd[1], 1);
+    dup2(fd[1], 2);
+
+    char* nargs[7] = { nullptr };
+    for(unsigned i = 0; i < 6; i++) {
+      nargs[i] = new char[args[i].size() + 1];
+      auto s = args[i].c_str();
+      memcpy(nargs[i], s, args[i].size() * sizeof(char));
+      nargs[i][args[i].size()] = 0;
+    }
+
+    auto ret = execv(this->javapath.c_str(), nargs);
+    std::cout << "fatal: child returned: " << ret << std::endl;
+    std::cout << strerror(errno) << std::endl;
+    exit(1);
+  } else if(pid < 0) {
+    std::cout << "fork failed" << std::endl;
+    exit(1);
+  } else if(pid > 0) {
+    waitpid(pid, nullptr, 0);
+  }
+
+  std::string result;
+  char buf[1024] = { 0 };
+  while(read(fd[0], buf, 1024)) {
+    result.append(buf);
+  }
+  std::cout << "get from pipe: " << result << std::endl;
+  return { result };
 }

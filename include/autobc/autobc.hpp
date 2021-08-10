@@ -20,6 +20,9 @@ namespace autobc {
     std::vector<BC>      sorted_bcs;
     std::vector<double>  weight_bcs;
 
+    Goal*                target_goal = nullptr;
+    BC*                  target_bc = nullptr;
+
     bool                 sorted = false;
 
     std::string          likelyhood;                        // likelyhood.jar 的路径
@@ -50,6 +53,12 @@ namespace autobc {
     std::string into() const;
     // 将into()生成的字符串截断写入文件，返回字符串内容
     std::string into(const std::string& filename) const;
+
+    // 在生成排序的bc之后，根据第一个bc，返回应该需要修复的goal
+    const Goal& get_fix_goal(unsigned bound = 100);
+
+    // 生成需要修复的goal之后，进行修复
+    void fix(unsigned k);
   };
 }
 

@@ -139,8 +139,9 @@ namespace autobc {
       auto ret = execv(this->javapath.c_str(), nargs);
       std::cout << "fatal: child returned: " << ret << std::endl;
       std::cout << strerror(errno) << std::endl;
+      exit(1);
     } else if(pid > 0) {
-      waitpid(pid, 0, 0);
+      waitpid(pid, nullptr, 0);
       for(unsigned i = 0; i < size; i++) {
         delete[] nargs[i];
       }
@@ -196,6 +197,7 @@ namespace autobc {
     }
 
     this->sorted = true;
+    this->target_bc = &this->sorted_bcs[0];
     ltl::format_double_and = format_double_and;
     ltl::format_double_or = format_double_or;
     ltl::format_symbol_F = format_symbol_F;
@@ -281,6 +283,26 @@ namespace autobc {
     ofstream << s;
     ofstream.close();
     return s;
+  }
+
+  const Goal &AutoBC::get_fix_goal(unsigned int bound) {
+
+    ltl::ModelCounter mc;
+    const Goal* ret = nullptr;
+    ltl::BigInteger mbi;
+
+    for(auto& goal: this->goals) {
+      auto workspace = this->domains;
+      workspace.insert(goal);
+      workspace.insert(*this->target_bc);
+      auto tbi = mc.count(workspace, 3);
+      if(!ret || tbi > mbi) {
+        ret = &goal;
+        mbi = tbi;
+      }
+    }
+    this->target_goal = const_cast<Goal*>(ret);
+    return *ret;
   }
 }
 

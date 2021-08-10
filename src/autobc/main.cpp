@@ -51,4 +51,7 @@ int main() {
   abc.bc_sort();
 //  std::cout << abc << std::endl;
   std::cout << "use bc: " << abc.sorted_bcs[0] << std::endl;
+  std::cout << "running model counting..." << std::endl;
+  auto goal = abc.get_fix_goal();
+  std::cout << "get goal: " << goal << std::endl;
 }

@@ -34,11 +34,12 @@ namespace ltl {
 
   class ModelCounter {
   public:
-      ModelCounter(const std::string& counter = "../jar/modelcounting.jar");
+      ModelCounter(const std::string& counter = "../jar/modelcounting.jar", const std::string& javapath = "/usr/bin/java");
 
       BigInteger count(const std::set<LTL>& ltls, unsigned bound);
 
   private:
       std::string     counter;
+      std::string     javapath;
   };
 }
