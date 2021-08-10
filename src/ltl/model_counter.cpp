@@ -335,10 +335,12 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   std::cout << "wait pid done" << std::endl;
   std::string result;
   char buf[1024] = { 0 };
+  close(fd[1]);
   while(read(fd[0], buf, 1024)) {
     std::cout << "read: " << buf << std::endl;
     result.append(buf);
   }
+  close(fd[0]);
   std::cout << "get from pipe: " << result << std::endl;
   return { result };
 }
