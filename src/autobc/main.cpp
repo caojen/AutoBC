@@ -1,6 +1,7 @@
 #include "ltl.hpp"
 #include "autobc.hpp"
 #include "fix_solver.hpp"
+#include "lasso.hpp"
 
 using namespace ltl;
 using namespace autobc;
@@ -61,7 +62,7 @@ int main() {
   std::set<LTL> domains;
   domains.insert(domain);
   auto goal = LTL::parse("G(!h | X(p))");
-  auto lasso = LTL::parse("F(h & m)");
+  auto lasso = Lasso(LTL::parse("F(h & m)"));
   FixSolver solver(domains, goal, lasso);
   auto res = solver.next();
 

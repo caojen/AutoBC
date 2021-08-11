@@ -3,7 +3,7 @@
 using namespace ltl;
 
 namespace autobc {
-  FixSolver::FixSolver(std::set<ltl::LTL>& domains, ltl::LTL& goal, ltl::LTL& bc) {
+  FixSolver::FixSolver(std::set<ltl::LTL>& domains, ltl::LTL& goal, Lasso& bc) {
     this->domains = domains;
     this->goal = goal;
     this->bc = bc;
@@ -39,8 +39,7 @@ namespace autobc {
     return this->prev;
   }
 
-  std::set<LTL> FixSolver::SR(const LTL& formula, const ltl::LTL& lasso) {
-    std::cout << "Call SR[" << formula << "]" << std::endl;
+  std::set<LTL> FixSolver::SR(const LTL& formula, const Lasso& lasso) {
     std::set<LTL> ret;
 
     auto& root = formula.root;
@@ -169,7 +168,7 @@ namespace autobc {
     return ret;
   }
 
-  std::set<LTL> FixSolver::WR(const LTL& formula, const ltl::LTL& lasso) {
+  std::set<LTL> FixSolver::WR(const LTL& formula, const Lasso& lasso) {
     return {};
   }
 }
