@@ -19,108 +19,126 @@ namespace ltl {
       virtual ~Operator() = default;
       virtual unsigned weight() const = 0;
       static std::shared_ptr<Operator> gen(const std::string& s);
+      virtual bool can_reverse() const = 0;
   };
 
   class Op1: public Operator {
     public:
       std::string str() const { return "Op1"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Op2: public Operator {
     public:
       std::string str() const { return "Op2"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class EmptyOp: public Op1 {
     public:
       std::string str() const { return "EmptyOp"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class LTLOp1: public Op1 {
     public:
       std::string str() const { return "LTLOp1"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class LTLOp2: public Op2 {
     public:
       std::string str() const { return "LTLOp2"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class ProOp1: public Op1 {
     public:
       std::string str() const { return "ProOp1"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class ProOp2: public Op2 {
     public:
       std::string str() const { return "ProOp2"; }
       unsigned weight() const { return 0; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Next: public LTLOp1 {
     public:
       std::string str() const { return "X"; }
       unsigned weight() const { return 3; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Finally: public LTLOp1 {
     public:
       std::string str() const { return format_symbol_F ? "<>": "F"; }
       unsigned weight() const { return 3; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Global: public LTLOp1 {
     public:
       std::string str() const { return format_symbol_G ? "[]": "G"; }
       unsigned weight() const { return 3; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Until: public LTLOp2 {
     public:
       std::string str() const { return "U"; }
       unsigned weight() const { return 1; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Release: public LTLOp2 {
     public:
       std::string str() const { return "R"; }
       unsigned weight() const { return 1; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Not: public ProOp1 {
     public:
       std::string str() const { return "!"; }
       unsigned weight() const { return 3; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class And: public ProOp2 {
     public:
       std::string str() const { return format_double_and ? "&&": "&"; }
       unsigned weight() const { return 2; }
+      virtual bool can_reverse() const { return true; }
   };
 
   class Or: public ProOp2 {
     public:
       std::string str() const { return format_double_or ? "||": "|"; }
       unsigned weight() const { return 1; }
+      virtual bool can_reverse() const { return true; }
   };
 
   class Imply: public ProOp2 {
     public:
       std::string str() const { return "->"; }
       unsigned weight() const { return 1; }
+      virtual bool can_reverse() const { return false; }
   };
 
   class Equal: public ProOp2 {
     public:
       std::string str() const { return "<->"; }
       unsigned weight() const { return 1; }
+      virtual bool can_reverse() const { return true; }
   };
 
   namespace op {

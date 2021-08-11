@@ -231,13 +231,37 @@ namespace ltl {
       ostr << this->right->serialize();
       ostr << ")";
     } else if(this->is_op2()) {
-      ostr << "(";
-      ostr << this->left->serialize();
-      ostr << ")";
-      ostr << this->op->str();
-      ostr << "(";
-      ostr << this->right->serialize();
-      ostr << ")";
+
+      auto left = this->left->serialize();
+      auto right = this->right->serialize();
+
+      if(this->op->can_reverse()) {
+        if(left < right) {
+          ostr << "(";
+          ostr << left;
+          ostr << ")";
+          ostr << this->op->str();
+          ostr << "(";
+          ostr << right;
+          ostr << ")";
+        } else {
+          ostr << "(";
+          ostr << right;
+          ostr << ")";
+          ostr << this->op->str();
+          ostr << "(";
+          ostr << left;
+          ostr << ")";
+        }
+      } else {
+        ostr << "(";
+        ostr << left;
+        ostr << ")";
+        ostr << this->op->str();
+        ostr << "(";
+        ostr << right;
+        ostr << ")";
+      }
     } else {
       throw not_a_ltl();
     }
