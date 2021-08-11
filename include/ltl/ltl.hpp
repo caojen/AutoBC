@@ -103,6 +103,18 @@ namespace ltl{
             }
             return ret;
           };
+
+          bool is_boolean_formula() const {
+            if(this->is_literal()) {
+              return true;
+            } else if(this->is_op1()) {
+              return dynamic_cast<ProOp1*>(this->op.get()) != nullptr;
+            } else if(this->is_op2()) {
+              return dynamic_cast<ProOp2*>(this->op.get()) != nullptr;
+            } else {
+              throw not_a_ltl();
+            }
+          }
       };
 
       LTL() = default;
@@ -156,6 +168,9 @@ namespace ltl{
       // 获取这个LTL的层序遍历的LTLNode，不拷贝，直接返回节点的指针
       std::vector<LTLNode*>
         get_level_order();
+      
+      // 判断这个LTL是不是一个只有布尔逻辑运算符的LTL
+      bool is_boolean_formula() const;
   };
 }
 

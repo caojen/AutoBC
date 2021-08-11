@@ -342,4 +342,8 @@ namespace ltl {
 
     return ret;
   }
+
+  bool LTL::is_boolean_formula() const {
+    return this->root->is_boolean_formula();
+  }
 }
