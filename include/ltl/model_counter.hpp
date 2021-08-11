@@ -18,7 +18,10 @@ namespace ltl {
       BigInteger(const BigInteger&) = default;
 
       std::string serialize() const;
-      friend std::ostream& operator<<(std::ostream& o, const BigInteger& bi);
+      friend std::ostream& operator<<(std::ostream& o, const BigInteger& bi) {
+        o << bi.serialize();
+        return o;
+      }
 
       // 重载加减法，比较运算符
       BigInteger operator+(const BigInteger& other) const;

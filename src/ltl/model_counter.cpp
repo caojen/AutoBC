@@ -62,11 +62,6 @@ std::string BigInteger::serialize() const {
   return ret;
 }
 
-std::ostream& ltl::operator<<(std::ostream& o, const BigInteger& bi) {
-  o << bi.serialize();
-  return o;
-}
-
 BigInteger BigInteger::operator+(const BigInteger& other) const {
   BigInteger ret;
   if(this->op == other.op) {

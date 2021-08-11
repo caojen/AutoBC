@@ -112,6 +112,14 @@ namespace ltl{
         this->root = std::make_shared<LTLNode>(*ltl.root);
       }
 
+      LTL(const LTLNode& node) {
+        this->root = std::make_shared<LTLNode>(node);
+      }
+
+      LTL(const std::shared_ptr<LTLNode>& ptr) {
+        this->root = std::make_shared<LTLNode>(*ptr);
+      }
+
       // 移动构造函数
 //      LTL(LTL&& ltl) noexcept {
 //        this->root = ltl.root;
