@@ -26,7 +26,15 @@ namespace param {
 
   void Param::run(int argc, char** argv) {
     for(int i = 1; i < argc; i++) {
-      auto key = std::string(argv[i]);
+      auto target = std::string(argv[i]);
+      std::string key;
+      if(briefs.find(target) != briefs.end()) {
+        key = briefs[target];
+      } else if(details.find(target) != details.end()) {
+        key = details[target];
+      } else {
+        throw no_such_key(target);
+      }
       if(keys.find(key) == keys.end()) {
         throw no_such_key(key);
       }
