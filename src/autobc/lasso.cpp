@@ -16,12 +16,14 @@ namespace autobc {
 
       if(node->is_literal()) {
         this->terms.insert({ true, node->literal });
+        this->literals.insert(node->literal);
       } else if(node->is_op1()) {
         if(
           dynamic_cast<Not*>(node->op.get()) != nullptr &&
           node->right->is_literal()
         ) {
           this->terms.insert({ false, node->right->literal });
+          this->literals.insert(node->literal);
         } else {
           nodes.push(node->right);
         }
@@ -33,21 +35,21 @@ namespace autobc {
       }
     }
 
-    this->always_true = false;
+    this->always_false = false;
     for(auto& term: this->terms) {
       for(auto& i: this->terms) {
         if(term.first != i.first && term.second == i.second) {
-          this->always_true = true;
+          this->always_false = true;
           break;
         }
       }
-      if(this->always_true) {
+      if(this->always_false) {
         break;
       }
     }
 
 
-    if(!this->always_true) {
+    if(!this->always_false) {
       std::string str;
       for(auto iter = this->terms.begin(); iter != this->terms.end(); ++iter) {
         if(!iter->first) {

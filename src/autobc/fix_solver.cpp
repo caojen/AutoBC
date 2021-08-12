@@ -2,6 +2,32 @@
 
 using namespace ltl;
 
+static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::shared_ptr<ltl::Literal>> {
+  std::set<std::shared_ptr<ltl::Literal>> ret;
+  std::queue<std::shared_ptr<ltl::LTL::LTLNode>> queue;
+  if(f.root.get() == nullptr) {
+    return ret;
+  } else {
+    queue.push(f.root);
+  }
+
+  while(!queue.empty()) {
+    auto node = queue.front(); queue.pop();
+    if(node->is_literal()) {
+      ret.insert(node->literal);
+    } else if(node->is_op1()) {
+      queue.push(node->right);
+    } else if(node->is_op2()) {
+      queue.push(node->left);
+      queue.push(node->right);
+    } else {
+      throw not_a_ltl();
+    }
+  }
+
+  return ret;
+};
+
 namespace autobc {
   FixSolver::FixSolver(std::set<ltl::LTL>& domains, ltl::LTL& goal, Lasso& bc) {
     this->domains = domains;
@@ -18,17 +44,23 @@ namespace autobc {
     std::set<ltl::LTL> next;
 
     for(auto& formula: this->prev) {
+      std::cout << "Solving formula: " << formula << std::endl;
       auto wrs = WR(formula, bc);
       auto srs = SR(formula, bc);
 
+      std::cout << "\tWR: " << wrs.size() << std::endl;
       for(auto& wr: wrs) {
         if(used.find(wr) == used.end()) {
+          std::cout << "\t\t" << wr << std::endl;
           used.insert(wr);
           next.insert(wr);
         }
       }
+
+      std::cout << "\tSR: " << srs.size() << std::endl;
       for(auto& sr: srs) {
         if(used.find(sr) == used.end()) {
+          std::cout << "\t\t" << sr << std::endl;
           used.insert(sr);
           next.insert(sr);
         }
@@ -163,8 +195,21 @@ namespace autobc {
       }
     }
 
-    // TODO: 选择在formula出现的可以蕴含lasso的状态去除
-    
+    // 2. 选择在formula出现的可以蕴含lasso的状态去除
+    if(!lasso.always_false && formula.is_boolean_formula()) {
+      auto all_literals = get_all_literals(formula);
+      bool exists = false;
+
+      for(auto &literal: all_literals) {
+        if(lasso.literals.find(literal) != lasso.literals.end()) {
+          exists = true;
+          break;
+        }
+      }
+      if(!exists) {
+        ret.emplace(formula.aand(lasso.to.nnot()));
+      }
+    }
     return ret;
   }
 
