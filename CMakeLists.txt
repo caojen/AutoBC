@@ -8,8 +8,9 @@ include_directories(include)
 include_directories(include/ltl)
 include_directories(include/rander)
 include_directories(include/autobc)
+include_directories(include/param)
 
-set(LTL_BASIC src/ltl/dict.cpp src/ltl/literal.cpp src/ltl/ltl.cpp src/ltl/operator.cpp src/ltl/sat.cpp src/ltl/model_counter.cpp)
+set(LTL_BASIC src/ltl/dict.cpp src/ltl/literal.cpp src/ltl/ltl.cpp src/ltl/operator.cpp src/ltl/sat.cpp src/ltl/model_counter.cpp src/param/param.cpp)
 
 add_compile_options(-Wall -g)
 
