@@ -91,16 +91,6 @@ int main(int argc, char** argv) {
 
   parser.run(argc, argv);
 
-  std::cout << parser["global"] << std::endl;
-  std::cout << parser["bcfile"] << std::endl;
-  std::cout << parser["ignore"] << std::endl;
-  std::cout << parser["jdk1.8"] << std::endl;
-  std::cout << parser["jdk16"] << std::endl;
-  std::cout << parser["k"] << std::endl;
-  std::cout << parser["level"] << std::endl;
-  std::cout << parser["likelyhood"] << std::endl;
-  std::cout << parser["modelcounting"] << std::endl;
-
   FileReader fr;
   auto global = fr(parser["global"]);
   auto bcfile = fr(parser["bcfile"]);

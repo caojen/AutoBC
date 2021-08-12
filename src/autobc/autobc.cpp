@@ -298,7 +298,7 @@ namespace autobc {
       workspace.insert(goal);
       workspace.insert(*this->target_bc);
       auto tbi = mc.count(workspace, bound);
-      if(!ret || tbi > mbi) {
+      if(!ret || tbi < mbi) {
         ret = &goal;
         mbi = tbi;
       }
