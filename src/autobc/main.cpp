@@ -126,8 +126,14 @@ int main(int argc, char** argv) {
   std::cout << "Target Goal is " << *target_goal << std::endl;
 
   std::cout << "Fix at level: " << level << std::endl;
-  // auto fix_result = abc.fix(level);
+  auto fix_result = abc.fix(level);
   std::cout << "Fix Done..." << std::endl;
+  for(int i = 0; i < level; i++) {
+    std::cout << "Level " << i + 1 << " Fix Result " << std::endl;
+    for(auto& goal: fix_result.at(i)) {
+      std::cout << "\t" << goal << std::endl;
+    }
+  }
 
   return 0;
 }
