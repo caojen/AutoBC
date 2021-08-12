@@ -33,7 +33,7 @@ static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::pair<bool,
 };
 
 namespace autobc {
-  FixSolver::FixSolver(std::set<ltl::LTL>& domains, ltl::LTL& goal, Lasso& bc) {
+  FixSolver::FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc) {
     this->domains = domains;
     this->goal = goal;
     this->bc = bc;

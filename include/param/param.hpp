@@ -6,6 +6,8 @@
 #include <map>
 #include <set>
 
+#include "file_reader.hpp"
+
 namespace param {
   class Param {
     public:

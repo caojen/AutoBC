@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ltl.hpp"
 #include "lasso.hpp"
 
@@ -6,8 +8,8 @@
 namespace autobc {
   class FixSolver {
     public:
-      FixSolver() = delete;
-      FixSolver(std::set<ltl::LTL>& domains, ltl::LTL& goal, Lasso& bc);
+      FixSolver() = default;
+      FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc);
 
       const std::set<ltl::LTL>& next();
       // 算法主函数

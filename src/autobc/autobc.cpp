@@ -11,6 +11,8 @@
 #include <sys/wait.h>
 #include "autobc.hpp"
 
+using namespace ltl;
+
 namespace autobc {
   AutoBC::AutoBC(std::string likelyhood) {
     std::srand(std::time(nullptr));
@@ -136,7 +138,7 @@ namespace autobc {
       dup2(fd, 1);
       dup2(fd, 2);
       close(fd);
-      auto ret = execv(this->javapath.c_str(), nargs);
+      auto ret = execv(this->jdk8.c_str(), nargs);
       std::cout << "fatal: child returned: " << ret << std::endl;
       std::cout << strerror(errno) << std::endl;
       exit(1);
@@ -285,10 +287,9 @@ namespace autobc {
     return s;
   }
 
-  const Goal &AutoBC::get_fix_goal(unsigned int bound, const std::string& javapath) {
+  const Goal &AutoBC::get_fix_goal(unsigned int bound, const std::string& jdk16) {
 
-    ltl::ModelCounter mc;
-    mc.javapath = javapath;
+    ltl::ModelCounter mc(this->modelcounting, jdk16);
     const Goal* ret = nullptr;
     ltl::BigInteger mbi;
 
@@ -304,6 +305,17 @@ namespace autobc {
     }
     this->target_goal = const_cast<Goal*>(ret);
     return *ret;
+  }
+
+  const std::vector<std::set<LTL>>& AutoBC::fix(unsigned k) {
+    auto lasso = Lasso(*this->target_bc);
+    this->fixSolver = FixSolver(this->domains, *this->target_goal, lasso);
+    std::vector<std::set<LTL>> ret;
+    for(unsigned i = 0; i < k; i++) {
+      auto next_res = fixSolver.next();
+      ret.push_back(next_res);
+    }
+    return ret;
   }
 }
 

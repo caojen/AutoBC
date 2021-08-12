@@ -253,7 +253,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   auto iter = ltls.begin();
   LTL ltl;
   while(iter != ltls.end()) {
-    std::cout << *iter << std::endl;
     if(ltl.root == nullptr) {
       ltl = *iter;
     } else {
@@ -261,7 +260,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     }
     ++iter;
   }
-  std::cout << ltl << std::endl;
   auto f = ltl.serialize();
   ltl::format_double_and = format_double_and;
   ltl::format_double_or = format_double_or;
@@ -287,11 +285,6 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
           "-vars=" + vars_str,
           "-f=" + f
   };
-  std::cout << "running command: ";
-  for(auto &arg: args) {
-    std::cout << arg << " ";
-  }
-  std::cout << std::endl;
 
   int fd[2];
   if(pipe(fd)) {
@@ -333,6 +326,5 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   }
   close(fd[0]);
   result = result.substr(0, result.size() - 1);
-  std::cout << "get from pipe: " << result << std::endl;
   return { result };
 }

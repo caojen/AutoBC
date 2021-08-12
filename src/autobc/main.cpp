@@ -86,6 +86,8 @@ int main(int argc, char** argv) {
   parser.set("-6", "--jdk16", "jdk16", true, false, "Specify JDK 16 java execute path. Default: /usr/bin/java", "/usr/bin/java");
   parser.set("-k", "--k", "k", true, true, "Specify K of Model Counting.");
   parser.set("-l", "--level", "level", true, true, "Specify Level of our algorithm.");
+  parser.set("-e", "--likelyhood", "likelyhood", true, true, "Specify LikelyHood.jar.");
+  parser.set("-m", "--modelcounting", "modelcounting", true, true, "Specify ModelCounting.jar.");
 
   parser.run(argc, argv);
 
@@ -96,4 +98,36 @@ int main(int argc, char** argv) {
   std::cout << parser["jdk16"] << std::endl;
   std::cout << parser["k"] << std::endl;
   std::cout << parser["level"] << std::endl;
+  std::cout << parser["likelyhood"] << std::endl;
+  std::cout << parser["modelcounting"] << std::endl;
+
+  FileReader fr;
+  auto global = fr(parser["global"]);
+  auto bcfile = fr(parser["bcfile"]);
+  auto ignore_first_line = parser["ignore"] == "true";
+  auto jdk8 = parser["jdk1.8"];
+  auto jdk16 = parser["jdk16"];
+  auto k = atoi(parser["k"].c_str());
+  auto level = atoi(parser["level"].c_str());
+  auto likelyhoood = parser["likelyhood"];
+  auto modelcounting = parser["modelcounting"];
+
+  auto abc = AutoBC::parse(global);
+  abc.likelyhood = likelyhoood;
+  abc.modelcounting = modelcounting;
+  abc.jdk8 = jdk8;
+  abc.use_bcs(bcfile, !ignore_first_line);
+  std::cout << abc << std::endl;
+  abc.bc_sort();
+  auto target_bc = abc.target_bc;
+  std::cout << "Target BC is " << *target_bc << std::endl;
+  abc.get_fix_goal(k, jdk16);
+  auto target_goal = abc.target_goal;
+  std::cout << "Target Goal is " << *target_goal << std::endl;
+
+  std::cout << "Fix at level: " << level << std::endl;
+  // auto fix_result = abc.fix(level);
+  std::cout << "Fix Done..." << std::endl;
+
+  return 0;
 }

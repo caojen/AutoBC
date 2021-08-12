@@ -6,6 +6,7 @@
 #include "ltl.hpp"
 #include "error.hpp"
 #include "autobc_error.hpp"
+#include "fix_solver.hpp"
 
 namespace autobc {
   typedef ltl::LTL Domain;
@@ -19,6 +20,9 @@ namespace autobc {
     std::set<BC>         bcs;
     std::vector<BC>      sorted_bcs;
     std::vector<double>  weight_bcs;
+    std::vector<std::set<ltl::LTL>>
+                         fixed_goals;
+    FixSolver            fixSolver;
 
     Goal*                target_goal = nullptr;
     BC*                  target_bc = nullptr;
@@ -26,7 +30,8 @@ namespace autobc {
     bool                 sorted = false;
 
     std::string          likelyhood;                        // likelyhood.jar 的路径
-    std::string          javapath = "/usr/bin/java";        // java的路径, AutoBC的java-jdk版本需要为8(1.8)
+    std::string          modelcounting;                     // modelcounting.jar的路径
+    std::string          jdk8 = "/usr/bin/java";        // java的路径, AutoBC的java-jdk版本需要为8(1.8)
 
     AutoBC(std::string likelyhood = "./Lasso-BC/likelyhood.jar");
 
@@ -56,10 +61,10 @@ namespace autobc {
 
     // 在生成排序的bc之后，根据第一个bc，返回应该需要修复的goal
     // 使用的javapath需要传入到model counter里面，jdk应该是16
-    const Goal &get_fix_goal(unsigned int bound, const std::string& javapath = "/usr/local/bin");
+    const Goal &get_fix_goal(unsigned int bound, const std::string& jdk16 = "/usr/local/bin");
 
     // 生成需要修复的goal之后，进行修复
-    void fix(unsigned k);
+    const std::vector<std::set<ltl::LTL>>& fix(unsigned k);
   };
 }
 
