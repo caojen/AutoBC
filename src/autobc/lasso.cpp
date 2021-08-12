@@ -15,9 +15,16 @@ namespace autobc {
       auto node = nodes.front(); nodes.pop();
 
       if(node->is_literal()) {
-        this->terms.insert(node->literal);
+        this->terms.insert({ true, node->literal });
       } else if(node->is_op1()) {
-        nodes.push(node->right);
+        if(
+          dynamic_cast<Not*>(node->op.get()) != nullptr &&
+          node->right->is_literal()
+        ) {
+          this->terms.insert({ false, node->right->literal });
+        } else {
+          nodes.push(node->right);
+        }
       } else if(node->is_op2()) {
         nodes.push(node->left);
         nodes.push(node->right);
@@ -26,14 +33,32 @@ namespace autobc {
       }
     }
 
-    std::string str;
-    for(auto iter = terms.begin(); iter != terms.end(); ++iter) {
-      str.append((*iter)->serialize());
-      if(std::next(iter) != terms.end()) {
-        str.append("&");
+    this->always_true = false;
+    for(auto& term: this->terms) {
+      for(auto& i: this->terms) {
+        if(term.first != i.first && term.second == i.second) {
+          this->always_true = true;
+          break;
+        }
+      }
+      if(this->always_true) {
+        break;
       }
     }
 
-    this->to = LTL::parse(str);
+
+    if(!this->always_true) {
+      std::string str;
+      for(auto iter = this->terms.begin(); iter != this->terms.end(); ++iter) {
+        if(!iter->first) {
+          str.append("!");
+        }
+        str.append(iter->second.get()->serialize());
+        if(std::next(iter) != this->terms.end()) {
+          str.append("&");
+        }
+      }
+      this->to = LTL::parse(str);
+    }
   }
 }
