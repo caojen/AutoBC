@@ -108,9 +108,17 @@ namespace ltl{
             if(this->is_literal()) {
               return true;
             } else if(this->is_op1()) {
-              return dynamic_cast<ProOp1*>(this->op.get()) != nullptr;
+              if(dynamic_cast<ProOp1*>(this->op.get()) != nullptr) {
+                return this->right->is_boolean_formula();
+              } else {
+                return false;
+              }
             } else if(this->is_op2()) {
-              return dynamic_cast<ProOp2*>(this->op.get()) != nullptr;
+              if(dynamic_cast<ProOp2*>(this->op.get()) != nullptr) {
+                return this->left->is_boolean_formula() && this->right->is_boolean_formula();
+              } else {
+                return false;
+              }
             } else {
               throw not_a_ltl();
             }

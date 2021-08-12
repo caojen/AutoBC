@@ -66,7 +66,13 @@ int main() {
   FixSolver solver(domains, goal, lasso);
   auto res = solver.next();
 
-  std::cout << std::endl << "Solver Result: " << res.size() << std::endl;
+  std::cout << std::endl << "Solver Result at level " << 1 << ": " << res.size() << std::endl;
+  for(auto& r: res) {
+    std::cout << '\t' << r << std::endl;
+  }
+
+  res = solver.next();
+  std::cout << std::endl << "Solver Result at level " << 2 << ": " << res.size() << std::endl;
   for(auto& r: res) {
     std::cout << '\t' << r << std::endl;
   }

@@ -292,7 +292,16 @@ namespace ltl {
   }
 
   bool LTL::operator<(const LTL& other) const {
-    return this->serialize() < other.serialize();
+    // return this->serialize() < other.serialize();
+    auto this_str = this->serialize();
+    auto other_str = other.serialize();
+    if(this_str.size() < other_str.size()) {
+      return true;
+    } else if(this_str.size() == other_str.size()) {
+      return this_str < other_str;
+    } else {
+      return false;
+    }
   }
 
   #define ops1(ops) LTL LTL::ops() const {    \

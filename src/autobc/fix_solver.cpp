@@ -2,8 +2,8 @@
 
 using namespace ltl;
 
-static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::shared_ptr<ltl::Literal>> {
-  std::set<std::shared_ptr<ltl::Literal>> ret;
+static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::pair<bool, std::shared_ptr<ltl::Literal>>> {
+  std::set<std::pair<bool, std::shared_ptr<ltl::Literal>>> ret;
   std::queue<std::shared_ptr<ltl::LTL::LTLNode>> queue;
   if(f.root.get() == nullptr) {
     return ret;
@@ -14,9 +14,13 @@ static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::shared_ptr
   while(!queue.empty()) {
     auto node = queue.front(); queue.pop();
     if(node->is_literal()) {
-      ret.insert(node->literal);
+      ret.insert({ true, node->literal });
     } else if(node->is_op1()) {
-      queue.push(node->right);
+      if(dynamic_cast<Not*>(node->op.get()) != nullptr && node->right->is_literal()) {
+        ret.insert({ false, node->right->literal });
+      } else {
+        queue.push(node->right);
+      }
     } else if(node->is_op2()) {
       queue.push(node->left);
       queue.push(node->right);
@@ -44,23 +48,18 @@ namespace autobc {
     std::set<ltl::LTL> next;
 
     for(auto& formula: this->prev) {
-      std::cout << "Solving formula: " << formula << std::endl;
       auto wrs = WR(formula, bc);
       auto srs = SR(formula, bc);
 
-      std::cout << "\tWR: " << wrs.size() << std::endl;
       for(auto& wr: wrs) {
         if(used.find(wr) == used.end()) {
-          std::cout << "\t\t" << wr << std::endl;
           used.insert(wr);
           next.insert(wr);
         }
       }
 
-      std::cout << "\tSR: " << srs.size() << std::endl;
       for(auto& sr: srs) {
         if(used.find(sr) == used.end()) {
-          std::cout << "\t\t" << sr << std::endl;
           used.insert(sr);
           next.insert(sr);
         }
@@ -195,15 +194,17 @@ namespace autobc {
       }
     }
 
-    // 2. 选择在formula出现的可以蕴含lasso的状态去除
+    // 2. 选择在formula出现的可以蕴含lasso的状态去除，合取term的非
     if(!lasso.always_false && formula.is_boolean_formula()) {
       auto all_literals = get_all_literals(formula);
       bool exists = false;
 
       for(auto &literal: all_literals) {
-        if(lasso.literals.find(literal) != lasso.literals.end()) {
-          exists = true;
-          break;
+        for(auto& term: lasso.terms) {
+          if(literal.first != term.first && literal.second == term.second) {
+            exists = true;
+            break;
+          }
         }
       }
       if(!exists) {
@@ -214,6 +215,156 @@ namespace autobc {
   }
 
   std::set<LTL> FixSolver::WR(const LTL& formula, const Lasso& lasso) {
-    return {};
+    std::set<LTL> ret;
+
+    auto& root = formula.root;
+
+    // WR(f) = 
+    // 1. F f
+    ret.emplace(formula.finally());
+
+    // 3. if f = f1 | f2
+    if(root->op == op::oor) {
+      auto f1 = LTL(root->left);
+      auto f2 = LTL(root->right);
+      // f1' | f2, for f1' in WR(f1)
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.oor(f2));
+      }
+      // f1 | f2' for f2' in WR(f2)
+      auto f2_dots = WR(f2, lasso);
+      for(auto& f2_dot: f2_dots) {
+        ret.emplace(f1.oor(f2_dot));
+      }
+    } 
+
+    // 4. f = f1 & f2
+    else if(root->op == op::aand) {
+      auto f1 = LTL(root->left);
+      auto f2 = LTL(root->right);
+      // f1' | f2, for f1' in WR(f1)
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.oor(f2));
+      }
+      // f1 | f2' for f2' in WR(f2)
+      auto f2_dots = WR(f2, lasso);
+      for(auto& f2_dot: f2_dots) {
+        ret.emplace(f1.oor(f2_dot));
+      }
+
+      // f1 U f2
+      ret.emplace(f1.until(f2));
+      // f1
+      ret.emplace(f1);
+      // f2
+      ret.emplace(f2);
+    }
+
+    // 5. f = X f1
+    else if(root->op == op::next) {
+      auto f1 = LTL(root->right);
+      // X f1', for f1' in WR(f1)
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.next());
+      }
+      // F f1
+      ret.emplace(f1.finally());
+    }
+
+    // 6. F f1
+    else if(root->op == op::finally) {
+      // F f1' for f1' in WR(f1)
+      auto f1 = LTL(root->right);
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.finally());
+      }
+    }
+
+    // 7. G f1
+    else if(root->op == op::global) {
+      // G f1' for f1' in WR(f1)
+      auto f1 = LTL(root->right);
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.global());
+      }
+      // F f1
+      ret.emplace(f1.finally());
+      // f1
+      ret.emplace(f1);
+    }
+
+    // 8. f1 U f2
+    else if(root->op == op::until) {
+      auto f1 = LTL(root->left);
+      auto f2 = LTL(root->right);
+      // f1' U f2, for f1' in WR(f1)
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.until(f2));
+      }
+      // f1 U f2' for f2' in WR(f2)
+      auto f2_dots = WR(f2, lasso);
+      for(auto& f2_dot: f2_dots) {
+        ret.emplace(f1.until(f2_dot));
+      }
+      // f1 | f2
+      ret.emplace(f1.oor(f2));
+    }
+
+    // 9. f1 R f2
+    else if(root->op == op::release) {
+      auto f1 = LTL(root->left);
+      auto f2 = LTL(root->right);
+      // f1' R f2, for f1' in WR(f1)
+      auto f1_dots = WR(f1, lasso);
+      for(auto& f1_dot: f1_dots) {
+        ret.emplace(f1_dot.release(f2));
+      }
+      // f1 R f2' for f2' in WR(f2)
+      auto f2_dots = WR(f2, lasso);
+      for(auto& f2_dot: f2_dots) {
+        ret.emplace(f1.release(f2_dot));
+      }
+      // f1 | f2
+      ret.emplace(f1.oor(f2));
+      // f2
+      ret.emplace(f2);
+    }
+
+    // 2. 选择未在f中出现的lasso的状态，析取term
+    if(!lasso.always_false && formula.is_boolean_formula()) {
+      auto all_literals = get_all_literals(formula);
+      bool should_insert = false;
+
+      for(auto& literal: all_literals) {
+        for(auto& term: lasso.terms) {
+          if(literal.first != term.first && literal.second == term.second) {
+            should_insert = true;
+            break;
+          }
+        }
+        if(!should_insert) {
+          bool found = false;
+          for(auto& term: lasso.terms) {
+            if(literal.second == term.second) {
+              found = true;
+              break;
+            }
+          }
+          if(!found) {
+            should_insert = true;
+          }
+        }
+      }
+      if(should_insert) {
+        ret.emplace(formula.oor(lasso.to));
+      }
+    }
+    return ret;
   }
 }
