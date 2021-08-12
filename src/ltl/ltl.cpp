@@ -169,7 +169,13 @@ namespace ltl {
           stack.pop();
           std::shared_ptr<LTL::LTLNode> b = stack.top();
           stack.pop();
-          stack.push(std::make_shared<LTL::LTLNode>(b, op, a));
+          // 判断是否使用imply
+          if(!use_op_imply && dynamic_cast<Imply*>(op.get()) != nullptr) {
+            auto not_b = std::make_shared<LTL::LTLNode>(op::nnot, b);
+            stack.push(std::make_shared<LTL::LTLNode>(not_b, op::oor, a));
+          } else {
+            stack.push(std::make_shared<LTL::LTLNode>(b, op, a));
+          }
         } else {
           throw unreachable();
         }

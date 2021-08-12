@@ -12,6 +12,11 @@ namespace ltl {
   extern bool format_symbol_F;   // true: <>, false: F, default: false
   extern bool format_symbol_G;   // true: [], false: G, default: false
 
+  // 判断是否使用imply(defualt: false)
+  // 如果不使用imply，那么在parse的时候会自动转换
+  // a -> b === !a | b
+  extern bool use_op_imply;
+
   class Operator {
     public:
       friend std::ostream& operator<<(std::ostream& o, const Operator& ope);

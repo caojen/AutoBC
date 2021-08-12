@@ -6,6 +6,8 @@ namespace ltl {
     bool format_symbol_F = false;
     bool format_symbol_G = false;
 
+    bool use_op_imply = false;
+
   namespace op {
     std::shared_ptr<EmptyOp> emptyOp = std::make_shared<EmptyOp>();
     std::shared_ptr<Next> next = std::make_shared<Next>();
