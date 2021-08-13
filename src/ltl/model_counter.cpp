@@ -362,6 +362,7 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
       std::cout << "\t" << arg << std::endl;
     }
     std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
-    std::cout << "Retry..." << std::endl;
+    std::cout << "Warning: It may be a bug from modelcounter.jar. Treat it as 0." << std::endl;
+    return { 0 };
   }
 }
