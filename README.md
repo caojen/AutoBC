@@ -11,6 +11,8 @@ docker exec -it autobc /bin/bash
 
 > 已经有一个已经部署好的镜像，你也可以使用``docker pull opentextfile/autobc:latest``来代替上面的搭建镜像操作。
 
+> 如果你确保你的宿主机上有root权限，你也可以根据Dockerfile来进行部署。注意，如果没有root权限，那么相关依赖的安装及其麻烦。
+
 # 可执行文件
 本节中将会介绍autobc所给出的可执行文件以及它们的作用。
 
