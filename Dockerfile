@@ -3,10 +3,12 @@ FROM ubuntu:18.04
 RUN apt-get update -y && \
   apt-get install -y vim gcc git wget && \
   apt-get install -y build-essential autoconf automake libtool intltool && \
-  apt-get install -y flex python3 python3-pip cmake gdb m4
+  apt-get install -y flex python3 python3-pip cmake gdb m4 lzip
 
 # 安装gmp
-RUN cd / && wget https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz
+RUN cd / && wget -c "https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz" -O "gmp.tar.lz" && \
+    lzip -d gmp.tar.lz && tar -xvf gmp.tar.lz && \
+    cd /gmp-6.1.2 && ./configure --enable-cxx && make && make check && make install
 
 # 安装java jdk 1.8，可以直接使用/usr/bin/java运行
 RUN apt-get install -y openjdk-8-jdk default-jre
