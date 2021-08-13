@@ -49,8 +49,6 @@ namespace autobc {
 
     for(auto& formula: this->prev) {
       auto wrs = WR(formula, bc);
-      auto srs = SR(formula, bc);
-
       for(auto& wr: wrs) {
         if(used.find(wr) == used.end()) {
           used.insert(wr);
@@ -58,6 +56,7 @@ namespace autobc {
         }
       }
 
+      auto srs = SR(formula, bc);
       for(auto& sr: srs) {
         if(used.find(sr) == used.end()) {
           used.insert(sr);
