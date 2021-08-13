@@ -112,7 +112,7 @@ F(h & m)
   "-8",
   "/usr/bin/java",
   "-6",
-  "/jdk-16.0.2+7/bin/java",
+  "/jdk-16/bin/java",
   "-k",
   "100",
   "--level",
