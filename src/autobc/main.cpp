@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
   auto fix_result = abc.fix(level);
   std::cout << "Fix Done..." << std::endl;
   for(int i = 0; i < level; i++) {
-    std::cout << "Level " << i + 1 << " Fix Result " << std::endl;
+    std::cout << "Level " << i + 1 << " Fix Results: (" << fix_result.at(i).size() << ") " << std::endl;
     for(auto& goal: fix_result.at(i)) {
       std::cout << "\t" << goal << std::endl;
     }
