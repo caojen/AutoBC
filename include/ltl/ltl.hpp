@@ -158,6 +158,8 @@ namespace ltl{
 
       // 使LTL产生偏序
       bool operator<(const LTL& other) const;
+      bool operator==(const LTL& other) const;
+      bool operator!=(const LTL& other) const;
 
       // 提供LTL的直接运算接口。这类运算会进行深拷贝而不影响已有的
       LTL aand(const LTL& other) const;

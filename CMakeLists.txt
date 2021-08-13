@@ -25,4 +25,4 @@ add_executable(mytest ${LTL_BASIC} src/test.cpp)
 
 project(autobc)
 
-add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/main.cpp)
+add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/main.cpp src/autobc/ranking.cpp)
