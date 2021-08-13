@@ -9,9 +9,9 @@ docker run -itd --name autobc -p 22:22 --restart=always autobc:latest
 docker exec -it autobc /bin/bash
 ```
 
-> 已经有一个已经部署好的镜像，你也可以使用``docker pull opentextfile/autobc:latest``来代替上面的搭建镜像操作。
+> 已经有一个已经搭建好的镜像部署到DockerHub上。你也可以使用``docker pull opentextfile/autobc:latest``来代替上面的搭建镜像操作。
 
-> 如果你确保你的宿主机上有root权限，你也可以根据Dockerfile来进行部署。注意，如果没有root权限，那么相关依赖的安装及其麻烦。
+> 如果你确保你的宿主机上有root权限，你也可以根据Dockerfile来进行部署。（将Dockerfile的相关命令自己在宿主机上跑一遍。镜像的基础容器是Ubuntu:18.04）注意，如果没有root权限，那么相关依赖的安装非常麻烦。
 
 # 可执行文件
 本节中将会介绍autobc所给出的可执行文件以及它们的作用。
