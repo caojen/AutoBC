@@ -12,7 +12,7 @@ namespace param {
         this->key = key;
       }
 
-      const char* what() noexcept {
+      virtual const char* what() noexcept {
         std::string ret = this->key + " doesnot exists.";
         auto chars = ret.c_str();
         return chars;
@@ -21,7 +21,7 @@ namespace param {
 
   class no_value_provided: public std::exception {
     public:
-      const char* what() noexcept {
+      virtual const char* what() noexcept {
         return "no value provided";
       }
   };
@@ -33,7 +33,7 @@ namespace param {
       required_key_not_provided(const std::string& key) {
         this->key = key;
       }
-      const char* what() noexcept {
+      virtual const char* what() noexcept {
         std::string ret = "required_key_not_provided: ";
         ret.append(key);
         return ret.c_str();

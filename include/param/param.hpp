@@ -28,6 +28,8 @@ namespace param {
       std::string get(const std::string& key) const;
       std::string operator[](const std::string& key) const;
     private:
+
+      std::string name;
       std::set<std::string> keys;
       std::map<std::string, std::string> briefs;
       std::map<std::string, std::string> details;
@@ -37,5 +39,7 @@ namespace param {
       std::map<std::string, std::string> defs;
 
       std::map<std::string, std::string> values;
+
+      std::string get_help_page() const;
   };
 }
