@@ -6,7 +6,7 @@ RUN apt-get update -y && \
   apt-get install -y flex python3 python3-pip cmake
 
 # 安装java jdk 1.8，可以直接使用/usr/bin/java运行
-RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y openjdk-8-jdk default-jre
 # 安装java jdk 16
 # 注意，你可能需要根据你的内核来决定用哪个镜像源，下面的这条命令可能需要更改
 # 安装后，根目录会出现一个新的文件夹/jdk-16.0.2+7，重命名后为/jdk-16
