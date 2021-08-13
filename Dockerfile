@@ -15,7 +15,7 @@ RUN cd / && wget https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/16/jdk/aarch6
     tar -zxvf ibm-semeru-open-jdk_aarch64_linux_16.0.2_7_openj9-0.27.0.tar.gz && mv jdk-16.0.2+7 jdk-16
 
 # 安装Bison 3.0.4，通常来说，apt直接得到的是2.x版本，需要重新安装
-RUN wget -P / http://mirror.ossplanet.net/gnu/bison/bison-3.0.4.tar.gz && \
+RUN wget -P / https://mirrors.ustc.edu.cn/gnu/bison/bison-3.0.4.tar.gz && \
     cd / && tar -zxvf bison-3.0.4.tar.gz && \
     cd /bison-3.0.4 && \
     ./configure && make && make install
@@ -26,7 +26,7 @@ RUN cd / && \
     cd glog && \
     mkdir build && \
     cd build && \
-    cmake .. -G "Unix MakeFiles" && \
+    cmake .. && \
     cmake --build . && \
     cmake --build . --target test && \
     cmake --build . --target install
@@ -48,7 +48,7 @@ RUN cd /ABC && \
     ./autogen.sh && \
     ./configure && make && make install && ldconfig
 
-RUN mkdir -p /src/autobc
+RUN mkdir -p /src/autobc/build
 
 ADD . /src/autobc
 
