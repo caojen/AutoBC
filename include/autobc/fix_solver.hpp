@@ -9,7 +9,7 @@ namespace autobc {
   class FixSolver {
     public:
       FixSolver() = default;
-      FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc);
+      FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
 
       const std::set<ltl::LTL>& next();
       // 算法主函数
@@ -24,5 +24,7 @@ namespace autobc {
 
       std::set<ltl::LTL> used;
       std::set<ltl::LTL> prev;
+
+      ltl::LTL old_goal_and;
   };
 }

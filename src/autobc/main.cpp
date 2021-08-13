@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
   parser.set("-l", "--level", "level", true, true, "Specify Level of our algorithm.");
   parser.set("-e", "--likelyhood", "likelyhood", true, true, "Specify LikelyHood.jar.");
   parser.set("-m", "--modelcounting", "modelcounting", true, true, "Specify ModelCounting.jar.");
+  parser.set("-n", "--nuxmv", "nuxmv", true, true, "Specify nuXmv path.");
 
   parser.run(argc, argv);
 
@@ -31,6 +32,9 @@ int main(int argc, char** argv) {
   auto level = atoi(parser["level"].c_str());
   auto likelyhoood = parser["likelyhood"];
   auto modelcounting = parser["modelcounting"];
+  auto nuxmv = parser["nuxmv"];
+
+  ltl::satSolver = new SatSolver(nuxmv);
 
   Ranking ranking(modelcounting, jdk16);
 

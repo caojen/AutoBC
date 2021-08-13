@@ -33,7 +33,7 @@ static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::pair<bool,
 };
 
 namespace autobc {
-  FixSolver::FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc) {
+  FixSolver::FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<LTL>& old_goals) {
     this->domains = domains;
     this->goal = goal;
     this->bc = bc;
@@ -41,6 +41,14 @@ namespace autobc {
 
     this->prev.insert(goal);
     this->used.insert(goal);
+    
+    for(auto iter = old_goals.begin(); iter != old_goals.end(); ++iter) {
+      if(iter == old_goals.begin()) {
+        this->old_goal_and = *iter;
+      } else {
+        this->old_goal_and = this->old_goal_and.aand(*iter);
+      }
+    }
   }
 
   const std::set<LTL>& FixSolver::next() {
@@ -52,7 +60,10 @@ namespace autobc {
       for(auto& wr: wrs) {
         if(used.find(wr) == used.end()) {
           used.insert(wr);
-          next.insert(wr);
+          auto sat = satSolver->checkSAT(this->old_goal_and.aand(wr));
+          if(sat) {
+            next.insert(wr);
+          }
         }
       }
 
@@ -60,7 +71,10 @@ namespace autobc {
       for(auto& sr: srs) {
         if(used.find(sr) == used.end()) {
           used.insert(sr);
-          next.insert(sr);
+          auto sat = satSolver->checkSAT(this->old_goal_and.aand(sr));
+          if(sat) {
+            next.insert(sr);
+          }
         }
       }
     }

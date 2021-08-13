@@ -73,12 +73,15 @@ namespace ltl {
 
         std::istringstream ret_stream(output);
         std::string line;
-
+        
         while(std::getline(ret_stream, line)) {
           if(line.find("specification") != std::string::npos) {
             if(line.find("is false") != std::string::npos) {
               result = true;
             } else if(line.find("is true") != std::string::npos) {
+              std::cout << "[SatSolver] " << ltl << " ";
+              std::cout << "UNSAT";
+              std::cout << std::endl;
               result = false;
             } else {
               // unreachable.
