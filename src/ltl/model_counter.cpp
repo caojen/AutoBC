@@ -312,58 +312,56 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
           "-f=" + f
   };
 
-  while(1) {
-    std::string result;
-    try {
-      int fd[2];
-      if(pipe(fd)) {
-        std::cout << "Fatal: Cannot create pipe(use system call 'pipe()' failed.)" << std::endl;
-        std::cout << strerror(errno) << std::endl;
-      }
-
-      int pid = fork();
-      if(pid == 0) {
-        // child, call java
-        // 写入fd[1]
-        dup2(fd[1], 1);
-        dup2(fd[1], 2);
-        close(fd[1]);
-
-        char* nargs[7] = { nullptr };
-        for(unsigned i = 0; i < 6; i++) {
-          nargs[i] = new char[args[i].size() + 1];
-          auto s = args[i].c_str();
-          memcpy(nargs[i], s, args[i].size() * sizeof(char));
-          nargs[i][args[i].size()] = 0;
-        }
-
-        auto ret = execv(this->javapath.c_str(), nargs);
-        std::cout << "fatal: child returned: " << ret << std::endl;
-        std::cout << strerror(errno) << std::endl;
-        exit(1);
-      } else if(pid < 0) {
-        std::cout << "fork failed" << std::endl;
-        exit(1);
-      } else if(pid > 0) {
-        waitpid(pid, nullptr, 0);
-      }
-      
-      char buf[1024] = { 0 };
-      close(fd[1]);
-      while(read(fd[0], buf, 1024)) {
-        result.append(buf);
-      }
-      close(fd[0]);
-      result = result.substr(0, result.size() - 1);
-      return { result };
-    } catch (const not_an_integer& e) {
-      std::cout << "A not_an_integer error has been caught during model counting." << std::endl;
-      std::cout << "Arguments reported:" << std::endl;
-      for(auto& arg: args) {
-        std::cout << "\t" << arg << std::endl;
-      }
-      std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
-      std::cout << "Retry..." << std::endl;
+  std::string result;
+  try {
+    int fd[2];
+    if(pipe(fd)) {
+      std::cout << "Fatal: Cannot create pipe(use system call 'pipe()' failed.)" << std::endl;
+      std::cout << strerror(errno) << std::endl;
     }
+
+    int pid = fork();
+    if(pid == 0) {
+      // child, call java
+      // 写入fd[1]
+      dup2(fd[1], 1);
+      dup2(fd[1], 2);
+      close(fd[1]);
+
+      char* nargs[7] = { nullptr };
+      for(unsigned i = 0; i < 6; i++) {
+        nargs[i] = new char[args[i].size() + 1];
+        auto s = args[i].c_str();
+        memcpy(nargs[i], s, args[i].size() * sizeof(char));
+        nargs[i][args[i].size()] = 0;
+      }
+
+      auto ret = execv(this->javapath.c_str(), nargs);
+      std::cout << "fatal: child returned: " << ret << std::endl;
+      std::cout << strerror(errno) << std::endl;
+      exit(1);
+    } else if(pid < 0) {
+      std::cout << "fork failed" << std::endl;
+      exit(1);
+    } else if(pid > 0) {
+      waitpid(pid, nullptr, 0);
+    }
+    
+    char buf[1024] = { 0 };
+    close(fd[1]);
+    while(read(fd[0], buf, 1024)) {
+      result.append(buf);
+    }
+    close(fd[0]);
+    result = result.substr(0, result.size() - 1);
+    return { result };
+  } catch (const not_an_integer& e) {
+    std::cout << "A not_an_integer error has been caught during model counting." << std::endl;
+    std::cout << "Arguments reported:" << std::endl;
+    for(auto& arg: args) {
+      std::cout << "\t" << arg << std::endl;
+    }
+    std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
+    std::cout << "Retry..." << std::endl;
   }
 }
