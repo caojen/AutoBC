@@ -294,7 +294,9 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
   auto k = bound;
   std::vector<std::string> vars;
   for(auto & kv : ltl::dict.map) {
-    vars.push_back(kv.first);
+    if(kv.first != "1" && kv.first != "0") {
+      vars.push_back(kv.first);
+    }
   }
   std::string vars_str;
   for(unsigned i = 0; i < vars.size(); i++) {
