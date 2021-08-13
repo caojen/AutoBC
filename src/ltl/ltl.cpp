@@ -310,6 +310,16 @@ namespace ltl {
     }
   }
 
+  bool LTL::operator==(const LTL& other) const {
+    auto this_str = this->serialize();
+    auto other_str = other.serialize();
+    return this_str == other_str;
+  }
+
+  bool LTL::operator!=(const LTL& other) const {
+    return !(*this == other);
+  }
+
   #define ops1(ops) LTL LTL::ops() const {    \
     LTL ret;                                  \
     ret.root = std::make_shared<LTLNode>(     \

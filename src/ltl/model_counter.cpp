@@ -4,6 +4,8 @@
 #include <sys/wait.h>
 #include <cstring>
 
+#include <gmpxx.h>
+
 #include "model_counter.hpp"
 #include "error.hpp"
 
@@ -215,6 +217,30 @@ BigInteger BigInteger::operator-(const BigInteger& other) const {
     ret.data = "0";
   }
   return ret;
+}
+
+double BigInteger::device(const BigInteger& other) const {
+  auto this_num = this->serialize();
+  auto other_num = other.serialize();
+
+  mpf_t this_mpz_num; mpf_t other_mpz_num;
+  mpf_init(this_mpz_num);
+  mpf_init(other_mpz_num);
+  mpf_set_str(this_mpz_num, this_num.c_str(), 10);
+  mpf_set_str(other_mpz_num, other_num.c_str(), 10);
+
+  mpf_t r;
+  mpf_init(r);
+  mpf_div(r, this_mpz_num, other_mpz_num);
+
+  std::ostringstream ostr;
+  ostr << r;
+
+  mpf_clear(this_mpz_num);
+  mpf_clear(other_mpz_num);
+  mpf_clear(r);
+
+  return atof(ostr.str().c_str());
 }
 
 bool BigInteger::operator==(const BigInteger& other) const {

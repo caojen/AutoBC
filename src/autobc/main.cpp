@@ -1,7 +1,6 @@
-#include "ltl.hpp"
+#include <iomanip>
+
 #include "autobc.hpp"
-#include "fix_solver.hpp"
-#include "lasso.hpp"
 #include "param.hpp"
 
 using namespace ltl;
@@ -33,6 +32,8 @@ int main(int argc, char** argv) {
   auto likelyhoood = parser["likelyhood"];
   auto modelcounting = parser["modelcounting"];
 
+  Ranking ranking(modelcounting, jdk16);
+
   auto abc = AutoBC::parse(global);
   abc.likelyhood = likelyhoood;
   abc.modelcounting = modelcounting;
@@ -51,8 +52,11 @@ int main(int argc, char** argv) {
   std::cout << "Fix Done..." << std::endl;
   for(int i = 0; i < level; i++) {
     std::cout << "Level " << i + 1 << " Fix Results: (" << fix_result.at(i).size() << ") " << std::endl;
-    for(auto& goal: fix_result.at(i)) {
-      std::cout << "\t" << goal << std::endl;
+    std::cout << "Ranking..." << std::endl;
+    auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result.at(i));
+
+    for(auto& rankItem: ranked) {
+      std::cout << "\t" << std::setw(10) << rankItem.rank << "\t" << rankItem.ltl << std::endl;
     }
   }
 

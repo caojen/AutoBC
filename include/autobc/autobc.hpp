@@ -7,6 +7,8 @@
 #include "error.hpp"
 #include "autobc_error.hpp"
 #include "fix_solver.hpp"
+#include "lasso.hpp"
+#include "ranking.hpp"
 
 namespace autobc {
   typedef ltl::LTL Domain;

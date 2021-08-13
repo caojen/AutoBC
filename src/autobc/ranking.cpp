@@ -5,7 +5,8 @@
 using namespace ltl;
 
 namespace autobc {
-    RankingItem::RankingItem(const ltl::LTL &ltl, double rank) : ltl(ltl) {
+    RankingItem::RankingItem(const ltl::LTL &ltl, double rank) {
+      this->ltl = ltl;
       this->rank = rank;
     }
 
@@ -48,7 +49,8 @@ namespace autobc {
           ltls.insert(replacement);
           numerator = this->mc->count(ltls, this->bound);
         }
-        ret.emplace_back( replacement, numerator.device(denominator) );
+        auto rank = numerator.device(denominator);
+        ret.emplace_back( replacement, rank );
       }
       std::sort(ret.begin(), ret.end());
       return ret;

@@ -12,11 +12,10 @@ namespace autobc {
   public:
       RankingItem() = delete;
       RankingItem(const ltl::LTL &ltl, double rank);
-      RankingItem(const RankingItem&) = default;
 
       bool operator<(const RankingItem& other) const;
 
-      const ltl::LTL& ltl;
+      ltl::LTL ltl;
       double rank;
   };
 
