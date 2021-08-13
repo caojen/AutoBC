@@ -75,19 +75,29 @@ Domains: []((p && X(p)) -> X(X(! h)))
 Goals: [](h -> X(p)), [](m -> X(! p))
 ```
 两者各占一行，每个公式之间用逗号和空格进行分隔.
+
 2. -b, --bcfile: 指定所有BC。由于搜索BC时间比较慢，因此你需要提供BC的输入文件。
+
 ```
 minepipe
 F(h & m)
 ...
 ```
+
 其中，第一行可以使用``-i, --ignore``参数来忽略；然后，每一行代表一个BC。
+
 3. -i, --ignore: 如果指定，那么bcfile的第一行不会被读取.
+
 4. -8, --jdk1.8: 指定jdk1.8的java执行文件位置，在Docker部署的情况下，请输入``/usr/bin/java``
+
 5. -6, --jdk16 : 指定jdk16的java执行文件位置，在Docker部署的情况下，请输入``/jdk-16/bin/java``
+
 6. -k, --k     : 指定在进行ModelCounting时，使用的k的大小
+
 7. -l, --level : 指定在进行BC修复的时候，修复的层数
+
 8. -e, --likelyhood: 指定likelyhood.jar文件的位置。在Docker部署的情况下，请输入``/src/autobc/Lasso-BC/likelyhood.jar``
+
 9. -m, --modelcounting: 指定modelcounting.jar文件的位置。在Docker部署的情况下，请输入``/src/autobc/jar/modelcounting``
 
 随后，修复的结果将会输出到标准输出中。
