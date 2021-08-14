@@ -1,14 +1,15 @@
 FROM ubuntu:18.04
 
-RUN rm -rf /var/lib/apt/lists/* && apt-get update -y && \
+RUN rm -rf /var/lib/apt/lists/* && mkdir /var/lib/apt/lists/partial && sed -i "s/archive.ubuntu.com/mirrors.ustc.edu.cn/g" /etc/apt/sources.list && \
+  apt-get update -y --fix-missing && \
   apt-get install -y vim gcc git wget && \
   apt-get install -y build-essential autoconf automake libtool intltool && \
   apt-get install -y flex python3 python3-pip cmake gdb m4 lzip
 
 # 安装gmp
 RUN cd / && wget -c "https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz" -O "gmp.tar.lz" && \
-    lzip -d gmp.tar.lz && tar -xvf gmp.tar.lz && \
-    cd /gmp-6.1.2 && ./configure --enable-cxx && make && make check && make install
+    lzip -d gmp.tar.lz && tar -xvf gmp.tar && \
+    cd /gmp-6.2.1 && ./configure --enable-cxx && make && make check && make install
 
 # 安装java jdk 1.8，可以直接使用/usr/bin/java运行
 RUN apt-get install -y openjdk-8-jdk default-jre
