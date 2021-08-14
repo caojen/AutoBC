@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update -y && \
+RUN rm -rf /var/lib/apt/lists/* && apt-get update -y && \
   apt-get install -y vim gcc git wget && \
   apt-get install -y build-essential autoconf automake libtool intltool && \
   apt-get install -y flex python3 python3-pip cmake gdb m4 lzip
