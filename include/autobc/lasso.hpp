@@ -12,7 +12,7 @@ namespace autobc {
 
       ltl::LTL ltl;
       std::set<ltl::LTL> terms;
-      std::vector<ltl::LTL*> vec_terms;
+      std::vector<ltl::LTL> vec_terms;
 
       std::map<unsigned, std::set<ltl::LTL>> cache;
       // 获取C(i, n)对LTL公式，这些公式都是由terms组合而成，之间是以&连接的。
@@ -38,19 +38,23 @@ namespace autobc {
                   this->cache.push_back(t);
               }
           } else {
-              auto ptr = this->cache.size() - 1;
+              signed ptr = this->cache.size() - 1;
               while(ptr >= 0) {
                   if(this->cache.at(ptr) == n - (this->cache.size() - ptr - 1)) {
                       --ptr;
                   } else {
                       this->cache.at(ptr) += 1;
-                      for(auto j = ptr + 1; j < this->cache.size(); j++) {
+                      for(unsigned j = ptr + 1; j < this->cache.size(); j++) {
                           this->cache.at(j) = this->cache.at(ptr) + j - ptr;
                       }
+                      break;
                   }
               }
 
-              if(this->cache.back() > n) {
+              if(ptr < 0) {
+                  this->cache = {};
+                  this->first = true;
+              } else if(this->cache.back() > n) {
                   this->cache = {};
                   this->first = true;
               }
@@ -59,9 +63,9 @@ namespace autobc {
           return this->cache;
       }
   private:
-      unsigned i;
-      unsigned n;
-      bool     first;
-      std::vector<unsigned> cache;
+      unsigned                      i;
+      unsigned                      n;
+      bool                          first;
+      std::vector<unsigned>         cache;
   };
 }

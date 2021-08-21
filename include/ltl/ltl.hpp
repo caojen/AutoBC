@@ -31,6 +31,7 @@ namespace ltl{
           std::shared_ptr<LTLNode>            right;
 
           bool is_literal() const;
+          bool is_literal_negative() const;
           bool is_op1() const;
           bool is_op2() const;
 

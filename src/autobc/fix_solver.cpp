@@ -208,21 +208,8 @@ namespace autobc {
     }
 
     // 2. 选择在formula出现的可以蕴含lasso的状态去除，合取term的非
-    if(!lasso.always_false && formula.is_boolean_formula()) {
-      auto all_literals = get_all_literals(formula);
-      bool exists = false;
-
-      for(auto &literal: all_literals) {
-        for(auto& term: lasso.terms) {
-          if(literal.first != term.first && literal.second == term.second) {
-            exists = true;
-            break;
-          }
-        }
-      }
-      if(!exists) {
-        ret.emplace(formula.aand(lasso.to.nnot()));
-      }
+    if(formula.is_boolean_formula()) {
+      // TODO: SR lasso算子
     }
     return ret;
   }
@@ -351,7 +338,8 @@ namespace autobc {
 
     // 2. 选择未在f中出现的lasso的状态，析取term
     if(formula.is_boolean_formula()) {
-        ret.emplace(formula.oor(lasso.to));
+      // TODO: WR lasso 算子
+        // ret.emplace(formula.oor(lasso.to));
     }
     return ret;
   }

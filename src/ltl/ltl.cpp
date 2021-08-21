@@ -111,12 +111,12 @@ namespace ltl {
             stack.push(ch);
           } else {
             auto last = Operator::gen(stack.top());
-            if(last->weight() <= op->weight()) {
+            if(last->weight() < op->weight()) {
               stack.push(ch);
             } else {
               while(!stack.empty() && stack.top() != "(") {
                 auto last = Operator::gen(stack.top());
-                if(last->weight() <= op->weight()) {
+                if(last->weight() < op->weight()) {
                   break;
                 } else {
                   ret.push_back(stack.top());
@@ -195,6 +195,10 @@ namespace ltl {
 
   bool LTL::LTLNode::is_literal() const {
     return this->op.get() == nullptr;
+  }
+
+  bool LTL::LTLNode::is_literal_negative() const {
+    return this->op == op::nnot && this->right->is_literal();
   }
 
   bool LTL::LTLNode::is_op1() const {

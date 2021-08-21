@@ -123,5 +123,7 @@ F(h & m)
   "/src/autobc/Lasso-BC/likelyhood.jar",
   "--modelcounting",
   "/src/autobc/jar/modelcounting.jar"
+  "-n",
+  "/src/autobc/bin/nuXmv-2.0.0-Linux"
 ]
 ```
