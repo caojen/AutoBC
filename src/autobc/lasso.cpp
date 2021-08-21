@@ -8,59 +8,20 @@ typedef LTL::LTLNode LTLNode;
 
 namespace autobc {
   Lasso::Lasso(const LTL& ltl) {
-    std::queue<std::shared_ptr<LTLNode>> nodes;
-    nodes.push(ltl.root);
+    this->ltl = ltl;
+    // TODO: Get Lasso terms of this->ltl, insert into this->terms
+  }
 
-    while(!nodes.empty()) {
-      auto node = nodes.front(); nodes.pop();
-
-      if(node->is_literal()) {
-        this->terms.insert({ true, node->literal });
-        this->literals.insert(node->literal);
-      } else if(node->is_op1()) {
-        if(
-          dynamic_cast<Not*>(node->op.get()) != nullptr &&
-          node->right->is_literal()
-        ) {
-          this->terms.insert({ false, node->right->literal });
-          this->literals.insert(node->literal);
-        } else {
-          nodes.push(node->right);
-        }
-      } else if(node->is_op2()) {
-        nodes.push(node->left);
-        nodes.push(node->right);
-      } else {
-        throw not_a_ltl();
-      }
+  std::set<ltl::LTL> Lasso::fetch_terms(unsigned int i) {
+    if(i == 0 || i > this->terms.size()) {
+      return {};
     }
 
-    this->always_false = false;
-    for(auto& term: this->terms) {
-      for(auto& i: this->terms) {
-        if(term.first != i.first && term.second == i.second) {
-          this->always_false = true;
-          break;
-        }
-      }
-      if(this->always_false) {
-        break;
-      }
-    }
+    if(this->cache.find(i) != this->cache.end()) {
+      return this->cache[i];
+    } else {
+      // 构造C(i, n)
 
-
-    if(!this->always_false) {
-      std::string str;
-      for(auto iter = this->terms.begin(); iter != this->terms.end(); ++iter) {
-        if(!iter->first) {
-          str.append("!");
-        }
-        str.append(iter->second.get()->serialize());
-        if(std::next(iter) != this->terms.end()) {
-          str.append("&");
-        }
-      }
-      this->to = LTL::parse(str);
     }
   }
 }

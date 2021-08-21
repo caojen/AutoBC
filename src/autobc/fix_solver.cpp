@@ -350,33 +350,8 @@ namespace autobc {
     }
 
     // 2. 选择未在f中出现的lasso的状态，析取term
-    if(!lasso.always_false && formula.is_boolean_formula()) {
-      auto all_literals = get_all_literals(formula);
-      bool should_insert = false;
-
-      for(auto& literal: all_literals) {
-        for(auto& term: lasso.terms) {
-          if(literal.first != term.first && literal.second == term.second) {
-            should_insert = true;
-            break;
-          }
-        }
-        if(!should_insert) {
-          bool found = false;
-          for(auto& term: lasso.terms) {
-            if(literal.second == term.second) {
-              found = true;
-              break;
-            }
-          }
-          if(!found) {
-            should_insert = true;
-          }
-        }
-      }
-      if(should_insert) {
+    if(formula.is_boolean_formula()) {
         ret.emplace(formula.oor(lasso.to));
-      }
     }
     return ret;
   }
