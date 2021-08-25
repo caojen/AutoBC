@@ -37,50 +37,53 @@ namespace autobc {
     this->domains = domains;
     this->goal = goal;
     this->bc = bc;
-    this->k = 0;
-
-    this->prev.insert(goal);
-    this->used.insert(goal);
-    
-    for(auto iter = old_goals.begin(); iter != old_goals.end(); ++iter) {
-      if(iter == old_goals.begin()) {
-        this->old_goal_and = *iter;
-      } else {
-        this->old_goal_and = this->old_goal_and.aand(*iter);
-      }
-    }
+    this->level = 0;
+    this->old_goals = old_goals;
   }
 
-  const std::set<LTL>& FixSolver::next() {
-    this->k++;
-    std::set<ltl::LTL> next;
+  // const std::set<LTL>& FixSolver::next() {
+  //   this->k++;
+  //   std::set<ltl::LTL> next;
 
-    for(auto& formula: this->prev) {
-      auto wrs = WR(formula, bc);
-      for(auto& wr: wrs) {
-        if(used.find(wr) == used.end()) {
-          used.insert(wr);
-          auto sat = satSolver->checkSAT(this->old_goal_and.aand(wr));
-          if(sat) {
-            next.insert(wr);
-          }
-        }
-      }
+  //   for(auto& formula: this->prev) {
+  //     auto wrs = WR(formula, bc);
+  //     for(auto& wr: wrs) {
+  //       if(used.find(wr) == used.end()) {
+  //         used.insert(wr);
+  //         auto sat = satSolver->checkSAT(this->old_goal_and.aand(wr));
+  //         if(sat) {
+  //           next.insert(wr);
+  //         }
+  //       }
+  //     }
 
-      auto srs = SR(formula, bc);
-      for(auto& sr: srs) {
-        if(used.find(sr) == used.end()) {
-          used.insert(sr);
-          auto sat = satSolver->checkSAT(this->old_goal_and.aand(sr));
-          if(sat) {
-            next.insert(sr);
-          }
-        }
+  //     auto srs = SR(formula, bc);
+  //     for(auto& sr: srs) {
+  //       if(used.find(sr) == used.end()) {
+  //         used.insert(sr);
+  //         auto sat = satSolver->checkSAT(this->old_goal_and.aand(sr));
+  //         if(sat) {
+  //           next.insert(sr);
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   this->prev = std::move(next);
+  //   return this->prev;
+  // }
+  const std::vector<FixResult>& FixSolver::fix(unsigned level) {
+    this->fix_result.clear();
+    this->used.clear();
+    this->prev.clear();
+
+    this->used.insert(this->goal);
+    for(unsigned i = 0; i < level; i++) {
+      // Fix level i + 1
+      if(i == 0) {
+        
       }
     }
-
-    this->prev = std::move(next);
-    return this->prev;
   }
 
   std::set<LTL> FixSolver::SR(const LTL& formula, const Lasso& lasso) {

@@ -44,15 +44,15 @@ int main(int argc, char** argv) {
     abc.jdk8 = jdk8;
     abc.use_bcs(bcfile, !ignore_first_line);
     std::cout << abc << std::endl;
-    // abc.bc_sort();
-    // auto target_bc = abc.target_bc;
-    // std::cout << "Target BC is " << *target_bc << std::endl;
-    // abc.get_fix_goal(k, jdk16);
-    // auto target_goal = abc.target_goal;
-    // std::cout << "Target Goal is " << *target_goal << std::endl;
+    abc.bc_sort();
+    auto target_bc = abc.target_bc;
+    std::cout << "Target BC is " << *target_bc << std::endl;
+    abc.get_fix_goal(k, jdk16);
+    auto target_goal = abc.target_goal;
+    std::cout << "Target Goal is " << *target_goal << std::endl;
 
-    // std::cout << "Fix at level: " << level << std::endl;
-    // auto fix_result = abc.fix(level);
+    std::cout << "Fix at level: " << level << std::endl;
+    auto fix_result = abc.fix(level);
     // std::cout << "Fix Done..." << std::endl;
     // for(int i = 0; i < level; i++) {
     //     std::cout << "Level " << i + 1 << " Fix Results: (" << fix_result.at(i).size() << ") " << std::endl;

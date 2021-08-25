@@ -307,7 +307,7 @@ namespace autobc {
     return *ret;
   }
 
-  const std::vector<std::set<LTL>>& AutoBC::fix(unsigned k) {
+  const std::vector<FixResult>& AutoBC::fix(unsigned k) {
     this->fixed_goals.clear();
     std::set<LTL> old_goals;
     for(auto& goal: this->goals) {
@@ -316,10 +316,8 @@ namespace autobc {
       }
     }
     this->fixSolver = FixSolver(this->domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
-    for(unsigned i = 0; i < k; i++) {
-      auto next_res = fixSolver.next();
-      this->fixed_goals.push_back(next_res);
-    }
+    this->fixed_goals = this->fixSolver.fix(k);
+
     return this->fixed_goals;
   }
 }
