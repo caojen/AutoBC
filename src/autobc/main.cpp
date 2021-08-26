@@ -15,10 +15,11 @@ int main(int argc, char** argv) {
     parser.set("-8", "--jdk1.8", "jdk1.8", true, false, "Specify JDK 1.8 java execute path. Default: /usr/bin/java", "/usr/bin/java");
     parser.set("-6", "--jdk16", "jdk16", true, false, "Specify JDK 16 java execute path. Default: /usr/bin/java", "/usr/bin/java");
     parser.set("-k", "--k", "k", true, true, "Specify K of Model Counting.");
-    parser.set("-l", "--level", "level", true, true, "Specify Level of our algorithm.");
+    parser.set("-l", "--level", "level", true, false, "Specify Level of our algorithm.");
     parser.set("-e", "--likelyhood", "likelyhood", true, true, "Specify LikelyHood.jar.");
     parser.set("-m", "--modelcounting", "modelcounting", true, true, "Specify ModelCounting.jar.");
     parser.set("-n", "--nuxmv", "nuxmv", true, true, "Specify nuXmv path.");
+    parser.set("-t", "--limit", "limit", true, true, "Specify fix results limitation.");
 
     parser.run(argc, argv);
 
@@ -29,10 +30,11 @@ int main(int argc, char** argv) {
     auto jdk8 = parser["jdk1.8"];
     auto jdk16 = parser["jdk16"];
     auto k = atoi(parser["k"].c_str());
-    auto level = atoi(parser["level"].c_str());
+    // auto level = atoi(parser["level"].c_str());
     auto likelyhoood = parser["likelyhood"];
     auto modelcounting = parser["modelcounting"];
     auto nuxmv = parser["nuxmv"];
+    auto limit = atoi(parser["limit"].c_str());
 
     ltl::satSolver = new SatSolver(nuxmv);
 
@@ -61,18 +63,22 @@ int main(int argc, char** argv) {
 
     std::cout << std::endl;
 
-    std::cout << "Fix at level: " << level << std::endl;
-    auto const &fix_result = abc.fix(level);
+    // std::cout << "Fix at level: " << level << std::endl;
+    // auto const &fix_result = abc.fix(level);
+    std::cout << "Fix with limit = " << limit << std::endl;
+    auto const& fix_result = abc.fix_with_limit(limit);
     std::cout << "Fix Done. (" << fix_result.size() << ")" << std::endl;
+    unsigned idx = 0;
     for(auto& fix_result_item: fix_result) {
-        std::cout << fix_result_item.label << "\t\t" << fix_result_item.ltl << std::endl;
+        ++idx;
+        std::cout << idx << " " << std::setw(20) << fix_result_item.label << " " << fix_result_item.ltl << std::endl;
     }
-    
+
     std::cout << std::endl;
     std::cout << "Ranking..." << std::endl;
     auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
     for(auto& ranked_item: ranked) {
-        std::cout << ranked_item.item.label << "\t\t" << std::setw(10) << ranked_item.rank  << "\t" << ranked_item.item.ltl << std::endl;
+        std::cout << std::setw(20) << ranked_item.item.label << " " << std::setw(10) << ranked_item.rank  << " " << ranked_item.item.ltl << std::endl;
     }
     
 

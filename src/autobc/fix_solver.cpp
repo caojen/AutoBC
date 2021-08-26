@@ -119,6 +119,97 @@ namespace autobc {
     return this->fix_result;
   }
 
+  const std::vector<FixResultItem>& FixSolver::fix_with_limit(unsigned limit) {
+    this->fix_result.clear();
+    this->used.clear();
+    this->prev.clear();
+
+    this->used.insert(this->goal);
+    unsigned level = 0;
+    while(this->fix_result.size() < limit) {
+      ++level;
+      if(level == 1) {
+        this->used.insert(this->goal);
+        this->prev.insert(this->goal);
+      }
+
+      auto terms = this->bc.fetch_terms(1);
+
+      std::set<FixResultItem> next;
+      std::vector<FixResultItem> level_result;
+      
+      for(unsigned j = 0; j < terms.size() && level_result.size() + fix_result.size() < limit; j++) {
+        // Fix (i+1).(j+1)
+        for(auto& prev_item: this->prev) {
+          if(level_result.size() + fix_result.size() >= limit) {
+            break;
+          }
+          auto sr = SR(prev_item.ltl, this->bc, level, j + 1);
+          for(auto& sr_item: sr) {
+            if(this->used.find(sr_item) != this->used.end()) {
+              continue;
+            } else {
+              this->used.insert(sr_item);
+            }
+            FixResultItem next_item = {sr_item, prev_item.label + ".s" + std::to_string(j + 1)};
+            next.insert(next_item);
+
+            // 判断sr_item是否满足条件, 如果满足，就推到level_result里面
+            auto combine = sr_item.aand(this->bc.ltl);
+            for(auto& domain: this->domains) {
+              combine = combine.aand(domain);
+            }
+            for(auto& goal: this->old_goals) {
+              combine = combine.aand(goal);
+            }
+            if(satSolver->checkSAT(combine) == false) {
+              level_result.push_back(next_item);
+            }
+          }
+          auto wr = WR(prev_item.ltl, this->bc, level, j + 1);
+          for(auto& wr_item: wr) {
+            if(this->used.find(wr_item) != this->used.end()) {
+              continue;
+            } else {
+              this->used.insert(wr_item);
+            }
+
+            FixResultItem next_item = { wr_item, prev_item.label + ".w" + std::to_string(j + 1) };
+            next.insert(next_item);
+
+            // 判断wr是否满足条件，如果满足，就推到fixResult里面
+            auto combine = wr_item.aand(this->bc.ltl);
+            for(auto& domain: this->domains){
+              combine = combine.aand(domain);
+            }
+            for(auto& goal: this->old_goals) {
+              combine = combine.aand(goal);
+            }
+            if(satSolver->checkSAT(combine) == true) {
+              level_result.push_back(next_item);
+            }
+          }
+        }
+        terms = this->bc.fetch_terms(j + 2);
+      }
+      for(auto& lr: level_result) {
+        this->fix_result.push_back(lr);
+      }
+      this->prev = std::move(next);
+    }
+
+    // 获取前limit个
+    {
+      std::vector<FixResultItem> ret;
+      for(unsigned i = 0; i < limit && i < fix_result.size(); i++) {
+        ret.emplace_back(std::move(this->fix_result.at(i)));
+      }
+      this->fix_result = std::move(ret);
+    }
+
+    return this->fix_result;
+  }
+
   std::set<LTL> FixSolver::SR(const LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel) {
     std::set<LTL> ret;
 

@@ -40,6 +40,7 @@ namespace autobc {
       FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
 
       const std::vector<FixResultItem>& fix(unsigned level);
+      const std::vector<FixResultItem>& fix_with_limit(unsigned limit);
       
       // 算法主函数
       static std::set<ltl::LTL> SR(const ltl::LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel);

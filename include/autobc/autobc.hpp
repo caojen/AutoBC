@@ -67,6 +67,7 @@ namespace autobc {
 
     // 生成需要修复的goal之后，进行修复
     const std::vector<FixResultItem>& fix(unsigned k);
+    const std::vector<FixResultItem>& fix_with_limit(unsigned limit);
   };
 }
 

@@ -320,6 +320,20 @@ namespace autobc {
 
     return this->fixed_goals;
   }
+
+  const std::vector<FixResultItem>& AutoBC::fix_with_limit(unsigned limit) {
+    this->fixed_goals.clear();
+    std::set<LTL> old_goals;
+    for(auto& goal: this->goals) {
+      if(&goal != this->target_goal) {
+        old_goals.insert(goal);
+      }
+    }
+    this->fixSolver = FixSolver(this->domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
+    this->fixed_goals = this->fixSolver.fix_with_limit(limit);
+
+    return this->fixed_goals;
+  }
 }
 
 namespace autobc {
