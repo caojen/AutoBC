@@ -79,9 +79,6 @@ namespace ltl {
             if(line.find("is false") != std::string::npos) {
               result = true;
             } else if(line.find("is true") != std::string::npos) {
-              std::cout << "[SatSolver] " << ltl << " ";
-              std::cout << "UNSAT";
-              std::cout << std::endl;
               result = false;
             } else {
               // unreachable.

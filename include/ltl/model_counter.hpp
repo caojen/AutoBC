@@ -26,6 +26,7 @@ namespace ltl {
       // 重载加减法，比较运算符
       BigInteger operator+(const BigInteger& other) const;
       BigInteger operator-(const BigInteger& other) const;
+      double operator/(const BigInteger& other) const;
       double device(const BigInteger& other) const;
       bool operator==(const BigInteger& other) const;
       bool operator!=(const BigInteger& other) const;

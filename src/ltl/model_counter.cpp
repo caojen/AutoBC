@@ -219,6 +219,10 @@ BigInteger BigInteger::operator-(const BigInteger& other) const {
   return ret;
 }
 
+double BigInteger::operator/(const BigInteger& other) const {
+  return this->device(other);
+}
+
 double BigInteger::device(const BigInteger& other) const {
   auto this_num = this->serialize();
   auto other_num = other.serialize();
@@ -365,8 +369,8 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
       std::cout << "\t" << arg << std::endl;
     }
     std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
-    std::cout << "Warning: It may be a bug from modelcounter.jar. Treat it as 0." << std::endl;
+    std::cout << "Warning: It may be a bug from modelcounter.jar. Treat it as -1." << std::endl;
     std::cout << "================================================================" << std::endl;
-    return { 0 };
+    return { -1 };
   }
 }

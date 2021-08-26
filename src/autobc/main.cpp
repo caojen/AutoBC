@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 
     ltl::satSolver = new SatSolver(nuxmv);
 
-    Ranking ranking(modelcounting, jdk16);
+    Ranking<FixResultItem> ranking(modelcounting, jdk16);
 
     auto abc = AutoBC::parse(global);
     abc.likelyhood = likelyhoood;
@@ -47,22 +47,34 @@ int main(int argc, char** argv) {
     abc.bc_sort();
     auto target_bc = abc.target_bc;
     std::cout << "Target BC is " << *target_bc << std::endl;
+    {
+        Lasso lasso = Lasso(*target_bc);
+        auto terms = lasso.fetch_terms(1);
+        std::cout << "-- Terms:" << std::endl;
+        for(auto& term: terms) {
+            std::cout << "-- -- " << term << std::endl;
+        }
+    }
     abc.get_fix_goal(k, jdk16);
     auto target_goal = abc.target_goal;
     std::cout << "Target Goal is " << *target_goal << std::endl;
 
-    std::cout << "Fix at level: " << level << std::endl;
-    auto fix_result = abc.fix(level);
-    // std::cout << "Fix Done..." << std::endl;
-    // for(int i = 0; i < level; i++) {
-    //     std::cout << "Level " << i + 1 << " Fix Results: (" << fix_result.at(i).size() << ") " << std::endl;
-    //     std::cout << "Ranking..." << std::endl;
-    //     auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result.at(i));
+    std::cout << std::endl;
 
-    //     for(auto& rankItem: ranked) {
-    //         std::cout << "\t" << std::setw(10) << rankItem.rank << "\t" << rankItem.ltl << std::endl;
-    //     }
-    // }
+    std::cout << "Fix at level: " << level << std::endl;
+    auto const &fix_result = abc.fix(level);
+    std::cout << "Fix Done. (" << fix_result.size() << ")" << std::endl;
+    for(auto& fix_result_item: fix_result) {
+        std::cout << fix_result_item.label << "\t\t" << fix_result_item.ltl << std::endl;
+    }
+    
+    std::cout << std::endl;
+    std::cout << "Ranking..." << std::endl;
+    auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+    for(auto& ranked_item: ranked) {
+        std::cout << ranked_item.item.label << "\t\t" << std::setw(10) << ranked_item.rank  << "\t" << ranked_item.item.ltl << std::endl;
+    }
+    
 
     // return 0;
 
@@ -77,5 +89,4 @@ int main(int argc, char** argv) {
     //     std::cout << std::endl;
     //     t = c.next();
     // }
-    Lasso lasso(LTL::parse("F( !f3 & X(G(!f3)))"));
 }

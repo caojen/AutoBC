@@ -3,21 +3,27 @@
 #include "ltl.hpp"
 #include "lasso.hpp"
 
+#include <string>
 #include <set>
 
 namespace autobc {
-  struct FixResult {
-    ltl::LTL ltl;
-    std::shared_ptr<std::vector<FixResult>> wr;
-    std::shared_ptr<std::vector<FixResult>> sr;
+  struct FixResultItem {
+    ltl::LTL      ltl;
+    std::string   label;
 
-    FixResult(ltl::LTL ltl) {
+    FixResultItem() {}
+
+    FixResultItem(const ltl::LTL& ltl, const std::string& label = "") {
       this->ltl = ltl;
-      this->wr = std::make_shared<std::vector<FixResult>>();
-      this->sr = std::make_shared<std::vector<FixResult>>();
+      this->label = label;
     }
 
-    bool operator<(const FixResult& other) const {
+    FixResultItem(const FixResultItem& other) {
+      this->label = other.label;
+      this->ltl = other.ltl;
+    }
+
+    bool operator<(const FixResultItem& other) const {
       return this->ltl < other.ltl;
     }
   };
@@ -33,11 +39,11 @@ namespace autobc {
        */
       FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
 
-      const std::vector<FixResult>& fix(unsigned level);
+      const std::vector<FixResultItem>& fix(unsigned level);
       
       // 算法主函数
-      static std::set<ltl::LTL> SR(const ltl::LTL& formula, const Lasso& lasso);
-      static std::set<ltl::LTL> WR(const ltl::LTL& formula, const Lasso& lasso);
+      static std::set<ltl::LTL> SR(const ltl::LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel);
+      static std::set<ltl::LTL> WR(const ltl::LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel);
     private:
       std::set<ltl::LTL> domains;
       ltl::LTL goal;
@@ -47,7 +53,7 @@ namespace autobc {
       unsigned level;
 
       std::set<ltl::LTL> used;
-      std::set<FixResult> prev;
-      std::vector<FixResult> fix_result;
+      std::set<FixResultItem> prev;
+      std::vector<FixResultItem> fix_result;
   };
 }

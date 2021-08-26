@@ -131,6 +131,7 @@ namespace autobc {
           }
         }
         ret.insert(tmp);
+        list = c.next();
       }
       this->cache[i] = ret;
       return ret;

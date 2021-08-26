@@ -307,7 +307,7 @@ namespace autobc {
     return *ret;
   }
 
-  const std::vector<FixResult>& AutoBC::fix(unsigned k) {
+  const std::vector<FixResultItem>& AutoBC::fix(unsigned k) {
     this->fixed_goals.clear();
     std::set<LTL> old_goals;
     for(auto& goal: this->goals) {
