@@ -44,12 +44,23 @@ namespace autobc {
         std::vector<RankingItem<T>> rank(const std::set<ltl::LTL> &domains, const std::set<ltl::LTL> &goals, const ltl::LTL &gd, const std::set<T> &replacements) {
             std::vector<RankingItem<T>> ret;
 
+            ltl::BigInteger denominator_a = 0;
+            {
+                // 计算分母a
+                std::set<ltl::LTL> ltls = domains;
+                for(auto &goal: goals) {
+                    ltls.insert(goal);
+                }
+                ltls.insert(gd);
+                denominator_a = this->mc->count(ltls, this->bound);
+            }
+
             for(auto& replacement: replacements) {
-                // 计算replacement的分
+                // 计算replacement的rank
                 auto replacement_ltl = to_ltl(replacement);
                 ltl::BigInteger numerator = 0;
 
-                {
+                if(denominator_a > 0) {
                     // 计算分子
                     std::set<ltl::LTL> ltls = domains;
                     for(auto &goal: goals) {
@@ -59,20 +70,9 @@ namespace autobc {
                     ltls.insert(replacement_ltl);
                     numerator = this->mc->count(ltls, this->bound);
                 }
-                
-                ltl::BigInteger denominator_a = 0;
-                {
-                    // 计算分母a
-                    std::set<ltl::LTL> ltls = domains;
-                    for(auto &goal: goals) {
-                        ltls.insert(goal);
-                    }
-                    ltls.insert(gd);
-                    denominator_a = this->mc->count(ltls, this->bound);
-                }
 
                 ltl::BigInteger denominator_b = 0;
-                {
+                if(numerator > 0) {
                     // 计算分母b
                     std::set<ltl::LTL> ltls = domains;
                     for(auto &goal: goals) {
@@ -81,8 +81,7 @@ namespace autobc {
                     ltls.insert(replacement_ltl);
                     denominator_b = this->mc->count(ltls, this->bound);
                 }
-                std::cout << replacement_ltl << " " << denominator_a << " " << denominator_b << " " << numerator << std::endl;
-                if(denominator_a == -1 || denominator_b == -1 || numerator == -1) {
+                if(denominator_a > 0 || denominator_b > 0 || numerator > 0) {
                     ret.push_back(RankingItem<T>(replacement, -1));
                 } else {
                     ret.push_back(RankingItem<T>(replacement, (numerator / denominator_a + numerator / denominator_b) / 2));
