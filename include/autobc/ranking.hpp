@@ -81,6 +81,7 @@ namespace autobc {
                     ltls.insert(replacement_ltl);
                     denominator_b = this->mc->count(ltls, this->bound);
                 }
+                std::cout << replacement_ltl << " " << denominator_a << " " << denominator_b << " " << numerator << std::endl;
                 if(denominator_a > 0 || denominator_b > 0 || numerator > 0) {
                     ret.push_back(RankingItem<T>(replacement, -1));
                 } else {
