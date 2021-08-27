@@ -127,3 +127,65 @@ F(h & m)
   "/src/autobc/bin/nuXmv-2.0.0-Linux"
 ]
 ```
+
+伪代码：
+```
+function:
+-- input : domain, goal, lasso-bc, limit = 100
+-- output: limit个修复公式
+
+算法开始：
+    根据domain和goal以及所有的lasso-bc, 对这些bc进行排序，获得第一个bc，记为 bc#0
+
+    根据domain和bc#0，获得我们的目标goal，记作 goal#0
+
+    (接下来，想要使用domain和bc#0，对goal#0进行修复，并生成limit个修复的公式)
+
+    获取bc#0的所有terms，假设有n个terms，记作 terms[n]
+
+    返回集           result = []
+    中间结果集合      tmp    = []
+    上一层修复的结果   prev   = [goal#0] 
+
+    level = 1
+
+    loop until result.size() >= limit:
+      保存本层修复过的公式：  next_prev = []
+
+      for sublevel = 1 ..= n:
+        接下来，遍历上一层修复的结果中所有的公式（不管修复是否成功）for p in prev:
+
+          根据sublevel获取terms的组合，返回  ts[m], 其中 m = C(sublevel, n)
+
+          根据SR(p)（1，3~9）生成修复集合（递归地）: s1
+          根据SR(p) (2) 生成修复集合（递归地）    : s2
+
+          (WR同理)
+
+          中间结果集合  r = []
+
+          if sublevel == 1:
+            # x.1(1.1, 2.1, 3.1, ...)
+            r <= s1 + s2
+          else:
+            # x.sublevel, 只取s2
+            r <= s2
+          endif
+          
+          对于r中的每个公式f，如果该公式不出现在tmp中（如果出现了，说明已经在之前生成过）：
+            tmp += f
+            next_prev += f
+
+            判定f是否为修复成功的公式。（对于SR：）
+              判断 f && domain && (goal - goal#0) && bc#0 是否为UnSat, 如果是UnSat，那么:
+                f修复成功： result += f
+
+            同理，对于WR：
+              判断 f && domain && (goal - goal#0) && bc#0 是否为Sat，如果是Sat，那么:
+                f修复成功： result += f
+    此时，result的size可能>limit，那么我们只要前limit个：
+    result = result[:limit]
+
+
+    对result进行排序，然后返回result
+```
