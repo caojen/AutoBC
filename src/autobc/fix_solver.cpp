@@ -221,13 +221,13 @@ namespace autobc {
     // SR(f) = 
 
     // 1: G(f)
-    basic_ret.emplace(formula.global());
+    // basic_ret.emplace(formula.global());
     // 3. if f = f1 | f2
     if(root->op == op::oor) {
       // f1:
-      basic_ret.emplace(root->left);
+      // basic_ret.emplace(root->left);
       // f2:
-      basic_ret.emplace(root->right);
+      // basic_ret.emplace(root->right);
       // f2 R f1
       auto f1 = LTL(root->right);
       auto f2 = LTL(root->left);
@@ -288,7 +288,7 @@ namespace autobc {
       // X f1
       basic_ret.emplace(f1.next());
       // f1
-      basic_ret.emplace(f1);
+      // basic_ret.emplace(f1);
     }
 
     // 7. if f = G f1
@@ -318,7 +318,7 @@ namespace autobc {
       // f1 & f2
       basic_ret.emplace(f1.aand(f2));
       // f2
-      basic_ret.emplace(f2);
+      // basic_ret.emplace(f2);
     }
 
     // 9. if f = f1 R f2
@@ -368,7 +368,7 @@ namespace autobc {
 
     // WR(f) = 
     // 1. F f
-    basic_ret.emplace(formula.finally());
+    // basic_ret.emplace(formula.finally());
 
     // 3. if f = f1 | f2
     if(root->op == op::oor) {
@@ -404,9 +404,9 @@ namespace autobc {
       // f1 U f2
       basic_ret.emplace(f1.until(f2));
       // f1
-      basic_ret.emplace(f1);
+      // basic_ret.emplace(f1);
       // f2
-      basic_ret.emplace(f2);
+      // basic_ret.emplace(f2);
     }
 
     // 5. f = X f1
@@ -442,7 +442,7 @@ namespace autobc {
       // F f1
       basic_ret.emplace(f1.finally());
       // f1
-      basic_ret.emplace(f1);
+      // basic_ret.emplace(f1);
     }
 
     // 8. f1 U f2
@@ -480,7 +480,7 @@ namespace autobc {
       // f1 | f2
       basic_ret.emplace(f1.oor(f2));
       // f2
-      basic_ret.emplace(f2);
+      // basic_ret.emplace(f2);
     }
 
     // 2. 选择未在f中出现的lasso的状态，析取term
