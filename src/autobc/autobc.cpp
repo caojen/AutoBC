@@ -303,6 +303,16 @@ namespace autobc {
         mbi = tbi;
       }
     }
+    for(auto& domain: this->domains) {
+      auto workspace = this->goals;
+      workspace.insert(domain);
+      workspace.insert(*this->target_bc);
+      auto tbi = mc.count(workspace, bound);
+      if(!ret || tbi < mbi) {
+        ret = &domain;
+        mbi = tbi;
+      }
+    }
     this->target_goal = const_cast<Goal*>(ret);
     return *ret;
   }
@@ -315,7 +325,13 @@ namespace autobc {
         old_goals.insert(goal);
       }
     }
-    this->fixSolver = FixSolver(this->domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
+    std::set<LTL> old_domains;
+    for(auto& domain: this->domains) {
+      if(&domain != this->target_goal) {
+        old_domains.insert(domain);
+      }
+    }
+    this->fixSolver = FixSolver(old_domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
     this->fixed_goals = this->fixSolver.fix(k);
 
     return this->fixed_goals;
@@ -329,7 +345,13 @@ namespace autobc {
         old_goals.insert(goal);
       }
     }
-    this->fixSolver = FixSolver(this->domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
+    std::set<LTL> old_domains;
+    for(auto& domain: this->domains) {
+      if(&domain != this->target_goal) {
+        old_domains.insert(domain);
+      }
+    }
+    this->fixSolver = FixSolver(old_domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
     this->fixed_goals = this->fixSolver.fix_with_limit(limit);
 
     return this->fixed_goals;

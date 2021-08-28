@@ -43,8 +43,11 @@ namespace autobc {
       const std::vector<FixResultItem>& fix_with_limit(unsigned limit);
       
       // 算法主函数
-      static std::set<ltl::LTL> SR(const ltl::LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel);
-      static std::set<ltl::LTL> WR(const ltl::LTL& formula, Lasso& lasso, unsigned level, unsigned sublevel);
+      static std::set<ltl::LTL> SR(const ltl::LTL& formula, Lasso& lasso);
+      static std::set<ltl::LTL> WR(const ltl::LTL& formula, Lasso& lasso);
+      static bool SR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc);
+      static bool WR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc);
+
     private:
       std::set<ltl::LTL> domains;
       ltl::LTL goal;

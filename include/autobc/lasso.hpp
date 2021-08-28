@@ -14,9 +14,9 @@ namespace autobc {
       std::set<ltl::LTL> terms;
       std::vector<ltl::LTL> vec_terms;
 
-      std::map<unsigned, std::set<ltl::LTL>> cache;
+      std::map<unsigned, std::vector<ltl::LTL>> cache;
       // 获取C(i, n)对LTL公式，这些公式都是由terms组合而成，之间是以&连接的。
-      std::set<ltl::LTL> fetch_terms(unsigned i);
+      std::vector<ltl::LTL> fetch_terms(unsigned i);
   };
 
   class C {

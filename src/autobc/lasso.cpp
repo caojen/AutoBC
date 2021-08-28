@@ -104,7 +104,7 @@ namespace autobc {
     }
   }
 
-  std::set<ltl::LTL> Lasso::fetch_terms(unsigned int i) {
+  std::vector<ltl::LTL> Lasso::fetch_terms(unsigned int i) {
     if(i == 0 || i > this->terms.size()) {
       return {};
     }
@@ -116,7 +116,7 @@ namespace autobc {
       auto n = this->terms.size();
       C c(i, n);
       // 返回结果
-      std::set<ltl::LTL> ret;
+      std::vector<ltl::LTL> ret;
 
       auto list = c.next();
       while(!list.empty()) {
@@ -130,9 +130,10 @@ namespace autobc {
             tmp = tmp.aand(this->vec_terms[idx - 1]);
           }
         }
-        ret.insert(tmp);
+        ret.push_back(tmp);
         list = c.next();
       }
+
       this->cache[i] = ret;
       return ret;
     }
