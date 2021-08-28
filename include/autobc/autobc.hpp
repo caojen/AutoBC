@@ -22,7 +22,7 @@ namespace autobc {
     std::set<BC>         bcs;
     std::vector<BC>      sorted_bcs;
     std::vector<double>  weight_bcs;
-    std::vector<FixResultItem>
+    std::set<ltl::LTL>
                          fixed_goals;
     FixSolver            fixSolver;
 
@@ -66,8 +66,8 @@ namespace autobc {
     const Goal &get_fix_goal(unsigned int bound, const std::string& jdk16 = "/usr/local/bin");
 
     // 生成需要修复的goal之后，进行修复
-    const std::vector<FixResultItem>& fix(unsigned k);
-    const std::vector<FixResultItem>& fix_with_limit(unsigned limit);
+    const std::set<ltl::LTL>& fix(unsigned k);
+    const std::set<ltl::LTL>& fix_with_limit(unsigned limit);
   };
 }
 

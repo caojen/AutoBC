@@ -68,18 +68,18 @@ int main(int argc, char** argv) {
     std::cout << "Fix with limit = " << limit << std::endl;
     auto const& fix_result = abc.fix_with_limit(limit);
     std::cout << "Fix Done. (" << fix_result.size() << ")" << std::endl;
-    unsigned idx = 0;
-    for(auto& fix_result_item: fix_result) {
-        ++idx;
-        std::cout << idx << " " << std::setw(20) << fix_result_item.label << " " << fix_result_item.ltl << std::endl;
-    }
+    // unsigned idx = 0;
+    // for(auto& fix_result_item: fix_result) {
+    //     ++idx;
+    //     std::cout << idx << " " << std::setw(20) << fix_result_item.label << " " << fix_result_item.ltl << std::endl;
+    // }
 
-    std::cout << std::endl;
-    std::cout << "Ranking..." << std::endl;
-    auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-    for(auto& ranked_item: ranked) {
-        std::cout << std::setw(20) << ranked_item.item.label << " " << std::setw(10) << ranked_item.rank  << " " << ranked_item.item.ltl << std::endl;
-    }
+    // std::cout << std::endl;
+    // std::cout << "Ranking..." << std::endl;
+    // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+    // for(auto& ranked_item: ranked) {
+    //     std::cout << std::setw(20) << ranked_item.item.label << " " << std::setw(10) << ranked_item.rank  << " " << ranked_item.item.ltl << std::endl;
+    // }
     
 
     // return 0;
