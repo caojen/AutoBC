@@ -131,7 +131,7 @@ F(h & m)
 伪代码：
 ```
 function:
--- input : domain, goal, lasso-bc, limit = 100
+-- input : domain, goal, lasso-bc, limit = 1000
 -- output: limit个修复公式
 
 算法开始：
