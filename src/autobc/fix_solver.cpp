@@ -1,3 +1,4 @@
+#include <chrono>
 #include "fix_solver.hpp"
 
 using namespace ltl;
@@ -121,6 +122,7 @@ namespace autobc {
   }
 
   const std::set<ltl::LTL>& FixSolver::fix_with_limit(unsigned limit) {
+    auto start = std::chrono::system_clock::now();
     this->fix_result.clear();
     
     std::queue<ltl::LTL> cs;
@@ -133,7 +135,9 @@ namespace autobc {
     cs.push(this->goal);
     cw.push(this->goal);
 
-    while((!cs.empty() || !cw.empty()) && this->fix_result.size() < limit) {
+    auto cur = std::chrono::system_clock::now();
+
+    while((!cs.empty() || !cw.empty()) && this->fix_result.size() < limit && start - cur < std::chrono::hours(2)) {
       if(!cs.empty()) {
         auto c = cs.front(); cs.pop();
         auto Thi = FixSolver::SR(c, this->bc);
@@ -170,7 +174,9 @@ namespace autobc {
           }
         } 
       }
+      cur = std::chrono::system_clock::now();
     }
+    
     return this->fix_result;
   }
 

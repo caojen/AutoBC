@@ -1,5 +1,6 @@
 #include <queue>
 #include <iostream>
+#include <cstring>
 
 #include "lasso.hpp"
 
@@ -22,12 +23,12 @@ namespace autobc {
       std::string cmd = "python3 /src/autobc/Lasso-BC/get_terms.py '";
       cmd += ltl.serialize();
       cmd += "'";
-      std::cout << cmd << std::endl;
       FILE* fp = popen(cmd.c_str(), "r");
       
       char line[102400] = { 0 };
       while(fgets(line, 102400, fp)) {
         // std::cout << line << std::endl;
+        line[strcspn(line, "\n")] = 0;
         this->terms.insert(LTL::parse(std::string(line)));
       }
 

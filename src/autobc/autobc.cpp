@@ -223,6 +223,9 @@ namespace autobc {
       auto ltls = split(line.substr(pos), ",");
       auto prefix = line.substr(0, pos);
       for(auto &ltl: ltls) {
+        if(ltl == " ") {
+          continue;
+        }
         if(prefix == "Domains:") {
           ret.add_domain(ltl::LTL::parse(ltl));
         } else if(prefix == "Goals:") {

@@ -246,23 +246,28 @@ namespace ltl {
       auto right = this->right->serialize();
 
       if(this->op->can_reverse()) {
-        if(left < right) {
-          ostr << "(";
-          ostr << left;
-          ostr << ")";
-          ostr << this->op->str();
-          ostr << "(";
-          ostr << right;
-          ostr << ")";
+        bool left_first = false;
+        if(this->left->is_literal() || this->left->is_literal_negative()) {
+          left_first = true;
         } else {
-          ostr << "(";
-          ostr << right;
-          ostr << ")";
-          ostr << this->op->str();
-          ostr << "(";
-          ostr << left;
-          ostr << ")";
+          auto left_op = this->left->op.get();
+          if(dynamic_cast<ProOp1*>(left_op) || dynamic_cast<ProOp2*>(left_op)) {
+            left_first = true;
+          }
         }
+        if(left_first == false) {
+          std::string tmp = std::move(left);
+          left = std::move(right);
+          right = std::move(tmp);
+        }
+
+        ostr << "(";
+        ostr << left;
+        ostr << ")";
+        ostr << this->op->str();
+        ostr << "(";
+        ostr << right;
+        ostr << ")";
       } else {
         ostr << "(";
         ostr << left;
