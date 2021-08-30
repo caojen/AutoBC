@@ -23,5 +23,6 @@ do
     cd build
     echo "Running: ${filename}"
     ./autobc --global $domainfile --bcfile $bcfile --ignore -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 1000 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar -n /src/autobc/bin/nuXmv-2.0.0-Linux | tee outputs/${filename}.tmp
+    cd -
   fi
 done

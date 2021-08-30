@@ -531,9 +531,17 @@ namespace autobc {
         cns = c.next();
       }
 
-    } else {
+    } else if(vec_goals.size() == 1) {
       // vec_goals.size() == 1
       combine = combine.aand(vec_goals[0]);
+      if(!goal_is_from_domain) {
+        combine = combine.aand(formula);
+      }
+      if(satSolver->checkSAT(combine) == false) {
+        get_unsat = true;
+      }
+    } else {
+      // vec_goals.size() == 0
       if(!goal_is_from_domain) {
         combine = combine.aand(formula);
       }
