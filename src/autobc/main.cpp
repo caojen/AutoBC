@@ -1,4 +1,5 @@
 #include <iomanip>
+#include <chrono>
 
 #include "autobc.hpp"
 #include "param.hpp"
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
 
     ltl::satSolver = new SatSolver(nuxmv);
 
-    Ranking<FixResultItem> ranking(modelcounting, jdk16);
+    Ranking<ltl::LTL> ranking(modelcounting, jdk16);
 
     auto abc = AutoBC::parse(global);
     abc.likelyhood = likelyhoood;
@@ -66,20 +67,18 @@ int main(int argc, char** argv) {
     // std::cout << "Fix at level: " << level << std::endl;
     // auto const &fix_result = abc.fix(level);
     std::cout << "Fix with limit = " << limit << std::endl;
+    auto prev = std::chrono::system_clock::now();
     auto const& fix_result = abc.fix_with_limit(limit);
-    std::cout << "Fix Done. (" << fix_result.size() << ")" << std::endl;
-    // unsigned idx = 0;
-    // for(auto& fix_result_item: fix_result) {
-    //     ++idx;
-    //     std::cout << idx << " " << std::setw(20) << fix_result_item.label << " " << fix_result_item.ltl << std::endl;
-    // }
+    auto curr = std::chrono::system_clock::now();
+    std::chrono::duration<double, std::milli> diff = curr - prev;
+    std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
 
-    // std::cout << std::endl;
-    // std::cout << "Ranking..." << std::endl;
-    // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-    // for(auto& ranked_item: ranked) {
-    //     std::cout << std::setw(20) << ranked_item.item.label << " " << std::setw(10) << ranked_item.rank  << " " << ranked_item.item.ltl << std::endl;
-    // }
+    std::cout << std::endl;
+    std::cout << "Ranking..." << std::endl;
+    auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+    for(auto& ranked_item: ranked) {
+        std::cout << std::setw(10) << ranked_item.rank  << " " << ranked_item.item << std::endl;
+    }
     
 
     // return 0;

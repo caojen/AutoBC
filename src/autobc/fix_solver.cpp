@@ -33,12 +33,13 @@ static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::pair<bool,
 };
 
 namespace autobc {
-  FixSolver::FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<LTL>& old_goals) {
+  FixSolver::FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<LTL>& old_goals, bool goal_is_from_domain) {
     this->domains = domains;
     this->goal = goal;
     this->bc = bc;
     this->level = 0;
     this->old_goals = old_goals;
+    this->goal_is_from_domain = goal_is_from_domain;
   }
 
   const std::set<ltl::LTL>& FixSolver::fix(unsigned level) {
@@ -125,6 +126,10 @@ namespace autobc {
     std::queue<ltl::LTL> cs;
     std::queue<ltl::LTL> cw;
 
+    std::set<ltl::LTL> cs_used;
+    std::set<ltl::LTL> cw_used;
+
+
     cs.push(this->goal);
     cw.push(this->goal);
 
@@ -133,7 +138,14 @@ namespace autobc {
         auto c = cs.front(); cs.pop();
         auto Thi = FixSolver::SR(c, this->bc);
         for(auto& thi: Thi) {
-          if(FixSolver::SR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl)) {
+          if(cs_used.find(thi) != cs_used.end()) {
+            continue;
+          } else {
+            cs_used.insert(thi);
+          }
+
+          if(FixSolver::SR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl, this->goal_is_from_domain)) {
+            std::cout << "Get Fix Result From SR: " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
             cs.push(thi);
@@ -142,10 +154,16 @@ namespace autobc {
       }
 
       if(!cw.empty()) {
-        auto c = cs.front(); cs.pop();
+        auto c = cw.front(); cw.pop();
         auto Thi = FixSolver::WR(c, this->bc);
         for(auto& thi: Thi) {
+          if(cw_used.find(thi) != cw_used.end()) {
+            continue;
+          } else {
+            cw_used.insert(thi);
+          }
           if(FixSolver::WR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl)) {
+            std::cout << "Get Fix Result From WR: " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
             cw.push(thi);
@@ -322,7 +340,6 @@ namespace autobc {
 
   std::set<LTL> FixSolver::WR(const LTL& formula, Lasso& lasso) {
     std::set<LTL> ret;
-    std::set<LTL> ret;
     std::set<LTL> lasso_ret;
 
     auto& root = formula.root;
@@ -447,14 +464,104 @@ namespace autobc {
     // 2. 选择未在f中出现的lasso的状态，析取term
     if(formula.is_boolean_formula()) {
       auto terms = lasso.fetch_terms(1);
-      for(auto& term: terms) {
-        auto combine = formula.aand(term);
-        auto isSat = satSolver->checkSAT(combine);
-        if(!isSat) {
-          lasso_ret.insert(formula.oor(term));
+      auto insert_func = [&](unsigned begin) {
+        for(; begin < terms.size(); ++begin) {
+          auto const & term = terms.at(begin);
+
+          auto workspace = formula.aand(term);
+          if(satSolver->checkSAT(workspace) == false) {
+            ret.emplace(formula.oor(term));
+          }
+        }
+      };
+
+      if(formula.root->op != op::oor) {
+        insert_func(0);
+      } else {
+        // 检查right是否为一个 term
+        auto right = LTL(formula.root->right);
+        bool found = false;
+        for(unsigned i = 0; i < terms.size() && found == false; ++i) {
+          if(right == terms[i]) {
+            found = true;
+            insert_func(i + 1);
+          }
+        }
+        if(!found) {
+          insert_func(0);
         }
       }
     }
     return ret;
+  }
+
+  bool FixSolver::SR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc, bool goal_is_from_domain) {
+    auto combine = bc;
+    for(auto& domain: domains) {
+      combine = combine.aand(domain);
+    }
+    if(goal_is_from_domain) {
+      combine.aand(formula);
+    }
+
+    // goals to vec_goals
+    std::vector<ltl::LTL> vec_goals;
+    for(auto goal: goals) {
+      vec_goals.push_back(goal);
+    }
+
+    bool get_unsat = false;
+
+    if(vec_goals.size() > 1) {
+
+      C c(vec_goals.size() - 1, vec_goals.size());
+      auto cns = c.next();
+
+      while(cns.empty() && !get_unsat) {
+        ltl::LTL tmp = combine;
+        for(auto& cn: cns) {
+          tmp = tmp.aand(vec_goals.at(cn));
+        }
+        if(!goal_is_from_domain) {
+          tmp = tmp.aand(formula);
+        }
+        if(satSolver->checkSAT(tmp) == false) {
+          get_unsat = true;
+        }
+        cns = c.next();
+      }
+
+    } else {
+      // vec_goals.size() == 1
+      combine = combine.aand(vec_goals[0]);
+      if(!goal_is_from_domain) {
+        combine = combine.aand(formula);
+      }
+      if(satSolver->checkSAT(combine) == false) {
+        get_unsat = true;
+      }
+    }
+    
+    if(get_unsat) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool FixSolver::WR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc) {
+    auto combine = formula.aand(bc);
+    for(auto& domain: domains) {
+      combine = combine.aand(domain);
+    }
+    for(auto& goal: goals) {
+      combine = combine.aand(goal);
+    }
+
+    if(satSolver->checkSAT(combine) == true) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

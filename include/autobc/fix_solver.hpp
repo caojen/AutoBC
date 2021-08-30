@@ -37,7 +37,7 @@ namespace autobc {
        * @param bc 指定的Lasso BC
        * @param old_goals 所有的goals，去除掉需要修复的goal
        */
-      FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
+      FixSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals, bool goal_is_from_domain);
 
       const std::set<ltl::LTL>& fix(unsigned level);
       const std::set<ltl::LTL>& fix_with_limit(unsigned limit);
@@ -45,7 +45,7 @@ namespace autobc {
       // 算法主函数
       static std::set<ltl::LTL> SR(const ltl::LTL& formula, Lasso& lasso);
       static std::set<ltl::LTL> WR(const ltl::LTL& formula, Lasso& lasso);
-      static bool SR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc);
+      static bool SR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc, bool goal_is_from_domain);
       static bool WR_repair_success(const ltl::LTL& formula, const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& bc);
 
     private:
@@ -53,6 +53,7 @@ namespace autobc {
       ltl::LTL goal;
       Lasso bc;
       std::set<ltl::LTL> old_goals;
+      bool goal_is_from_domain;
 
       unsigned level;
 
