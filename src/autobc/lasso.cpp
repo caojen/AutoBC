@@ -1,4 +1,5 @@
 #include <queue>
+#include <iostream>
 
 #include "lasso.hpp"
 
@@ -10,96 +11,121 @@ namespace autobc {
   Lasso::Lasso(const LTL& ltl) {
     this->ltl = ltl;
     // Get Lasso terms of this->ltl, insert into this->terms and this->vec_terms
-    auto in_order = split_into_in_order(this->ltl.serialize());
+    auto f_count = 0;
+    auto str = ltl.serialize();
+    for(auto& ch: str) {
+      if(ch == 'F') {
+        f_count++;
+      }
+    }
+    if(f_count > 1) {
+      std::string cmd = "python3 /src/autobc/Lasso-BC/get_terms.py '";
+      cmd += ltl.serialize();
+      cmd += "'";
+      std::cout << cmd << std::endl;
+      FILE* fp = popen(cmd.c_str(), "r");
+      
+      char line[102400] = { 0 };
+      while(fgets(line, 102400, fp)) {
+        // std::cout << line << std::endl;
+        this->terms.insert(LTL::parse(std::string(line)));
+      }
 
-    auto post_order = in_order_to_post_order(in_order);
-    
-    std::stack<std::shared_ptr<LTL::LTLNode>> stack;
+      for(auto& t: this->terms) {
+        this->vec_terms.push_back(t);
+      }
+    } else {
+      auto in_order = split_into_in_order(this->ltl.serialize());
 
-    // ret = <term, root>
-    std::vector<std::pair<std::shared_ptr<LTL::LTLNode>, std::shared_ptr<LTL::LTLNode>>> tmp;
+      auto post_order = in_order_to_post_order(in_order);
+      
+      std::stack<std::shared_ptr<LTL::LTLNode>> stack;
 
-    for(auto& s: post_order) {
-      auto op = Operator::gen(s);
-      if(op == op::emptyOp) {
-        stack.push(std::make_shared<LTL::LTLNode>(ltl::Literal(s)));
-      } else {
-        // 判断op是什么符号
-        if(dynamic_cast<Op2*>(op.get()) != nullptr) {
-          // 二元运算符时，无条件加入
-          if(stack.size() < 2) {
-            throw not_a_ltl();
-          }
-          std::shared_ptr<LTL::LTLNode> a = stack.top();
-          stack.pop();
-          std::shared_ptr<LTL::LTLNode> b = stack.top();
-          stack.pop();
-          if(!use_op_imply && dynamic_cast<Imply*>(op.get()) != nullptr) {
-            auto not_b = std::make_shared<LTL::LTLNode>(op::nnot, b);
-            stack.push(std::make_shared<LTL::LTLNode>(not_b, op::oor, a));
-          } else {
-            stack.push(std::make_shared<LTL::LTLNode>(b, op, a));
-          }
-        } else if(dynamic_cast<Op1*>(op.get()) != nullptr) {
-          // 一元运算符时，如果是X或G，那么需要单独执行
-          // 但无论如何都是要继续构造
+      // ret = <term, root>
+      std::vector<std::pair<std::shared_ptr<LTL::LTLNode>, std::shared_ptr<LTL::LTLNode>>> tmp;
 
-          if(stack.empty()) {
-            throw not_a_ltl();
-          }
-
-          auto top = stack.top();
-
-          std::shared_ptr<LTL::LTLNode> a = stack.top();
-          stack.pop();
-          stack.push(std::make_shared<LTL::LTLNode>(op, a));
-
-          if(op == op::next || op == op::finally) {
-            // 如果是next 或 finally
-            
-            // 判断顶部是不是文字
-            if(top->is_literal() || top->is_literal_negative()) {
-              auto term = top;
-              auto root = stack.top();
-              tmp.push_back({term, root});
+      for(auto& s: post_order) {
+        auto op = Operator::gen(s);
+        if(op == op::emptyOp) {
+          stack.push(std::make_shared<LTL::LTLNode>(ltl::Literal(s)));
+        } else {
+          // 判断op是什么符号
+          if(dynamic_cast<Op2*>(op.get()) != nullptr) {
+            // 二元运算符时，无条件加入
+            if(stack.size() < 2) {
+              throw not_a_ltl();
+            }
+            std::shared_ptr<LTL::LTLNode> a = stack.top();
+            stack.pop();
+            std::shared_ptr<LTL::LTLNode> b = stack.top();
+            stack.pop();
+            if(!use_op_imply && dynamic_cast<Imply*>(op.get()) != nullptr) {
+              auto not_b = std::make_shared<LTL::LTLNode>(op::nnot, b);
+              stack.push(std::make_shared<LTL::LTLNode>(not_b, op::oor, a));
             } else {
-              // 如果不是文字，那么判断是不是&
-              if(top->op == op::aand) {
-                auto left = top->left;
-                auto right = top->right;
-                auto leftis = (left->is_literal() || left->is_literal_negative() || left->op == op::aand) && (left->serialize().find('G') == std::string::npos);
-                auto rightis = (right->is_literal() || right->is_literal_negative() || right->op == op::aand) && (right->serialize().find('G') == std::string::npos);
-                auto root = stack.top();
-                std::shared_ptr<LTL::LTLNode> term;
-                if(leftis && !rightis) {
-                  term = left;
-                } else if(!leftis && rightis) {
-                  term = right;
-                } else if(leftis && rightis) {
-                  term = top;
-                }
-                if(term) {
-                  tmp.push_back({term, root});
-                }
-              }
+              stack.push(std::make_shared<LTL::LTLNode>(b, op, a));
+            }
+          } else if(dynamic_cast<Op1*>(op.get()) != nullptr) {
+            // 一元运算符时，如果是X或G，那么需要单独执行
+            // 但无论如何都是要继续构造
+
+            if(stack.empty()) {
+              throw not_a_ltl();
             }
 
-          } else if(op == op::global) {
-            auto root = top;
-            for(auto iter = tmp.begin(); iter != tmp.end(); ++iter) {
-              if(iter->second == root) {
-                tmp.erase(iter);
-                break;
+            auto top = stack.top();
+
+            std::shared_ptr<LTL::LTLNode> a = stack.top();
+            stack.pop();
+            stack.push(std::make_shared<LTL::LTLNode>(op, a));
+
+            if(op == op::next || op == op::finally) {
+              // 如果是next 或 finally
+              
+              // 判断顶部是不是文字
+              if(top->is_literal() || top->is_literal_negative()) {
+                auto term = top;
+                auto root = stack.top();
+                tmp.push_back({term, root});
+              } else {
+                // 如果不是文字，那么判断是不是&
+                if(top->op == op::aand) {
+                  auto left = top->left;
+                  auto right = top->right;
+                  auto leftis = (left->is_literal() || left->is_literal_negative() || left->op == op::aand) && (left->serialize().find('G') == std::string::npos);
+                  auto rightis = (right->is_literal() || right->is_literal_negative() || right->op == op::aand) && (right->serialize().find('G') == std::string::npos);
+                  auto root = stack.top();
+                  std::shared_ptr<LTL::LTLNode> term;
+                  if(leftis && !rightis) {
+                    term = left;
+                  } else if(!leftis && rightis) {
+                    term = right;
+                  } else if(leftis && rightis) {
+                    term = top;
+                  }
+                  if(term) {
+                    tmp.push_back({term, root});
+                  }
+                }
+              }
+
+            } else if(op == op::global) {
+              auto root = top;
+              for(auto iter = tmp.begin(); iter != tmp.end(); ++iter) {
+                if(iter->second == root) {
+                  tmp.erase(iter);
+                  break;
+                }
               }
             }
           }
         }
       }
-    }
-    for(auto& item: tmp) {
-      auto insert_result = this->terms.insert(item.first);
-      if(insert_result.second == true) {
-        this->vec_terms.push_back(item.first);
+      for(auto& item: tmp) {
+        auto insert_result = this->terms.insert(item.first);
+        if(insert_result.second == true) {
+          this->vec_terms.push_back(item.first);
+        }
       }
     }
   }
