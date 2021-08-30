@@ -39,7 +39,7 @@ def parseLassoBC(str):
 # 反向解析出前后缀公式, k个lassoBC的析取截k个出来，然后每个lassoBC取状态
 def parse_kLassoBc(lassoBc):
     LassoBC = []
-    matchObj = re.match( r'\((.*)\) \| \((.*)\)', lassoBc)
+    matchObj = re.match( r'\((.*)\)\|\((.*)\)', lassoBc)
     latter_part = ''
     left = ''
     while(matchObj):
@@ -52,7 +52,7 @@ def parse_kLassoBc(lassoBc):
             if(latter_part.find('F')!=-1):
                 LassoBC.append(latter_part)
                 latter_part = ''
-        matchObj = re.match( r'\((.*)\) \| \((.*)\)', left)
+        matchObj = re.match( r'\((.*)\)\|\((.*)\)', left)
     LassoBC.append(left)
     result = []
     for lassoBc in LassoBC:
