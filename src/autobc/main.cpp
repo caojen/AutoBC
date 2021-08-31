@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
     abc.jdk8 = jdk8;
     abc.use_bcs(bcfile, !ignore_first_line);
     std::cout << abc << std::endl;
-    return 0;
+
     std::cout << "Finding Target BC..." << std::endl;
     abc.bc_sort();
     auto target_bc = abc.target_bc;
