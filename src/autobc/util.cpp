@@ -15,32 +15,32 @@ namespace autobc {
       ret.insert(LTL(*root->literal));
     } else if(root->is_op1()) {
       ret.insert(LTL(*root));
-      if(!root->right->is_boolean_formula()) {
+      // if(!root->right->is_boolean_formula()) {
         auto s = sf(root->right);
         for(auto& ss: s) {
           ret.insert(ss);
         }
-      } else {
-        ret.insert(root->right);
-      }
+      // } else {
+      //   ret.insert(root->right);
+      // }
     } else if(root->is_op2()) {
       ret.insert(LTL(*root));
-      if(!root->right->is_boolean_formula()) {
+      // if(!root->right->is_boolean_formula()) {
         auto s = sf(root->right);
         for(auto& ss: s) {
           ret.insert(ss);
         }
-      } else {
-        ret.insert(root->right);
-      }
-      if(!root->left->is_boolean_formula()) {
-        auto s = sf(root->left);
+      // } else {
+      //   ret.insert(root->right);
+      // }
+      // if(!root->left->is_boolean_formula()) {
+        s = sf(root->left);
         for(auto& ss: s) {
           ret.insert(ss);
         }
-      } else {
-        ret.insert(root->left);
-      }
+      // } else {
+      //   ret.insert(root->left);
+      // }
     }
 
     return ret;
