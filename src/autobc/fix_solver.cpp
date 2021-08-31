@@ -75,7 +75,7 @@ namespace autobc {
             std::cout << "+ Get Fix Result From SR: " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
-            std::cout << "- WR found, push into cw queue: " << thi << std::endl;
+            std::cout << "- SR found, push into sr queue: " << thi << std::endl;
             cs.push(thi);
           }
         }
