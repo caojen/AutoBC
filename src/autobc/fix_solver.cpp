@@ -137,7 +137,7 @@ namespace autobc {
 
     auto cur = std::chrono::system_clock::now();
 
-    while((!cs.empty() || !cw.empty()) && this->fix_result.size() < limit && start - cur < std::chrono::hours(2)) {
+    while((!cs.empty() || !cw.empty()) && this->fix_result.size() < limit && cur - start < std::chrono::minutes(30)) {
       if(!cs.empty()) {
         auto c = cs.front(); cs.pop();
         auto Thi = FixSolver::SR(c, this->bc);
