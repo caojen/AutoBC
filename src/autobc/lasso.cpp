@@ -131,6 +131,13 @@ namespace autobc {
     }
   }
 
+  Lasso::Lasso(const Lasso& other) {
+    this->ltl = other.ltl;
+    this->cache = other.cache;
+    this->terms = other.terms;
+    this->vec_terms = other.vec_terms;
+  }
+
   std::vector<ltl::LTL> Lasso::fetch_terms(unsigned int i) {
     if(i == 0 || i > this->terms.size()) {
       return {};

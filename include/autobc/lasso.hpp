@@ -9,6 +9,7 @@ namespace autobc {
     public:
       Lasso() = default;
       explicit Lasso(const ltl::LTL& ltl);
+      Lasso(const Lasso& other);
 
       ltl::LTL ltl;
       std::set<ltl::LTL> terms;
