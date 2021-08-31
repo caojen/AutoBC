@@ -443,7 +443,7 @@ namespace autobc {
       C c(vec_goals.size() - 1, vec_goals.size());
       auto cns = c.next();
 
-      while(cns.empty() && !get_unsat) {
+      while(!cns.empty() && !get_unsat) {
         ltl::LTL tmp = combine;
         for(auto& cn: cns) {
           tmp = tmp.aand(vec_goals.at(cn));

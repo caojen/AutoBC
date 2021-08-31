@@ -65,21 +65,32 @@ int main(int argc, char** argv) {
     std::cout << "Target Goal/Domain is " << *target_goal << std::endl;
 
     std::cout << std::endl;
+    {
 
-    // std::cout << "Fix at level: " << level << std::endl;
-    // auto const &fix_result = abc.fix(level);
-    std::cout << "Fix with limit = " << limit << std::endl;
-    auto prev = std::chrono::system_clock::now();
-    auto const& fix_result = abc.fix_with_limit(limit);
-    auto curr = std::chrono::system_clock::now();
-    std::chrono::duration<double, std::milli> diff = curr - prev;
-    std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
+        // std::cout << "Fix with limit = " << limit << std::endl;
+        // auto prev = std::chrono::system_clock::now();
+        // auto const& fix_result = abc.fix_with_limit(limit);
+        // auto curr = std::chrono::system_clock::now();
+        // std::chrono::duration<double, std::milli> diff = curr - prev;
+        // std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "Ranking..." << std::endl;
-    auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-    for(auto& ranked_item: ranked) {
-        std::cout << std::setw(10) << ranked_item.rank  << " " << ranked_item.item << std::endl;
+        // std::cout << std::endl;
+        // std::cout << "Ranking..." << std::endl;
+        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+        // for(auto& ranked_item: ranked) {
+        //     std::cout << std::setw(10) << ranked_item.rank  << " " << ranked_item.item << std::endl;
+        // }
+
+    }
+
+    {
+        std::cout << "Random Fix with limit = " << limit << std::endl;
+        auto prev = std::chrono::system_clock::now();
+        auto const& fix_result = abc.random_fix_with_limit(limit);
+        auto curr = std::chrono::system_clock::now();
+        std::chrono::duration<double, std::milli> diff = curr - prev;
+        std::cout << "Random Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() << "ms)" << std::endl;
+        std::cout << std::endl;
     }
     
 

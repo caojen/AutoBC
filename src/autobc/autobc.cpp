@@ -10,6 +10,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include "autobc.hpp"
+#include "random_solver.hpp"
 
 using namespace ltl;
 
@@ -336,6 +337,20 @@ namespace autobc {
     this->fixed_goals = this->fixSolver.fix_with_limit(limit);
 
     return this->fixed_goals;
+  }
+  
+  const std::set<ltl::LTL>& AutoBC::random_fix_with_limit(unsigned limit) {
+    this->random_fixed_goals.clear();
+    std::set<LTL> old_goals;
+    for(auto& goal: this->goals) {
+      if(&goal != this->target_goal) {
+        old_goals.insert(goal);
+      }
+    }
+    auto random_solver = RandomSolver(this->domains, *this->target_goal, Lasso(*this->target_bc), old_goals);
+    this->random_fixed_goals = random_solver.fix_with_limit(limit);
+
+    return this->random_fixed_goals;
   }
 }
 

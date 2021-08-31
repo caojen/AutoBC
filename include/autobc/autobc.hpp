@@ -24,6 +24,9 @@ namespace autobc {
     std::vector<double>  weight_bcs;
     std::set<ltl::LTL>
                          fixed_goals;
+    std::set<ltl::LTL>
+                         random_fixed_goals;
+                         
     FixSolver            fixSolver;
 
     Goal*                target_goal = nullptr;
@@ -67,6 +70,7 @@ namespace autobc {
 
     // 生成需要修复的goal之后，进行修复
     const std::set<ltl::LTL>& fix_with_limit(unsigned limit);
+    const std::set<ltl::LTL>& random_fix_with_limit(unsigned limit);
   };
 }
 
