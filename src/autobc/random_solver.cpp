@@ -193,15 +193,7 @@ bool RandomSolver::repair_success(const ltl::LTL& formula) {
         cns = c.next();
       }
     } else if(vec_goals.size() == 1) {
-      ltl::LTL combine = this->bc.ltl.aand(vec_goals[0]).aand(formula);
-      for(auto& domain: this->domains) {
-        combine = combine.aand(domain);
-      }
-      if(ltl::satSolver->checkSAT(combine) == false) {
-        ret = true;
-      }
-    } else {
-      // vec_goals . size () == 0
+      // vec_goals . size () == 1
       ltl::LTL combine = this->bc.ltl.aand(formula);
       for(auto& domain: this->domains) {
         combine = combine.aand(domain);

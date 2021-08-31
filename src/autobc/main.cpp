@@ -4,6 +4,7 @@
 #include "autobc.hpp"
 #include "param.hpp"
 #include "util.hpp"
+#include "random_solver.hpp"
 
 using namespace ltl;
 using namespace autobc;
@@ -67,6 +68,15 @@ int main(int argc, char** argv) {
     std::cout << "Target Goal/Domain is " << *target_goal << std::endl;
 
     std::cout << std::endl;
+    std::set<ltl::LTL> old_goal;
+    for(auto& g: abc.goals) {
+        if(target_goal != &g) {
+            old_goal.insert(g);
+        }
+    }
+    RandomSolver rs(abc.domains, *target_goal, Lasso(*target_bc), old_goal);
+    auto r = rs.repair_success(ltl::LTL::parse("G((!(r))|(G(!(s))))"));
+    std::cout << r << std::endl;
 
     std::set<ltl::LTL> ref_result;
     std::set<ltl::LTL> random_result;

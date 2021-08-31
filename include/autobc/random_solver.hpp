@@ -11,8 +11,6 @@ namespace autobc {
       RandomSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
       const std::set<ltl::LTL>& fix_with_limit(unsigned limit);
 
-    private:
-
       static std::set<ltl::LTL> RS(const ltl::LTL& formula);
       bool repair_success(const ltl::LTL& formula);
 
