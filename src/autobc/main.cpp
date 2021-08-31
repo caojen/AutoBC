@@ -3,6 +3,7 @@
 
 #include "autobc.hpp"
 #include "param.hpp"
+#include "util.hpp"
 
 using namespace ltl;
 using namespace autobc;
@@ -62,6 +63,7 @@ int main(int argc, char** argv) {
     }
     abc.get_fix_goal(k, jdk16);
     auto target_goal = abc.target_goal;
+    ranking.target_goal = target_goal;
     std::cout << "Target Goal/Domain is " << *target_goal << std::endl;
 
     std::cout << std::endl;
@@ -70,21 +72,21 @@ int main(int argc, char** argv) {
     std::set<ltl::LTL> random_result;
     {
 
-        // std::cout << "Fix with limit = " << limit << std::endl;
-        // auto prev = std::chrono::system_clock::now();
-        // auto const& fix_result = abc.fix_with_limit(limit);
-        // ref_result = fix_result;
+        std::cout << "Fix with limit = " << limit << std::endl;
+        auto prev = std::chrono::system_clock::now();
+        auto const& fix_result = abc.fix_with_limit(limit);
+        ref_result = fix_result;
 
-        // auto curr = std::chrono::system_clock::now();
-        // std::chrono::duration<double, std::milli> diff = curr - prev;
-        // std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
+        auto curr = std::chrono::system_clock::now();
+        std::chrono::duration<double, std::milli> diff = curr - prev;
+        std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
 
-        // std::cout << std::endl;
-        // std::cout << "Ranking..." << std::endl;
-        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-        // for(auto& ranked_item: ranked) {
-        //     std::cout << std::setw(10) << ranked_item.rank  << " " << ranked_item.item << std::endl;
-        // }
+        std::cout << std::endl;
+        std::cout << "Ranking..." << std::endl;
+        auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+        for(auto& ranked_item: ranked) {
+            std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
+        }
 
     }
     std::cout << std::endl << std::endl;
@@ -102,7 +104,7 @@ int main(int argc, char** argv) {
         std::cout << "Ranking..." << std::endl;
         auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
         for(auto& ranked_item: ranked) {
-            std::cout << std::setw(10) << ranked_item.rank  << " " << ranked_item.item << std::endl;
+            std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
         }
     }
     

@@ -8,6 +8,7 @@
 
 #include "ltl.hpp"
 #include "fix_solver.hpp"
+#include "util.hpp"
 
 namespace autobc {
 
@@ -18,17 +19,19 @@ namespace autobc {
     class RankingItem {
     public:
         RankingItem() = delete;
-        RankingItem(const T &item, double rank = 0) {
+        RankingItem(const T &item, double rank = 0, double syn = 0) {
             this->item = item;
             this->rank = rank;
+            this->syn = syn;
         }
 
         bool operator<(const RankingItem &other) const {
-            return this->rank < other.rank;
+            return this->rank < other.rank || this->rank == other.rank && this->syn < other.syn;
         }
 
         T item;
         double rank;
+        double syn;
     };
 
     template <class T>
@@ -84,9 +87,9 @@ namespace autobc {
                 // std::cout << replacement_ltl << " " << denominator_a << " " << denominator_b << " " << numerator << std::endl;
 
                 if(denominator_a > 0 && denominator_b > 0 && numerator > 0) {
-                    ret.push_back(RankingItem<T>(replacement, (numerator / denominator_a + numerator / denominator_b) / 2));
+                    ret.push_back(RankingItem<T>(replacement, ((numerator / denominator_a + numerator / denominator_b) / 2), synSim(*this->target_goal, replacement)));
                 } else {
-                    ret.push_back(RankingItem<T>(replacement, -1));
+                    ret.push_back(RankingItem<T>(replacement, -1, synSim(*this->target_goal, replacement)));
                 }
             }
 
@@ -102,7 +105,7 @@ namespace autobc {
 
             return this->rank(domains, goals, gd, forward);
         }
-
+        ltl::LTL* target_goal;
     private:
         std::string counter;
         std::string jdk16;
