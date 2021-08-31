@@ -37,27 +37,31 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
   std::set<ltl::LTL>& result = this->fix_results;
   std::set<ltl::LTL> used;
   std::queue<ltl::LTL> queue;
-  queue.push(this->goal);
+  auto rand_time = 100;
+  while(rand_time--) {
+    queue = {};
+    used = {};
+    queue.push(this->goal);
+    auto prev = std::chrono::system_clock::now();
+    auto curr = std::chrono::system_clock::now();
 
-  auto prev = std::chrono::system_clock::now();
-  auto curr = std::chrono::system_clock::now();
-
-  while(result.size() < limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
-    auto f = queue.front(); queue.pop();
-    if(used.find(f) != used.end()) {
-      continue;
-    } else {
-      used.insert(f);
-    }
-
-    auto tmp = RS(f);
-    for(auto &t: tmp) {
-      if(this->repair_success(t)) {
-        std::cout << "+ RS result found: " << t << std::endl;
-        result.insert(t);
+    while(result.size() < limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
+      auto f = queue.front(); queue.pop();
+      if(used.find(f) != used.end()) {
+        continue;
       } else {
-        std::cout << "- RS queue pushed: " << t << std::endl;
-        queue.push(t);
+        used.insert(f);
+      }
+
+      auto tmp = RS(f);
+      for(auto &t: tmp) {
+        if(this->repair_success(t)) {
+          std::cout << "+ RS result found: " << t << std::endl;
+          result.insert(t);
+        } else {
+          std::cout << "- RS queue pushed: " << t << std::endl;
+          queue.push(t);
+        }
       }
     }
   }
@@ -67,40 +71,93 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
 
 std::set<ltl::LTL> RandomSolver::RS(const ltl::LTL& formula) {
   std::set<ltl::LTL> ret;
+    std::array<std::shared_ptr<ltl::Operator>, 9> ops = {
+      ltl::op::finally,
+      ltl::op::next,
+      ltl::op::global,
+      ltl::op::nnot,
+      ltl::op::until,
+      ltl::op::release,
+      ltl::op::aand,
+      ltl::op::oor,
+      ltl::op::emptyOp
+    };
 
-  auto root = formula.root;
-  if(root->is_op1()) {
-    auto op = root->op;
-    auto f = ltl::LTL(root->right);
-    auto r = random_range(1, 3);
-    for(unsigned i = 0; i < 10 * r; i++) {
-      ret.insert(randOp1(f, op));
-    }
-    auto tmp = RS(f);
-    for(auto& t: tmp) {
-      ret.insert(randOp1(t, ltl::op::emptyOp));
-    }
-  } else if(root->is_op2()) {
-    auto op = root->op;
-    auto f1 = ltl::LTL(root->left);
-    auto f2 = ltl::LTL(root->right);
-    auto r = random_range(1, 3);
-    for(unsigned i = 0; i < r; i++) {
-      ret.insert(randOp2(f1, op, f2));
-    }
-    auto tmp1 = RS(f1);
-    for(auto& t: tmp1) {
-      for(unsigned i = 0; i < 10 * r; i++) {
-        ret.insert(randOp2(t, ltl::op::emptyOp, f2));
+    auto target_op = ops[random_range(0, ops.size())];
+    auto is_op1 = dynamic_cast<ltl::Op1*>(target_op.get()) != nullptr;
+    auto is_op2 = dynamic_cast<ltl::Op2*>(target_op.get()) != nullptr;
+
+    ltl::LTL f = formula;
+    if(f.root->is_op1()) {
+      if(is_op1) {
+        ret.insert(randOp1(f.root->right, f.root->op));
+        auto tmp = RS(f.root->right);
+        for(auto& t: tmp) {
+          ret.insert(randOp1(t, ltl::op::emptyOp));
+        }
+      } else if(is_op2) {
+        ltl::LTL left = ltl::LTL(*ltl::dict.random_get());
+        ret.insert(randOp2(left, ltl::op::emptyOp, f.root->right));
+        auto tmp = RS(f.root->right);
+        for(auto& t: tmp) {
+          ret.insert(randOp2(left, ltl::op::emptyOp, t));
+        }
+        tmp = RS(left);
+        for(auto& t: tmp) {
+          ret.insert(randOp2(t, ltl::op::emptyOp, f.root->right));
+        }
+      } else {
+        f = ltl::LTL(*ltl::dict.random_get());
+        ret.insert(f);
+      }
+    } else if(f.root->is_op2()) {
+      if(is_op1) {
+        ret.insert(randOp1(f.root->right, ltl::op::emptyOp));
+        f.root->left = nullptr;
+        auto tmp = RS(f.root->right);
+        for(auto& t: tmp) {
+          ret.insert(randOp1(t, ltl::op::emptyOp));
+        }
+      } else if(is_op2) {
+        ret.insert(randOp2(f.root->left, ltl::op::emptyOp, f.root->right));
+        auto tmp = RS(f.root->left);
+        for(auto& t: tmp) {
+          ret.insert(randOp2(t, ltl::op::emptyOp, f.root->right));
+        }
+        tmp = RS(f.root->right);
+        for(auto& t: tmp) {
+          ret.insert(randOp2(f.root->left, ltl::op::emptyOp, t));
+        }
+      } else {
+        f = ltl::LTL(*ltl::dict.random_get());
+        ret.insert(f);
+      }
+    } else if(f.root->is_literal()) {
+      if(is_op1) {
+        if(target_op == ltl::op::finally) {
+          ret.insert(f.finally());
+        } else if(target_op == ltl::op::global) {
+          ret.insert(f.global());
+        } else if(target_op == ltl::op::next) {
+          ret.insert(f.next());
+        } else if(target_op == ltl::op::nnot) {
+          ret.insert(f.nnot());
+        }
+      } else if(is_op2) {
+        if(target_op == ltl::op::aand) {
+          ret.insert(f.aand(ltl::LTL(*ltl::dict.random_get())));
+        } else if(target_op == ltl::op::oor) {
+          ret.insert(f.oor(ltl::LTL(*ltl::dict.random_get())));
+        } else if(target_op == ltl::op::until) {
+          ret.insert(f.until(ltl::LTL(*ltl::dict.random_get())));
+        } else if(target_op == ltl::op::release) {
+          ret.insert(f.release(ltl::LTL(*ltl::dict.random_get())));
+        }
+      } else {
+        f = ltl::LTL(*ltl::dict.random_get());
+        ret.insert(f);
       }
     }
-    auto tmp2 = RS(f2);
-    for(auto& t: tmp2) {
-      for(unsigned i = 0; i < 10 * r; i++) {
-        ret.insert(randOp2(f1, ltl::op::emptyOp, t));
-      }
-    }
-  }
   return ret;
 }
 
@@ -189,7 +246,7 @@ ltl::LTL RandomSolver::randOp1(const ltl::LTL& f, std::shared_ptr<ltl::Operator>
     return f;
   }
 }
-ltl::LTL RandomSolver::randOp2(const ltl::LTL& f1, std::shared_ptr<ltl::Operator> op, const ltl::LTL f2) {
+ltl::LTL RandomSolver::randOp2(const ltl::LTL& f1, std::shared_ptr<ltl::Operator> op, const ltl::LTL& f2) {
   std::array<std::shared_ptr<ltl::Operator>, 4> ops = {
     ltl::op::until,
     ltl::op::release,
