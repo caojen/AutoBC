@@ -28,5 +28,5 @@ target_link_libraries(mytest -lgmp -lgmpxx)
 
 project(autobc)
 
-add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/main.cpp src/autobc/random_solver.cpp)
+add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/main.cpp src/autobc/random_solver.cpp src/autobc/util.cpp)
 target_link_libraries(autobc -lgmp -lgmpxx)
