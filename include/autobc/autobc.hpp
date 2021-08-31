@@ -66,7 +66,6 @@ namespace autobc {
     const Goal &get_fix_goal(unsigned int bound, const std::string& jdk16 = "/usr/local/bin");
 
     // 生成需要修复的goal之后，进行修复
-    const std::set<ltl::LTL>& fix(unsigned k);
     const std::set<ltl::LTL>& fix_with_limit(unsigned limit);
   };
 }

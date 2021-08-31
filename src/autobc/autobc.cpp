@@ -315,26 +315,6 @@ namespace autobc {
     return *ret;
   }
 
-  const std::set<ltl::LTL>& AutoBC::fix(unsigned k) {
-    this->fixed_goals.clear();
-    std::set<LTL> old_goals;
-    for(auto& goal: this->goals) {
-      if(&goal != this->target_goal) {
-        old_goals.insert(goal);
-      }
-    }
-    std::set<LTL> old_domains;
-    for(auto& domain: this->domains) {
-      if(&domain != this->target_goal) {
-        old_domains.insert(domain);
-      }
-    }
-    this->fixSolver = FixSolver(old_domains, *this->target_goal, Lasso(*this->target_bc), old_goals, false);
-    this->fixed_goals = this->fixSolver.fix(k);
-
-    return this->fixed_goals;
-  }
-
   const std::set<ltl::LTL>& AutoBC::fix_with_limit(unsigned limit) {
     this->fixed_goals.clear();
     std::set<LTL> old_goals;
