@@ -53,13 +53,14 @@ namespace autobc {
     std::set<ltl::LTL> cs_used;
     std::set<ltl::LTL> cw_used;
 
+    unsigned check_time = 0;
 
     cs.push(this->goal);
     cw.push(this->goal);
 
     auto cur = std::chrono::system_clock::now();
 
-    while((!cs.empty() || !cw.empty()) && this->fix_result.size() < limit && cur - start < std::chrono::minutes(30)) {
+    while((!cs.empty() || !cw.empty()) && check_time < limit && cur - start < std::chrono::minutes(30)) {
       if(!cs.empty()) {
         auto c = cs.front(); cs.pop();
         auto Thi = FixSolver::SR(c, this->bc);
@@ -69,7 +70,7 @@ namespace autobc {
           } else {
             cs_used.insert(thi);
           }
-
+          check_time++;
           if(FixSolver::SR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl, this->goal_is_from_domain)) {
             std::cout << "+ Get Fix Result From SR: " << thi << std::endl;
             this->fix_result.insert(thi);
@@ -89,6 +90,7 @@ namespace autobc {
           } else {
             cw_used.insert(thi);
           }
+          check_time++;
           if(FixSolver::WR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl)) {
             std::cout << "+ Get Fix Result From WR: " << thi << std::endl;
             this->fix_result.insert(thi);

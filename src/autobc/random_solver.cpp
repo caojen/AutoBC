@@ -37,15 +37,16 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
   std::set<ltl::LTL>& result = this->fix_results;
   std::set<ltl::LTL> used;
   std::queue<ltl::LTL> queue;
+  unsigned check_time = 0;
   auto rand_time = 100;
-  while(rand_time--) {
+  while(rand_time-- && check_time < limit) {
     queue = {};
     used = {};
     queue.push(this->goal);
     auto prev = std::chrono::system_clock::now();
     auto curr = std::chrono::system_clock::now();
 
-    while(result.size() < limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
+    while(check_time < limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
       auto f = queue.front(); queue.pop();
       if(used.find(f) != used.end()) {
         continue;
@@ -55,6 +56,7 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
 
       auto tmp = RS(f);
       for(auto &t: tmp) {
+        ++check_time;
         if(this->repair_success(t)) {
           std::cout << "+ RS result found: " << t << std::endl;
           result.insert(t);
