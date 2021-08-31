@@ -73,7 +73,7 @@ std::set<ltl::LTL> RandomSolver::RS(const ltl::LTL& formula) {
     auto op = root->op;
     auto f = ltl::LTL(root->right);
     auto r = random_range(1, 3);
-    for(unsigned i = 0; i < r; i++) {
+    for(unsigned i = 0; i < 10 * r; i++) {
       ret.insert(randOp1(f, op));
     }
     auto tmp = RS(f);
@@ -90,13 +90,13 @@ std::set<ltl::LTL> RandomSolver::RS(const ltl::LTL& formula) {
     }
     auto tmp1 = RS(f1);
     for(auto& t: tmp1) {
-      for(unsigned i = 0; i < r; i++) {
+      for(unsigned i = 0; i < 10 * r; i++) {
         ret.insert(randOp2(t, ltl::op::emptyOp, f2));
       }
     }
     auto tmp2 = RS(f2);
     for(auto& t: tmp2) {
-      for(unsigned i = 0; i < r; i++) {
+      for(unsigned i = 0; i < 10 * r; i++) {
         ret.insert(randOp2(f1, ltl::op::emptyOp, t));
       }
     }
