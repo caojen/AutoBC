@@ -294,28 +294,23 @@ namespace autobc {
 
     ltl::ModelCounter mc(this->modelcounting, jdk16);
     const Goal* ret = nullptr;
-    ltl::BigInteger mbi;
+    double mbi;
 
     for(auto& goal: this->goals) {
       auto workspace = this->domains;
       workspace.insert(goal);
+      auto d = mc.count(workspace, bound);
+
       workspace.insert(*this->target_bc);
       auto tbi = mc.count(workspace, bound);
-      if(!ret || tbi < mbi) {
+
+      auto d_tbi = tbi.device(d);
+      if(!ret || d_tbi < mbi) {
         ret = &goal;
-        mbi = tbi;
+        mbi = d_tbi;
       }
     }
-    for(auto& domain: this->domains) {
-      auto workspace = this->goals;
-      workspace.insert(domain);
-      workspace.insert(*this->target_bc);
-      auto tbi = mc.count(workspace, bound);
-      if(!ret || tbi < mbi) {
-        ret = &domain;
-        mbi = tbi;
-      }
-    }
+
     this->target_goal = const_cast<Goal*>(ret);
     return *ret;
   }

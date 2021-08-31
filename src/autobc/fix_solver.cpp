@@ -149,9 +149,10 @@ namespace autobc {
           }
 
           if(FixSolver::SR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl, this->goal_is_from_domain)) {
-            std::cout << "Get Fix Result From SR: " << thi << std::endl;
+            std::cout << "+ Get Fix Result From SR: " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
+            std::cout << "- WR found, push into cw queue: " << thi << std::endl;
             cs.push(thi);
           }
         }
@@ -167,9 +168,10 @@ namespace autobc {
             cw_used.insert(thi);
           }
           if(FixSolver::WR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl)) {
-            std::cout << "Get Fix Result From WR: " << thi << std::endl;
+            std::cout << "+ Get Fix Result From WR: " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
+            std::cout << "- WR found, push into cw queue: " << thi << std::endl;
             cw.push(thi);
           }
         } 
@@ -473,11 +475,7 @@ namespace autobc {
       auto insert_func = [&](unsigned begin) {
         for(; begin < terms.size(); ++begin) {
           auto const & term = terms.at(begin);
-
-          auto workspace = formula.aand(term);
-          if(satSolver->checkSAT(workspace) == false) {
-            ret.emplace(formula.oor(term));
-          }
+          ret.emplace(formula.oor(term));
         }
       };
 
