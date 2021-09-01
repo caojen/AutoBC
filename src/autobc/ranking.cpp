@@ -71,23 +71,23 @@ namespace autobc {
 
   std::vector<RankResultItem> Ranking::rank(const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& target, const std::set<ltl::LTL>& replacements) {
     std::vector<RankResultItem> r;
+    // 1.1 计算分母a
+    ltl::BigInteger denominator_a = 0;
+    {
+      std::set<ltl::LTL> ltls = domains;
+      for(auto& goal: goals) {
+        ltls.insert(goal);
+      }
+      ltls.insert(target);
+      denominator_a = this->mc->count(ltls, this->bound);
+    }
+
     for(auto& replacement: replacements) {
       RankResultItem item;
       item.ltl = replacement;
-      // 1.1 计算分母a
-      ltl::BigInteger denominator_a = 0;
-      {
-        std::set<ltl::LTL> ltls = domains;
-        for(auto& goal: goals) {
-          ltls.insert(goal);
-        }
-        ltls.insert(target);
-        denominator_a = this->mc->count(ltls, this->bound);
-      }
+      
       {
         // 1. rank
-
-        
         ltl::BigInteger numerator = 0;
         ltl::BigInteger denominator_b = 0;
 
