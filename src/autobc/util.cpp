@@ -57,7 +57,7 @@ namespace autobc {
 
   void to_model(std::shared_ptr<ltl::LTL::LTLNode>& root) {
     if(root->is_boolean_formula()) {
-      root = std::make_shared<ltl::LTL::LTLNode>(*dict.get("m"));
+      root = std::make_shared<ltl::LTL::LTLNode>(*dict.get("fffffffffffff"));
     } else {
       if(root->is_op1()) {
         to_model(root->right);
