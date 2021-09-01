@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
     abc.get_fix_goal(k, jdk16);
     auto target_goal = abc.target_goal;
 
-    std::cout << "Target Goal/Domain is " << *target_goal << std::endl;
+    std::cout << "Target Goal is " << *target_goal << std::endl;
 
     std::cout << std::endl;
 
