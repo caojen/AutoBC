@@ -1,0 +1,5 @@
+domain=G((!(X(open)))|(atfloor))
+target=G((!(call))|(F(open)))
+fixed=F((!(call))|(F(open)))
+fixed=G((!(call))|(F((open)|(!(atfloor)))))
+fixed=G(((!(call))|(!(atfloor)))|(F(open)))

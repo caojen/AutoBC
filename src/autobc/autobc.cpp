@@ -170,6 +170,7 @@ namespace autobc {
     auto lines = split(result, "\n");
 
     if(lines.size() != this->bcs.size()) {
+      std::cout << result << std::endl;
       throw output_line_too_less();
     }
     std::vector<double> weights;
