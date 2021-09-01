@@ -6,11 +6,26 @@
 
 namespace autobc {
   bool RankResultItem::operator<(const RankResultItem& other) const {
-    return this->rank > other.rank ||
-      (
-        this->rank == other.rank && ( this->syn > other.syn || ( 
-          this->syn == other.syn && this->length < other.length))
-      );
+    if(this->rank > other.rank) {
+      return true;
+    } else if(this->rank == other.rank) {
+      if(this->syn > other.syn) {
+        return true;
+      } else if(this->syn == other.syn) {
+        if(this->length < other.length) {
+          return true;
+        } else if(this->length == other.length) {
+          return this->ltl < other.ltl;
+        }
+      }
+    }
+    return false;
+  }
+
+  bool RankResultItem::operator==(const RankResultItem& other) const {
+    return this->rank == other.rank
+      && this->syn == other.syn
+      && this->length == other.length;
   }
 
   OriginResult OriginResult::parse(const std::string& content) {
@@ -57,30 +72,37 @@ namespace autobc {
     for(auto& replacement: replacements) {
       RankResultItem item;
       item.ltl = replacement;
+      // 1.1 计算分母a
+      ltl::BigInteger denominator_a = 0;
       {
-        // 1. rank
-
-        // 1.1 计算分母a
-        ltl::BigInteger denominator_a = 0;
-        ltl::BigInteger numerator = 0;
-        ltl::BigInteger denominator_b = 0;
-
         std::set<ltl::LTL> ltls = domains;
         for(auto& goal: goals) {
           ltls.insert(goal);
         }
         ltls.insert(target);
         denominator_a = this->mc->count(ltls, this->bound);
+      }
+      {
+        // 1. rank
+
+        
+        ltl::BigInteger numerator = 0;
+        ltl::BigInteger denominator_b = 0;
 
         // 1.2 计算分子
         if(denominator_a > 0) {
+          std::set<ltl::LTL> ltls = domains;
+          for(auto& goal: goals) {
+            ltls.insert(goal);
+          }
+          ltls.insert(target);
           ltls.insert(replacement);
           numerator = this->mc->count(ltls, this->bound);
         }
 
         // 1.3 计算分母b
         if(denominator_a > 0 && numerator > 0) {
-          ltls = domains;
+          std::set<ltl::LTL> ltls = domains;
           for(auto& goal: goals) {
             ltls.insert(goal);
           }
@@ -90,7 +112,7 @@ namespace autobc {
 
         // 计算rank
         if(denominator_a > 0 && denominator_b > 0 && numerator > 0) {
-          item.rank = ((numerator / denominator_a + numerator / denominator_b) / 2);
+          item.rank = (numerator / denominator_a + numerator / denominator_b) / 2;
         } else {
           item.rank = -1;
         }

@@ -45,20 +45,20 @@ int main(int argc, char** argv) {
 
     ltl::satSolver = new SatSolver(nuxmv);
 
-    Ranking ranking(modelcounting, jdk16);
+    Ranking ranking(modelcounting, jdk16, k);
 
     auto random_result = OriginResult::parse(random_file_content);
     auto ref_result = OriginResult::parse(ref_file_content);
 
     std::cout << "Ranking Ref Results: " << ref_result.replacements.size() << std::endl;
-    auto ref_rand_result = ranking.rank(ref_result);
+    auto ref_rank_result = ranking.rank(ref_result);
 
     std::cout << "Ref Solver Results:" << std::endl;
-    std::cout << std::endl << std::setw(10) << "r"
+    std::cout << std::endl << std::setw(10) << "semSim"
             << std::setw(10) << "synSim"
             << std::setw(10) << "len_diff" << "\t" << "ltl"
             << std::endl;
-    for(auto &r: ref_rand_result) {
+    for(auto &r: ref_rank_result) {
         std::cout << std::setw(10) << r.rank
             << std::setw(10) << r.syn
             << std::setw(10) << r.length << "\t" << r.ltl
@@ -68,17 +68,64 @@ int main(int argc, char** argv) {
     std::cout << "Ranking Random Results: " << random_result.replacements.size() << std::endl;
     auto random_rank_result = ranking.rank(random_result);
 
-    std::cout << std::endl << std::setw(10) << "r"
+    std::cout << "Random Solver Results:" << std::endl;
+    std::cout << std::endl << std::setw(10) << "semSim"
             << std::setw(10) << "synSim"
             << std::setw(10) << "len_diff" << "\t" << "ltl"
             << std::endl;
-    std::cout << "Random Solver Results:" << std::endl;
     for(auto &r: random_rank_result) {
         std::cout << std::setw(10) << r.rank
             << std::setw(10) << r.syn
             << std::setw(10) << r.length << "\t" << r.ltl
             << std::endl;
     }
+    std::cout << std::endl;
+
+    std::set<RankResultItem> rank_set;
+    for(auto& r: random_rank_result) {
+        rank_set.insert(r);
+    }
+    for(auto& r: ref_rank_result) {
+        rank_set.insert(r);
+    }
+
+    const unsigned use_top = 5;
+    auto top = get_top<use_top>(rank_set);
+
+    unsigned formula_count = 0;
+
+    std::cout << "Top " <<  use_top << ":" << std::endl;
+    for(unsigned i = 0; i < use_top; i++) {
+        std::cout << " Top " << i + 1 << ":" << std::endl;
+        for(auto& r: top[i]) {
+            ++formula_count;
+            std::cout << std::setw(10) << r.rank
+                << std::setw(10) << r.syn
+                << std::setw(10) << r.length << "\t" << r.ltl
+                << std::endl;
+        }
+    }
+
+    std::cout << std::endl;
+    std::cout << "Formula Count = " << formula_count << std::endl;
+
+    unsigned ref_count = 0;
+    unsigned random_count = 0;
+
+    for(auto& f: ref_rank_result) {
+        if(in_top<use_top>(top, f.ltl)) {
+            ++ref_count;
+        }
+    }
+
+    for(auto& f: random_rank_result) {
+        if(in_top<use_top>(top, f.ltl)) {
+            ++random_count;
+        }
+    }
+
+    std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+    std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
 
     return 0;
 }

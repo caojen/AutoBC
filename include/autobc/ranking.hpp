@@ -3,6 +3,7 @@
 #include <string>
 #include <set>
 #include <vector>
+#include <algorithm>
 
 #include "ltl.hpp"
 #include "model_counter.hpp"
@@ -15,6 +16,7 @@ namespace autobc {
     double length;
 
     bool operator<(const RankResultItem& other) const;
+    bool operator==(const RankResultItem& other) const;
   };
 
   struct OriginResult {
@@ -37,4 +39,44 @@ namespace autobc {
     std::shared_ptr<ltl::ModelCounter> mc;
     unsigned bound;
   };
+
+  template<unsigned top>
+  std::array<std::set<RankResultItem>, top> get_top(const std::set<RankResultItem>& result) {
+    std::array<std::set<RankResultItem>, top> ret;
+
+    std::vector<RankResultItem> vec;
+    for(auto& r: result) {
+      vec.push_back(r);
+    }
+    std::sort(vec.begin(), vec.end());
+
+    auto iter = vec.begin();
+    for(unsigned i = 0; i < top && iter != vec.end(); i++) {
+      while(iter != vec.end()) {
+        ret[i].insert(*iter);
+        if(std::next(iter) != vec.end()) {
+          if(*iter == *std::next(iter)) {
+            ++iter;
+          } else {
+            ++iter;
+            break;
+          }
+        }
+      }
+    }
+
+    return ret;
+  }
+
+  template<unsigned top>
+  bool in_top(const std::array<std::set<RankResultItem>, top>& result, const ltl::LTL& formula) {
+    for(unsigned i = 0; i < top; i++) {
+      for(auto& r: result[i]) {
+        if(r.ltl == formula) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }
