@@ -11,6 +11,8 @@ using namespace ltl;
 using namespace autobc;
 using namespace param;
 
+bool use_model = false;
+
 int main(int argc, char** argv) {
     Param parser;
     parser.set("-i", "--ignore", "ignore", false, false, "If specify, the first line of bcfile will be ignored");
@@ -24,6 +26,7 @@ int main(int argc, char** argv) {
     parser.set("-t", "--limit", "limit", true, true, "Specify fix results limitation.");
     parser.set("-r", "--random", "random", true, true, "Specify random_solver output file.");
     parser.set("-f", "--ref", "ref", true, true, "Specify ref_solver output file.");
+    parser.set("-d", "--model", "model", false, false, "If specify, use model_ltl when synSim");
 
     parser.run(argc, argv);
 
@@ -39,6 +42,7 @@ int main(int argc, char** argv) {
     auto limit = atoi(parser["limit"].c_str());
     auto random_file = parser["random"];
     auto ref_file = parser["ref"];
+    use_model = parser["model"] == "true";
 
     auto random_file_content = fr(random_file);
     auto ref_file_content = fr(ref_file);

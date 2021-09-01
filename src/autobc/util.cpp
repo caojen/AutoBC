@@ -34,9 +34,13 @@ namespace autobc {
     return ret;
   }
 
-  double synSim(const ltl::LTL& f1, const ltl::LTL& f2) {
-    auto sf1 = sf(model_ltl(f1));
-    auto sf2 = sf(model_ltl(f2));
+  double synSim(const ltl::LTL& f1, const ltl::LTL& f2, bool use_model) {
+    auto sf1 = sf(f1);
+    auto sf2 = sf(f2);
+    if(use_model) {
+      sf1 = sf(model_ltl(f1));
+      sf2 = sf(model_ltl(f2));
+    }
 
     std::set<ltl::LTL> intersection;
     std::set_intersection(sf1.begin(), sf1.end(), sf2.begin(), sf2.end(), std::inserter(intersection, intersection.begin()));

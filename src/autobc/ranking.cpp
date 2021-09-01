@@ -4,6 +4,8 @@
 #include "autobc.hpp"
 #include "util.hpp"
 
+extern bool use_model;
+
 namespace autobc {
   bool RankResultItem::operator<(const RankResultItem& other) const {
     if(this->rank > other.rank) {
@@ -24,7 +26,7 @@ namespace autobc {
 
   bool RankResultItem::operator==(const RankResultItem& other) const {
     return this->rank == other.rank
-      && this->syn == other.syn
+      // && this->syn == other.syn
       && this->length == other.length;
   }
 
@@ -119,7 +121,7 @@ namespace autobc {
       }
       {
         // 计算synsim
-        item.syn = synSim(target, replacement);
+        item.syn = synSim(target, replacement, use_model);
       }
       {
         // 计算length：公式长度差距
