@@ -87,24 +87,30 @@ int main(int argc, char** argv) {
     std::set<ltl::LTL> random_result;
     {
 
-        std::cout << "Fix with limit = " << limit << std::endl;
-        auto prev = std::chrono::system_clock::now();
-        auto const& fix_result = abc.fix_with_limit(limit);
-        ref_result = fix_result;
+        // std::cout << "Fix with limit = " << limit << std::endl;
+        // auto prev = std::chrono::system_clock::now();
+        // auto const& fix_result = abc.fix_with_limit(limit);
+        // ref_result = fix_result;
 
-        auto curr = std::chrono::system_clock::now();
-        std::chrono::duration<double, std::milli> diff = curr - prev;
-        std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
+        // auto curr = std::chrono::system_clock::now();
+        // std::chrono::duration<double, std::milli> diff = curr - prev;
+        // std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
 
-        std::cout << std::endl;
-        std::cout << "Ranking..." << std::endl;
-        auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-        for(auto& ranked_item: ranked) {
-            std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
-        }
+        // std::cout << std::endl;
+        // std::cout << "Will Print Fix_Result Into Stderr..." << std::endl;
+
+        // for(auto& item: fix_result) {
+        //     std::cerr << item << std::endl;
+        // }
+        // std::cout << "Fix Done." << std::endl;
+        // std::cout << "Ranking..." << std::endl;
+        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+        // for(auto& ranked_item: ranked) {
+        //     std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
+        // }
 
     }
-    std::cout << std::endl << std::endl;
+    // std::cout << std::endl << std::endl;
     {
         std::cout << "Random Fix with limit = " << limit << std::endl;
         auto prev = std::chrono::system_clock::now();
@@ -115,26 +121,19 @@ int main(int argc, char** argv) {
         std::chrono::duration<double, std::milli> diff = curr - prev;
         std::cout << "Random Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() << "ms)" << std::endl;
         std::cout << std::endl;
-
-        std::cout << "Ranking..." << std::endl;
-        auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-        for(auto& ranked_item: ranked) {
-            std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
+        std::cout << "Will Print Fix Result Into Stderr..." << std::endl;
+        for(auto& item: fix_result) {
+          std::cerr << item << std::endl;
         }
+        std::cout << "Random Fix Done";
+
+        // std::cout << "Ranking..." << std::endl;
+        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
+        // for(auto& ranked_item: ranked) {
+        //     std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
+        // }
     }
     
 
     return 0;
-
-    // C c(3, 5);
-    // auto t = c.next();
-    // while(!t.empty()) {
-    //     std::cout << "(";
-    //     for(auto item: t) {
-    //         std::cout << item << ", ";
-    //     }
-    //     std::cout << ")";
-    //     std::cout << std::endl;
-    //     t = c.next();
-    // }
 }

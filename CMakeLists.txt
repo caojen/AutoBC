@@ -26,7 +26,10 @@ project(mytest)
 add_executable(mytest ${LTL_BASIC} src/test.cpp)
 target_link_libraries(mytest -lgmp -lgmpxx)
 
-project(autobc)
+project(ref_solver)
+add_executable(ref_solver ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/util.cpp src/autobc/random_solver.cpp src/autobc/fix_solver_main.cpp)
+target_link_libraries(ref_solver -lgmp -lgmpxx)
 
-add_executable(autobc ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/main.cpp src/autobc/random_solver.cpp src/autobc/util.cpp)
-target_link_libraries(autobc -lgmp -lgmpxx)
+project(random_solver)
+add_executable(random_solver ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/util.cpp src/autobc/random_solver.cpp src/autobc/random_solver_main.cpp)
+target_link_libraries(random_solver -lgmp -lgmpxx)
