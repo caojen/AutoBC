@@ -1,5 +1,7 @@
 #include <iomanip>
 #include <chrono>
+#include <iostream>
+#include <fstream>
 
 #include "autobc.hpp"
 #include "param.hpp"
@@ -23,6 +25,7 @@ int main(int argc, char** argv) {
     parser.set("-m", "--modelcounting", "modelcounting", true, true, "Specify ModelCounting.jar.");
     parser.set("-n", "--nuxmv", "nuxmv", true, true, "Specify nuXmv path.");
     parser.set("-t", "--limit", "limit", true, true, "Specify fix results limitation.");
+    parser.set("-o", "--output", "output", true, true, "Specify result output file.");
 
     parser.run(argc, argv);
 
@@ -38,10 +41,9 @@ int main(int argc, char** argv) {
     auto modelcounting = parser["modelcounting"];
     auto nuxmv = parser["nuxmv"];
     auto limit = atoi(parser["limit"].c_str());
+    auto output = parser["output"];
 
     ltl::satSolver = new SatSolver(nuxmv);
-
-    Ranking<ltl::LTL> ranking(modelcounting, jdk16);
 
     auto abc = AutoBC::parse(global);
     abc.likelyhood = likelyhoood;
@@ -69,48 +71,13 @@ int main(int argc, char** argv) {
     std::cout << "Finding Target Goal..." << std::endl;
     abc.get_fix_goal(k, jdk16);
     auto target_goal = abc.target_goal;
-    ranking.target_goal = target_goal;
-    std::cout << "Target Goal/Domain is " << *target_goal << std::endl;
+
+    std::cout << "Target Goal is " << *target_goal << std::endl;
 
     std::cout << std::endl;
-    // std::set<ltl::LTL> old_goal;
-    // for(auto& g: abc.goals) {
-    //     if(target_goal != &g) {
-    //         old_goal.insert(g);
-    //     }
-    // }
-    // RandomSolver rs(abc.domains, *target_goal, Lasso(*target_bc), old_goal);
-    // auto r = rs.repair_success(ltl::LTL::parse("G((!(r))|(G(!(s))))"));
-    // std::cout << r << std::endl;
 
     std::set<ltl::LTL> ref_result;
     std::set<ltl::LTL> random_result;
-    {
-
-        // std::cout << "Fix with limit = " << limit << std::endl;
-        // auto prev = std::chrono::system_clock::now();
-        // auto const& fix_result = abc.fix_with_limit(limit);
-        // ref_result = fix_result;
-
-        // auto curr = std::chrono::system_clock::now();
-        // std::chrono::duration<double, std::milli> diff = curr - prev;
-        // std::cout << "Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() <<"ms)" << std::endl;
-
-        // std::cout << std::endl;
-        // std::cout << "Will Print Fix_Result Into Stderr..." << std::endl;
-
-        // for(auto& item: fix_result) {
-        //     std::cerr << item << std::endl;
-        // }
-        // std::cout << "Fix Done." << std::endl;
-        // std::cout << "Ranking..." << std::endl;
-        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-        // for(auto& ranked_item: ranked) {
-        //     std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
-        // }
-
-    }
-    // std::cout << std::endl << std::endl;
     {
         std::cout << "Random Fix with limit = " << limit << std::endl;
         auto prev = std::chrono::system_clock::now();
@@ -121,17 +88,23 @@ int main(int argc, char** argv) {
         std::chrono::duration<double, std::milli> diff = curr - prev;
         std::cout << "Random Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() << "ms)" << std::endl;
         std::cout << std::endl;
-        std::cout << "Will Print Fix Result Into Stderr..." << std::endl;
-        for(auto& item: fix_result) {
-          std::cerr << item << std::endl;
-        }
-        std::cout << "Random Fix Done";
+        std::cout << "Will Print Fix Result Into Outfile..." << std::endl;
+        std::ofstream ofstream(output);
 
-        // std::cout << "Ranking..." << std::endl;
-        // auto ranked = ranking.rank(abc.domains, abc.goals, *abc.target_goal, fix_result);
-        // for(auto& ranked_item: ranked) {
-        //     std::cout << std::setw(10) << ranked_item.rank << " " << std::setw(10) << ranked_item.syn << " " << ranked_item.item << std::endl;
-        // }
+        for(auto& domain: abc.domains) {
+          ofstream << "domain=" << domain << std::endl;
+        }
+        for(auto& goal: abc.goals) {
+          if(&goal != abc.target_goal) {
+            ofstream << "goal=" << goal << std::endl;
+          }
+        }
+        ofstream << "target=" << *abc.target_goal << std::endl;
+        for(auto& item: fix_result) {
+            ofstream << "fixed=" << item << std::endl;
+        }
+
+        std::cout << "Ref Fix Done." << std::endl;
     }
     
 

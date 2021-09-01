@@ -65,17 +65,17 @@ namespace autobc {
         auto c = cs.front(); cs.pop();
         auto Thi = FixSolver::SR(c, this->bc);
         for(auto& thi: Thi) {
-          if(cs_used.find(thi) != cs_used.end()) {
-            continue;
-          } else {
+          if(cs_used.find(thi) == cs_used.end()) {
             cs_used.insert(thi);
+          } else {
+            continue;
           }
           check_time++;
           if(FixSolver::SR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl, this->goal_is_from_domain)) {
-            std::cout << "+ Get Fix Result From SR: " << thi << std::endl;
+            std::cout << "+ Get Fix Result From SR:       " << c << " => " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
-            std::cout << "- SR found, push into sr queue: " << thi << std::endl;
+            std::cout << "- SR found, push into sr queue: " << c << " => " << thi << std::endl;
             cs.push(thi);
           }
         }
@@ -85,17 +85,17 @@ namespace autobc {
         auto c = cw.front(); cw.pop();
         auto Thi = FixSolver::WR(c, this->bc);
         for(auto& thi: Thi) {
-          if(cw_used.find(thi) != cw_used.end()) {
-            continue;
-          } else {
+          if(cw_used.find(thi) == cw_used.end()) {
             cw_used.insert(thi);
+          } else {
+            continue;
           }
           check_time++;
           if(FixSolver::WR_repair_success(thi, this->domains, this->old_goals, this->bc.ltl)) {
-            std::cout << "+ Get Fix Result From WR: " << thi << std::endl;
+            std::cout << "+ Get Fix Result From WR:       " << c << " => " << thi << std::endl;
             this->fix_result.insert(thi);
           } else {
-            std::cout << "- WR found, push into cw queue: " << thi << std::endl;
+            std::cout << "- WR found, push into cw queue: " << c << " => " << thi << std::endl;
             cw.push(thi);
           }
         } 
@@ -109,124 +109,128 @@ namespace autobc {
   std::set<LTL> FixSolver::SR(const LTL& formula, Lasso& lasso) {
     std::set<LTL> ret;
 
-    auto& root = formula.root;
+    if(formula.is_boolean_formula() == false) {
 
-    // SR(f) = 
+      auto& root = formula.root;
 
-    // 1: G(f)
-    // ret.emplace(formula.global());
-    // 3. if f = f1 | f2
-    if(root->op == op::oor) {
-      // f1:
-      // ret.emplace(root->left);
-      // f2:
-      // ret.emplace(root->right);
-      // f2 R f1
-      auto f1 = LTL(root->right);
-      auto f2 = LTL(root->left);
-      ret.emplace(f2.release(f1));
-      // f2 U f1
-      ret.emplace(f2.until(f1));
-      // f1 R f2
-      ret.emplace(f1.release(f2));
-      // f1 U f2
-      ret.emplace(f1.until(f2));
-      // f1 | f2', for f2' in SR(f2)
-      auto f2_dots = SR(f2, lasso);
-      for(auto &f2_dot: f2_dots) {
-        ret.emplace(f1.oor(f2_dot));
-      }
-      // f1' | f2, for f1' in SR(f1)
-      auto f1_dots = SR(f1, lasso);
-      for(auto &f1_dot: f1_dots) {
-        ret.emplace(f1_dot.oor(f2));
-      }
-    }
-    
-    // 4. if f = f1 & f2
-    else if(root->op == op::aand) {
-      // f1' | f2, for f1' in SR(f1)
-      auto f1 = LTL(root->right);
-      auto f2 = LTL(root->left);
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.oor(f2));
-      }
-      auto f2_dots = SR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.oor(f2_dot));
-      }
-    }
+      // SR(f) = 
 
-    // 5. if f = X f1
-    else if(root->op == op::next) {
-      // X f1' for f1' in SR(f1)
-      auto f1 = LTL(root->right);
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.next());
+      // 1: G(f)
+      // ret.emplace(formula.global());
+      // 3. if f = f1 | f2
+      if(root->op == op::oor) {
+        // f1:
+        // ret.emplace(root->left);
+        // f2:
+        // ret.emplace(root->right);
+        // f2 R f1
+        auto f1 = LTL(root->right);
+        auto f2 = LTL(root->left);
+        ret.emplace(f2.release(f1));
+        // f2 U f1
+        ret.emplace(f2.until(f1));
+        // f1 R f2
+        ret.emplace(f1.release(f2));
+        // f1 U f2
+        ret.emplace(f1.until(f2));
+        // f1 | f2', for f2' in SR(f2)
+        auto f2_dots = SR(f2, lasso);
+        for(auto &f2_dot: f2_dots) {
+          ret.emplace(f1.oor(f2_dot));
+        }
+        // f1' | f2, for f1' in SR(f1)
+        auto f1_dots = SR(f1, lasso);
+        for(auto &f1_dot: f1_dots) {
+          ret.emplace(f1_dot.oor(f2));
+        }
       }
-    }
+      
+      // 4. if f = f1 & f2
+      else if(root->op == op::aand) {
+        // f1' | f2, for f1' in SR(f1)
+        auto f2 = LTL(root->right);
+        auto f1 = LTL(root->left);
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.oor(f2));
+        }
+        // f1 | f2', for f2' in SR(f2)
+        auto f2_dots = SR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.oor(f2_dot));
+        }
+      }
 
-    // 6. if f = F f1
-    else if(root->op == op::finally) {
-      // F f1' for f1' in SR(f1)
-      auto f1 = LTL(root->right);
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.finally());
+      // 5. if f = X f1
+      else if(root->op == op::next) {
+        // X f1' for f1' in SR(f1)
+        auto f1 = LTL(root->right);
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.next());
+        }
       }
-      // G f1
-      ret.emplace(f1.global());
-      // X f1
-      ret.emplace(f1.next());
-      // f1
-      // ret.emplace(f1);
-    }
 
-    // 7. if f = G f1
-    else if(root->op == op::global) {
-      auto f1 = LTL(root->right);
-      // G f1' for f1' in SR(f1)
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.global());
+      // 6. if f = F f1
+      else if(root->op == op::finally) {
+        // F f1' for f1' in SR(f1)
+        auto f1 = LTL(root->right);
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.finally());
+        }
+        // G f1
+        ret.emplace(f1.global());
+        // X f1
+        ret.emplace(f1.next());
+        // f1
+        // ret.emplace(f1);
       }
-    }
 
-    // 8. if f = f1 U f2
-    else if(root->op == op::until) {
-      auto f1 = LTL(root->right);
-      auto f2 = LTL(root->left);
-      // f1' U f2, for f1' in SR(f1)
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.until(f2));
+      // 7. if f = G f1
+      else if(root->op == op::global) {
+        auto f1 = LTL(root->right);
+        // G f1' for f1' in SR(f1)
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.global());
+        }
       }
-      // f1 U f2', for f2' in SR(f2)
-      auto f2_dots = SR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.until(f2_dot));
-      }
-      // f1 & f2
-      ret.emplace(f1.aand(f2));
-      // f2
-      // ret.emplace(f2);
-    }
 
-    // 9. if f = f1 R f2
-    else if(root->op == op::release) {
-      auto f1 = LTL(root->right);
-      auto f2 = LTL(root->left);
-      // f1' R f2, for f1' in SR(f1)
-      auto f1_dots = SR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.release(f2));
+      // 8. if f = f1 U f2
+      else if(root->op == op::until) {
+        auto f2 = LTL(root->right);
+        auto f1 = LTL(root->left);
+        // f1' U f2, for f1' in SR(f1)
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.until(f2));
+        }
+        // f1 U f2', for f2' in SR(f2)
+        auto f2_dots = SR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.until(f2_dot));
+        }
+        // f1 & f2
+        ret.emplace(f1.aand(f2));
+        // f2
+        // ret.emplace(f2);
       }
-      // f1 R f2', for f2' in SR(f2)
-      auto f2_dots = SR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.release(f2_dot));
+
+      // 9. if f = f1 R f2
+      else if(root->op == op::release) {
+        auto f2 = LTL(root->right);
+        auto f1 = LTL(root->left);
+        // f1' R f2, for f1' in SR(f1)
+        auto f1_dots = SR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.release(f2));
+        }
+        // f1 R f2', for f2' in SR(f2)
+        auto f2_dots = SR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.release(f2_dot));
+        }
       }
     }
 
@@ -272,125 +276,127 @@ namespace autobc {
 
   std::set<LTL> FixSolver::WR(const LTL& formula, Lasso& lasso) {
     std::set<LTL> ret;
-    std::set<LTL> lasso_ret;
 
-    auto& root = formula.root;
+    if(formula.is_boolean_formula() == false) {
 
-    // WR(f) = 
-    // 1. F f
-    // ret.emplace(formula.finally());
+      auto& root = formula.root;
 
-    // 3. if f = f1 | f2
-    if(root->op == op::oor) {
-      auto f1 = LTL(root->left);
-      auto f2 = LTL(root->right);
-      // f1' | f2, for f1' in WR(f1)
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.oor(f2));
-      }
-      // f1 | f2' for f2' in WR(f2)
-      auto f2_dots = WR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.oor(f2_dot));
-      }
-    } 
+      // WR(f) = 
+      // 1. F f
+      // ret.emplace(formula.finally());
 
-    // 4. f = f1 & f2
-    else if(root->op == op::aand) {
-      auto f1 = LTL(root->left);
-      auto f2 = LTL(root->right);
-      // f1' | f2, for f1' in WR(f1)
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.oor(f2));
-      }
-      // f1 | f2' for f2' in WR(f2)
-      auto f2_dots = WR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.oor(f2_dot));
+      // 3. if f = f1 | f2
+      if(root->op == op::oor) {
+        auto f1 = LTL(root->left);
+        auto f2 = LTL(root->right);
+        // f1' | f2, for f1' in WR(f1)
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.oor(f2));
+        }
+        // f1 | f2' for f2' in WR(f2)
+        auto f2_dots = WR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.oor(f2_dot));
+        }
+      } 
+
+      // 4. f = f1 & f2
+      else if(root->op == op::aand) {
+        auto f1 = LTL(root->left);
+        auto f2 = LTL(root->right);
+        // f1' | f2, for f1' in WR(f1)
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.oor(f2));
+        }
+        // f1 | f2' for f2' in WR(f2)
+        auto f2_dots = WR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.oor(f2_dot));
+        }
+
+        // f1 U f2
+        ret.emplace(f1.until(f2));
+        // f1
+        // ret.emplace(f1);
+        // f2
+        // ret.emplace(f2);
       }
 
-      // f1 U f2
-      ret.emplace(f1.until(f2));
-      // f1
-      // ret.emplace(f1);
-      // f2
-      // ret.emplace(f2);
-    }
+      // 5. f = X f1
+      else if(root->op == op::next) {
+        auto f1 = LTL(root->right);
+        // X f1', for f1' in WR(f1)
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.next());
+        }
+        // F f1
+        ret.emplace(f1.finally());
+      }
 
-    // 5. f = X f1
-    else if(root->op == op::next) {
-      auto f1 = LTL(root->right);
-      // X f1', for f1' in WR(f1)
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.next());
+      // 6. F f1
+      else if(root->op == op::finally) {
+        // F f1' for f1' in WR(f1)
+        auto f1 = LTL(root->right);
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.finally());
+        }
       }
-      // F f1
-      ret.emplace(f1.finally());
-    }
 
-    // 6. F f1
-    else if(root->op == op::finally) {
-      // F f1' for f1' in WR(f1)
-      auto f1 = LTL(root->right);
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.finally());
+      // 7. G f1
+      else if(root->op == op::global) {
+        // G f1' for f1' in WR(f1)
+        auto f1 = LTL(root->right);
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.global());
+        }
+        // F f1
+        ret.emplace(f1.finally());
+        // f1
+        // ret.emplace(f1);
       }
-    }
 
-    // 7. G f1
-    else if(root->op == op::global) {
-      // G f1' for f1' in WR(f1)
-      auto f1 = LTL(root->right);
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.global());
+      // 8. f1 U f2
+      else if(root->op == op::until) {
+        auto f1 = LTL(root->left);
+        auto f2 = LTL(root->right);
+        // f1' U f2, for f1' in WR(f1)
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.until(f2));
+        }
+        // f1 U f2' for f2' in WR(f2)
+        auto f2_dots = WR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.until(f2_dot));
+        }
+        // f1 | f2
+        ret.emplace(f1.oor(f2));
       }
-      // F f1
-      ret.emplace(f1.finally());
-      // f1
-      // ret.emplace(f1);
-    }
 
-    // 8. f1 U f2
-    else if(root->op == op::until) {
-      auto f1 = LTL(root->left);
-      auto f2 = LTL(root->right);
-      // f1' U f2, for f1' in WR(f1)
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.until(f2));
+      // 9. f1 R f2
+      else if(root->op == op::release) {
+        auto f1 = LTL(root->left);
+        auto f2 = LTL(root->right);
+        // f1' R f2, for f1' in WR(f1)
+        auto f1_dots = WR(f1, lasso);
+        for(auto& f1_dot: f1_dots) {
+          ret.emplace(f1_dot.release(f2));
+        }
+        // f1 R f2' for f2' in WR(f2)
+        auto f2_dots = WR(f2, lasso);
+        for(auto& f2_dot: f2_dots) {
+          ret.emplace(f1.release(f2_dot));
+        }
+        // f1 | f2
+        ret.emplace(f1.oor(f2));
+        // f2
+        // ret.emplace(f2);
       }
-      // f1 U f2' for f2' in WR(f2)
-      auto f2_dots = WR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.until(f2_dot));
-      }
-      // f1 | f2
-      ret.emplace(f1.oor(f2));
-    }
-
-    // 9. f1 R f2
-    else if(root->op == op::release) {
-      auto f1 = LTL(root->left);
-      auto f2 = LTL(root->right);
-      // f1' R f2, for f1' in WR(f1)
-      auto f1_dots = WR(f1, lasso);
-      for(auto& f1_dot: f1_dots) {
-        ret.emplace(f1_dot.release(f2));
-      }
-      // f1 R f2' for f2' in WR(f2)
-      auto f2_dots = WR(f2, lasso);
-      for(auto& f2_dot: f2_dots) {
-        ret.emplace(f1.release(f2_dot));
-      }
-      // f1 | f2
-      ret.emplace(f1.oor(f2));
-      // f2
-      // ret.emplace(f2);
     }
 
     // 2. 选择未在f中出现的lasso的状态，析取term

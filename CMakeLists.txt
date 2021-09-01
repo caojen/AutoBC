@@ -33,3 +33,7 @@ target_link_libraries(ref_solver -lgmp -lgmpxx)
 project(random_solver)
 add_executable(random_solver ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/util.cpp src/autobc/random_solver.cpp src/autobc/random_solver_main.cpp)
 target_link_libraries(random_solver -lgmp -lgmpxx)
+
+project(ranking)
+add_executable(ranking ${LTL_BASIC} src/autobc/autobc.cpp src/autobc/fix_solver.cpp src/autobc/lasso.cpp src/autobc/util.cpp src/autobc/random_solver.cpp src/autobc/ranking_main.cpp src/autobc/ranking.cpp)
+target_link_libraries(ranking -lgmp -lgmpxx)
