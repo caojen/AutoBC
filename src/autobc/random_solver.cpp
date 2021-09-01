@@ -185,7 +185,7 @@ bool RandomSolver::repair_success(const ltl::LTL& formula) {
           combine = combine.aand(domain);
         }
         for(auto& cn: cns) {
-          combine = combine.aand(vec_goals.at(cn));
+          combine = combine.aand(vec_goals.at(cn - 1));
         }
         if(ltl::satSolver->checkSAT(combine) == false) {
           ret = true;

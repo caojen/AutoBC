@@ -51,6 +51,10 @@ int main(int argc, char** argv) {
     std::cout << abc << std::endl;
 
     std::cout << "Finding Target BC..." << std::endl;
+    if(abc.bcs.size() == 0) {
+        std::cerr << "No Bc Found. Abort" << std::endl;
+        abort();
+    }
     abc.bc_sort();
     auto target_bc = abc.target_bc;
     std::cout << "Target BC is " << *target_bc << std::endl;
@@ -62,6 +66,7 @@ int main(int argc, char** argv) {
             std::cout << "-- -- " << term << std::endl;
         }
     }
+    std::cout << "Finding Target Goal..." << std::endl;
     abc.get_fix_goal(k, jdk16);
     auto target_goal = abc.target_goal;
     ranking.target_goal = target_goal;

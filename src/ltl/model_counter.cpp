@@ -362,15 +362,15 @@ BigInteger ModelCounter::count(const std::set<LTL> &ltls, unsigned int bound) {
     result = result.substr(0, result.size() - 1);
     return { result };
   } catch (const not_an_integer& e) {
-    std::cout << "================================================================" << std::endl;
-    std::cout << "A not_an_integer error has been caught during model counting." << std::endl;
-    std::cout << "Arguments reported:" << std::endl;
-    for(auto& arg: args) {
-      std::cout << "\t" << arg << std::endl;
-    }
-    std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
-    std::cout << "Warning: It may be a bug from modelcounter.jar. Treat it as -1." << std::endl;
-    std::cout << "================================================================" << std::endl;
+    // std::cout << "================================================================" << std::endl;
+    // std::cout << "A not_an_integer error has been caught during model counting." << std::endl;
+    // std::cout << "Arguments reported:" << std::endl;
+    // for(auto& arg: args) {
+    //   std::cout << "\t" << arg << std::endl;
+    // }
+    // std::cout << "Result is:" << std::endl << "\t" << result << std::endl;
+    // std::cout << "Warning: It may be a bug from modelcounter.jar. Treat it as -1." << std::endl;
+    // std::cout << "================================================================" << std::endl;
     return { -1 };
   }
 }

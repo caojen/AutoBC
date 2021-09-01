@@ -448,7 +448,7 @@ namespace autobc {
       while(!cns.empty() && !get_unsat) {
         ltl::LTL tmp = combine;
         for(auto& cn: cns) {
-          tmp = tmp.aand(vec_goals.at(cn));
+          tmp = tmp.aand(vec_goals.at(cn - 1));
         }
         if(!goal_is_from_domain) {
           tmp = tmp.aand(formula);

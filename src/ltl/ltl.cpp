@@ -111,12 +111,12 @@ namespace ltl {
             stack.push(ch);
           } else {
             auto last = Operator::gen(stack.top());
-            if(last->weight() < op->weight()) {
+            if(last->weight() <= op->weight()) {
               stack.push(ch);
             } else {
               while(!stack.empty() && stack.top() != "(") {
                 auto last = Operator::gen(stack.top());
-                if(last->weight() < op->weight()) {
+                if(last->weight() <= op->weight()) {
                   break;
                 } else {
                   ret.push_back(stack.top());
