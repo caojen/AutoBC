@@ -1,0 +1,5 @@
+((((((F( c & !d & m & n  & !i & h))) | (F( !d & !i & m & !n  & h & X( !h & n & !d & c)))) | (F(!a & h & !m & n  & !i & X( !c & h & m & n & !a & !i & X( i & !n  & a & m & h))))) | (F(!a & h & !m & n  & !c & X(a & !m  & d & n & !c)))) | (F( c & d & !n  & !a ))) | (F( !h & i))
+((((((F(a & !m  & d & n & c & h))) | (F( c & !d & m & n  & !a))) | (F( i & !h))) | (F(a & !m  ))) | (F( !h & d & c ))) | (F( c & d & !h))
+((((((F( c & d & !n  & a))) | (F( !a & !c & !i & !n  & h & X(!a & h & !m & n  & !d & !c & !i & X(a & !m  & d & n & !c))))) | (F( c & d & !h))) | (F( c & !d & m & i ))) | (F(a & !m  ))) | (F( i & !n  ))
+((((((F( !d & !i & m & !n  & a & !c & !h & X( !h & n & a & d)))) | (F( !d & !i & m & !n  & a & h & X( i & !n  & a & m & d & !c)))) | (F( !d & !i & m & !n  & h & X(a & !d & n & c )))) | (F( c & d & !n  ))) | (F( !h & n ))) | (F(a & !m  ))
+((((((F( !d & !i & m & !n  & c & X( !d & !i & m & !n  & a & !h & X( d & h & m & n  & !a & !i & X( !c & !i & m & !n  & a & d & !h & X( d & h & m & n  & !c & i & X( !c & !i & m & !n  & a & d & X( c & d & !h))))))))) | (F( c & d & !n  ))) | (F(a & !m  ))) | (F( i & !n  ))) | (F( c & !d & m & i ))) | (F( c & d & !n  ))

@@ -1,0 +1,5 @@
+(F( !r & p & !s))
+(F(p & q & r & !s & X(q & r & !s & X( !r & !s))))
+(F(p & q & r & !s & X(q & r & !s & X(q & r & !s & !p & X( !r & !s)))))
+(F(p & q & r & !s & X( !s  & !r)))
+(F( r & s  & !p & X( !p & !q  & r & s & X(p & q & r & !s & X( r & s & !q & p & X(p & q & r & !s & X(q & r & !s & X(q & r & !s & X( !s  & !r)))))))))

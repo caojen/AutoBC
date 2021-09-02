@@ -1,0 +1,1 @@
+((((((((((((F(g0 & g1  ))) | (F( rm   & X(G(g0 & !gm | !gm))))) | (F( rm  & X(G(g0 & !gm | !gm))))) | (F( gm & r1 & X(G(!g1 |  !g1 ))))) | (F( g1 & gm ))) | (F( g0 & gm  ))) | (F( rm   & X(G(g0 & !gm | !gm))))) | (F( r0   & X(r1  & X( !r1))))) | (F( rm  & X( g1 )))) | (F( !g0 & r0  & X(G(!g0))))) | (F( rm & X(G(g0 & !gm | g1 & !gm | rm  ))))) | (F(!g0 & r0   & X(G(!g0))))

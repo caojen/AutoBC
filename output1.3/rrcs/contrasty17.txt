@@ -1,0 +1,1 @@
+(((F(ca & go & !ta & !tc  & cc & X(ca & go & !ta & !tc & cc & X(ca & go & !ta & !tc & cc & X(ca & go & !ta & !tc & X( ta & go ))))))) | (F( cc & tc ))) | (F( ta  & X( !tc  )))

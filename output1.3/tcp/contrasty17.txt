@@ -1,0 +1,5 @@
+(F(!ack & send & X(G( !delivered))))
+(F( send & X(G(!ack & send | !ack & delivered & !send | !delivered  & send))))
+(F(!send  & delivered & !ack & X( !ack & !delivered  & X( !delivered & send ))))
+(F(!send  & delivered & !ack & X( !delivered & send )))
+(F( !delivered  & send & X(G(!ack & send | !ack & delivered & !send | !ack))))
