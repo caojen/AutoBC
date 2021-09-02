@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <chrono>
 
 #include "ranking.hpp"
 #include "autobc.hpp"
@@ -70,6 +71,8 @@ namespace autobc {
   }
 
   std::vector<RankResultItem> Ranking::rank(const std::set<ltl::LTL>& domains, const std::set<ltl::LTL>& goals, const ltl::LTL& target, const std::set<ltl::LTL>& replacements) {
+    auto begin = std::chrono::system_clock::now();
+
     std::vector<RankResultItem> r;
     // 1.1 计算分母a
     ltl::BigInteger denominator_a = 0;
@@ -83,6 +86,11 @@ namespace autobc {
     }
 
     for(auto& replacement: replacements) {
+      auto end = std::chrono::system_clock::now();
+      if(end - begin > std::chrono::hours(1)) {
+        break;
+      }
+      
       RankResultItem item;
       item.ltl = replacement;
       
