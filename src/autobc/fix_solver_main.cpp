@@ -102,6 +102,7 @@ int main(int argc, char** argv) {
           }
         }
         ofstream << "target=" << *abc.target_goal << std::endl;
+        ofstream << "bc=" << *abc.target_bc << std::endl;
         for(auto& item: fix_result) {
             ofstream << "fixed=" << item << std::endl;
         }
