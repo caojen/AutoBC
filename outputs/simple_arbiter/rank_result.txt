@@ -1,5 +1,4 @@
 Ranking Ref Results: 36
-denominator_a = -1
 Ref Solver Results:
 
     semSim    synSim  len_diff	ltl
@@ -40,7 +39,6 @@ Ref Solver Results:
         -1  0.338235        51	F((((!(r2))|((!(g0))&(r0)))|((!(g1))&(r1)))|(F((g2)|((!(g1))&(r1)))))
         -1  0.338235        51	G((((!(r2))|((!(g0))&(r0)))|((!(g1))&(r1)))|(F((g2)|((!(g0))&(r0)))))
 Ranking Random Results: 82
-denominator_a = -1
 Random Solver Results:
 
     semSim    synSim  len_diff	ltl

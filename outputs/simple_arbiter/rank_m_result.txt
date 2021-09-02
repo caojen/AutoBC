@@ -1,5 +1,4 @@
 Ranking Ref Results: 36
-denominator_a = -1
 Ref Solver Results:
 
     semSim    synSim  len_diff	ltl
@@ -40,7 +39,6 @@ Ref Solver Results:
         -1      0.25         0	G((G(g2))R(!(r2)))
         -1      0.25         0	G((X(g2))R(!(r2)))
 Ranking Random Results: 82
-denominator_a = -1
 Random Solver Results:
 
     semSim    synSim  len_diff	ltl
