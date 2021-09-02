@@ -84,13 +84,14 @@ namespace autobc {
       ltls.insert(target);
       denominator_a = this->mc->count(ltls, this->bound);
     }
+    std::cout << "denominator_a = " << denominator_a << std::endl;
 
     for(auto& replacement: replacements) {
       auto end = std::chrono::system_clock::now();
       if(end - begin > std::chrono::hours(1)) {
         break;
       }
-      
+
       RankResultItem item;
       item.ltl = replacement;
       
