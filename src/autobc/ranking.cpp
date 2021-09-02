@@ -51,7 +51,7 @@ namespace autobc {
       } else if(parts[0] == "fixed") {
         r.replacements.emplace(ltl::LTL::parse(parts[1]));
       } else {
-        std::cerr << "Warning: ignore prefix: " << parts[0] << std::endl;
+        // std::cerr << "Warning: ignore prefix: " << parts[0] << std::endl;
       }
     }
 
