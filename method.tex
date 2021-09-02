@@ -1,0 +1,521 @@
+\section{\Solver: Automatic Identifying-assessing-resolving Divergences}\label{sec:method}
+
+In this section, we design \Solver to automatically identify, assess, and resolve divergences.
+We first formally define the concept of LBC.
+% and the task of partial resolving divergences.
+Then, we illustrate the framework of \Solver.
+Afterwards, we propose the algorithm to automatically identify and resolve divergences.
+
+\subsection{Overview}
+
+In order to model system divergences, we first define the concept of {\em lasso boundary condition (LBC)}.
+
+%状态公式
+% \begin{definition}\label{def:state-formula}
+%     % Let $\pi = s_0,\dots,s_k,(s_{k+1},\dots.s_{m})^{\omega}$ be a lasso.
+%     A {\em state formula} is formed by the conjunction of literals. 
+%     % It denotes the event happened at timestamp i.
+% \end{definition}
+
+%前后缀公式
+\begin{definition}\label{def:prefix-suffix-formula}
+    A {\em Prefix-suffix formula} is an LTL formula in the form of $\future(t_0 \land \nexttime \mathcal{L})$, where $t_0$ is a conjunction of literals.
+    $\mathcal{L}$ is defined as follows.
+    $$
+    \mathcal{L} \coloneqq \true \mid G(t_k \lor .. \lor t_n) \mid t_j \land \nexttime \mathcal{L},
+    $$
+    where $t_i$ is a conjunction of literals.
+    $G(t_k \lor .. \lor t_n)$ is {\em suffix formula}.
+    Let $\phi$ be a Prefix-suffix formula.
+    $\pre$ denotes the {\em prefix set} of $\phi$.
+    It is recursively computed by $\prefixF(\phi)$ as follows:
+    \begin{equation}
+        \nonumber
+        \prefixF(\phi) =
+        \left\{
+            \begin{array}{ll}
+                \prefix{t_0} \cup \prefixF(\phi_0), & \text{if } \phi = \future(t_0 \land \nexttime \phi_0),\\ 
+                \prefix{t_i} \cup \prefixF(\phi_i), & \text{if } \phi = t_i \land \nexttime \phi_i,\\
+                \emptyset, & \text{otherwise,}
+
+            \end{array}
+        \right.
+    \end{equation}
+    $\suf$ denotes the {\em suffix set} of $\phi$.
+    It is recursively computed by $\suffixF(\phi)$ as follows:
+    \begin{equation}
+        \nonumber
+        \suffixF(\phi) =
+        \left\{
+            \begin{array}{ll}
+                \suffix{t_i,\dots,t_n}, & \text{if } \phi = G(t_i \lor \dots \lor t_n),\\ 
+                \suffixF(\phi_0), & \text{if } \phi = \future(t_0 \land \nexttime \phi_0) \text{ or } \phi = t_i \land \nexttime \phi_i,\\
+                \emptyset, & \text{otherwise,}
+            \end{array}
+        \right.
+    \end{equation}
+\end{definition}
+
+We give an example to illustrate Definition~\ref{def:prefix-suffix-formula}.
+% [滨好]完善例子  TODO 看下这个例子行不行
+\begin{example}[Example~\ref{exam:minepump} cont.]
+    % 在minepump找一个有两个前缀转态且后缀有两个状态的前缀后缀公式（不一定是BC）
+    For a prefix-suffix LTL formulae $\phi = \future(p \land \lnot h \land m \land \nexttime (p \land h \land m \land \nexttime \globally((p \land h \land \lnot m) \lor (\lnot h \land \lnot m))))$, \prefixF(\phi) = $\prefix{p \land \lnot h \land m}\cup\prefix{ p \land h \land m}$ and \suffixF(\phi) = $\suffix{p \land h \land \lnot m,\lnot h \land \lnot m}$.
+    Intuitively, the prefix-suffix LTL formula corresponds to the model $\pi = \{p,\lnot h,m\}\{p,h,m\}(\{p,h,\lnot m\},\{\lnot h,\lnot m\})^{\omega}$.
+\end{example}
+    
+\begin{definition}\label{def:LBC}
+    Let $G = \{g_1, \dots, g_n\}$ be a set of goals and $Dom$ a set of domain properties.
+    An {\em lasso boundary condition (LBC)} $\phi$ under $Dom$ and $G$ is an LTL formula in the form of the disjunction of prefix-suffix formulae and fulfills the following conditions:
+    \begin{flalign*}
+    &Dom \wedge G  \wedge \phi \models \bot    \tag{\text{logical inconsistency}} \\
+    &Dom \wedge  G_{-i} \wedge \phi \not \models \bot \text{, for  each } \! 1 \leq i \! \leq \! n  \tag{\text{minimality}}
+    \end{flalign*}
+    where $G=\bigwedge_{1\leq i \leq n}g_i$ and $G_{-i} = \bigwedge_{j\not =i}g_j$.
+    An LBC is {\em $k$-LBC} if it is the disjunction of $k$ prefix-suffix formulae.
+    If an LTL formula $\phi$ is LBC, the union of the prefix sets of the prefix-suffix formulae of $\phi$ is an {\em inducement}, denoted as $\inducement$.
+\end{definition}
+
+Intuitively, the prefix set models the possible behaviors (state transitions) of the system and the suffix set models the abstract states of the system under the possible behaviors modeled by the prefix set.
+LBC can describe the situation where the system diverges due to the inducement.
+Therefore, we argue that the inducement is interpretable.
+Moreover, we will illustrate that the inducement can be used to guide resolving in Section~\ref{sec:resolver}.
+
+Then, we illustrate the framework of \Solver.
+\Solver takes the domain properties ($Dom$) and goals ($Goal$) as input and returns a set of candidate repairs ($\CRs$) as output.
+We will define the repair for resolving divergences in Section~\ref{sec:resolver}.
+\Solver consists of the identification, assessment, and resolution stages:
+\begin{enumerate}
+    \item \Solver first identifies a set of LBCs based on abstraction.
+    \item Then, \Solver accesses the set of LBCs and recommends an important LBC, and a goal or a domain property that needs to be updated for resolving divergences. 
+    \item Finally, \Solver resolve divergences guided by the LBC by updating the recommended goal or domain property.
+\end{enumerate}
+
+The identification and resolution stages are our main contributions.
+We will introduce their details in Section~\ref{sec:identifier} and Section~\ref{sec:resolver}, respectively.
+In the assessment stage, we utilize the automated assessing work based on model counting~\cite{degiovanni2018goal}.
+The details is illustrated in Section~\ref{sec:background}.
+
+\subsection{\identifier: Identifying LBCs based on Abstraction}\label{sec:identifier}
+
+In the identification stage, we design \identifier to identify LBCs based on abstraction.
+Overview, \identifier iteratively searches for prefix-suffix formulae that satisfy the incompatibility of BC, and then abstracts them step by step to prompt them to satisfy the minimality of BC.
+
+We first define the {\em prefix weakening operator} and {\em suffix weakening operator} for prefix-suffix formulae. 
+
+\begin{definition}\label{def:weakenPFOp}
+    Let $\phi$ be a prefix-suffix formulae. 
+    The {\em prefix weakening operator} $\weakenPFOp$ for prefix-suffix formulae is defined as follows:
+    \begin{equation}
+        \nonumber
+        \weakenPFOp(\phi) =
+        \left\{
+            \begin{array}{ll}
+            \future(t_1 \land \nexttime \globally \phi_1), & \text{if } \phi = \future(t_0 \land \nexttime \phi_0)\\
+            &\text{and } \phi_0 = t_1 \land \nexttime \phi_1\\
+            \phi, & otherwise,\\
+            \end{array}
+        \right.
+    \end{equation}
+    where $t_i$ is a conjunction of literals and $\phi_i$ is an LTL formula.
+\end{definition}
+
+\begin{theorem}\label{thm:weakenPFOp}
+    Let $\phi$ be a prefix-suffix formulae. 
+    If $\phi' = \weakenPFOp(\phi)$, then $\phi \to \phi'$.
+\end{theorem}
+
+It is straightforward to prove Theorem~\ref{thm:weakenPFOp} because $\phi \land \nexttime (\varphi \land \nexttime \psi) \to \varphi \land \nexttime \psi$, where $\phi,\varphi,\psi$ are LTL formulae, and Theorem~\ref{prop:strengthen-weaken} holds.
+% 保留至少一个前缀
+Intuitively, $\weakenPFOp$ weakens the prefix-suffix formula by sequentially reducing the prefix set.
+Note that $\weakenPFOp$ guarantees that the prefix set has at least one element.
+
+\begin{definition}\label{def:weakenSFOp}
+    Let $\phi$ be a prefix-suffix formulae. 
+    The {\em suffix weakening operator} $\weakenSFOp$ for prefix-suffix formulae is defined as follows:
+    \begin{equation}
+        \nonumber
+        \weakenSFOp(\phi) =
+        \left\{
+            \begin{array}{ll}
+            \future(t_0 \land \nexttime \phi_0'), \text{ where } \phi_0' = \weakenSFOp(\phi_0), & \text{if } \phi = \future(t_0 \land \nexttime \phi_0)\\ 
+            t_i \land \nexttime \phi_i', \text{ where } \phi_i' = \weakenSFOp(\phi_i), & \text{if } \phi = t_i \land \nexttime \phi_i\\
+            &\text{and } \phi_i \neq \globally \phi_j\\
+            \nexttime \globally (t_i \lor \phi_i), & \text{if } \phi = t_i \land \nexttime \globally \phi_i\\
+            \phi, & otherwise,\\
+            \end{array}
+        \right.
+    \end{equation}
+    where $t_i$ is a conjunction of literals and $\phi_i$ is an LTL formula.
+\end{definition}
+
+\begin{theorem}\label{thm:weakenSFOp}
+    Let $\phi$ be a prefix-suffix formulae. 
+    If $\phi' = \weakenSFOp(\phi)$, then $\phi \to \phi'$.
+\end{theorem}
+
+It is straightforward to prove Theorem~\ref{thm:weakenSFOp} because $\phi \land \nexttime \globally \varphi \to \nexttime \globally (\phi \lor \varphi)$, where $\phi,\varphi$ are LTL formulae, and Theorem~\ref{prop:strengthen-weaken} holds.
+% 保留至少一个前缀
+Intuitively, $\weakenSFOp$ weakens the prefix-suffix formula by sequentially reducing the prefix set and adding the suffix set.
+Note that $\weakenSFOp$ also guarantees that the prefix set has at least one element.
+
+%TODO 改下k的增长方式
+% \vspace{-0.5cm}
+\begin{algorithm}[h]
+    \caption{\identifier}\label{alg:solver}
+    \KwIn{domain properties $Dom$, goals $G$, and a threshold $\eta$.}
+    \KwOut{a set of LBCs $\LBCs$.}
+
+    $\LBCs,\block \gets \emptyset, k \gets 1$;\\
+    % 1. 在不超时的情况下：
+    \While(){there are $k$ models of $\lnot (Dom \land G) \land \block$}{
+        %     1. 做初始化得到K-PS formula
+        $\phi,\phi^*,\block \gets$\Call{initialize}{$Dom$,$G$,$\block$,$k$};\\
+        %     2. 逐步抽象得到BC公式
+        $\phi^*,\block \gets$\Call{abstact}{$Dom$,$G$,$\block$,$\phi$,$\phi^*$};\\
+        \If(){$\phi^*$ is not $\false$}{
+            $\LBCs \gets \LBCs \cup \{ \phi^* \}$;\\
+        }
+        %   如果SAT调用次数达到一定值且没有解，增加K
+        \If(){$\LBCs$ does not update after $\eta$ iterations}{
+            $k \gets k + 1,\block \gets \emptyset$;\\
+        }
+    }
+    \Return{$\LBCs$}\\
+\end{algorithm}
+
+Algorithm~\ref{alg:solver}-\ref{alg:update} shows the pseudo-code of \identifier. 
+% [滨好]算法描述
+% 整体思路
+
+% 分步骤描述
+
+% 需要描述变量的意义，作用
+
+% 有些操作要写出意义，例如block集合的操作的目的，例如不满足BC定义的不同性质做不同操作的意义
+% 有些需要写下如何实现的，例如如何从lasso得到对应的前缀后缀公式（这里需要有一个例子）
+
+% TODO 改成random walk的形式 
+% \vspace{-0.5cm}
+\begin{algorithm}[h]
+    \caption{\funFont{initialize}}\label{alg:initialize}
+    \KwIn{domain properties $Dom$, goals $G$, a block set $\block$, and the number of prefix-suffix formula $k$.}
+    \KwOut{a candidate formula $\phi$, an LBC $\phi^*$, and a updated block set $\block$.}
+    %初始化过程
+    $\phi^* \gets \false$;\\
+    \While(){there are $k$ models of $\lnot (Dom \land G) \land \block$}{
+        $\varphi \gets$ build the disjunction of $k$ prefix-suffix formulae based on the $k$ different models of $\lnot (Dom \land G) \land \block$;\\
+        %   如果SAT调用次数达到一定值且没有解，增加K
+        \If(){$\varphi$ does not satisfy the logical inconsistency under $Dom$ and $G$}{
+            $\block \gets \block \cup \lnot \varphi$;\\
+        }
+        \ElseIf(){$\varphi$ does not satisfy the minimality under $Dom$ and $G$}{
+            \Return{$\varphi,\phi^*,\block$}\\
+        }
+        \Else(){
+            $\phi^* \gets \varphi$;\\
+            \Return{$\varphi,\phi^*,\block$};\\
+        }
+    }
+\end{algorithm}
+
+% \vspace{-0.5cm}
+% v1.3.1
+\begin{algorithm}[h]
+    \caption{\funFont{abstact}}\label{alg:abstact}
+    \KwIn{domain properties $Dom$, goals $G$, a block set $\block$, a candidate formula $\phi$, and an LBC $\phi^*$.}
+    \KwOut{updated $\phi^*$ and $\block$.}
+    %抽象过程
+
+    \For(){each prefix-suffix formula $\phi_i$ of $\phi$}{
+        % 检查后缀的必要性
+        $\phi_i' \gets$ replace the suffix formula in $\phi_i$ with $\true$;\\
+        $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\ 
+        $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi^*$,$\phi'$};\\
+
+        % 增大后缀，缩减前缀
+        \While(){$\true$}{
+            $\phi_i' \gets \weakenSFOp(\phi_i)$;\\
+            \If(){$\phi_i'$ is equal to $\phi_i$}{
+                % bleak的时候至少会留一个前缀
+                break;\\
+            }
+            \Else(){
+                $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\ 
+                $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi^*$,$\phi'$};\\
+            }
+        }
+
+        % 检查前缀term的必要性
+        \While(){$\true$}{
+            $\phi_i' \gets \weakenPFOp(\phi_i)$;\\
+            $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\ 
+            $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi^*$,$\phi'$};\\
+            \If(){$\phi'$ is equal to $\phi$}{
+                % 不满足极小性
+                break;\\
+            }
+        }
+
+        % 极小化term
+        \For(){each term $t_j$ in the prefix and suffix set of $\phi_i$}{
+            \For(){each literal $l_k$ in $t_j$}{
+                $t_j' \gets$ replace the $l_k$ in $t_j$ with $\true$;\\
+                % 每个term不能为true
+                \If(){the $t_j'$ is not $\true$}{
+                    $\phi_i' \gets$ replace the $t_j$ in $\phi_i$ with $t_j'$;\\
+                    $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\
+                    $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi^*$,$\phi'$};\\
+                }
+            }
+        }
+    }
+    $\block \gets \block \cup \{\phi\}$;\\
+    \Return{$\phi^*,\block$};\\
+\end{algorithm}
+% v1.4
+% \begin{algorithm}[h]
+%     \caption{\funFont{abstact}}\label{alg:abstact}
+%     \KwIn{domain properties $Dom$, goals $G$, a block set $\block$, a candidate formula $\phi$, and an LBC $\phi^*$.}
+%     \KwOut{updated $\phi^*$ and $\block$.}
+%     %抽象过程
+
+%     \For(){each prefix-suffix formula $\phi_i$ of $\phi$}{
+%         $\phi_i' \gets$ replace the suffix formula in $\phi_i$ with $\true$;\\
+%         $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\ 
+%         $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi'$,$\phi^*$};\\
+%         \For(){each term $t_j$ in the prefix set of $\phi_i$}{
+%             \For(){each literal $l_k$ in $t_j$}{
+%                 $t_j' \gets$ replace the $l_k$ in $t_j$ with $\true$;\\
+%                 $\phi_i' \gets$ replace the $t_j$ in $\phi_i$ with $t_j'$;\\
+%                 \If(){the $\pre$ of $\phi_i'$ is not all $\true$}{
+%                     $\phi' \gets$ replace $\phi_i$ in $\phi$ with $\phi_i'$;\\
+%                     $\phi,\phi^* \gets$\Call{update}{$Dom$,$G$,$\phi$,$\phi'$,$\phi^*$};\\
+%                 }
+%             }
+%         }
+%     }
+%     $\block \gets \block \cup \{\phi\}$;\\
+%     \Return{$\phi^*,\block$};\\
+% \end{algorithm}
+
+% \vspace{-0.5cm}
+\begin{algorithm}[h]
+    \caption{\funFont{update}}\label{alg:update}
+    \KwIn{domain properties $Dom$, goals $G$, and three formula $\phi,\phi^*,\varphi$.}
+    \KwOut{updated $\phi$ and $\phi^*$.}
+
+    \If(){$\varphi$ does not satisfy the logical inconsistency under $Dom$ and $G$}{
+        \Return{$\phi,\phi^*$};\\
+    }
+    \ElseIf(){$\varphi$ does not satisfy the minimality under $Dom$ and $G$}{
+        \Return{$\varphi,\phi^*$}\\
+    }
+    \Else(){
+        \Return{$\varphi,\varphi$}\\
+    }
+
+\end{algorithm}
+
+
+\begin{theorem}\label{thm:identify-abstract}
+    In Algorithm~\ref{alg:abstact}, $\phi \to \phi'$ is an invariant. 
+\end{theorem}
+
+It is straightforward to prove Theorem~\ref{thm:identify-abstract} by the updating of $\phi$ and $\phi'$ in Algorithm~\ref{alg:abstact} and Algorithm~~\ref{alg:update}, and Theorem~\ref{prop:strengthen-weaken}.
+Theorem~\ref{thm:identify-abstract} guarantees the correctness of the main idea of \identifier: starting from the LTL formula that satisfies the logical inconsistency of BC, the formula is iteratively weakened until it satisfies the minimality of BC.
+
+% 描述逐步抽象的过程。
+
+\subsection{\resolver: Resolving Divergences Guided by LBCs}\label{sec:resolver}
+
+In order to automatically resolve divergences, we give the formal definition of {\em partial resolving divergences}. 
+As far as we know, there is no work to give a formal definition of resolving divergences.
+
+\begin{definition}\label{def:partial-resolving-divergences}
+    Let $G = \{g_1, \dots, g_n\}$ be a set of goals, $Dom$ a set of domain properties, $\phi$ be a BC under $Dom$ and $G$.
+    {\em Partial resolving divergences} aims to generate a set of candidate {\em repairs} $\CRs$ by updating the partial specification, \ie, $g_r \in G$, such that for each $r \in \CRs$, $r$ fulfills one of the following conditions:
+    \begin{flalign*}
+        &(Dom \wedge G)[r/g_r] \wedge \phi \not\models \bot    \tag{\text{breaking logical inconsistency}},\\
+        &(Dom \wedge G_{-i})[r/g_r] \wedge \phi \models \bot \text{, for one of } 1 \leq i \leq n \land i \neq r \tag{\text{breaking minimality}},
+    \end{flalign*}
+    where $(S)[f/s]$ is the set obtained by replacing $s$ in $S$ with $f$.
+\end{definition}
+
+Partially resolving divergences inputs the recommended BC and the partial specification, \ie, one of goals, and outputs some updated formulae as candidate repairs so that the BC is no longer identified as a BC by breaking one of the logical inconsistency or minimality of BC.
+The reason of only considering the partial specification to resolve is shown as follows.
+First, due to only updating a goal, it avoids huge changes to the specification in syntax, which makes engineers to easily understand the resolved specification. 
+Second, it helps to reduce the time cost of computing repairs, which improve the efficient of the whole goal-conflict analysis.
+
+Following the work~\cite{Brizzio21Automated}, we use the semantic similarity and syntactic similarity with the original specification as the quality metric of repairs.
+The semantically and syntactically closer are to the original specification, the higher the quality of the repair is.
+The intuition behind the adoption of the two quality metric is shown as follows.
+Semantically close to the original specification is to avoid subverting the original intention of the system design.
+The syntactically close to the original specification is to help engineers to more easily understand the diffidence between the new specification and the original one.
+
+In order to resolve divergences with high quality, we propose a refinement-operator-based algorithm -- \resolver.
+Its main idea to resolve divergences is to break the minimality (\resp logical inconsistency) of BC by strengthening (\resp weakening) the partial specification.
+% To this end, we first define the {\em refinement operator}, where $\Fn$ denotes the set of all $n$-operator LTL formulae.
+
+% \begin{definition}\label{def:ref-op}
+%     In a partial-ordered space $(\Fn,\to)$, a strengthening (\resp weakening) {\em refinement operator} $\strengthenOp$ (\resp $\weakenOp$) is a mapping from $\Fn$ to $2^{\Fn}$, such that for all $\phi \in \Fn$ we have that $\phi' \in \strengthenOp(\phi)$ (\resp $\phi' \in \weakenOp(\phi)$) implies $\phi' \to \phi$ (\resp $\phi \to \phi'$). 
+%     % $\phi'$ is called a specialization (generalization) o\phi $\phi$.
+% \end{definition}
+To this end, we define two refinement operators of LTL ($\strengthenOp$ and $\weakenOp$) based on the precondition $\precondition$ modeled by LBC.
+The basic idea is to refine a formula in semantic by slightly updating the formula in syntax.
+
+\begin{definition}\label{def:strength-op}
+    Let $\phi$ be an LTL formula and $\precondition$ a precondition. 
+    {\em Strengthening refinement operator} is defined as follows:
+    \begin{equation}
+        \nonumber
+        \strengthenOp(\phi,\precondition) =
+        \left\{
+            \begin{array}{ll}
+            \{ \phi \land \lnot t_i | t_i \in \precondition \}, & \text{if } \phi \text{ is a propositi-}\\ 
+            &\text{onal logic formula},\\ 
+            \{ \phi_i' \lor \phi'' | \phi_i' \in \strengthenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \lor \phi_i'' | \phi_i'' \in \strengthenOp(\phi'',\precondition) \} \cup\\
+            \{ \phi' \until \phi'' \} \cup \{ \phi' \release \phi'' \} \cup \\
+            \{ \phi'' \until \phi' \} \cup \{ \phi'' \release \phi' \}, & \text{if } \phi = \phi' \lor \phi'',\\
+            \{ \phi_i' \land \phi'' | \phi_i' \in \strengthenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \land \phi_i'' | \phi_i'' \in \strengthenOp(\phi'',\precondition) \}, & \text{if } \phi = \phi' \land \phi'', \\
+            \{ \nexttime \phi_i' | \phi_i' \in \strengthenOp(\phi',\precondition) \}, & \text{if } \phi = \nexttime \phi', \\
+            \{ \future \phi_i' | \phi_i' \in \strengthenOp(\phi',\precondition) \} \cup\\
+            \{ \globally \phi_i' \} \cup \{ \nexttime \phi_i' \}, & \text{if } \phi = \future \phi', \\
+            \{ \globally \phi_i' | \phi_i' \in \strengthenOp(\phi',\precondition) \}, & \text{if } \phi = \globally \phi', \\
+            \{ \phi_i' \until \phi'' | \phi_i' \in \strengthenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \until \phi_i'' | \phi_i'' \in \strengthenOp(\phi'',\precondition) \} \cup\\
+            \{ \phi' \land \phi'' \}, & \text{if } \phi = \phi' \until \phi'', \\
+            \{ \phi_i' \release \phi'' | \phi_i' \in \strengthenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \release \phi_i'' | \phi_i'' \in \strengthenOp(\phi'',\precondition) \}, & \text{if } \phi = \phi' \release \phi'', \\
+            \end{array}
+        \right.
+    \end{equation}
+    where $\phi',\phi''$ are LTL formulae.
+\end{definition}
+
+% 强化关系
+\begin{theorem}\label{thm:strenop}
+    Let $\phi$ be an LTL formula in NNF and $\precondition$ a precondition.
+    $\forall \phi' \in \strengthenOp(\phi,\precondition)$ \suchthat $\phi' \to \phi$.
+\end{theorem}
+
+It is straightforward to prove Theorem~\ref{thm:strenop} by inducting on the sub-formulae of $\phi$ and Theorem~\ref{prop:strengthen-weaken}.
+$\strengthenOp$ returns a set of stronger formulae by updating the sub-formulae of the input formula (Theorem~\ref{thm:strenop}).
+% 语法最小变化
+When the sub-formula contains temporal operators, $\strengthenOp$ replaces one operator of the sub-formula according to the semantic implication relationships. 
+In this way, we only consider replacing one operator in order to make the updated formula as close to the original formula as possible in syntax, which meet the syntactic similarity metric.
+% This is helpful for engineers to construct the connection between the original specification and the new specification.
+
+% 命题公式由LBC引导的直观理解
+When the sub-formula is a propositional logic formula, $\strengthenOp$ deletes some states that is potentially reached on the precondition modeled by LBC. 
+Intuitively, the propositional logic formula in an LTL formula characterizes the state constraints of the model of this LTL formula at a certain time.
+For example, let $\nexttime \phi$ be an LTL formula and $\phi$ a propositional logic formula.
+According to the semantics of the temporal operator $\nexttime$, all the models of $\nexttime \phi$ must fulfills the constraint where the reachable state satisfies $\phi$ at the second time.
+Therefore, we use $\phi \land \lnot t_i$, where $\phi$ is a propositional logic formula in an LTL formula and $t_i$ is a state constraint in the precondition, to delete the states, \ie, $t_i$, that is potentially reached on the precondition modeled by LBC. 
+
+% [鉴恩]
+We use an example to illustrate $\strengthenOp$.
+\begin{example}
+
+\end{example}
+
+\begin{definition}\label{def:weak-op}
+    Let $\phi$ be an LTL formula and $\precondition$ a precondition. 
+    {\em Weakening refinement operator} is defined as follows:
+    \begin{equation}
+        \nonumber
+        \weakenOp(\phi,\precondition) =
+        \left\{
+            \begin{array}{ll}
+            \{ \phi \lor t_i | t_i \in \precondition \}, & \text{if } \phi \text{ is a propositi-}\\ 
+            &\text{onal logic formula},\\ 
+            \{ \phi_i' \lor \phi'' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \lor \phi_i'' | \phi_i'' \in \weakenOp(\phi'',\precondition) \}, & \text{if } \phi = \phi' \lor \phi'',\\
+            \{ \phi_i' \land \phi'' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \land \phi_i'' | \phi_i'' \in \weakenOp(\phi'',\precondition) \} \cup\\
+            \{ \phi' \until \phi_i'' \}, & \text{if } \phi = \phi' \land \phi'', \\
+            \{ \nexttime \phi_i' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup \{ \future \phi_i' \}, & \text{if } \phi = \nexttime \phi', \\
+            \{ \future \phi_i' | \phi_i' \in \weakenOp(\phi',\precondition) \}, & \text{if } \phi = \future \phi', \\
+            \{ \globally \phi_i' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup \{ \future \phi_i' \}, & \text{if } \phi = \globally \phi', \\
+            \{ \phi_i' \until \phi'' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \until \phi_i'' | \phi_i'' \in \weakenOp(\phi'',\precondition) \} \cup\\
+            \{ \phi' \lor \phi'' \}, & \text{if } \phi = \phi' \until \phi'', \\
+            \{ \phi_i' \release \phi'' | \phi_i' \in \weakenOp(\phi',\precondition) \} \cup\\
+            \{ \phi' \release \phi_i'' | \phi_i'' \in \weakenOp(\phi'',\precondition) \} \cup\\
+            \{ \phi' \lor \phi'' \}, & \text{if } \phi = \phi' \release \phi'', \\
+            \end{array}
+        \right.
+    \end{equation}
+    where $\phi',\phi''$ are LTL formulae.
+\end{definition}
+
+\begin{theorem}\label{thm:weakop}
+    Let $\phi$ be an LTL formula in NNF and $\precondition$ a precondition.
+    $\forall \phi' \in \weakenOp(\phi,\precondition)$ \suchthat $\phi \to \phi'$.
+\end{theorem}
+
+It is straightforward to prove Theorem~\ref{thm:weakop} by inducting on the sub-formulae of $\phi$ and Theorem~\ref{prop:strengthen-weaken}.
+$\weakenOp$ returns a set of weaker formulae by updating the sub-formulae of the input formula (Theorem~\ref{thm:strenop}).
+% 语法最小变化
+Similarly, when the sub-formula contains temporal operators, $\weakenOp$ replaces one operator of the sub-formula according to the semantic implication relationships. 
+% 命题公式由LBC引导的直观理解
+When the sub-formula is a propositional logic formula, $\weakenOp$ adds some states that is potentially reached on the precondition modeled by LBC. 
+Specifically, we use $\phi \lor t_i$, where $\phi$ is a propositional logic formula in an LTL formula and $t_i$ is a state constraint in the precondition, to add the states characterized by $t_i$. 
+
+% [鉴恩]
+We use an example to illustrate $\weakenOp$.
+\begin{example}
+
+\end{example}
+
+Now, we apply the refinement operators to \resolver.
+Algorithm~\ref{alg:resolver} shows the pseudo-code.
+Overall, \resolver starts from the original specification and the refinement operators iteratively bias \resolver towards the stronger or weaker formulae.
+It performs a breadth-first search in the partial-ordered space constructed by the refinement operators.
+The partial-ordered space ensures that the quality of the first repair is better than that of the repairs searched from the first repair.
+Therefore, each branch is explored from the formula that is still not a repair, until a repair is found.
+
+% \vspace{-0.5cm}
+\begin{algorithm}[h]
+    \caption{\resolver}\label{alg:resolver}
+    \KwIn{domain properties $Dom$, goals $G$, a partial specification $\varphi \in G$, and an LBC $\psi$.}
+    \KwOut{a set of candidate repairs $\CRs$.}
+
+    $\precondition \gets \bigcup_{\psi_i \text{ is a prefix-suffix formula of }\psi } \prefixF(\psi_i)$;\\
+    $C_s,C_w \gets$ initialize a queue with one element $\varphi$;\\
+    \While(){$C_s$ or $C_w$ is not empty}{
+        \If(){$C_s$ is not empty}{
+            $c \gets$ pop from $C_s$;\\
+            $\Phi \gets \strengthenOp(c,\precondition)$;\\
+            \For(){each formula $\phi \in \Phi$}{
+                \If(){$\phi$ is a repair under $Dom$, $G$, and $\psi$}{
+                    $\CRs \gets \CRs \cup \phi$;\\
+                }
+                \Else(){
+                    $C_s \gets$ push $\phi$;\\
+                }
+            }
+        }
+        \If(){$C_w$ is not empty}{
+            $c \gets$ pop from $C_w$;\\
+            $\Phi \gets \weakenOp(c,\precondition)$;\\
+            \For(){each formula $\phi \in \Phi$}{
+                \If(){$\phi$ is a repair under $Dom$, $G$, and $\psi$}{
+                    $\CRs \gets \CRs \cup \phi$;\\
+                }
+                \Else(){
+                    $C_w \gets$ push $\phi$;\\
+                }
+            }
+        }
+    }
+    \Return{$\CRs$};\\
+\end{algorithm}
+
+% [鉴恩]
+We use an running example to illustrate \resolver.
+\begin{example}
+
+\end{example}
