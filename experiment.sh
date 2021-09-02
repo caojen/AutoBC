@@ -4,9 +4,9 @@ mkdir -p experiment1.3
 outputdir="$(pwd)/output1.3"
 
 cases=$(ls ${outputdir})
-ref_bin="${pwd}/build/ref_solver"
-random_bin="${pwd}/build/random_solver"
-ranking_bin="${pwd}/build/ranking"
+ref_bin="$(pwd)/build/ref_solver"
+random_bin="$(pwd)/build/random_solver"
+ranking_bin="$(pwd)/build/ranking"
 
 cd build && cmake .. && make && cd -
 
@@ -21,7 +21,7 @@ do
   for contrasty in $contrasties:
   do
     echo "- - running: ${one_case}: ${contrasty}"
-    bcfile="${casepath}/${contrasty}.txt"
+    bcfile="${casepath}/${contrasty}"
     echo "- - BC File: ${bcfile}"
     workspace="$(pwd)/experiment1.3/${one_case}/${contrasty}"
     mkdir -p $workspace
