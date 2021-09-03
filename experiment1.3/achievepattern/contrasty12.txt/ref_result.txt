@@ -1,3 +1,6 @@
+found=12
+result=10
+time=347.521
 domain=G((!(q))|(s))
 goal=G((!(p))|(F(q)))
 target=G((!(r))|(G(!(s))))
@@ -12,3 +15,4 @@ fixed=G(((!(r))|((r)&(p)))|(G(!(s))))
 fixed=G((!(r))U(G((!(s))&(!((r)&(p))))))
 fixed=G((!(r))|(G((!(s))&(!((r)&(p))))))
 fixed=G((G((!(s))&(!((r)&(p)))))U(!(r)))
+dif=2
