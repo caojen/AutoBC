@@ -50,7 +50,7 @@ do
       sleep 1s
     fi
     # 排序，生成普通文件 rank_m_result
-    rank_m_result_file = "${workspace}/rank_m_result.txt"
+    rank_m_result_file="${workspace}/rank_m_result.txt"
     if [ ! -f ${rank_m_result_file} ];then
       ${ranking_bin} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar -n /src/autobc/bin/nuXmv-2.0.0-Linux -f ${ref_result_file} -r ${random_result_file} --model | tee ${rank_m_result_file}
       sleep 1s
