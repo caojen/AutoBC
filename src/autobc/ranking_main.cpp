@@ -55,9 +55,15 @@ int main(int argc, char** argv) {
     auto ref_result = OriginResult::parse(ref_file_content);
 
     std::cout << "Ranking Ref Results: " << ref_result.replacements.size() << std::endl;
+    auto begin = std::chrono::system_clock::now();
     auto ref_rank_result = ranking.rank(ref_result);
+    auto end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double, std::milli> diff = end - begin;
 
     std::cout << "Ref Solver Results:" << std::endl;
+    std::cout << "Ref Solver Time:" << diff.count() << "ms" << std::endl;
+
     std::cout << std::endl << std::setw(10) << "semSim"
             << std::setw(10) << "synSim"
             << std::setw(10) << "len_diff" << "\t" << "ltl"
@@ -69,10 +75,14 @@ int main(int argc, char** argv) {
             << std::endl;
     }
 
+    begin = std::chrono::system_clock::now();
     std::cout << "Ranking Random Results: " << random_result.replacements.size() << std::endl;
     auto random_rank_result = ranking.rank(random_result);
+    end = std::chrono::system_clock::now();
+    diff = end - begin;
 
     std::cout << "Random Solver Results:" << std::endl;
+    std::cout << "Random Solver Time:" << diff.count() << "ms" << std::endl;
     std::cout << std::endl << std::setw(10) << "semSim"
             << std::setw(10) << "synSim"
             << std::setw(10) << "len_diff" << "\t" << "ltl"
