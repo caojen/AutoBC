@@ -109,6 +109,14 @@ int main(int argc, char** argv) {
             ofstream << "fixed=" << item << std::endl;
         }
 
+        unsigned dif = 0;
+        for(auto& item: fix_result) {
+          if(satSolver->checkSAT(abc.target_goal->imply(item)) == false || satSolver->checkSAT(item.imply(*abc.target_goal)) == false) {
+            ++dif;
+          }
+        }
+        ofstream << "dif=" << dif << std::endl;
+
         std::cout << "Ref Fix Done." << std::endl;
     }
     
