@@ -1,0 +1,9 @@
+Ranking Ref Results: 3
+Ref Solver Results:
+Ref Solver Time:6353.72ms
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking Random Results: 0
