@@ -7,6 +7,7 @@
 #include "sat.hpp"
 
 using namespace autobc;
+unsigned autobc::random_check_time = 0;
 
 static inline unsigned random_range(unsigned begin, unsigned end) {
   std::random_device r;
@@ -36,19 +37,19 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
 
   std::set<ltl::LTL>& result = this->fix_results;
   std::queue<ltl::LTL> queue;
-  unsigned check_time = 0;
-  while(check_time <= limit) {
+  random_check_time = 0;
+  while(random_check_time <= limit) {
     queue = {};
     queue.push(this->goal);
     auto prev = std::chrono::system_clock::now();
     auto curr = std::chrono::system_clock::now();
 
-    while(check_time <= limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
+    while(random_check_time <= limit && !queue.empty() && curr - prev < std::chrono::seconds(60)) {
       auto f = queue.front(); queue.pop();
 
       auto tmp = RS(f);
       for(auto &t: tmp) {
-        ++check_time;
+        ++random_check_time;
         if(this->repair_success(t)) {
           std::cout << "+ RS result found: " << t << std::endl;
           result.insert(t);
@@ -56,7 +57,7 @@ const std::set<ltl::LTL>& RandomSolver::fix_with_limit(unsigned limit) {
           std::cout << "- RS queue pushed: " << t << std::endl;
           queue.push(t);
         }
-        if(check_time > limit) {
+        if(random_check_time > limit) {
           break;
         }
       }

@@ -2,6 +2,7 @@
 #include "fix_solver.hpp"
 
 using namespace ltl;
+unsigned autobc::check_time = 0;
 
 static auto get_all_literals = [](const ltl::LTL& f) -> std::set<std::pair<bool, std::shared_ptr<ltl::Literal>>> {
   std::set<std::pair<bool, std::shared_ptr<ltl::Literal>>> ret;
@@ -53,7 +54,7 @@ namespace autobc {
     std::set<ltl::LTL> cs_used;
     std::set<ltl::LTL> cw_used;
 
-    unsigned check_time = 0;
+    check_time = 0;
 
     cs.push(this->goal);
     cw.push(this->goal);

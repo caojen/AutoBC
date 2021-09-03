@@ -7,6 +7,7 @@
 #include <set>
 
 namespace autobc {
+  extern unsigned check_time;
   struct FixResultItem {
     ltl::LTL      ltl;
     std::string   label;

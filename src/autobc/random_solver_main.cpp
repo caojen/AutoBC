@@ -86,10 +86,13 @@ int main(int argc, char** argv) {
 
         auto curr = std::chrono::system_clock::now();
         std::chrono::duration<double, std::milli> diff = curr - prev;
-        std::cout << "Random Fix Done. (result = " << fix_result.size() << ", time = " << diff.count() << "ms)" << std::endl;
+        std::cout << "Fix Done. (result = " << fix_result.size() << ", checktime = " << random_check_time << ", time = " << diff.count() <<"ms)" << std::endl;
         std::cout << std::endl;
         std::cout << "Will Print Fix Result Into Outfile..." << std::endl;
         std::ofstream ofstream(output);
+
+        ofstream << "found=" << random_check_time << std::endl;
+        ofstream << "result=" << fix_result.size() << std::endl;
 
         for(auto& domain: abc.domains) {
           ofstream << "domain=" << domain << std::endl;

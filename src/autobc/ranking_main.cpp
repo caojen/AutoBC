@@ -93,43 +93,114 @@ int main(int argc, char** argv) {
         rank_set.insert(r);
     }
 
-    const unsigned use_top = 5;
-    auto top = get_top<use_top>(rank_set);
+    {
+        const unsigned use_top = 1;
+        auto top = get_top<use_top>(rank_set);
 
-    unsigned formula_count = 0;
+        unsigned formula_count = 0;
 
-    std::cout << "Top " <<  use_top << ":" << std::endl;
-    for(unsigned i = 0; i < use_top; i++) {
-        std::cout << " Top " << i + 1 << ":" << std::endl;
-        for(auto& r: top[i]) {
-            ++formula_count;
-            std::cout << std::setw(10) << r.rank
-                << std::setw(10) << r.syn
-                << std::setw(10) << r.length << "\t" << r.ltl
-                << std::endl;
+        std::cout << "Top " <<  use_top << ":" << std::endl;
+        for(unsigned i = 0; i < use_top; i++) {
+            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            for(auto& r: top[i]) {
+                ++formula_count;
+                std::cout << std::setw(10) << r.rank
+                    << std::setw(10) << r.syn
+                    << std::setw(10) << r.length << "\t" << r.ltl
+                    << std::endl;
+            }
         }
-    }
+        std::cout << std::endl;
+        std::cout << "Formula Count = " << formula_count << std::endl;
+        unsigned ref_count = 0;
+        unsigned random_count = 0;
 
-    std::cout << std::endl;
-    std::cout << "Formula Count = " << formula_count << std::endl;
-
-    unsigned ref_count = 0;
-    unsigned random_count = 0;
-
-    for(auto& f: ref_rank_result) {
-        if(in_top<use_top>(top, f.ltl)) {
-            ++ref_count;
+        for(auto& f: ref_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++ref_count;
+            }
         }
-    }
 
-    for(auto& f: random_rank_result) {
-        if(in_top<use_top>(top, f.ltl)) {
-            ++random_count;
+        for(auto& f: random_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++random_count;
+            }
         }
+        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
+    {
+        const unsigned use_top = 2;
+        auto top = get_top<use_top>(rank_set);
 
-    std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-    std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        unsigned formula_count = 0;
+
+        std::cout << "Top " <<  use_top << ":" << std::endl;
+        for(unsigned i = 0; i < use_top; i++) {
+            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            for(auto& r: top[i]) {
+                ++formula_count;
+                std::cout << std::setw(10) << r.rank
+                    << std::setw(10) << r.syn
+                    << std::setw(10) << r.length << "\t" << r.ltl
+                    << std::endl;
+            }
+        }
+        std::cout << std::endl;
+        std::cout << "Formula Count = " << formula_count << std::endl;
+        unsigned ref_count = 0;
+        unsigned random_count = 0;
+
+        for(auto& f: ref_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++ref_count;
+            }
+        }
+
+        for(auto& f: random_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++random_count;
+            }
+        }
+        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+    }
+    {
+        const unsigned use_top = 3;
+        auto top = get_top<use_top>(rank_set);
+
+        unsigned formula_count = 0;
+
+        std::cout << "Top " <<  use_top << ":" << std::endl;
+        for(unsigned i = 0; i < use_top; i++) {
+            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            for(auto& r: top[i]) {
+                ++formula_count;
+                std::cout << std::setw(10) << r.rank
+                    << std::setw(10) << r.syn
+                    << std::setw(10) << r.length << "\t" << r.ltl
+                    << std::endl;
+            }
+        }
+        std::cout << std::endl;
+        std::cout << "Formula Count = " << formula_count << std::endl;
+        unsigned ref_count = 0;
+        unsigned random_count = 0;
+
+        for(auto& f: ref_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++ref_count;
+            }
+        }
+
+        for(auto& f: random_rank_result) {
+            if(in_top<use_top>(top, f.ltl)) {
+                ++random_count;
+            }
+        }
+        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+    }
 
     return 0;
 }

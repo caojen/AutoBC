@@ -6,6 +6,8 @@
 
 namespace autobc {
 
+  extern unsigned random_check_time;
+
   class RandomSolver {
     public:
       RandomSolver(const std::set<ltl::LTL>& domains, const ltl::LTL& goal, const Lasso& bc, const std::set<ltl::LTL>& old_goals);
