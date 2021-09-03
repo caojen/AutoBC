@@ -1,0 +1,2611 @@
+Case: elevator
+- Domain&Goal File: /src/autobc/Lasso-BC/elevator/elevator.txt
+- - running: elevator: contrasty10.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty10.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((!(m))&((!(l))&(X(!(l)))))
+-- Terms:
+-- -- !(l)
+-- -- (!(m))&((!(l))&(X(!(l))))
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G(((!(call))&(!(!(l))))|(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(!(l)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(!(l)))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|((!(m))&((!(l))&(X(!(l))))))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|((!(m))&((!(l))&(X(!(l))))))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G(((!(call))&(!(!(l))))R(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G(((!(call))&(!(!(l))))U(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G(((!(call))&(!(!(l))))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G(((!(call))&(!(!(l))))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(X(open)))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(!(l)))))R(!(call)))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F(open))R((!(call))&(!(!(l)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!((!(m))&((!(l))&(X(!(l))))))))R(!(call)))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F(open))R((!(call))&(!((!(m))&((!(l))&(X(!(l))))))))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(!(l)))))U(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F(open))U((!(call))&(!(!(l)))))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!((!(m))&((!(l))&(X(!(l))))))))U(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F(open))U((!(call))&(!((!(m))&((!(l))&(X(!(l))))))))
+- SR found, push into sr queue: G((!(call))|(F((open)&(!(!(l)))))) => G(((!(call))&(!(!(l))))|(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))|(F((open)&(!(!(l)))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G(((!(call))&(!(!(l))))|(F(open))) => G(((!(call))&(!(!(l))))|(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))|(F(((open)&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))|(F(((open)&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))|(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(F(open))) => G((((!(call))&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))|(F(open)))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(F(open))) => G((((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G(((!(call))&(!(!(l))))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G(((!(call))&(!(!(l))))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F((open)&(!(!(l)))))) => G(((!(call))&(!(!(l))))R(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))R(F((open)&(!(!(l)))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G(((!(call))&(!(!(l))))R(F(open))) => G(((!(call))&(!(!(l))))R(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))R(F(((open)&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))R(F(((open)&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))R(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(F(open))) => G((((!(call))&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))R(F(open)))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))R(F(open))) => G((((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))R(F(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G(((!(call))&(!(!(l))))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G(((!(call))&(!(!(l))))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(!(l)))))) => G((!(call))&(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(!(l)))))) => G(((!(call))&(!(!(l))))U(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(!(l)))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F((open)&(!(!(l))))))
+- SR found, push into sr queue: G(((!(call))&(!(!(l))))U(F(open))) => G(((!(call))&(!(!(l))))&(F(open)))
+- SR found, push into sr queue: G(((!(call))&(!(!(l))))U(F(open))) => G(((!(call))&(!(!(l))))U(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))&(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))U(F(((open)&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G((!(call))U(F(((open)&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!((!(m))&((!(l))&(X(!(l))))))))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F((open)&(!((!(m))&((!(l))&(X(!(l)))))))))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F(open))) => G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))&(F(open)))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F(open))) => G((((!(call))&(!(!(l))))|(!((!(m))&((!(l))&(X(!(l)))))))U(F(open)))
+- SR found, push into sr queue: G(((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))U(F(open))) => G((((!(call))&(!((!(m))&((!(l))&(X(!(l)))))))|(!((!(m))&((!(l))&(X(!(l)))))))U(F(open)))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(!(l)))))R(!(call)))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G(open))R((!(call))&(!(!(l)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!((!(m))&((!(l))&(X(!(l))))))))R(!(call)))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G(open))R((!(call))&(!((!(m))&((!(l))&(X(!(l))))))))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(!(l)))))U(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G(open))U((!(call))&(!(!(l)))))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!((!(m))&((!(l))&(X(!(l))))))))U(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G(open))U((!(call))&(!((!(m))&((!(l))&(X(!(l))))))))
+Fix Done. (result = 5, checktime = 102, time = 308.871ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+
+Ranking_Ref_Results: 5
+Ref_Solver_Time:30627.5
+
+    semSim    synSim  len_diff	ltl
+  0.947917   0.47619        30	G(((!(call))|((!(m))&((!(l))&(X(!(l))))))|(F(open)))
+     0.875  0.555556         9	G(((!(call))|(!(l)))|(F(open)))
+    0.8125  0.416667         9	G((!(call))|(F((open)|(!(l)))))
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.357143        30	G((!(call))|(F((open)|((!(m))&((!(l))&(X(!(l))))))))
+Ranking_Random_Results: 0
+Ranking_Ref_Results: 5
+Ref_Solver_Time:35564.7
+
+    semSim    synSim  len_diff	ltl
+  0.947917     0.375        30	G(((!(call))|((!(m))&((!(l))&(X(!(l))))))|(F(open)))
+     0.875         1         9	G(((!(call))|(!(l)))|(F(open)))
+    0.8125         1         9	G((!(call))|(F((open)|(!(l)))))
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75    0.1875        30	G((!(call))|(F((open)|((!(m))&((!(l))&(X(!(l))))))))
+Ranking_Random_Results: 0
+- - running: elevator: contrasty11.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty11.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(atfloor)))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(atfloor)))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 282.348ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(atfloor)))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(atfloor)))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
+- RS queue pushed: (open)&(G(X(open)))
++ RS result found: (open)|(F(F(open)))
+- RS queue pushed: (open)R(F(F(G(open))))
+- RS queue pushed: (open)R((!(call))|(F(open)))
+- RS queue pushed: ((open)R(open))R((!(call))|(F(open)))
+- RS queue pushed: G(G(X(open)))
++ RS result found: X(F(X(open)))
++ RS result found: !(!((atfloor)&(open)))
++ RS result found: !(!((atfloor)|((open)U(call))))
+- RS queue pushed: F(F(((atfloor)R(open))R(open)))
+- RS queue pushed: (open)R(F(F(G(open))))
+- RS queue pushed: (!(open))R(F(F(G(open))))
+- RS queue pushed: (open)R((atfloor)R(F(G(open))))
++ RS result found: (open)U((F(G(open)))|(X(atfloor)))
+- RS queue pushed: (open)R((atfloor)|((open)&(G(open))))
+- RS queue pushed: (open)|((atfloor)R((open)U(F(open))))
++ RS result found: (open)|((atfloor)|((G(open))|(X(open))))
++ RS result found: (open)|((atfloor)&((open)U(!((open)&(atfloor)))))
++ RS result found: (open)U(G(!(open)))
++ RS result found: (open)|(!(F(open)))
++ RS result found: (open)|(!(G((open)U(call))))
++ RS result found: (open)|((!(call))|(F(open)))
++ RS result found: !((!(call))|(F(open)))
++ RS result found: G(((open)|(call))|(F(open)))
+- RS queue pushed: F((!(call))R((atfloor)&(open)))
+- RS queue pushed: F(((open)|(X(call)))R(F(open)))
+- RS queue pushed: !((!(call))U((F(atfloor))R(open)))
+- RS queue pushed: G((!(call))U((atfloor)&(F(open))))
++ RS result found: F((((open)&(call))|(call))U(F(open)))
+- RS queue pushed: (atfloor)R(!(F(open)))
+- RS queue pushed: (atfloor)U(G(X(open)))
++ RS result found: (atfloor)U(X(X(open)))
++ RS result found: (atfloor)U(!(G((open)|(atfloor))))
+- RS queue pushed: (call)U(G(G(open)))
++ RS result found: (call)&(F(X((open)|(atfloor))))
+- RS queue pushed: (call)&(!(((atfloor)R(open))R(open)))
+- RS queue pushed: (call)|(F(((atfloor)R(open))R(open)))
+- RS queue pushed: (X(call))U(F(((atfloor)R(open))R(open)))
+- RS queue pushed: F(F(F(G(open))))
+- RS queue pushed: X((atfloor)U(F(G(open))))
+- RS queue pushed: F((atfloor)R((open)&(G(open))))
+- RS queue pushed: X((atfloor)R((open)|(!(open))))
+- RS queue pushed: !((atfloor)R((open)R(!(X(open)))))
+- RS queue pushed: F((atfloor)U((G(open))&(G(open))))
+- RS queue pushed: F(((atfloor)U(atfloor))R(F(G(open))))
+- RS queue pushed: G(G(G(G(open))))
++ RS result found: G(X(X(!(open))))
+- RS queue pushed: X(F(F(G(open))))
+- RS queue pushed: X(X(F(G(open))))
+- RS queue pushed: G(F(G(G((open)R(open)))))
++ RS result found: G((atfloor)|(!(G(open))))
++ RS result found: G((atfloor)|(F(G(open))))
+- RS queue pushed: X((atfloor)R(F(G(open))))
+- RS queue pushed: F(((atfloor)&(call))R(F(G(open))))
+- RS queue pushed: G((atfloor)R(F((atfloor)|(open))))
++ RS result found: F((atfloor)&(X((atfloor)U((open)&(call)))))
+- RS queue pushed: (open)&(G(G(G(open))))
++ RS result found: (open)|(G(!(F(open))))
++ RS result found: (open)|(X(X(F(G(open)))))
++ RS result found: (open)&(!((open)&(G(open))))
+- RS queue pushed: (open)R((atfloor)|((open)&(G(open))))
+- RS queue pushed: (open)R(!((open)R(F(open))))
++ RS result found: (open)U(X((open)U(F(open))))
+- RS queue pushed: (open)&(X((open)R((call)&(open))))
++ RS result found: (open)&(F((open)|((call)U(X(open)))))
+- RS queue pushed: (open)R((atfloor)R((open)U(F(open))))
++ RS result found: (open)|(F(((open)U(atfloor))U(F(open))))
+- RS queue pushed: (open)&(X((open)R(((call)&(call))|(open))))
+- RS queue pushed: ((open)&(atfloor))U((atfloor)R((open)U(F(open))))
+- RS queue pushed: (open)R(X((atfloor)U(open)))
++ RS result found: (open)U(!((atfloor)&(open)))
++ RS result found: (open)U(!((atfloor)U(F(open))))
+- RS queue pushed: (open)R((!(call))R((atfloor)&(open)))
+- RS queue pushed: (open)R(G(((atfloor)R(open))U(open)))
+- RS queue pushed: ((open)&(open))R((!(call))R((atfloor)&(open)))
+- RS queue pushed: G((!(X(call)))&(F(open)))
++ RS result found: F(((open)|(X(call)))U(!(open)))
+- RS queue pushed: G(((open)|(X(call)))R(F(open)))
++ RS result found: X(((open)|(X(call)))U(F(open)))
+- RS queue pushed: G((F(open))&(X((atfloor)R(call))))
+- RS queue pushed: X((!((atfloor)|(G(call))))R(F(open)))
+- RS queue pushed: F(((open)|(X(call)))R(G((open)&(atfloor))))
+- RS queue pushed: X((F(open))|(X(((atfloor)|(call))R(call))))
++ RS result found: X((!(call))U(F(open)))
+- RS queue pushed: F((!(call))R(!(X(open))))
+- RS queue pushed: G((!(call))&((F(atfloor))R(open)))
+- RS queue pushed: X((!(call))U((F(atfloor))R(open)))
+- RS queue pushed: X((X(call))R((F(atfloor))R(open)))
+- RS queue pushed: !(((F(atfloor))R(open))&(G(G(call))))
+- RS queue pushed: (open)&(G(G(F(open))))
+- RS queue pushed: (open)R(X((atfloor)&(F(open))))
++ RS result found: (open)|(G(F((atfloor)&(open))))
++ RS result found: (open)U(X(!((open)&(G(atfloor)))))
+- RS queue pushed: (open)&(!(F((atfloor)R((open)&(call)))))
++ RS result found: (open)|((!(call))U((atfloor)&(F(open))))
++ RS result found: ((open)U(atfloor))U((!(call))U((atfloor)&(F(open))))
++ RS result found: X(!(F(open)))
+- RS queue pushed: !((call)R(F(open)))
+- RS queue pushed: G((call)R(X(open)))
++ RS result found: X((call)U(!(!(open))))
+- RS queue pushed: !(((call)|(atfloor))R(F(open)))
+Fix Done. (result = 38, checktime = 101, time = 5075.23ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:20719.4
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 38
+Random Solver Results:
+Random_Solver_Time:216635
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+      0.75  0.666667         0	X((!(call))U(F(open)))
+      0.75  0.464286         9	X(((open)|(X(call)))U(F(open)))
+      0.75  0.464286        15	F((((open)&(call))|(call))U(F(open)))
+      0.75  0.416667         3	(open)|(F(F(open)))
+      0.75  0.366667         6	(open)U(X((open)U(F(open))))
+      0.75  0.333333         6	(open)|(!(G((open)U(call))))
+      0.75  0.309524         9	F(((open)|(X(call)))U(!(open)))
+      0.75  0.309524        18	(open)|(F(((open)U(atfloor))U(F(open))))
+      0.75  0.291667        21	F((atfloor)&(X((atfloor)U((open)&(call)))))
+      0.75  0.208333         9	X(F(X(open)))
+      0.75  0.183333         6	(open)U(!((atfloor)&(open)))
+      0.75  0.166667         3	(open)|(X(X(F(G(open)))))
+      0.75  0.166667         3	G((atfloor)|(F(G(open))))
+      0.75  0.166667        12	(atfloor)U(!(G((open)|(atfloor))))
+      0.75  0.154762        12	(open)U((X(atfloor))|(F(G(open))))
+      0.75  0.154762        12	(open)U(X(!((open)&(G(atfloor)))))
+       0.7  0.583333        18	(open)|((!(call))U((atfloor)&(F(open))))
+    0.6875  0.309524         9	!(!((atfloor)|((open)U(call))))
+  0.677778  0.555556        30	((open)U(atfloor))U((!(call))U((atfloor)&(F(open))))
+  0.666667       0.5         6	G(((open)|(call))|(F(open)))
+  0.666667  0.154762        18	(open)|((atfloor)|((X(open))|(G(open))))
+  0.666667  0.154762        27	(open)|((atfloor)&((open)U(!((open)&(atfloor)))))
+     0.625  0.166667         9	(open)|(G(F((atfloor)&(open))))
+  0.533334  0.166667         3	G((atfloor)|(!(G(open))))
+  0.527778  0.183333         0	(atfloor)U(X(X(open)))
+       0.5  0.416667         3	(open)|(!(F(open)))
+       0.5  0.366667         0	(open)|(G(!(F(open))))
+       0.5  0.333333         0	X((call)U(!(!(open))))
+       0.5  0.309524         9	(call)&(F(X((open)|(atfloor))))
+       0.5  0.309524        15	(open)&(F((open)|((call)U(X(open)))))
+       0.5  0.183333         6	(open)&(!((open)&(G(open))))
+  0.416666  0.183333         0	!(!((atfloor)&(open)))
+2.61639e-29  0.333333         9	(open)U(!((atfloor)U(F(open))))
+2.61639e-29  0.208333         3	(open)U(G(!(open)))
+9.2034e-31  0.183333         6	G(X(X(!(open))))
+5.91645e-31  0.416667         9	X(!(F(open)))
+        -1  0.833333         0	!((!(call))|(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+TopItem 3:
+      0.75  0.666667         0	X((!(call))U(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=0.333333
++Random_Solver_Count=0.666667
+Ranking_Ref_Results: 3
+Ref_Solver_Time:21317
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 38
+Random Solver Results:
+Random_Solver_Time:214568
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+      0.75       0.5         0	X((!(call))U(F(open)))
+      0.75       0.5         3	(open)|(F(F(open)))
+      0.75       0.5        15	F((((open)&(call))|(call))U(F(open)))
+      0.75      0.45         6	(open)U(X((open)U(F(open))))
+      0.75  0.416667         9	X(((open)|(X(call)))U(F(open)))
+      0.75  0.416667        18	(open)|(F(((open)U(atfloor))U(F(open))))
+      0.75     0.375         6	(open)U(!((atfloor)&(open)))
+      0.75      0.25         9	X(F(X(open)))
+      0.75      0.25        12	(atfloor)U(!(G((open)|(atfloor))))
+      0.75     0.225         3	G((atfloor)|(F(G(open))))
+      0.75     0.225         6	(open)|(!(G((open)U(call))))
+      0.75     0.225         9	F(((open)|(X(call)))U(!(open)))
+      0.75     0.225        21	F((atfloor)&(X((atfloor)U((open)&(call)))))
+      0.75  0.208333         3	(open)|(X(X(F(G(open)))))
+      0.75  0.208333        12	(open)U((X(atfloor))|(F(G(open))))
+      0.75  0.208333        12	(open)U(X(!((open)&(G(atfloor)))))
+       0.7      0.45        18	(open)|((!(call))U((atfloor)&(F(open))))
+    0.6875     0.225         9	!(!((atfloor)|((open)U(call))))
+  0.677778  0.416667        30	((open)U(atfloor))U((!(call))U((atfloor)&(F(open))))
+  0.666667         1         6	G(((open)|(call))|(F(open)))
+  0.666667      0.25        27	(open)|((atfloor)&((open)U(!((open)&(atfloor)))))
+  0.666667  0.208333        18	(open)|((atfloor)|((X(open))|(G(open))))
+     0.625       0.5         9	(open)|(G(F((atfloor)&(open))))
+  0.533334     0.225         3	G((atfloor)|(!(G(open))))
+  0.527778      0.25         0	(atfloor)U(X(X(open)))
+       0.5       0.5         3	(open)|(!(F(open)))
+       0.5      0.45         0	(open)|(G(!(F(open))))
+       0.5  0.291667         0	X((call)U(!(!(open))))
+       0.5      0.25         9	(call)&(F(X((open)|(atfloor))))
+       0.5     0.225         6	(open)&(!((open)&(G(open))))
+       0.5  0.208333        15	(open)&(F((open)|((call)U(X(open)))))
+  0.416666     0.625         0	!(!((atfloor)&(open)))
+2.61639e-29      0.45         9	(open)U(!((atfloor)U(F(open))))
+2.61639e-29  0.291667         3	(open)U(G(!(open)))
+9.2034e-31      0.25         6	G(X(X(!(open))))
+5.91645e-31       0.5         9	X(!(F(open)))
+        -1      0.75         0	!((!(call))|(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+- - running: elevator: contrasty12.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty12.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 341.046ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
++ RS result found: !(X(F(open)))
+- RS queue pushed: X(G(X(open)))
+- RS queue pushed: F(G(G(G(open))))
++ RS result found: F((!(call))|(F(open)))
+- RS queue pushed: G(G(X(open)))
++ RS result found: !((open)&(X(open)))
++ RS result found: X((open)U((open)U(open)))
+- RS queue pushed: G(((open)&(call))R(X(open)))
++ RS result found: X((open)U((open)|(!(open))))
+- RS queue pushed: (atfloor)R(G(F(G(open))))
++ RS result found: (atfloor)|(G(G(G(open))))
++ RS result found: (atfloor)|(X(G(G(open))))
++ RS result found: (atfloor)&(!(G((open)&(open))))
+- RS queue pushed: ((atfloor)|(call))R(G(G(G(open))))
+- RS queue pushed: (atfloor)|(F(F((F(open))R(open))))
++ RS result found: (atfloor)&(X(X((open)&((open)|(atfloor)))))
+- RS queue pushed: F(G(X(open)))
++ RS result found: F(X(X(open)))
+- RS queue pushed: F(X((atfloor)R(open)))
++ RS result found: X(X((G(atfloor))U(open)))
+- RS queue pushed: X(G((atfloor)R((open)|(open))))
++ RS result found: X((!(call))&(X(open)))
++ RS result found: !((X(open))&(G(!(call))))
++ RS result found: F(((open)&(call))&(X(open)))
+- RS queue pushed: F(((open)&(call))R(X(open)))
++ RS result found: F(((open)&(call))|((call)&(open)))
+- RS queue pushed: G(((open)&(call))R((open)&(F(call))))
+- RS queue pushed: G(G(F(G(open))))
+- RS queue pushed: X(X(F(G(open))))
++ RS result found: F(!((call)&(G(open))))
++ RS result found: G(F((call)&(!(open))))
+- RS queue pushed: G(F((call)R(F(F(open)))))
+- RS queue pushed: !(G(((call)U(open))R(G(open))))
++ RS result found: !(G(G(G(open))))
+- RS queue pushed: G((call)R(G(G(open))))
+- RS queue pushed: F((F(call))R(G(G(open))))
+- RS queue pushed: X((call)U((open)R(G(open))))
++ RS result found: F((call)|((open)|((open)&(open))))
+- RS queue pushed: !((call)&((open)U((open)R(X(open)))))
+- RS queue pushed: !((call)U((open)&((X(open))R(open))))
+- RS queue pushed: G((call)&(((open)&(atfloor))|(G(open))))
+- RS queue pushed: X(!((open)R(X(open))))
++ RS result found: !(!((open)U(F(X(open)))))
+- RS queue pushed: F(!(F((F(open))R(open))))
+- RS queue pushed: F(F(F((F(open))R(open))))
+- RS queue pushed: F(F((open)|((F(open))R(open))))
+- RS queue pushed: F(F(((F(open))R(open))&(X(open))))
++ RS result found: !(G(X(open)))
+- RS queue pushed: G(X(F(open)))
+- RS queue pushed: G(X(X(open)))
++ RS result found: X(G(!((open)&(atfloor))))
+- RS queue pushed: F(G((atfloor)&(open)))
+- RS queue pushed: G(X((atfloor)R(open)))
+- RS queue pushed: X(F((atfloor)R(open)))
++ RS result found: F(!((!(atfloor))|(open)))
+- RS queue pushed: X(!((atfloor)R(G(open))))
++ RS result found: (open)U(X(F(!(open))))
++ RS result found: (open)&(!(X(X(X(open)))))
+- RS queue pushed: (open)U(G(X((open)|(open))))
+- RS queue pushed: (open)U(G((atfloor)R((open)|(open))))
+- RS queue pushed: (open)|(F((atfloor)R((open)|(open))))
+- RS queue pushed: (X(open))U(G((atfloor)R((open)|(open))))
++ RS result found: (call)|(F(X(open)))
++ RS result found: (call)&(X((call)U(open)))
++ RS result found: (call)|(!((call)|((open)U(call))))
+- RS queue pushed: (call)|(((open)&(call))R(X(open)))
+- RS queue pushed: (((open)&(call))R(X(open)))|(F(call))
+- RS queue pushed: (atfloor)|(((open)&(call))R(F(open)))
+- RS queue pushed: (atfloor)R(((open)&(call))&((open)&(F(call))))
++ RS result found: (atfloor)U(((open)&(F(call)))&((open)U(call)))
+- RS queue pushed: (atfloor)U(((open)&(call))R((open)&(F(call))))
+- RS queue pushed: (atfloor)R(((call)|(X(open)))&((open)&(F(call))))
++ RS result found: (atfloor)U(((open)&(call))&(X((open)|(atfloor))))
+- RS queue pushed: (((open)&(call))R((open)&(F(call))))|((atfloor)U(atfloor))
+- RS queue pushed: (atfloor)&(((open)|((call)R(atfloor)))|((open)&(F(call))))
+- RS queue pushed: (call)R(G(F(G(open))))
+- RS queue pushed: (F(call))R(G(F(G(open))))
+- RS queue pushed: (call)R((call)&(F(G(open))))
+- RS queue pushed: (call)|((!(call))R(F(G(open))))
+- RS queue pushed: (call)&((call)&((call)R(F(open))))
+- RS queue pushed: (call)R((call)U((call)&(G(open))))
+- RS queue pushed: (call)R((call)R((call)&(G(!(open)))))
+- RS queue pushed: (call)U((call)&(((call)|(open))R(G(open))))
+- RS queue pushed: (atfloor)U(X(F(G(open))))
+- RS queue pushed: (atfloor)R((open)&(X(G(open))))
++ RS result found: (atfloor)|((open)U(F(G(open))))
+- RS queue pushed: (X(F(G(open))))|((atfloor)R(open))
++ RS result found: (atfloor)|(((open)&(call))U(F(G(open))))
++ RS result found: (atfloor)|((open)|(!((atfloor)|(open))))
+- RS queue pushed: (atfloor)R((open)&(!((atfloor)&(!(open)))))
++ RS result found: (atfloor)|((open)&(G((!(atfloor))&(open))))
+- RS queue pushed: F(F((call)R(F(F(open)))))
++ RS result found: !((atfloor)U(!(F(F(open)))))
+- RS queue pushed: F((atfloor)R(G(X(F(open)))))
+- RS queue pushed: F((atfloor)&((call)R(F(F(open)))))
++ RS result found: !((atfloor)|(F(F((atfloor)&(open)))))
+- RS queue pushed: F(((call)R(F(F(open))))&(G(atfloor)))
+- RS queue pushed: G((atfloor)R(!(X((atfloor)&(X(open))))))
++ RS result found: X((atfloor)|(X(!((open)|(X(atfloor))))))
++ RS result found: (call)U(!(X(F(open))))
++ RS result found: (call)|(G(F(G(open))))
+Fix Done. (result = 39, checktime = 101, time = 5591.28ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:19822.6
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 39
+Random Solver Results:
+Random_Solver_Time:218300
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.464286         3	!((G(!(call)))&(X(open)))
+      0.75  0.366667         3	(call)|(F(X(open)))
+      0.75  0.333333         0	(call)|(G(F(G(open))))
+      0.75  0.333333         0	F(!((call)&(G(open))))
+      0.75  0.333333        12	F(((open)&(call))|((call)&(open)))
+      0.75  0.333333        12	F((call)|((open)|((open)&(open))))
+      0.75  0.309524         6	!((atfloor)U(!(F(F(open)))))
+      0.75  0.291667        18	(atfloor)|(((open)&(call))U(F(G(open))))
+      0.75  0.208333         9	!(G(X(open)))
+      0.75  0.208333         9	F(X(X(open)))
+      0.75  0.183333         0	(open)U(X(F(!(open))))
+      0.75  0.183333         6	!(G(G(G(open))))
+      0.75  0.183333         6	X((open)U((open)|(!(open))))
+      0.75  0.166667         3	!(!((open)U(F(X(open)))))
+      0.75  0.166667         3	F(!((!(atfloor))|(open)))
+      0.75  0.166667         9	(atfloor)|((open)U(F(G(open))))
+      0.75  0.166667        18	(atfloor)|((open)|(!((atfloor)|(open))))
+  0.747275  0.333333         6	F(((open)&(call))&(X(open)))
+     0.675  0.333333        12	(call)|(!((call)|((open)U(call))))
+  0.666667  0.208333         3	!((open)&(X(open)))
+  0.638889  0.145833        18	X((atfloor)|(X(!((open)|(X(atfloor))))))
+  0.583333  0.166667         3	(atfloor)|(G(G(G(open))))
+  0.583333  0.166667         3	(atfloor)|(X(G(G(open))))
+  0.583333  0.166667         9	(atfloor)&(!(G((open)&(open))))
+  0.583333  0.154762        21	(atfloor)|((open)&(G((!(atfloor))&(open))))
+  0.565789  0.291667        24	(atfloor)U(((open)&(F(call)))&((open)U(call)))
+  0.444445  0.291667        27	(atfloor)U(((open)&(call))&(X((open)|(atfloor))))
+  0.416666  0.208333         3	X((open)U((open)U(open)))
+  0.416666  0.166667         3	(open)&(!(X(X(X(open)))))
+  0.416666  0.166667         3	X(X((G(atfloor))U(open)))
+     0.375  0.366667         3	(call)&(X((call)U(open)))
+  0.361111  0.154762        21	(atfloor)&(X(X((open)&((open)|(atfloor)))))
+  0.333334       0.5         0	X((!(call))&(X(open)))
+  0.146447  0.166667         3	X(G(!((open)&(atfloor))))
+  0.146447  0.154762        15	!((atfloor)|(F(F((atfloor)&(open)))))
+1.06906e-13       0.5         0	(call)U(!(X(F(open))))
+5.91645e-31  0.416667         9	!(X(F(open)))
+        -1  0.333333         0	G(F((call)&(!(open))))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=1
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+TopItem 3:
+      0.75  0.464286         3	!((G(!(call)))&(X(open)))
+
+Formula_Count=3
++Ref_Solver_Count=0.666667
++Random_Solver_Count=0.666667
+Ranking_Ref_Results: 3
+Ref_Solver_Time:20347.7
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 39
+Random Solver Results:
+Random_Solver_Time:211476
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         3	F(!((!(atfloor))|(open)))
+      0.75      0.75        12	F(((open)&(call))|((call)&(open)))
+      0.75      0.75        12	F((call)|((open)|((open)&(open))))
+      0.75     0.625        18	(atfloor)|((open)|(!((atfloor)|(open))))
+      0.75       0.5         0	(open)U(X(F(!(open))))
+      0.75  0.416667         6	!((atfloor)U(!(F(F(open)))))
+      0.75  0.291667         6	X((open)U((open)|(!(open))))
+      0.75      0.25         3	(call)|(F(X(open)))
+      0.75      0.25         9	!(G(X(open)))
+      0.75      0.25         9	F(X(X(open)))
+      0.75     0.225         0	(call)|(G(F(G(open))))
+      0.75     0.225         0	F(!((call)&(G(open))))
+      0.75     0.225         3	!((G(!(call)))&(X(open)))
+      0.75     0.225         6	!(G(G(G(open))))
+      0.75     0.225         9	(atfloor)|((open)U(F(G(open))))
+      0.75     0.225        18	(atfloor)|(((open)&(call))U(F(G(open))))
+      0.75  0.208333         3	!(!((open)U(F(X(open)))))
+  0.747275      0.25         6	F(((open)&(call))&(X(open)))
+     0.675     0.225        12	(call)|(!((call)|((open)U(call))))
+  0.666667      0.25         3	!((open)&(X(open)))
+  0.638889  0.196429        18	X((atfloor)|(X(!((open)|(X(atfloor))))))
+  0.583333      0.25         9	(atfloor)&(!(G((open)&(open))))
+  0.583333      0.25        21	(atfloor)|((open)&(G((!(atfloor))&(open))))
+  0.583333     0.225         3	(atfloor)|(G(G(G(open))))
+  0.583333     0.225         3	(atfloor)|(X(G(G(open))))
+  0.565789  0.416667        24	(atfloor)U(((open)&(F(call)))&((open)U(call)))
+  0.444445      0.25        27	(atfloor)U(((open)&(call))&(X((open)|(atfloor))))
+  0.416666      0.25         3	X((open)U((open)U(open)))
+  0.416666     0.225         3	X(X((G(atfloor))U(open)))
+  0.416666  0.208333         3	(open)&(!(X(X(X(open)))))
+     0.375      0.25         3	(call)&(X((call)U(open)))
+  0.361111      0.25        21	(atfloor)&(X(X((open)&((open)|(atfloor)))))
+  0.333334      0.25         0	X((!(call))&(X(open)))
+  0.146447  0.291667         3	X(G(!((open)&(atfloor))))
+  0.146447      0.45        15	!((atfloor)|(F(F((atfloor)&(open)))))
+1.06906e-13      0.45         0	(call)U(!(X(F(open))))
+5.91645e-31       0.5         9	!(X(F(open)))
+        -1  0.583333         0	G(F((call)&(!(open))))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0.333333
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         3	F(!((!(atfloor))|(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.5
+- - running: elevator: contrasty13.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty13.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 234.473ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
++ RS result found: !((!(call))|(F(open)))
+- RS queue pushed: G((!(call))|(F(open)))
+- RS queue pushed: !(((call)U(call))R(F(open)))
+- RS queue pushed: X((!(call))R((open)U(open)))
+- RS queue pushed: F((!(call))R((open)U(X(open))))
++ RS result found: F((!(call))|((X(open))U(open)))
+- RS queue pushed: X(((call)&((call)R(open)))U(F(open)))
++ RS result found: (call)&((!(call))|(F(open)))
++ RS result found: (call)&((F(open))&(G(call)))
+- RS queue pushed: (call)R((!(call))&(F(open)))
+- RS queue pushed: ((!(call))|(F(open)))&((call)R(call))
+- RS queue pushed: (call)&((G((call)&(call)))R(F(open)))
++ RS result found: (call)|((!(call))U((atfloor)U(open)))
+- RS queue pushed: (call)&((!(call))R((X(atfloor))R(open)))
+- RS queue pushed: (call)|((!(call))&((atfloor)R(X(open))))
+- RS queue pushed: (call)R(F(F(open)))
++ RS result found: (call)|(!((atfloor)|(open)))
++ RS result found: (call)U(F((atfloor)&(!(open))))
+- RS queue pushed: (call)|(((call)U(call))R(F(open)))
+- RS queue pushed: (call)U(!(((atfloor)R(open))R(open)))
+- RS queue pushed: (call)U((!(call))R(F(open)))
+- RS queue pushed: (call)R((!(call))R((open)U(open)))
+- RS queue pushed: (call)U((!(call))R((open)U(open)))
+- RS queue pushed: (call)&(((call)&(call))R((open)U(open)))
+- RS queue pushed: (call)U((!(call))U(G((open)&(atfloor))))
+- RS queue pushed: ((!(call))R((open)U(open)))&((call)U(atfloor))
+- RS queue pushed: (call)|(((call)R((call)U(call)))U((open)U(open)))
+- RS queue pushed: (call)|((((call)&(atfloor))&(call))R((open)U(open)))
+- RS queue pushed: (atfloor)&((!(call))R((open)&(X(open))))
+- RS queue pushed: (atfloor)&((!(call))R((open)U(X(open))))
++ RS result found: (atfloor)|((!(call))U((open)U(X(open))))
++ RS result found: (atfloor)|((!(call))|((open)&(G(open))))
+- RS queue pushed: (!(atfloor))|((!(call))R((open)U(X(open))))
++ RS result found: (atfloor)U((!(call))&((X(open))|(F(open))))
++ RS result found: (atfloor)U(((call)|(call))&((open)U(X(open))))
+- RS queue pushed: (atfloor)R(((call)|(F(call)))U((open)U(X(open))))
++ RS result found: (atfloor)|((!(call))|((open)U(G((open)&(open)))))
+- RS queue pushed: (atfloor)U(((call)&((call)U(call)))R((open)U(X(open))))
++ RS result found: (open)U(X(F(open)))
++ RS result found: (open)|(!(G(open)))
+- RS queue pushed: (open)|(((call)&((call)R(open)))U(F(open)))
+- RS queue pushed: (((call)&((call)R(open)))U(F(open)))|(G(open))
++ RS result found: F((!(call))&(F(open)))
+- RS queue pushed: G((!(call))U(G(open)))
++ RS result found: X((F(call))U(F(open)))
++ RS result found: X((!(call))|(!(F(open))))
+- RS queue pushed: !((G(call))R(F(open)))
++ RS result found: X((!(call))|(F(open)))
+- RS queue pushed: !((!((call)&(call)))R(F(open)))
++ RS result found: F((!(call))|((atfloor)|(open)))
++ RS result found: F((!(call))U((atfloor)&(F(open))))
+- RS queue pushed: G((!(call))|((open)&(X(atfloor))))
++ RS result found: (call)U(F(F(open)))
++ RS result found: (call)|(X(X(open)))
++ RS result found: (call)&(F(!(G(open))))
+- RS queue pushed: (call)&((G((call)&(call)))R(F(open)))
+- RS queue pushed: ((call)|(call))U((G((call)&(call)))R(F(open)))
+- RS queue pushed: (call)&((!(call))R((X(atfloor))R(open)))
+- RS queue pushed: (call)&((!(call))R((open)|(X(atfloor))))
+- RS queue pushed: (call)R((!(call))R((X(atfloor))R(open)))
+- RS queue pushed: (call)U(((X(atfloor))R(open))&(F(call)))
++ RS result found: (call)|((!(call))&((X(atfloor))U(G(open))))
+- RS queue pushed: (call)U((!(call))R(((call)&(atfloor))|(open)))
+- RS queue pushed: ((call)U(call))U((!(call))R((X(atfloor))R(open)))
+- RS queue pushed: (call)|((G((call)|(atfloor)))R((X(atfloor))R(open)))
+- RS queue pushed: (call)R((!(call))U((((call)&(open))U(atfloor))U(open)))
+- RS queue pushed: (call)|((!(call))|(((call)&((atfloor)|(atfloor)))R(open)))
+- RS queue pushed: (call)&(F((atfloor)R(X(open))))
+- RS queue pushed: (call)&(G((atfloor)&(X(open))))
++ RS result found: (call)|(F((atfloor)&(!(open))))
+- RS queue pushed: (call)&(G((atfloor)U(X(F(open)))))
+- RS queue pushed: (call)R(F((X(open))|(F(atfloor))))
+- RS queue pushed: (call)U((!(call))&((atfloor)R(X(open))))
+- RS queue pushed: (X(call))U((!(call))&((atfloor)R(X(open))))
+- RS queue pushed: G(F(F(open)))
+- RS queue pushed: G(X(F(open)))
++ RS result found: !(!((call)U(open)))
+- RS queue pushed: F(!((call)R((open)|(call))))
+- RS queue pushed: G(F((open)&((call)R(open))))
+- RS queue pushed: (call)R(X(F(open)))
+- RS queue pushed: (call)R(X(X(open)))
+- RS queue pushed: (call)R(((call)U(call))R(F(open)))
+- RS queue pushed: (F(call))R(((call)U(call))R(F(open)))
++ RS result found: (call)&((open)U(X(open)))
+- RS queue pushed: (call)R((open)|(F((open)&(open))))
+- RS queue pushed: (call)R(!(((atfloor)R(open))R(open)))
+- RS queue pushed: (F(call))R(!(((atfloor)R(open))R(open)))
+- RS queue pushed: (call)R((open)|(((atfloor)R(open))R(open)))
+- RS queue pushed: (call)|((((atfloor)R(open))R(open))|((open)U(atfloor)))
+- RS queue pushed: !((!(call))R(F(open)))
+- RS queue pushed: G((!(call))U(F(open)))
++ RS result found: X((!(call))U(!(open)))
++ RS result found: X((F(open))|(G(call)))
+- RS queue pushed: X((!(F(call)))&(F(open)))
++ RS result found: F((!(call))U(!((open)&(open))))
++ RS result found: (call)&(X((open)U(open)))
+- RS queue pushed: (call)R(!((open)U(open)))
+- RS queue pushed: (call)&(F((!(open))R(open)))
+- RS queue pushed: (call)U((!(call))R((open)U(open)))
++ RS result found: (call)|(X((open)U((open)|(call))))
+- RS queue pushed: ((!(call))R((open)U(open)))&((call)U(call))
+Fix Done. (result = 32, checktime = 101, time = 4852.11ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:17994.3
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 32
+Random Solver Results:
+Random_Solver_Time:167039
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	X((!(call))|(F(open)))
+      0.75  0.666667         0	F((!(call))&(F(open)))
+      0.75  0.583333        12	F((!(call))U((atfloor)&(F(open))))
+      0.75      0.55         3	(call)U(F(F(open)))
+      0.75       0.5         0	X((F(call))U(F(open)))
+      0.75       0.5         0	X((G(call))|(F(open)))
+      0.75  0.464286         9	F((!(call))U(!((open)&(open))))
+      0.75  0.464286         9	F((!(call))|((X(open))U(open)))
+      0.75  0.464286         9	F((!(call))|((atfloor)|(open)))
+      0.75  0.416667         3	(open)U(X(F(open)))
+      0.75  0.309524         9	(call)U(F((atfloor)&(!(open))))
+      0.75  0.309524         9	(call)|(F((atfloor)&(!(open))))
+      0.75  0.208333         3	(open)|(!(G(open)))
+   0.71875  0.464286        15	(call)|((!(call))U((atfloor)U(open)))
+  0.666667    0.4375        18	(atfloor)|((!(call))|((open)&(G(open))))
+  0.666667  0.416667        27	(atfloor)|((!(call))|((open)U(G((open)&(open)))))
+  0.666667  0.333333        12	(call)|(X((open)U((open)|(call))))
+      0.65       0.5         0	X((!(call))U(!(open)))
+  0.638889    0.4375        18	(atfloor)|((!(call))U((open)U(X(open))))
+     0.625  0.555556        21	(atfloor)U((!(call))&((F(open))|(X(open))))
+  0.583333  0.366667         3	(call)|(X(X(open)))
+    0.5625  0.366667         3	!(!((call)U(open)))
+  0.541667  0.333333         6	(call)|(!((atfloor)|(open)))
+       0.5  0.833333         6	(call)&((!(call))|(F(open)))
+       0.5  0.619048         3	X((!(call))|(!(F(open))))
+       0.5  0.416667        21	(call)|((!(call))&((X(atfloor))U(G(open))))
+       0.5  0.333333         0	(call)&(F(!(G(open))))
+  0.446429  0.291667        24	(atfloor)U(((call)|(call))&((open)U(X(open))))
+  0.361111  0.366667         3	(call)&((open)U(X(open)))
+  0.333334  0.366667         3	(call)&(X((open)U(open)))
+  0.166666       0.5         6	(call)&((G(call))&(F(open)))
+        -1  0.833333         0	!((!(call))|(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.833333         0	X((!(call))|(F(open)))
+      0.75  0.666667         0	F((!(call))&(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=0.333333
++Random_Solver_Count=0.666667
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.833333         0	X((!(call))|(F(open)))
+      0.75  0.666667         0	F((!(call))&(F(open)))
+TopItem 2:
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.833333         0	X((!(call))|(F(open)))
+      0.75  0.666667         0	F((!(call))&(F(open)))
+TopItem 2:
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+TopItem 3:
+      0.75  0.583333        12	F((!(call))U((atfloor)&(F(open))))
+
+Formula_Count=5
++Ref_Solver_Count=0.4
++Random_Solver_Count=0.6
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18237.6
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 32
+Random Solver Results:
+Random_Solver_Time:163276
+
+    semSim    synSim  len_diff	ltl
+      0.75     0.875         9	(call)|(F((atfloor)&(!(open))))
+      0.75      0.75         0	X((!(call))|(F(open)))
+      0.75      0.75         9	F((!(call))|((atfloor)|(open)))
+      0.75  0.583333         9	(call)U(F((atfloor)&(!(open))))
+      0.75       0.5         0	F((!(call))&(F(open)))
+      0.75       0.5         0	X((F(call))U(F(open)))
+      0.75       0.5         3	(call)U(F(F(open)))
+      0.75       0.5         3	(open)U(X(F(open)))
+      0.75      0.45         0	X((G(call))|(F(open)))
+      0.75      0.45        12	F((!(call))U((atfloor)&(F(open))))
+      0.75  0.291667         9	F((!(call))U(!((open)&(open))))
+      0.75      0.25         3	(open)|(!(G(open)))
+      0.75     0.225         9	F((!(call))|((X(open))U(open)))
+   0.71875      0.25        15	(call)|((!(call))U((atfloor)U(open)))
+  0.666667      0.25        12	(call)|(X((open)U((open)|(call))))
+  0.666667     0.225        18	(atfloor)|((!(call))|((open)&(G(open))))
+  0.666667     0.225        27	(atfloor)|((!(call))|((open)U(G((open)&(open)))))
+      0.65  0.291667         0	X((!(call))U(!(open)))
+  0.638889     0.225        18	(atfloor)|((!(call))U((open)U(X(open))))
+     0.625  0.416667        21	(atfloor)U((!(call))&((F(open))|(X(open))))
+  0.583333      0.25         3	(call)|(X(X(open)))
+    0.5625      0.25         3	!(!((call)U(open)))
+  0.541667     0.625         6	(call)|(!((atfloor)|(open)))
+       0.5      0.75         6	(call)&((!(call))|(F(open)))
+       0.5      0.45         3	X((!(call))|(!(F(open))))
+       0.5     0.225         0	(call)&(F(!(G(open))))
+       0.5  0.208333        21	(call)|((!(call))&((X(atfloor))U(G(open))))
+  0.446429     0.225        24	(atfloor)U(((call)|(call))&((open)U(X(open))))
+  0.361111      0.25         3	(call)&((open)U(X(open)))
+  0.333334      0.25         3	(call)&(X((open)U(open)))
+  0.166666      0.45         6	(call)&((G(call))&(F(open)))
+        -1      0.75         0	!((!(call))|(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75     0.875         9	(call)|(F((atfloor)&(!(open))))
+
+Formula_Count=3
++Ref_Solver_Count=0.666667
++Random_Solver_Count=0.333333
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75     0.875         9	(call)|(F((atfloor)&(!(open))))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         0	X((!(call))|(F(open)))
+
+Formula_Count=5
++Ref_Solver_Count=0.6
++Random_Solver_Count=0.4
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75     0.875         9	(call)|(F((atfloor)&(!(open))))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         0	X((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         9	F((!(call))|((atfloor)|(open)))
+      0.75  0.583333         9	(call)U(F((atfloor)&(!(open))))
+
+Formula_Count=7
++Ref_Solver_Count=0.428571
++Random_Solver_Count=0.571429
+- - running: elevator: contrasty14.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty14.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 258.026ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
++ RS result found: (atfloor)&(F(F(open)))
+- RS queue pushed: (atfloor)R(!((open)&(open)))
+- RS queue pushed: (atfloor)R((!(call))|(F(open)))
+- RS queue pushed: (atfloor)U(F((open)R((open)R(call))))
++ RS result found: ((atfloor)|(open))|((!(call))|(F(open)))
++ RS result found: (atfloor)|(X(((open)|(atfloor))U(open)))
++ RS result found: F(!((open)&(open)))
++ RS result found: X((atfloor)|(F(open)))
++ RS result found: F((atfloor)U((open)&(open)))
++ RS result found: F(((open)&(open))&(X(atfloor)))
++ RS result found: F((atfloor)|(X((open)|(open))))
++ RS result found: !(X(X(open)))
+- RS queue pushed: F(G(F(open)))
+- RS queue pushed: G((!(call))|(F(open)))
+- RS queue pushed: X(X(G((open)|(open))))
++ RS result found: !((call)|(!(!(call))))
+- RS queue pushed: F((call)R(X(X(F(call)))))
+- RS queue pushed: !((call)U(G((open)R(call))))
+- RS queue pushed: G(F((open)R((open)R(call))))
+- RS queue pushed: F((call)R((open)R((open)R(call))))
++ RS result found: F(!(F(open)))
+- RS queue pushed: X(G(F(open)))
++ RS result found: F(!((open)|(open)))
+- RS queue pushed: G(F((open)U(F(open))))
++ RS result found: !(X(((open)|(call))&(open)))
++ RS result found: (call)|(!(F(open)))
++ RS result found: (call)&(X((call)|(open)))
++ RS result found: (call)U((!(call))|(F(open)))
++ RS result found: (call)U(X((call)|(!(open))))
+- RS queue pushed: (call)|(X((open)|((call)R(call))))
+- RS queue pushed: ((call)&(call))R((!(call))|(F(open)))
++ RS result found: !(X(G((open)|(open))))
++ RS result found: F(!(G((open)|(open))))
++ RS result found: X(!(G((open)&(open))))
++ RS result found: X(X(!((open)|(open))))
+- RS queue pushed: X(X(X((X(open))R(open))))
+- RS queue pushed: F(G(X((open)&((open)&(open)))))
++ RS result found: !(X(G(X(F(call)))))
++ RS result found: F(X(X(X(F(call)))))
++ RS result found: F(X(G((open)|(G(call)))))
+- RS queue pushed: X((call)R(X(X(F(call)))))
++ RS result found: X(F(F((open)&(F(call)))))
++ RS result found: F(F(X((G(open))U(F(call)))))
+- RS queue pushed: !(!(F((open)R(G((call)&(open))))))
+- RS queue pushed: (atfloor)&(G(G((open)R(call))))
++ RS result found: (atfloor)U(G((atfloor)|(G(call))))
+- RS queue pushed: (atfloor)R((call)U(G((open)R(call))))
+- RS queue pushed: (atfloor)|(X((atfloor)R((open)R(call))))
++ RS result found: (atfloor)U(X((atfloor)U(X((call)U(call)))))
+- RS queue pushed: (atfloor)|(G((F(atfloor))U((open)R(call))))
+- RS queue pushed: (open)&(G(F((open)R(call))))
++ RS result found: (open)&(X(X((open)&(call))))
+- RS queue pushed: (open)R(G(G((open)&(F(call)))))
+- RS queue pushed: (open)&(F((open)R((open)R(call))))
+- RS queue pushed: (open)U(!((open)R((open)R(call))))
+- RS queue pushed: (F((open)R((open)R(call))))&(X(open))
++ RS result found: (atfloor)&((call)U(G((open)|(call))))
+- RS queue pushed: (atfloor)|((call)&(X((open)R(call))))
+- RS queue pushed: (atfloor)R((call)U(X((call)&(G(open)))))
+- RS queue pushed: (atfloor)&((call)R((open)R((open)R(call))))
+- RS queue pushed: (atfloor)U((call)U((open)R((open)R(call))))
+- RS queue pushed: (!(atfloor))U((call)R((open)R((open)R(call))))
+- RS queue pushed: (atfloor)|((!(call))&((open)R((open)R(call))))
+- RS queue pushed: F(G(F(open)))
++ RS result found: G(!(F(open)))
+- RS queue pushed: G(F(G(open)))
+- RS queue pushed: F(G(X((open)R(atfloor))))
+- RS queue pushed: !((call)R(F(X(open))))
+- RS queue pushed: !((call)R(X(F(open))))
++ RS result found: !(F((open)U(F(open))))
++ RS result found: F((call)|(G(!(X(open)))))
++ RS result found: F((call)U((open)U(F(open))))
++ RS result found: F(((open)U(F(open)))|(F(call)))
+- RS queue pushed: G(X((open)|((call)R(call))))
+- RS queue pushed: X((atfloor)R((G(call))R(open)))
++ RS result found: F((atfloor)U((!(!(call)))&(open)))
+- RS queue pushed: !((atfloor)R((open)|((call)R(call))))
+- RS queue pushed: G((atfloor)&((open)|((call)R(call))))
+- RS queue pushed: !((X(atfloor))U((open)|((call)R(call))))
+- RS queue pushed: ((call)&(call))R((F(open))&(F(call)))
++ RS result found: ((call)&(call))|((!(call))U(F(open)))
++ RS result found: ((call)&(call))|((!(call))|(F(open)))
++ RS result found: ((call)U(call))U((!(call))|(F(open)))
++ RS result found: ((call)&(call))U((!(call))|((call)U(open)))
+- RS queue pushed: (((call)R(call))U(call))U((!(call))|(F(open)))
+- RS queue pushed: ((call)&(call))R((!(call))U((call)R(F(open))))
+- RS queue pushed: ((call)&(call))U((X((call)R(atfloor)))R(F(open)))
+- RS queue pushed: ((call)&(call))&((!(call))&(((call)&(call))&(open)))
+- RS queue pushed: (open)&((call)R(X(G(open))))
+- RS queue pushed: (open)|(X(X((X(open))R(open))))
+- RS queue pushed: (X(open))U(X(X((X(open))R(open))))
+- RS queue pushed: (open)&((call)R(X((X(open))R(open))))
+- RS queue pushed: (open)&((call)|(F(G((open)R(open)))))
+- RS queue pushed: (open)|((call)U(G((X(open))R(open))))
+- RS queue pushed: (open)|(((call)U(open))U(X((X(open))R(open))))
++ RS result found: (open)|(G(X((open)&((open)&(open)))))
+- RS queue pushed: (open)R((atfloor)|(X((open)&((open)&(open)))))
+- RS queue pushed: (open)U((atfloor)&((call)R((open)R(X(open)))))
+- RS queue pushed: (open)U((atfloor)&((call)R((open)U((open)&(open)))))
++ RS result found: (open)|((atfloor)&((call)|((open)&((open)&(open)))))
+- RS queue pushed: (open)&((atfloor)R(((open)&((open)&(open)))|(G(call))))
+Fix Done. (result = 42, checktime = 101, time = 5343.03ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18534.9
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 42
+Random Solver Results:
+Random_Solver_Time:210570
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         6	(call)U((!(call))|(F(open)))
+      0.75   0.77381        15	((call)&(call))|((!(call))|(F(open)))
+      0.75   0.77381        15	((call)U(call))U((!(call))|(F(open)))
+      0.75  0.729167        18	((atfloor)|(open))|((!(call))|(F(open)))
+      0.75  0.619048        15	((call)&(call))|((!(call))U(F(open)))
+      0.75       0.5         6	F((call)U((open)U(F(open))))
+      0.75  0.464286         9	F((F(call))|((open)U(F(open))))
+      0.75  0.464286        21	((call)&(call))U((!(call))|((call)U(open)))
+      0.75    0.4375        12	F((atfloor)U((!(!(call)))&(open)))
+      0.75  0.416667         9	F(!(F(open)))
+      0.75  0.366667         0	X((atfloor)|(F(open)))
+      0.75  0.309524         3	F((call)|(G(!(X(open)))))
+      0.75  0.309524         3	F(X(G((open)|(G(call)))))
+      0.75  0.309524         3	X(F(F((open)&(F(call)))))
+      0.75  0.291667         6	F(F(X((G(open))U(F(call)))))
+      0.75  0.208333         3	F(!((open)&(open)))
+      0.75  0.208333         3	F(!((open)|(open)))
+      0.75  0.183333         0	!(X(G((open)|(open))))
+      0.75  0.183333         0	F(!(G((open)|(open))))
+      0.75  0.183333         0	X(!(G((open)&(open))))
+      0.75  0.183333         6	F((atfloor)U((open)&(open)))
+      0.75  0.166667         3	!(X(G(X(F(call)))))
+      0.75  0.166667         3	F(X(X(X(F(call)))))
+      0.75  0.166667         9	F(((open)&(open))&(X(atfloor)))
+      0.75  0.166667         9	F((atfloor)|(X((open)|(open))))
+  0.701389  0.333333         6	(call)U(X((call)|(!(open))))
+    0.6875  0.154762        21	(atfloor)U(X((atfloor)U(X((call)U(call)))))
+  0.666667  0.166667        18	(atfloor)|(X(((open)|(atfloor))U(open)))
+  0.583333  0.366667         0	(atfloor)&(F(F(open)))
+  0.583333  0.333333         6	!(X(((open)|(call))&(open)))
+  0.583333  0.291667        30	(open)|((atfloor)&((call)|((open)&((open)&(open)))))
+  0.583333  0.208333         9	!(X(X(open)))
+  0.583333  0.183333         0	X(X(!((open)|(open))))
+       0.5      0.55         3	(call)|(!(F(open)))
+       0.5  0.366667         0	!((call)|(!(!(call))))
+       0.5  0.166667        15	(open)|(G(X((open)&((open)&(open)))))
+  0.416666  0.366667         3	(call)&(X((call)|(open)))
+  0.291667  0.333333         6	(open)&(X(X((open)&(call))))
+      0.25  0.309524        15	(atfloor)&((call)U(G((open)|(call))))
+  0.233333  0.166667        12	(atfloor)U(G((atfloor)|(G(call))))
+3.94431e-31  0.416667         9	G(!(F(open)))
+3.94431e-31  0.366667         0	!(F((open)U(F(open))))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(call)U((!(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(call)U((!(call))|(F(open)))
+TopItem 3:
+      0.75   0.77381        15	((call)&(call))|((!(call))|(F(open)))
+      0.75   0.77381        15	((call)U(call))U((!(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.25
++Random_Solver_Count=0.75
+Ranking_Ref_Results: 3
+Ref_Solver_Time:19299.2
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 42
+Random Solver Results:
+Random_Solver_Time:210575
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         0	X((atfloor)|(F(open)))
+      0.75      0.75         3	F(!((open)&(open)))
+      0.75      0.75         3	F(!((open)|(open)))
+      0.75      0.75         6	(call)U((!(call))|(F(open)))
+      0.75      0.75        15	((call)&(call))|((!(call))|(F(open)))
+      0.75      0.75        18	((atfloor)|(open))|((!(call))|(F(open)))
+      0.75     0.675        15	((call)U(call))U((!(call))|(F(open)))
+      0.75       0.5         9	F(!(F(open)))
+      0.75       0.5        15	((call)&(call))|((!(call))U(F(open)))
+      0.75      0.45         6	F((call)U((open)U(F(open))))
+      0.75      0.45         9	F((F(call))|((open)U(F(open))))
+      0.75  0.416667         3	!(X(G(X(F(call)))))
+      0.75  0.416667         3	F(X(X(X(F(call)))))
+      0.75  0.416667         3	X(F(F((open)&(F(call)))))
+      0.75  0.392857         6	F(F(X((G(open))U(F(call)))))
+      0.75  0.291667         6	F((atfloor)U((open)&(open)))
+      0.75  0.291667        12	F((atfloor)U((!(!(call)))&(open)))
+      0.75      0.25         0	!(X(G((open)|(open))))
+      0.75      0.25         0	F(!(G((open)|(open))))
+      0.75      0.25         0	X(!(G((open)&(open))))
+      0.75      0.25         9	F(((open)&(open))&(X(atfloor)))
+      0.75      0.25         9	F((atfloor)|(X((open)|(open))))
+      0.75      0.25        21	((call)&(call))U((!(call))|((call)U(open)))
+      0.75  0.208333         3	F((call)|(G(!(X(open)))))
+      0.75  0.208333         3	F(X(G((open)|(G(call)))))
+  0.701389  0.291667         6	(call)U(X((call)|(!(open))))
+    0.6875  0.208333        21	(atfloor)U(X((atfloor)U(X((call)U(call)))))
+  0.666667      0.25        18	(atfloor)|(X(((open)|(atfloor))U(open)))
+  0.583333     0.625        30	(open)|((atfloor)&((call)|((open)&((open)&(open)))))
+  0.583333       0.5         0	(atfloor)&(F(F(open)))
+  0.583333  0.291667         0	X(X(!((open)|(open))))
+  0.583333  0.291667         6	!(X(((open)|(call))&(open)))
+  0.583333      0.25         9	!(X(X(open)))
+       0.5     0.625         0	!((call)|(!(!(call))))
+       0.5       0.5         3	(call)|(!(F(open)))
+       0.5      0.25        15	(open)|(G(X((open)&((open)&(open)))))
+  0.416666  0.291667         3	(call)&(X((call)|(open)))
+  0.291667      0.25         6	(open)&(X(X((open)&(call))))
+      0.25      0.25        15	(atfloor)&((call)U(G((open)|(call))))
+  0.233333     0.225        12	(atfloor)U(G((atfloor)|(G(call))))
+3.94431e-31       0.5         9	G(!(F(open)))
+3.94431e-31      0.45         0	!(F((open)U(F(open))))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         0	X((atfloor)|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         0	X((atfloor)|(F(open)))
+TopItem 3:
+      0.75      0.75         3	F(!((open)&(open)))
+      0.75      0.75         3	F(!((open)|(open)))
+
+Formula_Count=6
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+- - running: elevator: contrasty15.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty15.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 302.708ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
+- RS queue pushed: (open)&(G(F(open)))
+- RS queue pushed: (open)U(G(G(open)))
++ RS result found: (open)U(!(G(X(open))))
+- RS queue pushed: (open)R((!(call))|(F(open)))
++ RS result found: (F(open))U((!(call))|(F(open)))
+- RS queue pushed: F(G(F(open)))
+- RS queue pushed: !((open)R(F(open)))
++ RS result found: G((open)U(!(open)))
+- RS queue pushed: G(G(G(open)))
++ RS result found: !((atfloor)&(G(open)))
+- RS queue pushed: G((atfloor)&((call)&(open)))
+- RS queue pushed: !((atfloor)R((call)&(F(open))))
++ RS result found: F((G(open))|((atfloor)U(atfloor)))
+- RS queue pushed: X((atfloor)&((open)|((call)R(call))))
++ RS result found: (open)U(!(X(open)))
+- RS queue pushed: (open)U(G(F(open)))
+- RS queue pushed: (open)R(X(!((open)|(open))))
++ RS result found: (open)|((!(call))|(F(open)))
++ RS result found: ((open)&(call))|((!(call))|(F(open)))
++ RS result found: X(F(F(open)))
+- RS queue pushed: X(G(F(open)))
++ RS result found: X(G((call)|(open)))
+- RS queue pushed: !(F((call)|(X(open))))
++ RS result found: X(F((open)&(X(call))))
++ RS result found: F(!(G(open)))
+- RS queue pushed: F(G(F(open)))
+- RS queue pushed: X((open)R(F(open)))
++ RS result found: !(F(F((open)|(atfloor))))
++ RS result found: F(!(G(open)))
+- RS queue pushed: X(G(G(open)))
+- RS queue pushed: G(F((open)&(open)))
++ RS result found: G(!(X(open)))
++ RS result found: X(X((call)&(open)))
++ RS result found: X(X(!((open)&(call))))
++ RS result found: F((atfloor)&((call)&(open)))
++ RS result found: F(X(X(F(open))))
++ RS result found: X(X((call)&(F(open))))
+- RS queue pushed: F(!(X((atfloor)R(open))))
+- RS queue pushed: X((atfloor)R((call)&(F(open))))
++ RS result found: !(F(F(((atfloor)&(call))&(open))))
++ RS result found: F(G(!((atfloor)|((open)&(open)))))
+- RS queue pushed: (call)R((atfloor)|(F(open)))
++ RS result found: (call)U((atfloor)|(X(F(open))))
+- RS queue pushed: (call)R((atfloor)&((open)|((call)R(call))))
+- RS queue pushed: (call)U((atfloor)U((open)|((call)R(call))))
+- RS queue pushed: (call)R((!(atfloor))&((open)|((call)R(call))))
++ RS result found: F(F(F(open)))
+- RS queue pushed: X(G(F(open)))
+- RS queue pushed: F(G((atfloor)&(open)))
++ RS result found: !(G((atfloor)|(G(open))))
+- RS queue pushed: F(G(((atfloor)|(atfloor))U(open)))
+- RS queue pushed: (open)R(X(!((open)|(open))))
+- RS queue pushed: (X(!((open)|(open))))&(G(open))
+- RS queue pushed: (open)&((call)R(!((open)|(open))))
+- RS queue pushed: (open)R((call)U((atfloor)U(X(open))))
+- RS queue pushed: (open)|((call)R((atfloor)U(X(F(open)))))
++ RS result found: (open)U((call)|((atfloor)&((open)|(open))))
++ RS result found: (open)U(((call)&(atfloor))U(!((open)|(open))))
++ RS result found: (open)&(X(F(open)))
++ RS result found: (open)U(!(X(open)))
++ RS result found: (open)|(G(F(open)))
++ RS result found: (open)|(F(X(X(open))))
++ RS result found: ((open)|(atfloor))|(G(F(open)))
++ RS result found: X(F((call)|(X(open))))
+- RS queue pushed: G((atfloor)&(X(X(open))))
++ RS result found: F((atfloor)U(F((open)&(open))))
++ RS result found: X((atfloor)U((call)|(X(open))))
+- RS queue pushed: F((atfloor)&(F((open)&(G(open)))))
+- RS queue pushed: G((atfloor)R(G((open)R(G(open)))))
+- RS queue pushed: X(((atfloor)U(atfloor))R((call)|(X(open))))
+- RS queue pushed: (atfloor)U(G(F(open)))
+- RS queue pushed: (G(F(open)))|((atfloor)R(call))
+- RS queue pushed: (atfloor)R((atfloor)U(F(open)))
+- RS queue pushed: (atfloor)|((atfloor)R(X(open)))
+- RS queue pushed: (atfloor)R((F(open))&(X(atfloor)))
++ RS result found: (atfloor)|((atfloor)U(!(F(open))))
+- RS queue pushed: (open)R((open)R(F(open)))
+- RS queue pushed: (open)R((open)|(X(open)))
+- RS queue pushed: (open)|((open)R(F(open)))
+- RS queue pushed: ((open)R(F(open)))|((open)R(call))
++ RS result found: (open)&(((open)|(open))U(F(open)))
+- RS queue pushed: (open)R((open)&(G((open)R(call))))
++ RS result found: !(X(G(open)))
+- RS queue pushed: G(G(G(open)))
++ RS result found: !(G((call)U(open)))
+- RS queue pushed: !(G((call)R(X(open))))
++ RS result found: F(F((!(call))U(open)))
++ RS result found: X(F((open)&(open)))
+- RS queue pushed: !((open)|((open)R(open)))
+- RS queue pushed: X((open)R((open)&(open)))
++ RS result found: F((open)|((G(open))U(open)))
+- RS queue pushed: X((open)U((open)U((open)R(call))))
+- RS queue pushed: G(((open)&(atfloor))U((open)&(open)))
+- RS queue pushed: !(G(X((atfloor)R(open))))
++ RS result found: !(X(!((atfloor)|(open))))
+- RS queue pushed: G(!(X((atfloor)R(open))))
+- RS queue pushed: X(!(G((atfloor)R(open))))
++ RS result found: X(G(!((atfloor)U((open)U(open)))))
+- RS queue pushed: !(!(G(((atfloor)|(atfloor))U(open))))
+- RS queue pushed: (open)R(!((call)R(F(open))))
+- RS queue pushed: (open)R(F((call)&(F(open))))
+Fix Done. (result = 42, checktime = 101, time = 4490.35ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18336.5
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 42
+Random Solver Results:
+Random_Solver_Time:213573
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+      0.75  0.833333         9	(F(open))U((!(call))|(F(open)))
+      0.75   0.77381        15	((open)&(call))|((!(call))|(F(open)))
+      0.75       0.5         0	F(F((!(call))U(open)))
+      0.75  0.464286         9	(call)U((atfloor)|(X(F(open))))
+      0.75  0.416667         3	(open)|(G(F(open)))
+      0.75  0.416667         9	F(F(F(open)))
+      0.75  0.416667         9	X(F(F(open)))
+      0.75  0.366667         3	!(G((call)U(open)))
+      0.75  0.366667         6	F(X(X(F(open))))
+      0.75  0.333333         0	X(F((call)|(X(open))))
+      0.75  0.333333         0	X(F((open)&(X(call))))
+      0.75  0.333333         9	((open)|(atfloor))|(G(F(open)))
+      0.75  0.291667        24	(open)U(((call)&(atfloor))U(!((open)|(open))))
+      0.75  0.208333         3	G((open)U(!(open)))
+      0.75  0.208333         3	X(F((open)&(open)))
+      0.75  0.208333         9	!(X(G(open)))
+      0.75  0.208333         9	F(!(G(open)))
+      0.75  0.183333         0	!((atfloor)&(G(open)))
+      0.75  0.183333         0	(open)U(!(G(X(open))))
+      0.75  0.183333         0	(open)|(F(X(X(open))))
+      0.75  0.183333         6	F((open)|((G(open))U(open)))
+      0.75  0.166667         3	!(G((atfloor)|(G(open))))
+      0.75  0.166667         9	F((atfloor)U(F((open)&(open))))
+      0.75  0.166667        12	F(((atfloor)U(atfloor))|(G(open)))
+  0.749995  0.333333         6	F((atfloor)&((call)&(open)))
+  0.666667  0.333333         0	X(X(!((open)&(call))))
+  0.666667  0.208333         3	(open)U(!(X(open)))
+      0.65  0.309524         9	X((atfloor)U((call)|(X(open))))
+  0.638889  0.166667         3	!(X(!((atfloor)|(open))))
+  0.604167  0.309524        21	(open)U((call)|((atfloor)&((open)|(open))))
+  0.583333  0.333333        12	(atfloor)|((atfloor)U(!(F(open))))
+       0.5       0.5         0	X(X((call)&(F(open))))
+       0.5  0.416667         3	(open)&(X(F(open)))
+       0.5  0.366667        12	(open)&(((open)|(open))U(F(open)))
+       0.5  0.154762        12	F(G(!((atfloor)|((open)&(open)))))
+  0.333334  0.366667         3	X(X((call)&(open)))
+      0.25  0.366667         3	X(G((call)|(open)))
+  0.203471  0.291667        12	!(F(F(((atfloor)&(call))&(open))))
+5.91645e-31  0.208333         9	G(!(X(open)))
+5.91645e-31  0.154762        12	X(G(!((atfloor)U((open)U(open)))))
+3.94431e-31  0.166667         3	!(F(F((open)|(atfloor))))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+TopItem 3:
+      0.75  0.833333         9	(F(open))U((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=0.333333
++Random_Solver_Count=0.666667
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18266.4
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 42
+Random Solver Results:
+Random_Solver_Time:218122
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+      0.75      0.75         9	(F(open))U((!(call))|(F(open)))
+      0.75      0.75        15	((open)&(call))|((!(call))|(F(open)))
+      0.75  0.583333         3	X(F((open)&(open)))
+      0.75       0.5         3	(open)|(G(F(open)))
+      0.75       0.5         9	F(F(F(open)))
+      0.75       0.5         9	X(F(F(open)))
+      0.75       0.5         9	((open)|(atfloor))|(G(F(open)))
+      0.75       0.5         9	F((atfloor)U(F((open)&(open))))
+      0.75      0.45         6	F(X(X(F(open))))
+      0.75      0.45         9	(call)U((atfloor)|(X(F(open))))
+      0.75  0.291667         3	G((open)U(!(open)))
+      0.75  0.291667        24	(open)U(((call)&(atfloor))U(!((open)|(open))))
+      0.75      0.25         0	!((atfloor)&(G(open)))
+      0.75      0.25         0	F(F((!(call))U(open)))
+      0.75      0.25         3	!(G((call)U(open)))
+      0.75      0.25         9	!(X(G(open)))
+      0.75      0.25         9	F(!(G(open)))
+      0.75     0.225         0	(open)U(!(G(X(open))))
+      0.75     0.225         0	(open)|(F(X(X(open))))
+      0.75     0.225         0	X(F((call)|(X(open))))
+      0.75     0.225         0	X(F((open)&(X(call))))
+      0.75     0.225         3	!(G((atfloor)|(G(open))))
+      0.75     0.225         6	F((open)|((G(open))U(open)))
+      0.75     0.225        12	F(((atfloor)U(atfloor))|(G(open)))
+  0.749995      0.75         6	F((atfloor)&((call)&(open)))
+  0.666667  0.291667         0	X(X(!((open)&(call))))
+  0.666667      0.25         3	(open)U(!(X(open)))
+      0.65     0.225         9	X((atfloor)U((call)|(X(open))))
+  0.638889  0.291667         3	!(X(!((atfloor)|(open))))
+  0.604167     0.375        21	(open)U((call)|((atfloor)&((open)|(open))))
+  0.583333      0.45        12	(atfloor)|((atfloor)U(!(F(open))))
+       0.5       0.5         3	(open)&(X(F(open)))
+       0.5       0.5        12	(open)&(((open)|(open))U(F(open)))
+       0.5      0.45         0	X(X((call)&(F(open))))
+       0.5  0.291667        12	F(G(!((atfloor)|((open)&(open)))))
+  0.333334  0.291667         3	X(X((call)&(open)))
+      0.25  0.291667         3	X(G((call)|(open)))
+  0.203471       0.5        12	!(F(F(((atfloor)&(call))&(open))))
+5.91645e-31      0.25         9	G(!(X(open)))
+5.91645e-31  0.208333        12	X(G(!((atfloor)U((open)U(open)))))
+3.94431e-31       0.5         3	!(F(F((open)|(atfloor))))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+- - running: elevator: contrasty16.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty16.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 297.179ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
++ RS result found: (open)&(F(!(open)))
++ RS result found: (open)U(!(F(open)))
+- RS queue pushed: (open)U(G(F((open)R(call))))
++ RS result found: (open)|((!(call))|(F(open)))
++ RS result found: (!(open))|((!(call))|(F(open)))
++ RS result found: (open)U(!(G(F(call))))
+- RS queue pushed: (open)R(G(G(G(!(call)))))
+- RS queue pushed: (open)&(G(F((open)R(call))))
+- RS queue pushed: (open)U(F(G((open)R(call))))
+- RS queue pushed: (open)|(!(F((open)R(call))))
+- RS queue pushed: ((open)R(atfloor))R(G(F((open)R(call))))
++ RS result found: (open)&(!(G(G(!(call)))))
++ RS result found: (open)&(!(X(X(!(call)))))
+- RS queue pushed: (open)R(G(G(G(!(call)))))
++ RS result found: (open)U(X(X(G(!(call)))))
++ RS result found: (open)&(X(X(!((call)U(call)))))
+- RS queue pushed: (open)|(!(G(X((F(call))R(call)))))
++ RS result found: (open)|(X(G(!((call)U(F(call))))))
+- RS queue pushed: (G(G(G(!(call)))))|((open)R(atfloor))
+- RS queue pushed: (open)U(G(F((open)R(call))))
+- RS queue pushed: (G(F((open)R(call))))&(F(open))
+- RS queue pushed: (open)R((call)|(X((open)R(call))))
+- RS queue pushed: (open)U((call)U(F((open)R(call))))
++ RS result found: (open)U((call)|(X((open)&(call))))
+- RS queue pushed: (open)U((G(call))R(F((open)R(call))))
+- RS queue pushed: (open)U((call)|(!((open)R(F(call)))))
+- RS queue pushed: (open)&((call)&(!(((open)&(open))U(call))))
++ RS result found: (open)U(!(G(!(call))))
+- RS queue pushed: (open)&(!(X((open)R(call))))
+- RS queue pushed: (open)R(F(G((open)R(call))))
+- RS queue pushed: (open)U(X(G((open)R(call))))
+- RS queue pushed: (X(open))R(F(G((open)R(call))))
++ RS result found: (open)|(X(!(F((call)U(call)))))
+- RS queue pushed: !(!(F((open)R(call))))
++ RS result found: G((atfloor)&(G((open)U(call))))
+- RS queue pushed: G((atfloor)R(X((open)R(call))))
+- RS queue pushed: X((atfloor)U(F((open)R(call))))
+- RS queue pushed: F((atfloor)R(F((open)R(!(call)))))
+- RS queue pushed: !(((atfloor)&(open))&(F((open)R(call))))
+- RS queue pushed: F((atfloor)&(X((call)&((open)R(call)))))
+- RS queue pushed: (!((call)|(!(call))))&((open)R(atfloor))
+- RS queue pushed: (!(F((open)R(call))))|((open)R(atfloor))
+- RS queue pushed: ((open)&(atfloor))|(G(F((open)R(call))))
+- RS queue pushed: ((open)R(atfloor))R(G(F((open)R(call))))
+- RS queue pushed: ((open)R(atfloor))U(G((call)&((open)R(call))))
+- RS queue pushed: ((open)R(atfloor))U(G((call)R(X((call)U(open)))))
+- RS queue pushed: ((open)|((atfloor)U(call)))|(G(F((open)R(call))))
++ RS result found: (open)&(F(G(G(!(call)))))
+- RS queue pushed: (open)&(G(G(G(!(call)))))
++ RS result found: (open)U(X(X(G(!(call)))))
+- RS queue pushed: (open)U(!(!((atfloor)R(!(call)))))
+- RS queue pushed: (open)U(X(X((atfloor)R(G(call)))))
+- RS queue pushed: (open)U(!(G((atfloor)R(X(G(call))))))
++ RS result found: (open)|(X(F(((atfloor)|(atfloor))&(!(call)))))
+- RS queue pushed: (open)&(X(G(X((F(call))R(call)))))
+- RS queue pushed: (open)R(!(G(X((F(call))R(call)))))
+- RS queue pushed: (open)R(X(!(X((F(call))R(call)))))
+- RS queue pushed: (X(open))U(!(G(X((F(call))R(call)))))
+- RS queue pushed: (open)R(X(X((atfloor)|((call)|(F(call))))))
+- RS queue pushed: (open)U(F(F((atfloor)U((F(call))R(call)))))
+- RS queue pushed: (open)U(F(G((G(atfloor))U((F(call))R(call)))))
+- RS queue pushed: (open)R(G(!((atfloor)|(((call)U(call))U(call)))))
++ RS result found: (open)&(!(!((atfloor)U(((!(call))U(call))U(call)))))
+- RS queue pushed: (open)|(F(X((atfloor)R(((call)U(open))|(F(call))))))
+- RS queue pushed: (open)R(!(!((atfloor)|(((call)R((call)R(call)))U(call)))))
++ RS result found: (F(atfloor))U(G(G(G(!(call)))))
+- RS queue pushed: (X(G(atfloor)))R(G(G(G(!(call)))))
+- RS queue pushed: ((open)R(atfloor))R(!(X(G(!(call)))))
+- RS queue pushed: (F(F(X(X(call)))))|((open)R(atfloor))
+- RS queue pushed: (F(G(G(!(call)))))|((open)R(atfloor))
+- RS queue pushed: (G(G(G(!(call)))))|((open)R(atfloor))
+- RS queue pushed: (G(X(X(!(call)))))&((open)R(atfloor))
+- RS queue pushed: (G(!(G(!(!(call))))))&((open)R(atfloor))
+- RS queue pushed: (open)&(G(F((open)R(call))))
+- RS queue pushed: (G(F((open)R(call))))|(X(open))
+- RS queue pushed: (open)&((call)U(G((open)R(call))))
+- RS queue pushed: (open)R((call)|(G((open)&(call))))
+- RS queue pushed: (open)|((call)R(F((open)R(call))))
+- RS queue pushed: (open)R((call)R(G((open)U(X(call)))))
+- RS queue pushed: (open)|((call)R(X((X(open))U(call))))
+- RS queue pushed: (open)U(((call)&(open))U(F((open)R(call))))
+- RS queue pushed: F(G(F((open)R(call))))
+- RS queue pushed: !((atfloor)|(F((open)R(call))))
+- RS queue pushed: !((atfloor)|((call)U((open)R(call))))
+- RS queue pushed: G((atfloor)U((call)R((open)&(call))))
+- RS queue pushed: F((atfloor)U((call)R((!(open))|(call))))
+- RS queue pushed: X((F((open)R(call)))&((atfloor)R(atfloor)))
+- RS queue pushed: X((atfloor)&(((call)&(call))|((open)R(call))))
+- RS queue pushed: G((atfloor)|((call)|((open)R((call)U(atfloor)))))
+- RS queue pushed: F(G(X((open)R(call))))
+- RS queue pushed: X((call)|(X((open)R(call))))
++ RS result found: !(G((atfloor)&((open)&(call))))
+- RS queue pushed: G(G((atfloor)R((open)R(call))))
++ RS result found: !(G((atfloor)&((call)|(G(open)))))
++ RS result found: F(X((atfloor)&((open)U(G(call)))))
+- RS queue pushed: G(G(((atfloor)&(call))R((open)R(call))))
+- RS queue pushed: (open)U(G(F((open)R(call))))
+- RS queue pushed: (open)|(!(!((open)R(call))))
++ RS result found: (open)|(F(X((open)&(call))))
+- RS queue pushed: (open)|((call)U(F((open)R(call))))
+- RS queue pushed: (open)&(!(X(((open)|(call))R(call))))
+Fix Done. (result = 22, checktime = 101, time = 4104.87ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18337.6
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 22
+Random Solver Results:
+Random_Solver_Time:111954
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+      0.75   0.77381         9	(!(open))|((!(call))|(F(open)))
+      0.75       0.5         0	(open)U(!(G(!(call))))
+      0.75  0.416667        24	(open)|(X(F(((atfloor)|(atfloor))&(!(call)))))
+      0.75  0.333333         0	(open)U(!(G(F(call))))
+      0.75  0.333333         6	(open)|(F(X((open)&(call))))
+      0.75  0.309524         9	!(G((atfloor)&((open)&(call))))
+      0.75  0.291667        12	!(G((atfloor)&((call)|(G(open)))))
+      0.75  0.291667        12	F(X((atfloor)&((open)U(G(call)))))
+  0.685715  0.291667         9	(F(atfloor))U(G(G(G(!(call)))))
+  0.604167  0.333333        12	(open)U((call)|(X((open)&(call))))
+       0.5  0.464286         3	(open)&(!(G(G(!(call)))))
+       0.5  0.464286         3	(open)&(F(G(G(!(call)))))
+       0.5  0.464286         3	(open)U(X(X(G(!(call)))))
+       0.5       0.4        30	(open)&(!(!((atfloor)U(((!(call))U(call))U(call)))))
+       0.5  0.309524         9	(open)|(X(!(F((call)U(call)))))
+       0.5  0.291667        12	(open)|(X(G(!((call)U(F(call))))))
+       0.5  0.208333         3	(open)&(F(!(open)))
+     0.375  0.464286         3	(open)&(!(X(X(!(call)))))
+     0.375  0.309524         9	(open)&(X(X(!((call)U(call)))))
+  0.333334  0.309524         9	G((atfloor)&(G((open)U(call))))
+2.61639e-29  0.416667         3	(open)U(!(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+TopItem 3:
+      0.75   0.77381         9	(!(open))|((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Ranking_Ref_Results: 3
+Ref_Solver_Time:17513.9
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 22
+Random Solver Results:
+Random_Solver_Time:114999
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+      0.75      0.75         9	(!(open))|((!(call))|(F(open)))
+      0.75       0.5        24	(open)|(X(F(((atfloor)|(atfloor))&(!(call)))))
+      0.75      0.45         0	(open)U(!(G(F(call))))
+      0.75  0.291667         9	!(G((atfloor)&((open)&(call))))
+      0.75      0.25         0	(open)U(!(G(!(call))))
+      0.75      0.25         6	(open)|(F(X((open)&(call))))
+      0.75  0.208333        12	!(G((atfloor)&((call)|(G(open)))))
+      0.75  0.208333        12	F(X((atfloor)&((open)U(G(call)))))
+  0.685715  0.416667         9	(F(atfloor))U(G(G(G(!(call)))))
+  0.604167      0.25        12	(open)U((call)|(X((open)&(call))))
+       0.5  0.583333         3	(open)&(F(!(open)))
+       0.5  0.392857        12	(open)|(X(G(!((call)U(F(call))))))
+       0.5     0.225         3	(open)&(!(G(G(!(call)))))
+       0.5     0.225         3	(open)&(F(G(G(!(call)))))
+       0.5     0.225         3	(open)U(X(X(G(!(call)))))
+       0.5  0.208333         9	(open)|(X(!(F((call)U(call)))))
+       0.5  0.196429        30	(open)&(!(!((atfloor)U(((!(call))U(call))U(call)))))
+     0.375     0.225         3	(open)&(!(X(X(!(call)))))
+     0.375  0.208333         9	(open)&(X(X(!((call)U(call)))))
+  0.333334     0.225         9	G((atfloor)&(G((open)U(call))))
+2.61639e-29       0.5         3	(open)U(!(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+- - running: elevator: contrasty17.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty17.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 374.1ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&(!(open)))|(!(open))))))))
+
+Finding Target BC...
+
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18550.5
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 0
+Ranking_Ref_Results: 3
+Ref_Solver_Time:19263
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 0
+- - running: elevator: contrasty18.txt
+- - BC File: /src/autobc/output1.3/elevator/contrasty18.txt
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Fix with limit = 100
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))R(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))U(F(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(G(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(X(open)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((F(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(F(open))) => G((!(call))|(F((open)&(!(call)))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => F((!(call))|(F(open)))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G((!(call))|(F((open)|(call))))
++ Get Fix Result From WR:       G((!(call))|(F(open))) => G(((!(call))|(call))|(F(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(G(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(X(open)))
+- SR found, push into sr queue: G((!(call))R(F(open))) => G((!(call))R(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))&(F(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(G(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(X(open)))
+- SR found, push into sr queue: G((!(call))U(F(open))) => G((!(call))U(F((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((G(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(G(open))) => G((!(call))|(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))R(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((X(open))U(!(call)))
+- SR found, push into sr queue: G((!(call))|(X(open))) => G((!(call))|(X((open)&(!(call)))))
+- SR found, push into sr queue: G((F(open))R(!(call))) => G((F((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((F(open))U(!(call))) => G((F((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))R(G(open))) => G((!(call))R(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))R(X(open))) => G((!(call))R(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))&(G(open)))
+- SR found, push into sr queue: G((!(call))U(G(open))) => G((!(call))U(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))&(X(open)))
+- SR found, push into sr queue: G((!(call))U(X(open))) => G((!(call))U(X((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(F((open)&(!(call))))) => G((!(call))&(F((open)&(!(call)))))
+- SR found, push into sr queue: G((G(open))R(!(call))) => G((G((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((G(open))U(!(call))) => G((G((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((X(open))R(!(call))) => G((X((open)&(!(call))))R(!(call)))
+- SR found, push into sr queue: G((X(open))U(!(call))) => G((X((open)&(!(call))))U(!(call)))
+- SR found, push into sr queue: G((!(call))U(G((open)&(!(call))))) => G((!(call))&(G((open)&(!(call)))))
+- SR found, push into sr queue: G((!(call))U(X((open)&(!(call))))) => G((!(call))&(X((open)&(!(call)))))
+Fix Done. (result = 3, checktime = 38, time = 398.916ms)
+
+Will Print Fix_Result Into Outfile...
+Ref Fix Done.
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+
+Finding Target BC...
+Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+-- Terms:
+-- -- call
+Finding Target Goal...
+Target Goal is G((!(call))|(F(open)))
+
+Random Fix with limit = 100
+- RS queue pushed: (call)R(!(!(open)))
++ RS result found: (call)U(!(F(open)))
++ RS result found: (call)&((!(call))|(F(open)))
++ RS result found: (call)|(F(X((open)U(atfloor))))
++ RS result found: ((!(call))|(F(open)))|((call)U(call))
++ RS result found: F(!(!(open)))
++ RS result found: F((call)|(!(open)))
++ RS result found: !((!(open))|(X(call)))
++ RS result found: X((call)&((open)&(open)))
+- RS queue pushed: !((call)U((open)R(F(open))))
++ RS result found: G((call)|(((open)|(atfloor))U(open)))
+- RS queue pushed: (call)U((call)U(F(G(open))))
++ RS result found: (call)|((call)&(F(F(open))))
+- RS queue pushed: (call)R((call)U((open)R(F(open))))
+- RS queue pushed: (call)R((call)|((open)R(F(open))))
+- RS queue pushed: (call)R((X(call))R((open)R(F(open))))
+- RS queue pushed: ((call)U((open)R(F(open))))|((call)R(open))
++ RS result found: !((call)U(F(G(open))))
++ RS result found: F((call)|(F(G(open))))
+- RS queue pushed: G((call)U(X(X(open))))
+- RS queue pushed: X((call)&(G(G(open))))
+- RS queue pushed: F(((call)U(open))R(F(G(open))))
+- RS queue pushed: F((call)&(F(F((open)R(atfloor)))))
++ RS result found: !(G(!(F(open))))
+- RS queue pushed: !(G(!(G(open))))
++ RS result found: F(!(X(!(X(open)))))
+- RS queue pushed: F(F((open)R(F(open))))
+- RS queue pushed: G((call)U((open)R(F(open))))
+- RS queue pushed: !((call)R(X(F(open))))
+- RS queue pushed: !((call)|((open)R(F(open))))
+- RS queue pushed: G((call)U(G((open)R(open))))
+- RS queue pushed: G((call)|((open)R(F(open))))
+- RS queue pushed: G((call)U(X((open)|(G(open)))))
+- RS queue pushed: G(((call)|(open))|((open)R(F(open))))
++ RS result found: G((call)|(X((open)U((open)U(call)))))
+- RS queue pushed: (call)|(((open)R(F(open)))&(X(call)))
+- RS queue pushed: (call)|((X(call))R((open)&(F(open))))
+- RS queue pushed: (call)|((X(call))R((open)R(F(open))))
+- RS queue pushed: (call)U((X(call))R((F(open))&(X(open))))
+- RS queue pushed: (call)&(((call)|(call))|((open)R(F(open))))
+- RS queue pushed: (call)R(((open)U((call)|(open)))&(X(call)))
+- RS queue pushed: (call)|(((!(call))R(call))R((open)R(F(open))))
+- RS queue pushed: (call)R(((call)U((call)|(open)))R((open)R(F(open))))
+- RS queue pushed: (call)|((X(call))R((open)|((call)&((open)U(open)))))
+- RS queue pushed: ((call)&(open))U((call)U((open)R(F(open))))
+- RS queue pushed: ((call)R(open))R((call)&((open)U(!(open))))
+- RS queue pushed: ((call)R(open))U((call)|((open)&(F(open))))
+- RS queue pushed: ((call)U((open)R(F(open))))|((call)R(open))
+- RS queue pushed: ((call)|((open)R(F(open))))|((call)R(open))
+- RS queue pushed: ((!(call))&((open)R(F(open))))&((call)R(open))
+- RS queue pushed: ((call)R(open))U((call)|((!(open))|(F(open))))
+- RS queue pushed: ((call)R(open))R((call)R((open)R(X((open)&(open)))))
+- RS queue pushed: ((call)U((open)R(F(open))))&(((call)R(open))R(open))
+- RS queue pushed: ((call)|((open)&(open)))&((call)U((open)R(F(open))))
++ RS result found: (atfloor)&((call)U(X(X(open))))
+- RS queue pushed: (atfloor)U((call)R(X(X(open))))
++ RS result found: (atfloor)U((call)|(G(X(open))))
++ RS result found: ((call)U(X(X(open))))|(F(atfloor))
++ RS result found: (atfloor)U((X(X(open)))&(F(call)))
++ RS result found: (atfloor)|((call)&(G((open)&(open))))
+- RS queue pushed: (atfloor)&((call)R(X((open)&(F(open)))))
+- RS queue pushed: (atfloor)R((call)U(!((open)R((open)&(open)))))
++ RS result found: F((call)|(G(G(open))))
+- RS queue pushed: G((call)&(G(G(open))))
++ RS result found: G((call)|(!(G(open))))
+- RS queue pushed: G((X(call))U(G(G(open))))
++ RS result found: !((call)&(X((open)U(open))))
+- RS queue pushed: !((call)R(!((!(open))&(open))))
++ RS result found: X((call)|(F((open)&((open)&(atfloor)))))
+- RS queue pushed: G(F(F(G(open))))
+- RS queue pushed: G(F((atfloor)&(X(open))))
+- RS queue pushed: X(X((atfloor)U(G(open))))
+- RS queue pushed: X(((call)U(open))R(F(G(open))))
++ RS result found: F(!((atfloor)U(G((open)|(call)))))
+- RS queue pushed: !(F(!(F((open)R(atfloor)))))
+- RS queue pushed: X(X(F(F((open)R(atfloor)))))
+- RS queue pushed: !((call)&(F(F((open)R(atfloor)))))
++ RS result found: F(X(X((atfloor)|((open)&(atfloor)))))
+- RS queue pushed: G(F(G((atfloor)R((open)R(atfloor)))))
+- RS queue pushed: !(G(X((!(atfloor))&((open)R(atfloor)))))
+- RS queue pushed: X(F(!((atfloor)U(((open)R(atfloor))R(atfloor)))))
++ RS result found: (call)U(G(!(G(open))))
+- RS queue pushed: (call)U(G(F(G(open))))
++ RS result found: (call)U(X(!(G(open))))
++ RS result found: (G(!(G(open))))|(G(call))
++ RS result found: (call)&(G(!((atfloor)U(open))))
+- RS queue pushed: (call)&(F(X((atfloor)&(G(open)))))
++ RS result found: (call)|(!(G((open)|((atfloor)U(atfloor)))))
++ RS result found: (open)&((call)&(X(F(open))))
+- RS queue pushed: (open)&(F((open)R(F(open))))
+- RS queue pushed: (open)&((call)U((open)R(F(open))))
++ RS result found: (open)&((call)|(G((atfloor)U(open))))
+- RS queue pushed: (open)|((!(call))|((open)R(F(open))))
+- RS queue pushed: (open)U((call)U(X((atfloor)R((open)|(open)))))
++ RS result found: (open)|((call)|(!(((atfloor)|(open))|(open))))
+- RS queue pushed: !(!((open)R(F(open))))
++ RS result found: F(F((open)&(F(open))))
+- RS queue pushed: F(!((open)&((open)R(open))))
+- RS queue pushed: X((call)U((open)R(F(open))))
++ RS result found: X(F((open)|((open)U(!(open)))))
+- RS queue pushed: F((call)R(X(F(open))))
+Fix Done. (result = 36, checktime = 101, time = 5136.6ms)
+
+Will Print Fix Result Into Outfile...
+Ref Fix Done.
+Ranking_Ref_Results: 3
+Ref_Solver_Time:19191
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 36
+Random Solver Results:
+Random_Solver_Time:186084
+
+    semSim    synSim  len_diff	ltl
+      0.75   0.77381        15	((!(call))|(F(open)))|((call)U(call))
+      0.75  0.366667         0	F(F((open)&(F(open))))
+      0.75  0.366667         3	F((call)|(!(open)))
+      0.75  0.366667         6	!(G(!(F(open))))
+      0.75  0.333333         0	!((call)U(F(G(open))))
+      0.75  0.333333         0	(call)U(G(!(G(open))))
+      0.75  0.333333         0	(call)U(X(!(G(open))))
+      0.75  0.333333         0	F((call)|(F(G(open))))
+      0.75  0.333333         0	F((call)|(G(G(open))))
+      0.75  0.309524         3	(G(call))|(G(!(G(open))))
+      0.75  0.309524         9	(call)|(F(X((open)U(atfloor))))
+      0.75  0.291667        12	(F(atfloor))|((call)U(X(X(open))))
+      0.75  0.291667        12	F(!((atfloor)U(G((open)|(call)))))
+      0.75  0.291667        18	X((call)|(F((open)&((open)&(atfloor)))))
+      0.75  0.291667        21	(call)|(!(G((open)|((atfloor)U(atfloor)))))
+      0.75  0.208333         9	F(!(!(open)))
+      0.75  0.166667         3	F(!(X(!(X(open)))))
+      0.75  0.166667         9	X(F((open)|((open)U(!(open)))))
+      0.75  0.154762        15	F(X(X((atfloor)|((open)&(atfloor)))))
+  0.666667  0.333333         6	!((call)&(X((open)U(open))))
+  0.666667  0.291667        24	(open)|((call)|(!(((atfloor)|(open))|(open))))
+     0.625  0.309524         9	(atfloor)U((call)|(G(X(open))))
+  0.583333  0.309524        15	(atfloor)|((call)&(G((open)&(open))))
+  0.527778  0.291667        12	(atfloor)U((F(call))&(X(X(open))))
+       0.5  0.833333         6	(call)&((!(call))|(F(open)))
+       0.5       0.5         6	(call)|((call)&(F(F(open))))
+    0.4875  0.333333         0	G((call)|(!(G(open))))
+  0.416666  0.309524         9	(atfloor)&((call)U(X(X(open))))
+     0.375       0.5         6	(open)&((call)&(X(F(open))))
+     0.375  0.333333         0	!((!(open))|(X(call)))
+     0.375  0.309524        15	(open)&((call)|(G((atfloor)U(open))))
+  0.333334  0.366667         3	X((call)&((open)&(open)))
+  0.309018  0.309524        15	G((call)|(((open)|(atfloor))U(open)))
+  0.166667  0.309524        15	G((call)|(X((open)U((open)U(call)))))
+5.7017e-14      0.55         3	(call)U(!(F(open)))
+        -1  0.309524         9	(call)&(G(!((atfloor)U(open))))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75   0.77381        15	((!(call))|(F(open)))|((call)U(call))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75   0.77381        15	((!(call))|(F(open)))|((call)U(call))
+TopItem 3:
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+Ranking_Ref_Results: 3
+Ref_Solver_Time:17735.9
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 36
+Random Solver Results:
+Random_Solver_Time:185059
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         3	F((call)|(!(open)))
+      0.75      0.75         9	F(!(!(open)))
+      0.75      0.75        18	X((call)|(F((open)&((open)&(atfloor)))))
+      0.75     0.675        15	((!(call))|(F(open)))|((call)U(call))
+      0.75      0.45         0	F(F((open)&(F(open))))
+      0.75      0.45         6	!(G(!(F(open))))
+      0.75  0.416667        12	(F(atfloor))|((call)U(X(X(open))))
+      0.75      0.25        15	F(X(X((atfloor)|((open)&(atfloor)))))
+      0.75     0.225         0	!((call)U(F(G(open))))
+      0.75     0.225         0	(call)U(G(!(G(open))))
+      0.75     0.225         0	(call)U(X(!(G(open))))
+      0.75     0.225         0	F((call)|(F(G(open))))
+      0.75     0.225         0	F((call)|(G(G(open))))
+      0.75     0.225         3	(G(call))|(G(!(G(open))))
+      0.75     0.225         9	(call)|(F(X((open)U(atfloor))))
+      0.75     0.225         9	X(F((open)|((open)U(!(open)))))
+      0.75     0.225        12	F(!((atfloor)U(G((open)|(call)))))
+      0.75  0.208333         3	F(!(X(!(X(open)))))
+      0.75  0.208333        21	(call)|(!(G((open)|((atfloor)U(atfloor)))))
+  0.666667     0.625        24	(open)|((call)|(!(((atfloor)|(open))|(open))))
+  0.666667     0.225         6	!((call)&(X((open)U(open))))
+     0.625     0.225         9	(atfloor)U((call)|(G(X(open))))
+  0.583333      0.25        15	(atfloor)|((call)&(G((open)&(open))))
+  0.527778  0.416667        12	(atfloor)U((F(call))&(X(X(open))))
+       0.5      0.75         6	(call)&((!(call))|(F(open)))
+       0.5      0.45         6	(call)|((call)&(F(F(open))))
+    0.4875     0.225         0	G((call)|(!(G(open))))
+  0.416666     0.225         9	(atfloor)&((call)U(X(X(open))))
+     0.375      0.45         6	(open)&((call)&(X(F(open))))
+     0.375      0.25         0	!((!(open))|(X(call)))
+     0.375     0.225        15	(open)&((call)|(G((atfloor)U(open))))
+  0.333334     0.375         3	X((call)&((open)&(open)))
+  0.309018      0.25        15	G((call)|(((open)|(atfloor))U(open)))
+  0.166667  0.208333        15	G((call)|(X((open)U((open)U(call)))))
+5.7017e-14       0.5         3	(call)U(!(F(open)))
+        -1     0.225         9	(call)&(G(!((atfloor)U(open))))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         3	F((call)|(!(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.25
+- - running: elevator: contrasty19.txt:
+- - BC File: /src/autobc/output1.3/elevator/contrasty19.txt:
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+
+Finding Target BC...
+Domains:
+	G((!(X(open)))|(atfloor))
+Goals:
+	G((!(call))|(F(open)))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0

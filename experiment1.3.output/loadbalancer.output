@@ -1,0 +1,342 @@
+Case: loadbalancer
+- Domain&Goal File: /src/autobc/Lasso-BC/loadbalancer/loadbalancer.txt
+- - running: loadbalancer: contrasty10.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty10.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty11.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty11.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty12.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty12.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty13.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty13.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty14.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty14.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty15.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty15.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty16.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty16.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty17.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty17.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty18.txt
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty18.txt
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0
+- - running: loadbalancer: contrasty19.txt:
+- - BC File: /src/autobc/output1.3/loadbalancer/contrasty19.txt:
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Domains:
+	G(F(idle))
+	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
+	G((X(((!(request0))&(!(idle)))U((!(request0))&(idle))))|(X(!(grant0))))
+Goals:
+	G((!(request0))|(grant1))
+	G((!(X(grant0)))|(request0))
+	G((request1)|(X(!(grant1))))
+	G(X((!(grant0))|(!(grant1))))
+	G(F((!(request1))|(X(grant1))))
+	G((!(!(idle)))|(X((!(grant0))&(!(grant1)))))
+	G(((!(request0))|(X(!(request1))))|(X(X((grant0)&(grant1)))))
+BCs:
+
+Finding Target BC...
+Ranking_Ref_Results: 0
+Ranking_Ref_Results: 0

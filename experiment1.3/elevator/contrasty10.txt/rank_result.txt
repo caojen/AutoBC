@@ -1,0 +1,10 @@
+Ranking_Ref_Results: 5
+Ref_Solver_Time:30627.5
+
+    semSim    synSim  len_diff	ltl
+  0.947917   0.47619        30	G(((!(call))|((!(m))&((!(l))&(X(!(l))))))|(F(open)))
+     0.875  0.555556         9	G(((!(call))|(!(l)))|(F(open)))
+    0.8125  0.416667         9	G((!(call))|(F((open)|(!(l)))))
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.357143        30	G((!(call))|(F((open)|((!(m))&((!(l))&(X(!(l))))))))
+Ranking_Random_Results: 0

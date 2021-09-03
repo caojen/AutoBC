@@ -1,0 +1,12 @@
+found=102
+result=5
+time=308.871
+domain=G((!(X(open)))|(atfloor))
+target=G((!(call))|(F(open)))
+bc=F((!(m))&((!(l))&(X(!(l)))))
+fixed=F((!(call))|(F(open)))
+fixed=G((!(call))|(F((open)|(!(l)))))
+fixed=G(((!(call))|(!(l)))|(F(open)))
+fixed=G((!(call))|(F((open)|((!(m))&((!(l))&(X(!(l))))))))
+fixed=G(((!(call))|((!(m))&((!(l))&(X(!(l))))))|(F(open)))
+dif=0

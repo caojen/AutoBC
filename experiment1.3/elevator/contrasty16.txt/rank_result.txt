@@ -1,0 +1,63 @@
+Ranking_Ref_Results: 3
+Ref_Solver_Time:18337.6
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         0	F((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+      0.75  0.464286         9	G((!(call))|(F((open)|(call))))
+Ranking_Random_Results: 22
+Random Solver Results:
+Random_Solver_Time:111954
+
+    semSim    synSim  len_diff	ltl
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+      0.75   0.77381         9	(!(open))|((!(call))|(F(open)))
+      0.75       0.5         0	(open)U(!(G(!(call))))
+      0.75  0.416667        24	(open)|(X(F(((atfloor)|(atfloor))&(!(call)))))
+      0.75  0.333333         0	(open)U(!(G(F(call))))
+      0.75  0.333333         6	(open)|(F(X((open)&(call))))
+      0.75  0.309524         9	!(G((atfloor)&((open)&(call))))
+      0.75  0.291667        12	!(G((atfloor)&((call)|(G(open)))))
+      0.75  0.291667        12	F(X((atfloor)&((open)U(G(call)))))
+  0.685715  0.291667         9	(F(atfloor))U(G(G(G(!(call)))))
+  0.604167  0.333333        12	(open)U((call)|(X((open)&(call))))
+       0.5  0.464286         3	(open)&(!(G(G(!(call)))))
+       0.5  0.464286         3	(open)&(F(G(G(!(call)))))
+       0.5  0.464286         3	(open)U(X(X(G(!(call)))))
+       0.5       0.4        30	(open)&(!(!((atfloor)U(((!(call))U(call))U(call)))))
+       0.5  0.309524         9	(open)|(X(!(F((call)U(call)))))
+       0.5  0.291667        12	(open)|(X(G(!((call)U(F(call))))))
+       0.5  0.208333         3	(open)&(F(!(open)))
+     0.375  0.464286         3	(open)&(!(X(X(!(call)))))
+     0.375  0.309524         9	(open)&(X(X(!((call)U(call)))))
+  0.333334  0.309524         9	G((atfloor)&(G((open)U(call))))
+2.61639e-29  0.416667         3	(open)U(!(F(open)))
+
+Top 1:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+
+Formula_Count=1
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5
+Top 3:
+TopItem 1:
+      0.75  0.833333         0	F((!(call))|(F(open)))
+TopItem 2:
+      0.75  0.833333         6	(open)|((!(call))|(F(open)))
+TopItem 3:
+      0.75   0.77381         9	(!(open))|((!(call))|(F(open)))
+      0.75  0.619048         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.5
++Random_Solver_Count=0.5

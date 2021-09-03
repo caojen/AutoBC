@@ -1,0 +1,11 @@
+found=10
+result=2
+time=833.12
+domain=G((ta)<->(X(tc)))
+domain=G((!(X(cc)))|((ca)&(go)))
+goal=G((!(tc))|(!(cc)))
+target=G((!(ta))|(!(go)))
+bc=(F((!(q))&((p)&(X(G((!(q))|(((p)&(!(q)))|((!(q))|((!(q))|(!(q)))))))))))|(F((!(p))&(q)))
+fixed=F((!(ta))|(!(go)))
+fixed=G((((!(ta))|(!(go)))&(!((!(p))&(q))))&(!((!(q))&(p))))
+dif=2

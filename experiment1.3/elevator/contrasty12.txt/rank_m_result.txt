@@ -1,0 +1,82 @@
+Ranking_Ref_Results: 3
+Ref_Solver_Time:20347.7
+
+    semSim    synSim  len_diff	ltl
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75      0.75         0	F((!(call))|(F(open)))
+Ranking_Random_Results: 39
+Random Solver Results:
+Random_Solver_Time:211476
+
+    semSim    synSim  len_diff	ltl
+      0.75      0.75         0	F((!(call))|(F(open)))
+      0.75      0.75         3	F(!((!(atfloor))|(open)))
+      0.75      0.75        12	F(((open)&(call))|((call)&(open)))
+      0.75      0.75        12	F((call)|((open)|((open)&(open))))
+      0.75     0.625        18	(atfloor)|((open)|(!((atfloor)|(open))))
+      0.75       0.5         0	(open)U(X(F(!(open))))
+      0.75  0.416667         6	!((atfloor)U(!(F(F(open)))))
+      0.75  0.291667         6	X((open)U((open)|(!(open))))
+      0.75      0.25         3	(call)|(F(X(open)))
+      0.75      0.25         9	!(G(X(open)))
+      0.75      0.25         9	F(X(X(open)))
+      0.75     0.225         0	(call)|(G(F(G(open))))
+      0.75     0.225         0	F(!((call)&(G(open))))
+      0.75     0.225         3	!((G(!(call)))&(X(open)))
+      0.75     0.225         6	!(G(G(G(open))))
+      0.75     0.225         9	(atfloor)|((open)U(F(G(open))))
+      0.75     0.225        18	(atfloor)|(((open)&(call))U(F(G(open))))
+      0.75  0.208333         3	!(!((open)U(F(X(open)))))
+  0.747275      0.25         6	F(((open)&(call))&(X(open)))
+     0.675     0.225        12	(call)|(!((call)|((open)U(call))))
+  0.666667      0.25         3	!((open)&(X(open)))
+  0.638889  0.196429        18	X((atfloor)|(X(!((open)|(X(atfloor))))))
+  0.583333      0.25         9	(atfloor)&(!(G((open)&(open))))
+  0.583333      0.25        21	(atfloor)|((open)&(G((!(atfloor))&(open))))
+  0.583333     0.225         3	(atfloor)|(G(G(G(open))))
+  0.583333     0.225         3	(atfloor)|(X(G(G(open))))
+  0.565789  0.416667        24	(atfloor)U(((open)&(F(call)))&((open)U(call)))
+  0.444445      0.25        27	(atfloor)U(((open)&(call))&(X((open)|(atfloor))))
+  0.416666      0.25         3	X((open)U((open)U(open)))
+  0.416666     0.225         3	X(X((G(atfloor))U(open)))
+  0.416666  0.208333         3	(open)&(!(X(X(X(open)))))
+     0.375      0.25         3	(call)&(X((call)U(open)))
+  0.361111      0.25        21	(atfloor)&(X(X((open)&((open)|(atfloor)))))
+  0.333334      0.25         0	X((!(call))&(X(open)))
+  0.146447  0.291667         3	X(G(!((open)&(atfloor))))
+  0.146447      0.45        15	!((atfloor)|(F(F((atfloor)&(open)))))
+1.06906e-13      0.45         0	(call)U(!(X(F(open))))
+5.91645e-31       0.5         9	!(X(F(open)))
+        -1  0.583333         0	G(F((call)&(!(open))))
+
+Top 1:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+
+Formula_Count=2
++Ref_Solver_Count=1
++Random_Solver_Count=0
+Top 2:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+
+Formula_Count=3
++Ref_Solver_Count=1
++Random_Solver_Count=0.333333
+Top 3:
+TopItem 1:
+      0.75         1         9	G((!(call))|(F((open)|(call))))
+      0.75         1         9	G(((!(call))|(call))|(F(open)))
+TopItem 2:
+      0.75      0.75         0	F((!(call))|(F(open)))
+TopItem 3:
+      0.75      0.75         3	F(!((!(atfloor))|(open)))
+
+Formula_Count=4
++Ref_Solver_Count=0.75
++Random_Solver_Count=0.5
