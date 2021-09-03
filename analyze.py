@@ -1,0 +1,76 @@
+import os
+
+root="./experiment1.3"
+dirs = []
+for r, dirs, files in os.walk(root):  
+  print(r)
+  print(dirs) #当前路径下所有子目录
+  break
+
+for dir in dirs:
+  e = root + "/" + dir
+  contrasties = []
+
+  random_found = 0     # 实验搜索过的公式
+  random_results = 0    # 实验找到的修复
+  random_time = 0      # 实验修复的时间
+  random_diff = 0      # 实验修复公式中语义不同的
+
+  ref_found = 0
+  ref_results = 0
+  ref_time = 0
+  ref_diff = 0
+
+  for r, dirs, files in os.walk(e):
+    contrasties = [e + "/" + i for i in dirs]
+    break
+
+  for contrasty in contrasties:
+    random_result = contrasty + "/" + "random_result.txt"
+    ref_result = contrasty + "/" + "ref_result.txt"
+    rank_result = contrasty + "/" + "rank_result.txt"
+    rank_m_result = contrasty + "/" + "rank_m_result.txt"
+
+    if os.path.isfile(random_result):
+      random_content = open(random_result, "r").read()
+      random_content_lines = random_content.split("\n")
+      for random_content_line in random_content_lines:
+        parts = random_content_line.split("=")
+        if len(parts) != 2:
+          continue
+        if parts[0] == "found":
+          random_found += int(parts[1])
+        elif parts[0] == "result":
+          random_results += int(parts[1])
+        elif parts[0] == "time":
+          random_time += float(parts[1])
+        elif parts[0] == "dif":
+          random_diff += int(parts[1])
+    
+    if os.path.isfile(ref_result):
+      ref_content = open(ref_result, "r").read()
+      ref_content_lines = ref_content.split("\n")
+      for ref_content_line in ref_content_lines:
+        parts = ref_content_line.split("=")
+        if len(parts) != 2:
+          continue
+        if parts[0] == "found":
+          ref_found += int(parts[1])
+        elif parts[0] == "result":
+          ref_results += int(parts[1])
+        elif parts[0] == "time":
+          ref_time += float(parts[1])
+        elif parts[0] == "dif":
+          ref_diff += int(parts[1])
+
+  random_found = random_found / len(contrasties)
+  random_results = random_results / len(contrasties)
+  random_time = random_time / len(contrasties)
+  random_diff = random_diff / len(contrasties)
+
+  ref_found = ref_found / len(contrasties)
+  ref_results = ref_results / len(contrasties)
+  ref_time = ref_time / len(contrasties)
+  ref_diff = ref_diff / len(contrasties)
+  print(e, 'rand', random_found, random_results, random_time, random_diff)
+  print(e, 'ref ', ref_found, ref_results, ref_time, ref_diff)

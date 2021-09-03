@@ -54,46 +54,45 @@ int main(int argc, char** argv) {
     auto random_result = OriginResult::parse(random_file_content);
     auto ref_result = OriginResult::parse(ref_file_content);
 
-    std::cout << "Ranking Ref Results: " << ref_result.replacements.size() << std::endl;
+    std::cout << "Ranking_Ref_Results: " << ref_result.replacements.size() << std::endl;
     auto begin = std::chrono::system_clock::now();
     auto ref_rank_result = ranking.rank(ref_result);
     auto end = std::chrono::system_clock::now();
 
     std::chrono::duration<double, std::milli> diff = end - begin;
 
-    std::cout << "Ref Solver Results:" << std::endl;
-    std::cout << "Ref Solver Time:" << diff.count() << "ms" << std::endl;
+    std::cout << "Ref_Solver_Time:" << diff.count() << "" << std::endl;
 
-    std::cout << std::endl << std::setw(10) << "semSim"
-            << std::setw(10) << "synSim"
-            << std::setw(10) << "len_diff" << "\t" << "ltl"
-            << std::endl;
-    for(auto &r: ref_rank_result) {
-        std::cout << std::setw(10) << r.rank
-            << std::setw(10) << r.syn
-            << std::setw(10) << r.length << "\t" << r.ltl
-            << std::endl;
-    }
+    // std::cout << std::endl << std::setw(10) << "semSim"
+    //         << std::setw(10) << "synSim"
+    //         << std::setw(10) << "len_diff" << "\t" << "ltl"
+    //         << std::endl;
+    // for(auto &r: ref_rank_result) {
+    //     std::cout << std::setw(10) << r.rank
+    //         << std::setw(10) << r.syn
+    //         << std::setw(10) << r.length << "\t" << r.ltl
+    //         << std::endl;
+    // }
 
     begin = std::chrono::system_clock::now();
-    std::cout << "Ranking Random Results: " << random_result.replacements.size() << std::endl;
+    std::cout << "Ranking_Random_Results: " << random_result.replacements.size() << std::endl;
     auto random_rank_result = ranking.rank(random_result);
     end = std::chrono::system_clock::now();
     diff = end - begin;
 
-    std::cout << "Random Solver Results:" << std::endl;
-    std::cout << "Random Solver Time:" << diff.count() << "ms" << std::endl;
-    std::cout << std::endl << std::setw(10) << "semSim"
-            << std::setw(10) << "synSim"
-            << std::setw(10) << "len_diff" << "\t" << "ltl"
-            << std::endl;
-    for(auto &r: random_rank_result) {
-        std::cout << std::setw(10) << r.rank
-            << std::setw(10) << r.syn
-            << std::setw(10) << r.length << "\t" << r.ltl
-            << std::endl;
-    }
-    std::cout << std::endl;
+    // std::cout << "Random Solver Results:" << std::endl;
+    std::cout << "Random_Solver_Time:" << diff.count() << "" << std::endl;
+    // std::cout << std::endl << std::setw(10) << "semSim"
+    //         << std::setw(10) << "synSim"
+    //         << std::setw(10) << "len_diff" << "\t" << "ltl"
+    //         << std::endl;
+    // for(auto &r: random_rank_result) {
+    //     std::cout << std::setw(10) << r.rank
+    //         << std::setw(10) << r.syn
+    //         << std::setw(10) << r.length << "\t" << r.ltl
+    //         << std::endl;
+    // }
+    // std::cout << std::endl;
 
     std::set<RankResultItem> rank_set;
     for(auto& r: random_rank_result) {
@@ -111,7 +110,7 @@ int main(int argc, char** argv) {
 
         std::cout << "Top " <<  use_top << ":" << std::endl;
         for(unsigned i = 0; i < use_top; i++) {
-            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            std::cout << "TopItem " << i + 1 << ":" << std::endl;
             for(auto& r: top[i]) {
                 ++formula_count;
                 std::cout << std::setw(10) << r.rank
@@ -121,7 +120,7 @@ int main(int argc, char** argv) {
             }
         }
         std::cout << std::endl;
-        std::cout << "Formula Count = " << formula_count << std::endl;
+        std::cout << "Formula_Count=" << formula_count << std::endl;
         unsigned ref_count = 0;
         unsigned random_count = 0;
 
@@ -136,8 +135,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
     {
         const unsigned use_top = 2;
@@ -147,7 +146,7 @@ int main(int argc, char** argv) {
 
         std::cout << "Top " <<  use_top << ":" << std::endl;
         for(unsigned i = 0; i < use_top; i++) {
-            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            std::cout << "TopItem " << i + 1 << ":" << std::endl;
             for(auto& r: top[i]) {
                 ++formula_count;
                 std::cout << std::setw(10) << r.rank
@@ -157,7 +156,7 @@ int main(int argc, char** argv) {
             }
         }
         std::cout << std::endl;
-        std::cout << "Formula Count = " << formula_count << std::endl;
+        std::cout << "Formula_Count=" << formula_count << std::endl;
         unsigned ref_count = 0;
         unsigned random_count = 0;
 
@@ -172,8 +171,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
     {
         const unsigned use_top = 3;
@@ -183,7 +182,7 @@ int main(int argc, char** argv) {
 
         std::cout << "Top " <<  use_top << ":" << std::endl;
         for(unsigned i = 0; i < use_top; i++) {
-            std::cout << " TopItem " << i + 1 << ":" << std::endl;
+            std::cout << "TopItem " << i + 1 << ":" << std::endl;
             for(auto& r: top[i]) {
                 ++formula_count;
                 std::cout << std::setw(10) << r.rank
@@ -193,7 +192,7 @@ int main(int argc, char** argv) {
             }
         }
         std::cout << std::endl;
-        std::cout << "Formula Count = " << formula_count << std::endl;
+        std::cout << "Formula_Count=" << formula_count << std::endl;
         unsigned ref_count = 0;
         unsigned random_count = 0;
 
@@ -208,8 +207,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref Solver Count    = " << ref_count << "   " << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random Solver Count = " << random_count << "   " << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
 
     return 0;
