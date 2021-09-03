@@ -63,16 +63,16 @@ int main(int argc, char** argv) {
 
     std::cout << "Ref_Solver_Time:" << diff.count() << "" << std::endl;
 
-    // std::cout << std::endl << std::setw(10) << "semSim"
-    //         << std::setw(10) << "synSim"
-    //         << std::setw(10) << "len_diff" << "\t" << "ltl"
-    //         << std::endl;
-    // for(auto &r: ref_rank_result) {
-    //     std::cout << std::setw(10) << r.rank
-    //         << std::setw(10) << r.syn
-    //         << std::setw(10) << r.length << "\t" << r.ltl
-    //         << std::endl;
-    // }
+    std::cout << std::endl << std::setw(10) << "semSim"
+            << std::setw(10) << "synSim"
+            << std::setw(10) << "len_diff" << "\t" << "ltl"
+            << std::endl;
+    for(auto &r: ref_rank_result) {
+        std::cout << std::setw(10) << r.rank
+            << std::setw(10) << r.syn
+            << std::setw(10) << r.length << "\t" << r.ltl
+            << std::endl;
+    }
 
     begin = std::chrono::system_clock::now();
     std::cout << "Ranking_Random_Results: " << random_result.replacements.size() << std::endl;
@@ -80,19 +80,19 @@ int main(int argc, char** argv) {
     end = std::chrono::system_clock::now();
     diff = end - begin;
 
-    // std::cout << "Random Solver Results:" << std::endl;
+    std::cout << "Random Solver Results:" << std::endl;
     std::cout << "Random_Solver_Time:" << diff.count() << "" << std::endl;
-    // std::cout << std::endl << std::setw(10) << "semSim"
-    //         << std::setw(10) << "synSim"
-    //         << std::setw(10) << "len_diff" << "\t" << "ltl"
-    //         << std::endl;
-    // for(auto &r: random_rank_result) {
-    //     std::cout << std::setw(10) << r.rank
-    //         << std::setw(10) << r.syn
-    //         << std::setw(10) << r.length << "\t" << r.ltl
-    //         << std::endl;
-    // }
-    // std::cout << std::endl;
+    std::cout << std::endl << std::setw(10) << "semSim"
+            << std::setw(10) << "synSim"
+            << std::setw(10) << "len_diff" << "\t" << "ltl"
+            << std::endl;
+    for(auto &r: random_rank_result) {
+        std::cout << std::setw(10) << r.rank
+            << std::setw(10) << r.syn
+            << std::setw(10) << r.length << "\t" << r.ltl
+            << std::endl;
+    }
+    std::cout << std::endl;
 
     std::set<RankResultItem> rank_set;
     for(auto& r: random_rank_result) {
