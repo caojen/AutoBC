@@ -94,6 +94,7 @@ int main(int argc, char** argv) {
         std::ofstream ofstream(output);
         ofstream << "found=" << check_time << std::endl;
         ofstream << "result=" << fix_result.size() << std::endl;
+        ofstream << "time=" << diff.count() << std::endl;
         for(auto& domain: abc.domains) {
           ofstream << "domain=" << domain << std::endl;
         }
