@@ -21,6 +21,14 @@ for dir in dirs:
   ref_time = 0
   ref_diff = 0
 
+  ref_top1 = 0
+  ref_top2 = 0
+  ref_top3 = 0
+
+  ref_m_top1 = 0
+  ref_m_top2 = 0
+  ref_m_top3 = 0
+
   for r, dirs, files in os.walk(e):
     contrasties = [e + "/" + i for i in dirs]
     break
@@ -63,6 +71,42 @@ for dir in dirs:
         elif parts[0] == "dif":
           ref_diff += int(parts[1])
 
+    if os.path.isfile(rank_result):
+      content = open(rank_result, "r").read()
+      lines = content.split("\n")
+      idx = 1
+      for line in lines:
+        if line[0] == "+":
+          parts = lines.split("=")
+          if len(parts) != 2:
+            continue
+          if parts[0] == "+Ref_Solver_Count":
+            if idx == 1:
+              ref_top1 = float(parts[1])
+            elif idx == 2:
+              ref_top2 = float(parts[1])
+            else:
+              ref_top3 = float(parts[1])
+            idx += 1
+    
+    if os.path.isfile(rank_m_result):
+      content = open(rank_m_result, "r").read()
+      lines = content.split("\n")
+      idx = 1
+      for line in lines:
+        if line[0] == "+":
+          parts = lines.split("=")
+          if len(parts) != 2:
+            continue
+          if parts[0] == "+Ref_Solver_Count":
+            if idx == 1:
+              ref_top1 = float(parts[1])
+            elif idx == 2:
+              ref_top2 = float(parts[1])
+            else:
+              ref_top3 = float(parts[1])
+            idx += 1
+      
   random_found = random_found / len(contrasties)
   random_results = random_results / len(contrasties)
   random_time = random_time / len(contrasties)
@@ -74,3 +118,6 @@ for dir in dirs:
   ref_diff = ref_diff / len(contrasties)
   print(e, 'rand', random_found, random_results, random_time, random_diff)
   print(e, 'ref ', ref_found, ref_results, ref_time, ref_diff)
+
+  print(e, 'rank top', ref_top1 / len(contrasties), ref_top2 / len(contrasties), ref_top3 / len(contrasties))
+  print(e, 'rank m t', ref_m_top1 / len(contrasties), ref_m_top2 / len(contrasties), ref_m_top3 / len(contrasties))
