@@ -17,4 +17,5 @@ do
   mkdir -p $target_dir
 
   nohup ./one_case_cont.sh $domainfile $bcfile $target_dir > /src/autobc/experiment1.3.output/${casename}.${cont}.output &
+  sleep 1s
 done
