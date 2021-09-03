@@ -12,7 +12,7 @@ namespace ltl {
     std::string s = _s;
     auto iter = s.begin();
     while(iter != s.end()) {
-      if(*iter == ' ') {
+      if(*iter == ' ' || *iter == '\r') {
         iter = s.erase(iter);
       } else {
         ++iter;
