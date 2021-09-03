@@ -1,0 +1,35 @@
+/src/autobc/Lasso-BC/prioritized_arbiter/prioritized_arbiter.txt /src/autobc/output1.3/prioritized_arbiter/contrasty13.txt /src/autobc/experiment1.3/prioritized_arbiter/contrasty13.txt
+ref_result : /src/autobc/experiment1.3/prioritized_arbiter/contrasty13.txt/ref_result.txt
+Domains:
+	G(F(!(rm)))
+Goals:
+	G(!((gm)&(g0)))
+	G(!((gm)&(g1)))
+	G((!(g0))|(!(g1)))
+	G((!(rm))|(X(((!(g0))&(!(g1)))U(gm))))
+	(G((!(r1))|(F(g1))))&(G((!(r0))|(F(g0))))
+	G(((!(r0))|(F(!(r1))))|(X(X((g0)&(g1)))))
+BCs:
+
+Finding Target BC...
+No Bc Found. Abort
+./one_case_cont.sh: line 20: 95771 Aborted                 ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
+random_result: /src/autobc/experiment1.3/prioritized_arbiter/contrasty13.txt/random_result.txt
+Domains:
+	G(F(!(rm)))
+Goals:
+	G(!((gm)&(g0)))
+	G(!((gm)&(g1)))
+	G((!(g0))|(!(g1)))
+	G((!(rm))|(X(((!(g0))&(!(g1)))U(gm))))
+	(G((!(r1))|(F(g1))))&(G((!(r0))|(F(g0))))
+	G(((!(r0))|(F(!(r1))))|(X(X((g0)&(g1)))))
+BCs:
+
+Finding Target BC...
+No Bc Found. Abort
+./one_case_cont.sh: line 28: 95918 Aborted                 ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
+rank_result: /src/autobc/experiment1.3/prioritized_arbiter/contrasty13.txt/rank_result.txt
+Ranking_Ref_Results: 0
+rank_m_result_file: /src/autobc/experiment1.3/prioritized_arbiter/contrasty13.txt/rank_m_result.txt
+Ranking_Ref_Results: 0

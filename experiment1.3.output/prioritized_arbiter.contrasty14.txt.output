@@ -1,0 +1,47 @@
+/src/autobc/Lasso-BC/prioritized_arbiter/prioritized_arbiter.txt /src/autobc/output1.3/prioritized_arbiter/contrasty14.txt /src/autobc/experiment1.3/prioritized_arbiter/contrasty14.txt
+ref_result : /src/autobc/experiment1.3/prioritized_arbiter/contrasty14.txt/ref_result.txt
+Domains:
+	G(F(!(rm)))
+Goals:
+	G(!((gm)&(g0)))
+	G(!((gm)&(g1)))
+	G((!(g0))|(!(g1)))
+	G((!(rm))|(X(((!(g0))&(!(g1)))U(gm))))
+	(G((!(r1))|(F(g1))))&(G((!(r0))|(F(g0))))
+	G(((!(r0))|(F(!(r1))))|(X(X((g0)&(g1)))))
+BCs:
+	(((((((((F((!(g0))&((!(g1))&((!(gm))&((!(rm))&((r0)&(X((!(g0))&((!(g1))&((r1)&(X(G(((g0)&(!(gm)))|(!(gm)))))))))))))))|(F((!(g1))&((!(gm))&((r1)&((rm)&(X(G(!(g1))))))))))|(F((rm)&(X(G(rm))))))|(F((g1)&(gm))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm))))))))|(F((g0)&(gm))))|(F((g0)&(gm)))
+	(((((((((F((r0)&(X((r1)&(X(!(r1)))))))|(F((!(g0))&((!(g1))&((rm)&((r0)&(X(G(((g0)&(!(gm)))|(g1))))))))))|(F((r1)&((gm)&(X(G(!(g1))))))))|(F((r1)&((g0)&(X(G(!(g1))))))))|(F((gm)&(g1))))|(F((!(g1))&((r1)&(X(G((!(g1))|(((!(g1))&((!(gm))&((r1)&((g0)&((rm)&(!(r0)))))))|(!(g1))))))))))|(F((g0)&(g1))))|(F((g0)&(gm))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm)))))))
+
+Finding Target BC...
+(((((((((F((g0)&((gm)&(rm))))|(F((!(g1))&((!(gm))&((rm)&((r0)&(X(G(rm)))))))))|(F((g1)&(gm))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm))))))))|(F((g0)&(g1))))|(F((r0)&(X((r1)&(X(rm)))))))|(F((r1)&(X(G(rm))))))|(F((!(r1))&(X(G(rm))))))|(F((r1)&((g0)&(X(G(!(g1))))))))|(F((r0)&(X(G(rm))))), 1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+terminate called after throwing an instance of 'autobc::output_line_too_less'
+  what():  Likelyhood.jar return too less lines
+./one_case_cont.sh: line 20: 95776 Aborted                 ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
+random_result: /src/autobc/experiment1.3/prioritized_arbiter/contrasty14.txt/random_result.txt
+Domains:
+	G(F(!(rm)))
+Goals:
+	G(!((gm)&(g0)))
+	G(!((gm)&(g1)))
+	G((!(g0))|(!(g1)))
+	G((!(rm))|(X(((!(g0))&(!(g1)))U(gm))))
+	(G((!(r1))|(F(g1))))&(G((!(r0))|(F(g0))))
+	G(((!(r0))|(F(!(r1))))|(X(X((g0)&(g1)))))
+BCs:
+	(((((((((F((!(g0))&((!(g1))&((!(gm))&((!(rm))&((r0)&(X((!(g0))&((!(g1))&((r1)&(X(G(((g0)&(!(gm)))|(!(gm)))))))))))))))|(F((!(g1))&((!(gm))&((r1)&((rm)&(X(G(!(g1))))))))))|(F((rm)&(X(G(rm))))))|(F((g1)&(gm))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm))))))))|(F((g0)&(gm))))|(F((g0)&(gm)))
+	(((((((((F((r0)&(X((r1)&(X(!(r1)))))))|(F((!(g0))&((!(g1))&((rm)&((r0)&(X(G(((g0)&(!(gm)))|(g1))))))))))|(F((r1)&((gm)&(X(G(!(g1))))))))|(F((r1)&((g0)&(X(G(!(g1))))))))|(F((gm)&(g1))))|(F((!(g1))&((r1)&(X(G((!(g1))|(((!(g1))&((!(gm))&((r1)&((g0)&((rm)&(!(r0)))))))|(!(g1))))))))))|(F((g0)&(g1))))|(F((g0)&(gm))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm)))))))
+
+Finding Target BC...
+Target BC is (((((((((F((!(g1))&((!(gm))&((r1)&((rm)&(X(G(!(g1)))))))))|(F((!(g0))&((!(g1))&((!(gm))&((!(rm))&((r0)&(X((!(g0))&((!(g1))&((r1)&(X(G(((g0)&(!(gm)))|(!(gm))))))))))))))))|(F((rm)&(X(G(rm))))))|(F((g1)&(gm))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((!(g0))&((r0)&(X(G(!(g0))))))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm))))))))|(F((g0)&(gm))))|(F((g0)&(gm)))
+-- Terms:
+-- -- rm
+-- -- (g0)&(gm)
+-- -- (g1)&(gm)
+-- -- (!(g0))&(r0)
+-- -- (!(g1))&(r1)
+-- -- (!(g0))&((!(g1))&(r1))
+-- -- (!(g1))&((!(gm))&((r1)&(rm)))
+-- -- (!(g1))|((!(g0))&((!(g1))&((!(gm))&((!(rm))&(r0)))))
+Finding Target Goal...

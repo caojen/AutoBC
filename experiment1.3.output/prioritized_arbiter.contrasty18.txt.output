@@ -1,0 +1,26 @@
+/src/autobc/Lasso-BC/prioritized_arbiter/prioritized_arbiter.txt /src/autobc/output1.3/prioritized_arbiter/contrasty18.txt /src/autobc/experiment1.3/prioritized_arbiter/contrasty18.txt
+ref_result : /src/autobc/experiment1.3/prioritized_arbiter/contrasty18.txt/ref_result.txt
+Domains:
+	G(F(!(rm)))
+Goals:
+	G(!((gm)&(g0)))
+	G(!((gm)&(g1)))
+	G((!(g0))|(!(g1)))
+	G((!(rm))|(X(((!(g0))&(!(g1)))U(gm))))
+	(G((!(r1))|(F(g1))))&(G((!(r0))|(F(g0))))
+	G(((!(r0))|(F(!(r1))))|(X(X((g0)&(g1)))))
+BCs:
+	(((((F((!(g1))&((!(gm))&((r0)&((!(g0))&((!(rm))&((r1)&(X((r1)&((!(g0))&((!(g1))&(X(!(r1))))))))))))))|(F((!(g0))&((!(gm))&((rm)&((!(g1))&(X(G(((g0)&(!(gm)))|((g1)&(!(gm))))))))))))|(F((!(g1))&((r1)&(X(G(!(g1))))))))|(F((g1)&(gm))))|(F((g0)&(gm))))|(F((r1)&((g0)&(X(G(!(g1)))))))
+
+Finding Target BC...
+Target BC is (((((((((F((!(g1))&((!(gm))&((rm)&((r0)&(X(G(rm))))))))|(F((g0)&((gm)&(rm)))))|(F((g1)&(gm))))|(F((rm)&(X(G(((g0)&(!(gm)))|(!(gm))))))))|(F((g0)&(g1))))|(F((r0)&(X((r1)&(X(rm)))))))|(F((r1)&(X(G(rm))))))|(F((!(r1))&(X(G(rm))))))|(F((r1)&((g0)&(X(G(!(g1))))))))|(F((r0)&(X(G(rm)))))
+-- Terms:
+-- -- r0
+-- -- r1
+-- -- rm
+-- -- !(r1)
+-- -- (g0)&(g1)
+-- -- (g1)&(gm)
+-- -- (r1)&(g0)
+-- -- (!(g1))&((!(gm))&((rm)&(r0)))
+Finding Target Goal...
