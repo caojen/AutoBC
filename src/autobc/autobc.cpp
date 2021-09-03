@@ -9,6 +9,8 @@
 #include <utility>
 #include <string.h>
 #include <sys/wait.h>
+#include <thread>
+#include <chrono>
 #include "autobc.hpp"
 #include "random_solver.hpp"
 
@@ -149,6 +151,7 @@ namespace autobc {
         delete[] nargs[i];
       }
       delete[] nargs;
+      std::this_thread::sleep_for(std::chrono::seconds(1));
     } else if(pid < 0) {
       std::cout << "fork failed" << std::endl;
       exit(1);
