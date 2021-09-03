@@ -21,6 +21,7 @@ for dir in dirs:
   ref_time = 0
   ref_diff = 0
 
+  top_count = 0
   ref_top1 = 0
   ref_top2 = 0
   ref_top3 = 0
@@ -76,48 +77,59 @@ for dir in dirs:
       lines = content.split("\n")
       idx = 1
       for line in lines:
-        if line[0] == "+":
-          parts = lines.split("=")
+        if len(line) == 0:
+          continue
+        if line[0] == '+':
+          parts = line.split("=")
           if len(parts) != 2:
             continue
           if parts[0] == "+Ref_Solver_Count":
             if idx == 1:
-              ref_top1 = float(parts[1])
+              ref_top1 += float(parts[1])
             elif idx == 2:
-              ref_top2 = float(parts[1])
+              ref_top2 += float(parts[1])
             else:
-              ref_top3 = float(parts[1])
+              ref_top3 += float(parts[1])
             idx += 1
+            top_count += 1
     
     if os.path.isfile(rank_m_result):
       content = open(rank_m_result, "r").read()
       lines = content.split("\n")
       idx = 1
       for line in lines:
-        if line[0] == "+":
-          parts = lines.split("=")
+        if len(line) == 0:
+          continue
+        if line[0] == '+':
+          parts = line.split("=")
           if len(parts) != 2:
             continue
           if parts[0] == "+Ref_Solver_Count":
             if idx == 1:
-              ref_top1 = float(parts[1])
+              ref_m_top1 += float(parts[1])
             elif idx == 2:
-              ref_top2 = float(parts[1])
+              ref_m_top2 += float(parts[1])
             else:
-              ref_top3 = float(parts[1])
+              ref_m_top3 += float(parts[1])
             idx += 1
       
-  random_found = random_found / len(contrasties)
-  random_results = random_results / len(contrasties)
-  random_time = random_time / len(contrasties)
-  random_diff = random_diff / len(contrasties)
+  if top_count > 0:
+    top_count = top_count / 3
+    random_found = random_found / top_count
+    random_results = random_results / top_count
+    random_time = random_time / top_count
+    random_diff = random_diff / top_count
 
-  ref_found = ref_found / len(contrasties)
-  ref_results = ref_results / len(contrasties)
-  ref_time = ref_time / len(contrasties)
-  ref_diff = ref_diff / len(contrasties)
-  print(e, 'rand', random_found, random_results, random_time, random_diff)
-  print(e, 'ref ', ref_found, ref_results, ref_time, ref_diff)
+    ref_found = ref_found / top_count
+    ref_results = ref_results / top_count
+    ref_time = ref_time / top_count
+    ref_diff = ref_diff / top_count
+    print(e, 'rand', random_found, random_results, random_time, random_diff)
+    print(e, 'ref ', ref_found, ref_results, ref_time, ref_diff)
 
-  print(e, 'rank top', ref_top1 / len(contrasties), ref_top2 / len(contrasties), ref_top3 / len(contrasties))
-  print(e, 'rank m t', ref_m_top1 / len(contrasties), ref_m_top2 / len(contrasties), ref_m_top3 / len(contrasties))
+    print(e, 'ref rank top', ref_top1 / top_count, ref_top2 / top_count, ref_top3 / top_count)
+    print(e, 'ref rank m t', ref_m_top1 / top_count, ref_m_top2 / top_count, ref_m_top3 / top_count)
+    print(e, 'rnd rank top', 1 - ref_top1 / top_count, 1 - ref_top2 / top_count, 1 - ref_top3 / top_count)
+    print(e, 'rnd rank m t', 1 - ref_m_top1 / top_count, 1 - ref_m_top2 / top_count, 1 - ref_m_top3 / top_count)
+  else:
+    print(e, 'no result')
