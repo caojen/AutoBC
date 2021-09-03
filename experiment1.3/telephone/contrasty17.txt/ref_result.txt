@@ -1,6 +1,6 @@
 found=32
 result=26
-time=738.966
+time=961.821
 domain=G((!(c))|(!(f)))
 domain=G((!(o))|(!(c)))
 domain=G((!(o))|(!(f)))

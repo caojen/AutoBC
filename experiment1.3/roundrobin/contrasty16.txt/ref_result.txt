@@ -1,6 +1,6 @@
 found=77
 result=50
-time=7231.76
+time=3131.15
 domain=G(F(!((r0)&(g0))))
 domain=G(F(!((r1)&(g1))))
 domain=G((!((r0)&(!(g0))))|(X(r0)))

@@ -1,6 +1,6 @@
 found=12
 result=10
-time=338.545
+time=567.765
 domain=G((!(q))|(s))
 goal=G((!(p))|(F(q)))
 target=G((!(r))|(G(!(s))))

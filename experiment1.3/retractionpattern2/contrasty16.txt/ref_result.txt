@@ -1,6 +1,6 @@
 found=100
 result=58
-time=1887.73
+time=3042.14
 goal=G((!(q))|(r))
 target=G((!(p))|((G(q))|((q)U(s))))
 bc=F((p)&((!(s))&(!(r))))

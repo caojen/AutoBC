@@ -1,6 +1,6 @@
 found=15
 result=10
-time=681.847
+time=1115.92
 domain=G((!((p)&(X(p))))|(X(X(!(h)))))
 goal=G((!(m))|(X(!(p))))
 target=G((!(h))|(X(p)))

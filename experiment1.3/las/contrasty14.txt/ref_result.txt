@@ -1,6 +1,6 @@
 found=51
 result=33
-time=4751.9
+time=4119.56
 goal=G((!(!(h)))|(!(n)))
 goal=G((!(!(n)))|(!(i)))
 goal=G((!((c)&(!(n))))|(!(d)))

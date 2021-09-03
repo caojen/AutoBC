@@ -17,6 +17,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  1132 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -32,6 +34,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  1267 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty11.txt
@@ -51,6 +55,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  1977 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -66,6 +72,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  2243 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty12.txt
@@ -85,6 +93,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  2993 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -100,6 +110,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  3161 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty13.txt
@@ -119,6 +131,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  3851 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -134,6 +148,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  4037 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty14.txt
@@ -153,6 +169,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  4757 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -168,6 +186,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  4886 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty15.txt
@@ -187,6 +207,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  5831 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -202,6 +224,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  6150 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty16.txt
@@ -221,6 +245,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  7159 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -236,6 +262,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  7490 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty17.txt
@@ -255,6 +283,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  8370 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -270,6 +300,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  8758 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty18.txt
@@ -289,6 +321,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18:  9820 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -304,6 +338,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18: 10147 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0
 - - running: loadbalancer: contrasty19.txt:
@@ -323,6 +359,8 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18: 11302 Aborted                 (core dumped) ${ref_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${ref_result_file}
 Domains:
 	G(F(idle))
 	G((!((idle)&(X((!(grant0))&(!(grant1))))))|(X(idle)))
@@ -338,5 +376,7 @@ Goals:
 BCs:
 
 Finding Target BC...
+No Bc Found. Abort
+/src/autobc/one_experiment.sh: line 18: 11550 Aborted                 (core dumped) ${random_bin} --global ${domainfile} --bcfile ${bcfile} -8 /usr/bin/java -6 /jdk-16/bin/java -k 100 -t 100 --likelyhood /src/autobc/Lasso-BC/likelyhood.jar --modelcounting /src/autobc/jar/modelcounting.jar --nuxmv /src/autobc/bin/nuXmv-2.0.0-Linux --output ${random_result_file}
 Ranking_Ref_Results: 0
 Ranking_Ref_Results: 0

@@ -1,6 +1,6 @@
 found=111
 result=45
-time=48303.8
+time=53163.2
 domain=G(F(!(rm)))
 goal=G(!((gm)&(g0)))
 goal=G(!((gm)&(g1)))

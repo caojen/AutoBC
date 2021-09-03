@@ -1,6 +1,6 @@
 found=101
 result=60
-time=25280.2
+time=27539.1
 domain=(!(b1))&((!(b2))&(!(b3)))
 domain=G((!((b1)&(!(f1))))|(X(b1)))
 domain=G((!((b1)&(f1)))|(X(!(b1))))

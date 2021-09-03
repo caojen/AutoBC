@@ -1,6 +1,6 @@
 found=38
 result=3
-time=302.708
+time=292.507
 domain=G((!(X(open)))|(atfloor))
 target=G((!(call))|(F(open)))
 bc=F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))

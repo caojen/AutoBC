@@ -1,6 +1,6 @@
 found=5
 result=5
-time=439.611
+time=359.182
 domain=G((!(l))|(F(!(l))))
 goal=G((!(!(p)))|((!(m))&(X(l))))
 target=G((!((p)&(!(l))))|(m))

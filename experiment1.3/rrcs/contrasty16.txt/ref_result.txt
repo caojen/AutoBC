@@ -1,6 +1,6 @@
 found=6
 result=5
-time=498.035
+time=519.657
 domain=G((ta)<->(X(tc)))
 domain=G((!(X(cc)))|((ca)&(go)))
 goal=G((!(tc))|(!(cc)))

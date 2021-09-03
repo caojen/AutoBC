@@ -1,6 +1,6 @@
 found=54
 result=42
-time=2845.21
+time=3323.48
 goal=G((!(delivered))|((!(send))U(ack)))
 target=G((!(send))|((!(ack))U(delivered)))
 bc=F((!(ack))&((send)&(X(G(!(delivered))))))
