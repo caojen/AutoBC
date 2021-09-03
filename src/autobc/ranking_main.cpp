@@ -135,8 +135,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count=" << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count=" << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
     {
         const unsigned use_top = 2;
@@ -171,8 +171,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count=" << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count=" << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
     {
         const unsigned use_top = 3;
@@ -207,8 +207,8 @@ int main(int argc, char** argv) {
                 ++random_count;
             }
         }
-        std::cout << "Ref_Solver_Count= " << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
-        std::cout << "Random_Solver_Count = " << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Ref_Solver_Count=" << ref_count << "_" << static_cast<double>(ref_count) / static_cast<double>(formula_count) << std::endl;
+        std::cout << "Random_Solver_Count=" << random_count << "_" << static_cast<double>(random_count) / static_cast<double>(formula_count) << std::endl;
     }
 
     return 0;
