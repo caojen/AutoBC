@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p experiment1.3
+mkdir -p experiment1.3.output
 outputdir="$(pwd)/output1.3"
 
 cases=$(ls ${outputdir})
@@ -12,5 +13,5 @@ cd build && cmake .. && make && cd -
 
 for one_case in $cases
 do
-  nohup $(pwd)/one_experiment.sh $one_case > ${one_case}.output &
+  nohup $(pwd)/one_experiment.sh $one_case > experiment1.3.output/${one_case}.output &
 done
