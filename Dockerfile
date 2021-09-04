@@ -6,27 +6,26 @@ RUN rm -rf /var/lib/apt/lists/* && mkdir /var/lib/apt/lists/partial && sed -i "s
   apt-get install -y build-essential autoconf automake libtool intltool && \
   apt-get install -y flex python3 python3-pip cmake gdb m4 lzip
 
-# 安装gmp
+# gmp
 RUN cd / && wget -c "https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz" -O "gmp.tar.lz" && \
     lzip -d gmp.tar.lz && tar -xvf gmp.tar && \
     cd /gmp-6.2.1 && ./configure --enable-cxx && make && make check && make install
 
-# 安装java jdk 1.8，可以直接使用/usr/bin/java运行
+# java jdk 1.8，default locate: usr/bin/java
 RUN apt-get install -y openjdk-8-jdk default-jre
-# 安装java jdk 16
-# 注意，你可能需要根据你的内核来决定用哪个镜像源，下面的这条命令可能需要更改
-# 安装后，根目录会出现一个新的文件夹/jdk-16.0.2+7，重命名后为/jdk-16
-# 可以使用/jdk-16/bin/java来启动
+# java jdk 16
+# Note that you might need to change your mirror based on your OS and core. Use bash command `arch` and try to use google to help you.
+# jdk 16 is installed in /jdk-16/bin/java
 RUN cd / && wget https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/16/jdk/aarch64/linux/ibm-semeru-open-jdk_aarch64_linux_16.0.2_7_openj9-0.27.0.tar.gz && \
     tar -zxvf ibm-semeru-open-jdk_aarch64_linux_16.0.2_7_openj9-0.27.0.tar.gz && mv jdk-16.0.2+7 jdk-16
 
-# 安装Bison 3.0.4，通常来说，apt直接得到的是2.x版本，需要重新安装
+# Bison 3.0.4
 RUN wget -P / https://mirrors.ustc.edu.cn/gnu/bison/bison-3.0.4.tar.gz && \
     cd / && tar -zxvf bison-3.0.4.tar.gz && \
     cd /bison-3.0.4 && \
     ./configure && make && make install
 
-# 安装glog
+# glog
 RUN cd / && \
     git clone https://github.com/google/glog.git && \
     cd glog && \
@@ -37,11 +36,11 @@ RUN cd / && \
     cmake --build . --target test && \
     cmake --build . --target install
 
-# 克隆ABC到根目录
+# git clone ABC into /
 RUN cd / && \
     git clone https://github.com/vlab-cs-ucsb/ABC.git
   
-# 安装Mona，并且应用ABC的补丁
+# Mona
 RUN cd / && \
     git clone https://github.com/cs-au-dk/MONA.git && \
     cd MONA && \
@@ -49,7 +48,7 @@ RUN cd / && \
     libtoolize && aclocal && automake --gnu --add-missing && autoreconf -ivf && \
     ./configure && make all && make install && ldconfig
 
-# 安装ABC
+# ABC
 RUN cd /ABC && \
     ./autogen.sh && \
     ./configure && make && make install && ldconfig
@@ -58,7 +57,7 @@ RUN mkdir -p /src/autobc/build
 
 ADD . /src/autobc
 
-# 尝试编译
+# build
 RUN cd /src/autobc/build && cmake .. && make && cd -
 
 WORKDIR /src/autobc
