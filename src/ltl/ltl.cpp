@@ -23,7 +23,7 @@ namespace ltl {
 
   std::vector<std::string> split_into_in_order(const std::string& s) {
     std::vector<std::string> specials = { "<->", "->", "&&", "||", "[]", "<>",
-                                          "(", ")", "|", "&", "!",
+                                          "(", ")", "|", "&", "!", "~",
                                           "X", "G", "U", "R", "F" };
     // 分隔成vector
     std::vector<std::string> splits;

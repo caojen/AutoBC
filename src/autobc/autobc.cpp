@@ -53,7 +53,7 @@ namespace autobc {
     } else {
       ostr << "BCs(sorted):" << std::endl;
       for(unsigned i = 0; i < this->sorted_bcs.size(); i++) {
-        ostr << '\t' << this->sorted_bcs[i] << '\t' << this->weight_bcs[i] << std::endl;
+        ostr << '\t' << this->sorted_bcs[i] << std::endl;
       }
     }
 
@@ -173,7 +173,6 @@ namespace autobc {
     auto lines = split(result, "\n");
 
     if(lines.size() != this->bcs.size()) {
-      std::cout << result << std::endl;
       throw output_line_too_less();
     }
     std::vector<double> weights;
@@ -204,6 +203,8 @@ namespace autobc {
     }
 
     this->sorted = true;
+    std::cout << *this << std::endl;
+    exit(0);
     this->target_bc = &this->sorted_bcs[0];
     ltl::format_double_and = format_double_and;
     ltl::format_double_or = format_double_or;

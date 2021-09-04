@@ -38,7 +38,7 @@ namespace ltl {
       return op::until;
     } else if(s == "R") {
       return op::release;
-    } else if(s == "!") {
+    } else if(s == "!" || s == "~") {
       return op::nnot;
     } else if(s == "&" || s == "&&") {
       return op::aand;
