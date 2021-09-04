@@ -1,5 +1,0 @@
-Generals: 3
-Total: 1648
-( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) ) )
-( ( X(( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
-( ( F(( ( send ) & ( (( !(!( ack ) U !( !(( delivered )) )) ) U ( !(( send )) )) | G(( !(!( ack ) U !( !(( delivered )) )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )

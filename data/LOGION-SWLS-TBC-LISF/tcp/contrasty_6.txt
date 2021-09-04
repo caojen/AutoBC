@@ -1,1 +1,0 @@
-( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ( !(( send )) ) | ( ack ) )) )) ) )) ) )

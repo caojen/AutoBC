@@ -1,6 +1,0 @@
-( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( ack ) U !( !(( ack )) )) ) )) ) )
-( ( X(( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
-( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) ) )
-( ( F(( ( send ) & ( !(!( delivered ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
-( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( X(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
-( ( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )

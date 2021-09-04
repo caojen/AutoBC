@@ -1,2 +1,0 @@
-( ( G(( ( send ) & ( ~(( ack )) ) )) ) | ( G(( ( delivered ) & ( ( True ) & ( ~(( ack )) ) ) )) ) )
-( F(( G(( ( send ) & ( ~(( ack )) ) )) )) )

@@ -1,6 +1,0 @@
-( F(( (( ( go ) & ( tc ) ) U ( ( cc ) & ( tc ) )) | G(( ( go ) & ( tc ) )) )) )
-( ( ( go ) U ( tc ) ) & ( cc ) )
-( F(( (( ( go ) & ( ta ) ) U ( ( cc ) & ( tc ) )) | G(( ( go ) & ( ta ) )) )) )
-( (( (( ( go ) & ( tc ) ) U ( ( cc ) & ( tc ) )) | G(( ( go ) & ( tc ) )) ) U ( (( ( go ) & ( ta ) ) U ( ( cc ) & ( tc ) )) | G(( ( go ) & ( ta ) )) )) | G(( (( ( go ) & ( tc ) ) U ( ( cc ) & ( tc ) )) | G(( ( go ) & ( tc ) )) )) )
-( ( ( cc ) & ( tc ) ) | ( F(( ( go ) & ( ta ) )) ) )
-( ( F(( ( cc ) & ( tc ) )) ) | ( ( go ) & ( F(( ( go ) & ( ta ) )) ) ) )

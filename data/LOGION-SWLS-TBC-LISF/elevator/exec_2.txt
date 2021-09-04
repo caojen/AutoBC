@@ -1,9 +1,0 @@
-Generals: 7
-Total: 1908
-( G(( F(( ( call ) & ( G(( !(( open )) )) ) )) )) )
-( F(( ( call ) & ( G(( !(( (( atfloor ) U ( open )) | G(( atfloor )) )) )) ) )) )
-( ( call ) & ( G(( !(( open )) )) ) )
-( F(( ( call ) & ( G(( !(( (( call ) U ( open )) | G(( call )) )) )) ) )) )
-( ( G(( call )) ) & ( G(( ( !(( open )) ) | ( G(( !(( atfloor )) )) ) )) ) )
-( G(( ( call ) & ( ( !(( atfloor )) ) | ( G(( !(( open )) )) ) ) )) )
-( G(( ( (( call ) U ( open )) | G(( call )) ) & ( G(( !(( atfloor )) )) ) )) )

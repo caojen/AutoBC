@@ -1,4 +1,0 @@
-Is BC: 0
-Total: 1
-FALSE-     0: ( G(( (( f3 ) U ( F(( F(( (( !(( f1 )) ) U ( ( !(( f2 )) ) & ( !(( f3 )) ) )) | G(( !(( f1 )) )) )) )) )) | G(( f3 )) )) )
-    -> wrong at property 1

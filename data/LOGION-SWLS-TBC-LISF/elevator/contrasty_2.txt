@@ -1,4 +1,0 @@
-( G(( F(( ( call ) & ( G(( !(( open )) )) ) )) )) )
-( F(( ( call ) & ( G(( !(( (( atfloor ) U ( open )) | G(( atfloor )) )) )) ) )) )
-( ( call ) & ( G(( !(( open )) )) ) )
-( F(( ( call ) & ( G(( !(( (( call ) U ( open )) | G(( call )) )) )) ) )) )
