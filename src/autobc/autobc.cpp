@@ -203,8 +203,6 @@ namespace autobc {
     }
 
     this->sorted = true;
-    std::cout << *this << std::endl;
-    exit(0);
     this->target_bc = &this->sorted_bcs[0];
     ltl::format_double_and = format_double_and;
     ltl::format_double_or = format_double_or;
