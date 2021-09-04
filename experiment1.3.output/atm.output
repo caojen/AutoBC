@@ -37,12 +37,12 @@ BCs:
 	F((!(m))&((!(l))&(X(!(l)))))
 
 Finding Target BC...
-Target BC is F((!(m))&((!(l))&(X(!(l)))))
+Target BC is F( !m & ! l & X ! l ))
 -- Terms:
 -- -- !(l)
 -- -- (!(m))&((!(l))&(X(!(l))))
 Finding Target Goal...
-Target Goal is G((!((p)&(!(l))))|(m))
+Target Goal is G((!( p & ! l ))| m)
 
 Random Fix with limit = 100
 + RS result found: !(!(m))

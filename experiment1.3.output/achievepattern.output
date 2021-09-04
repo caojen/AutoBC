@@ -17,12 +17,12 @@ BCs:
 	F((!(q))&((!(s))&((r)&((!(p))&(X((!(q))&((r)&((!(s))&(X((!(s))&((!(p))&(X((!(s))&((!(q))&((!(r))&(X((!(s))&((!(q))&((!(r))&((p)&(X((!(s))&((!(p))&(X((!(s))&((!(q))&((!(r))&((p)&(X(!(p)))))))))))))))))))))))))))))))
 
 Finding Target BC...
-Target BC is F((!(q))&((!(s))&((p)&(X(r)))))
+Target BC is F(! q & !s &  p & X r)
 -- Terms:
 -- -- r
 -- -- (!(q))&((!(s))&((p)&(X(r))))
 Finding Target Goal...
-Target Goal is G((!(r))|(G(!(s))))
+Target Goal is G(! r| G ! s)
 
 Fix with limit = 100
 + Get Fix Result From SR:       G((!(r))|(G(!(s)))) => G((!(r))R(G(!(s))))

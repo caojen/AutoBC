@@ -156,7 +156,7 @@ Random_Solver_Time:4425.35
 
 Top 1:
 TopItem 1:
-        -1         1         7	G(F((f1)|(f3)))
+        -1         1         7	G F (f1 |f3)
 
 Formula_Count=1
 +Ref_Solver_Count=1
@@ -174,9 +174,9 @@ Top 3:
 TopItem 1:
         -1         1         7	G(F((f1)|(f3)))
 TopItem 2:
-        -1         1        10	G(F((f1)|(!(f3))))
+        -1         1        10	G F (f1|!f3)
 TopItem 3:
-        -1         1        13	G(F((f1)&(!(!(f3)))))
+        -1         1        13	GF(f1&f3)
 
 Formula_Count=3
 +Ref_Solver_Count=1

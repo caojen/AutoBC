@@ -110,12 +110,12 @@ Formula_Count=2
 +Random_Solver_Count=1
 Top 3:
 TopItem 1:
-       0.8  0.833333         6	(G(q))R((!(q))|(p))
+       0.8  0.833333         6	(G q)R(! q| p)
 TopItem 2:
-       0.5       0.5         3	(q)R((!(q))|(p))
+       0.5       0.5         3	q R(! q|p)
 TopItem 3:
-       0.5  0.416667         9	((q)U(q))R((!(q))|(p))
-       0.5     0.375         9	(q)R((!(q))|((p)U(p)))
+       0.5  0.416667         9	(qUq)R(!q|p)
+       0.5     0.375         9	q R (!q|(pUp))
 
 Formula_Count=4
 +Ref_Solver_Count=0

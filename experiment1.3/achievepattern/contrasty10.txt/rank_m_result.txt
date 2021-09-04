@@ -184,7 +184,7 @@ Random_Solver_Time:526717
 
 Top 1:
 TopItem 1:
-         1     0.175        72	G(((!(r))&(!((!(q))&((!(s))&((p)&(X(r)))))))|(G((!(s))&(!((!(q))&((!(s))&((p)&(X(r)))))))))
+         1     0.175        72	G((!r& (! (!q&! s& p & X r)))  | G( !s &  (!(!q& !s &( p & X r ) )) ))
 
 Formula_Count=1
 +Ref_Solver_Count=1
@@ -202,9 +202,9 @@ Top 3:
 TopItem 1:
          1     0.175        72	G(((!(r))&(!((!(q))&((!(s))&((p)&(X(r)))))))|(G((!(s))&(!((!(q))&((!(s))&((p)&(X(r)))))))))
 TopItem 2:
-       0.9         1         9	G((!(r))|(G((!(s))&(!(r)))))
+       0.9         1         9	G(!r | G(! s & ! r))
 TopItem 3:
-       0.9       0.5         0	G((G(!(s)))R(!(r)))
+       0.9       0.5         0	G(G !s R !r)
 
 Formula_Count=3
 +Ref_Solver_Count=1

@@ -25,7 +25,7 @@ Target BC is (F((r1)&((g0)&(X(G(!(g1)))))))|(F((r0)&((g1)&(X(G(!(g0)))))))
 -- -- (r0)&(g1)
 -- -- (r1)&(g0)
 Finding Target Goal...
-Target Goal is G((!(g0))|((!(g1))&((!((r0)&(X(r1))))|(X(X((g0)&(g1)))))))
+Target Goal is G( ! g0 |( ! g1 &( !( r0 & X r1) | X X( g0 & g1 )  )))
 
 Fix with limit = 100
 + Get Fix Result From SR:       G((!(g0))|((!(g1))&((!((r0)&(X(r1))))|(X(X((g0)&(g1))))))) => G((!(g0))R((!(g1))&((!((r0)&(X(r1))))|(X(X((g0)&(g1)))))))

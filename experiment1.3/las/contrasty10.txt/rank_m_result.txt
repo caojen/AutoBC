@@ -126,12 +126,12 @@ Formula_Count=3
 +Random_Solver_Count=0
 Top 3:
 TopItem 1:
-         1         1        18	G(((!(a))|(m))&(!((i)&(!(h)))))
+         1         1        18	G(( ! a | m )& !(i&!h) )
 TopItem 2:
-         1         1        24	G(((!(a))|(m))&(!((!(h))&((d)&(c)))))
-         1         1        24	G(((!(a))|(m))&(!((c)&((d)&(!(h))))))
+         1         1        24	G((!a|m)&!(!h & d & c))
+         1         1        24	G((!a|m)&!((c&d)&!h))
 TopItem 3:
-         1         1        30	G(((!(a))|(m))&(!((c)&((!(d))&((m)&(n))))))
+         1         1        30	G((!a|m)&!c&!d&m&n)
 
 Formula_Count=4
 +Ref_Solver_Count=1

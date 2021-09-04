@@ -118,11 +118,11 @@ Formula_Count=2
 +Random_Solver_Count=0.5
 Top 3:
 TopItem 1:
-         1         1        17	G(((!(ta))|(!(go)))&(!((cc)&(tc))))
+         1         1        17	G(( ! ta | ! go )&!( cc & tc ))
 TopItem 2:
-       0.5       0.5         4	(cc)R((!(ta))|(!(go)))
+       0.5       0.5         4	cc R((! ta)|(! go ))
 TopItem 3:
-       0.5       0.5         4	(ca)R((!(ta))|(!(go)))
+       0.5       0.5         4	ca R( ! ta | ! go )
 
 Formula_Count=3
 +Ref_Solver_Count=0.333333

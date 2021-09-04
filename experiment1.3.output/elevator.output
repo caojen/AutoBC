@@ -10,7 +10,7 @@ BCs:
 	F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
 
 Finding Target BC...
-Target BC is F((call)&((!(open))&(X(G((!(open))|(((call)&((!(open))&(!(atfloor))))|(!(open))))))))
+Target BC is F( call & !open &(X(G(! open|(( call & (! open& ! atfloor ))|!open)))))
 -- Terms:
 -- -- call
 Finding Target Goal...

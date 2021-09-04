@@ -81,13 +81,13 @@ Formula_Count=4
 +Random_Solver_Count=0.25
 Top 3:
 TopItem 1:
-      0.75         1         9	G((!(call))|(F((open)|(call))))
-      0.75         1         9	G(((!(call))|(call))|(F(open)))
+      0.75         1         9	G(!call|F( open | call ))
+      0.75         1         9	G(!call | call | F open)
 TopItem 2:
-      0.75      0.75         0	F((!(call))|(F(open)))
-      0.75      0.75         0	X((!(call))|(F(open)))
+      0.75      0.75         0	F(!call|F open)
+      0.75      0.75         0	X(!call | F open)
 TopItem 3:
-      0.75     0.675         3	X(F((open)|(F(atfloor))))
+      0.75     0.675         3	X(F( open | F atfloor ))
 
 Formula_Count=5
 +Ref_Solver_Count=0.6

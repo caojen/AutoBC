@@ -124,12 +124,12 @@ for dir in dirs:
     ref_results = ref_results / top_count
     ref_time = ref_time / top_count
     ref_diff = ref_diff / top_count
-    print(e, 'rand', random_found, random_results, random_time, random_diff)
-    print(e, 'ref ', ref_found, ref_results, ref_time, ref_diff)
+    print(e, 'rand %.2f %.2f %.2f %.2f' % (random_found, random_results, random_time / 1000, random_diff))
+    print(e, 'ref  %.2f %.2f %.2f %.2f' % (ref_found, ref_results, ref_time / 1000, ref_diff))
 
-    print(e, 'ref rank top', ref_top1 / top_count, ref_top2 / top_count, ref_top3 / top_count)
-    print(e, 'ref rank m t', ref_m_top1 / top_count, ref_m_top2 / top_count, ref_m_top3 / top_count)
-    print(e, 'rnd rank top', 1 - ref_top1 / top_count, 1 - ref_top2 / top_count, 1 - ref_top3 / top_count)
-    print(e, 'rnd rank m t', 1 - ref_m_top1 / top_count, 1 - ref_m_top2 / top_count, 1 - ref_m_top3 / top_count)
+    # print(e, 'ref rank top %.2f %.2f %.2f' % (ref_top1 / top_count, ref_top2 / top_count, ref_top3 / top_count))
+    # print(e, 'rnd rank top %.2f %.2f %.2f' % (1 - ref_top1 / top_count, 1 - ref_top2 / top_count, 1 - ref_top3 / top_count))
+    print(e, 'rnd rank m t %.4f %.4f %.4f' % (1 - ref_m_top1 / top_count, 1 - ref_m_top2 / top_count, 1 - ref_m_top3 / top_count))
+    print(e, 'ref rank m t %.4f %.4f %.4f' % (ref_m_top1 / top_count, ref_m_top2 / top_count, ref_m_top3 / top_count))
   else:
     print(e, 'no result')

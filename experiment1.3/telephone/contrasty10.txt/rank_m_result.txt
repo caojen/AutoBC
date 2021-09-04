@@ -147,11 +147,11 @@ Formula_Count=2
 +Random_Solver_Count=1
 Top 3:
 TopItem 1:
-         1      0.75         9	((c)&(o))R((!(c))|((c)U((f)|(d))))
+         1      0.75         9	(c & o) R (!c |(c U (f|d)))
 TopItem 2:
-         1     0.675         6	(G(o))R((!(c))|((c)U((f)|(d))))
+         1     0.675         6	(G o)R(! c |( c U( f | d )))
 TopItem 3:
-  0.597418      0.75         9	((d)&(f))R((!(c))|((c)U((f)|(d))))
+  0.597418      0.75         9	(d&f) R ( !c |(c U (f|d)))
 
 Formula_Count=3
 +Ref_Solver_Count=0

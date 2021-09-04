@@ -131,11 +131,11 @@ Formula_Count=2
 +Random_Solver_Count=0.5
 Top 3:
 TopItem 1:
-         1         1        17	G((!((gm)&(g0)))|((!(g0))&(r0)))
+         1         1        17	G(!( gm & g0 ) | (! g0 & r0))
 TopItem 2:
-         1     0.375         7	(rm)R(!(F((g0)&(gm))))
+         1     0.375         7	rm R ! F (g0 & gm)
 TopItem 3:
-  0.500007         1         7	G((!((gm)&(g0)))|(rm))
+  0.500007         1         7	G(!(gm&g0)|rm)
 
 Formula_Count=3
 +Ref_Solver_Count=0.666667

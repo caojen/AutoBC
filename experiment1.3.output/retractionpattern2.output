@@ -18,7 +18,7 @@ Target BC is F((p)&((!(s))&(!(r))))
 -- Terms:
 -- -- (p)&((!(s))&(!(r)))
 Finding Target Goal...
-Target Goal is G((!(p))|((G(q))|((q)U(s))))
+Target Goal is G(! p | G q | ( q U s))
 
 Fix with limit = 100
 + Get Fix Result From SR:       G((!(p))|((G(q))|((q)U(s)))) => G((!(p))R((G(q))|((q)U(s))))

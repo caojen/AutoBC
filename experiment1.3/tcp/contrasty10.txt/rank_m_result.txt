@@ -155,10 +155,10 @@ Formula_Count=3
 +Random_Solver_Count=0
 Top 3:
 TopItem 1:
-         1       0.5         0	G((!(send))U((!(ack))U(delivered)))
+         1       0.5         0	G(! send U (! ack U delivered))
 TopItem 2:
-  0.701086         1        14	G((!(send))|((!(ack))U((delivered)&(!(!(ack))))))
-  0.701086       0.5        14	G(((!(ack))U((delivered)&(!(!(ack)))))U(!(send)))
+  0.701086         1        14	G( ! send | ( ! ack U ( delivered & ack)))
+  0.701086       0.5        14	G( ( ! ack U( delivered & ack)) U !send)
 TopItem 3:
   0.521257       0.5        14	G(((!(send))&(!(!(ack))))U((!(ack))U(delivered)))
 

@@ -122,11 +122,11 @@ Formula_Count=2
 +Random_Solver_Count=0
 Top 3:
 TopItem 1:
-   0.85593         1        12	G((!(h))|(X((p)|((h)&(m)))))
+   0.85593         1        12	G(!h|X(p|(h&m)))
 TopItem 2:
-       0.5         1        12	G(((!(h))|((h)&(m)))|(X(p)))
+       0.5         1        12	G(!h| (h&m) |X p)
 TopItem 3:
-       0.5       0.5         0	G((X(p))R(!(h)))
+       0.5       0.5         0	G((X p )R !h)
 
 Formula_Count=3
 +Ref_Solver_Count=1
