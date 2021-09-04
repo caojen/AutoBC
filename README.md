@@ -50,4 +50,4 @@ chmod +x *.sh
 ./experiment.sh
 ```
 
-The experiment will be running in background. After done, the experiment will create folder `experiment1.3` (if not exists) and our experiment results will be list in it.
+The experiment will be running in background. After done, the experiment will create folder `experiment1.3` (if not exists) and our experiment results will be listed in it.
