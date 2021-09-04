@@ -1,0 +1,145 @@
+DOM: [!stob_req0, !rtob_ack0, [](btos_ack1 -> X(!stob_req1)), !stob_req1, !rtob_ack1, []((btor_req1 && rtob_ack1) -> X(rtob_ack1)), [](!btor_req1 -> X(!rtob_ack1)), []((enq <-> deq) -> ((full <-> X(full)) && (empty <-> X(empty)))), []((btor_req0 && rtob_ack0) -> X(rtob_ack0)), []((deq && !enq) -> X(!full)), empty, []((enq && !deq) -> X(!empty)), !full, []((stob_req0 && !btos_ack0) -> X(stob_req0)), []((stob_req1 && !btos_ack1) -> X(stob_req1)), [](<>(btor_req1 <-> rtob_ack1)), [](btos_ack0 -> X(!stob_req0)), [](!btor_req0 -> X(!rtob_ack0)), [](<>(btor_req0 <-> rtob_ack0))]
+GOALS: [stateg7_1, []((stateg7_1 && !btor_req0 && !btor_req1) -> X(stateg7_1 && stateg7_0)), []((btos_ack0 && stob_req0) -> X(btos_ack0)), []((!btos_ack0 && !stob_req0) -> X(!btos_ack0)), []((!btos_ack1 && !stob_req1) -> X(!btos_ack1)), [](((btos_ack0 || X(!btos_ack0)) &&   (btos_ack1 || X(!btos_ack1))) -> X(!enq)), !btos_ack0, []((!stateg7_1 && stateg7_0 && btor_req0) -> false), []((rtob_ack1 && X(!rtob_ack1)) -> X(deq)), []((stateg7_1 && stateg7_0 && btor_req1) -> false), [](empty -> !deq), [](rtob_ack1 -> X(!btor_req1)), []((btos_ack1 && stob_req1) -> X(btos_ack1)), []((stateg7_1 && !stateg7_0 && !btor_req0 && btor_req1) -> X(stateg7_1 && !stateg7_0)), []((stateg12 && !deq  ) -> X(stateg12)), []((!stateg7_1 && !btor_req0 && btor_req1) -> X(stateg7_1 && !stateg7_0)), []((!stateg12 && deq  ) -> X(!stateg12)), []((btor_req1 && !rtob_ack1) -> X(btor_req1)), [](rtob_ack0 -> X(!btor_req0)), []((btor_req0 && btor_req1) -> false), !stateg7_0, !btos_ack1, [](((!rtob_ack0 || X(rtob_ack0)) &&   (!rtob_ack1 || X(rtob_ack1))) -> X(!deq)), !stateg12, [](<>(stob_req0 <-> btos_ack0)), !slc0, !btor_req1, []((!stateg7_1 && !stateg7_0 && btor_req0 && !btor_req1) -> X(!stateg7_1 && !stateg7_0)), [](<>(!stateg12)), !btor_req0, []((!stateg12 && empty) -> X(!stateg12)), []((!btos_ack1 && X(btos_ack1)) -> X(enq)), [](<>(stob_req1 <-> btos_ack1)), []((btor_req0 && !rtob_ack0) -> X(btor_req0)), []((!stateg12 && !empty && !deq) -> X(stateg12)), []((stateg12 && deq  ) -> X(!stateg12)), !enq, []((stateg7_1 && btor_req0 && !btor_req1) -> X(!stateg7_1 && !stateg7_0)), []((full && !deq) -> !enq), []((rtob_ack0 && X(!rtob_ack0)) -> X(deq)), []((!btos_ack0) || (!btos_ack1)), []((!btos_ack1 && X(btos_ack1)) <-> X(slc0)), []((!stateg7_1 && !btor_req0 && !btor_req1) -> X(!stateg7_1 && stateg7_0)), []((!btos_ack0 && X(btos_ack0)) -> X(enq))]
+Initial population size: 438
+Total population size: 100
+LTL Satisfiability Check: Aalta
+Drop time(second): []
+
+GENERATION 1/50
+
+Best fitness value: ( X ( ( ! ( stateg7_1 ) ) \/ ( ! ( stateg7_0 ) ) ) ) 1.5909090909090908
+Generation Time :1199
+Accumulated Learning Time :1199
+CALLs: 19892    TIMEOUTs: 4    ERRORs: 0
+REEVALUATIONS: 95 OF 525
+
+GENERATION 2/50
+
+Best fitness value: ( X ( ( ! ( stateg7_1 ) ) \/ ( ! ( stateg7_0 ) ) ) ) 1.5909090909090908
+Generation Time :91
+Accumulated Learning Time :1291
+CALLs: 1879    TIMEOUTs: 4    ERRORs: 0
+REEVALUATIONS: 129 OF 604
+
+GENERATION 3/50
+
+Best fitness value: ( X ( ( ! ( stateg7_1 ) ) \/ ( ! ( stateg7_0 ) ) ) ) 1.5909090909090908
+Generation Time :269
+Accumulated Learning Time :1560
+CALLs: 2181    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 155 OF 688
+
+GENERATION 4/50
+
+Best fitness value: ( X ( ( ! ( stateg7_1 ) ) \/ ( ! ( stateg7_0 ) ) ) ) 1.5909090909090908
+Generation Time :136
+Accumulated Learning Time :1697
+CALLs: 2362    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 189 OF 778
+
+GENERATION 5/50
+
+Best fitness value: ( X ( X ( btor_req1 ) ) ) 1.6590909090909092
+Generation Time :105
+Accumulated Learning Time :1803
+CALLs: 1885    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 223 OF 859
+
+GENERATION 6/50
+
+Best fitness value: ( X ( X ( btor_req1 ) ) ) 1.6590909090909092
+Generation Time :122
+Accumulated Learning Time :1925
+CALLs: 2076    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 262 OF 949
+
+GENERATION 7/50
+
+Best fitness value: ( X ( X ( btor_req1 ) ) ) 1.6590909090909092
+Generation Time :166
+Accumulated Learning Time :2092
+CALLs: 1937    TIMEOUTs: 16    ERRORs: 0
+REEVALUATIONS: 282 OF 1019
+
+GENERATION 8/50
+
+Best fitness value: ( X ( X ( btor_req1 ) ) ) 1.6590909090909092
+Generation Time :128
+Accumulated Learning Time :2220
+CALLs: 1934    TIMEOUTs: 16    ERRORs: 0
+REEVALUATIONS: 312 OF 1097
+
+GENERATION 9/50
+
+Best fitness value: ( ( ( X ( ( stateg12 ) \/ ( ! ( stateg7_0 ) ) ) ) W ( X ( ( btos_ack0 ) U ( ! ( stateg7_0 ) ) ) ) ) U ( X ( ( btor_req1 ) \/ ( ( ! ( stateg7_1 ) ) /\ ( ( ! ( btor_req0 ) ) /\ ( ! ( btor_req1 ) ) ) ) ) ) ) 1.7045454545454546
+Generation Time :155
+Accumulated Learning Time :2376
+CALLs: 1938    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 349 OF 1186
+
+GENERATION 10/50
+
+Best fitness value: ( ( X ( ( enq ) \/ ( ! ( stateg7_0 ) ) ) ) \/ ( X ( X ( btor_req1 ) ) ) ) 1.7272727272727273
+Generation Time :161
+Accumulated Learning Time :2537
+CALLs: 1975    TIMEOUTs: 20    ERRORs: 0
+REEVALUATIONS: 383 OF 1266
+
+GENERATION 11/50
+
+Best fitness value: ( ( X ( ( enq ) \/ ( ! ( stateg7_0 ) ) ) ) \/ ( X ( X ( btor_req1 ) ) ) ) 1.7272727272727273
+Generation Time :188
+Accumulated Learning Time :2726
+CALLs: 1932    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 409 OF 1339
+
+GENERATION 12/50
+
+Best fitness value: ( ( X ( ( enq ) \/ ( ! ( stateg7_0 ) ) ) ) \/ ( X ( X ( btor_req1 ) ) ) ) 1.7272727272727273
+Generation Time :158
+Accumulated Learning Time :2885
+CALLs: 1895    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 437 OF 1418
+
+GENERATION 13/50
+
+Best fitness value: ( ( X ( X ( btor_req1 ) ) ) W ( ( X ( ( stateg12 ) \/ ( btor_req1 ) ) ) W ( X ( ( btos_ack0 ) U ( btor_req1 ) ) ) ) ) 1.75
+Generation Time :210
+Accumulated Learning Time :3095
+CALLs: 2215    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 458 OF 1489
+
+GENERATION 14/50
+
+Best fitness value: ( ( X ( X ( btor_req1 ) ) ) W ( ( X ( ( stateg12 ) \/ ( btor_req1 ) ) ) W ( X ( ( btos_ack0 ) U ( btor_req1 ) ) ) ) ) 1.75
+Generation Time :244
+Accumulated Learning Time :3339
+CALLs: 2463    TIMEOUTs: 31    ERRORs: 0
+REEVALUATIONS: 478 OF 1569
+
+GENERATION 15/50
+exit value = 143
+( ( ~(( rtob_ack1 )) ) & ( ( G(( ( X(( btor_req1 )) ) | ( ( rtob_ack1 ) | ( ~(( btor_req1 )) ) ) )) ) & ( ( G(( ( X(( ~(( stob_req0 )) )) ) | ( ~(( btos_ack0 )) ) )) ) & ( ( G(( ( ~(( btos_ack0 )) ) | ( ~(( btos_ack1 )) ) )) ) & ( ( G(( ( X(( ~(( stob_req1 )) )) ) | ( ~(( btos_ack1 )) ) )) ) & ( ( ~(( rtob_ack0 )) ) & ( ( G(( (( ( ~(( btos_ack1 )) ) & ( X(( btos_ack1 )) ) ) & ( X(( slc0 )) )) | (~( ( ~(( btos_ack1 )) ) & ( X(( btos_ack1 )) ) ) & ~( X(( slc0 )) )) )) ) & ( ( G(( ( X(( btos_ack1 )) ) | ( ( ~(( btos_ack1 )) ) | ( ~(( stob_req1 )) ) ) )) ) & ( ( G(( ( X(( btos_ack0 )) ) | ( ( ~(( btos_ack0 )) ) | ( ~(( stob_req0 )) ) ) )) ) & ( ( G(( ( X(( ~(( empty )) )) ) | ( ( deq ) | ( ~(( enq )) ) ) )) ) & ( ( ~(( stateg7_0 )) ) & ( ( G(( ( X(( ( ~(( stateg7_1 )) ) & ( ~(( stateg7_0 )) ) )) ) | ( ( ~(( stateg7_1 )) ) | ( ( btor_req1 ) | ( ~(( btor_req0 )) ) ) ) )) ) & ( ( G(( ( X(( ( stateg7_1 ) & ( ~(( stateg7_0 )) ) )) ) | ( ( stateg7_1 ) | ( ( btor_req0 ) | ( ~(( btor_req1 )) ) ) ) )) ) & ( ( G(( ( btor_req1 ) | ( X(( ~(( rtob_ack1 )) )) ) )) ) & ( ( G(( ( False ) | ( ( ~(( stateg7_1 )) ) | ( ( ~(( stateg7_0 )) ) | ( ~(( btor_req1 )) ) ) ) )) ) & ( ( G(( ( btor_req0 ) | ( X(( ~(( rtob_ack0 )) )) ) )) ) & ( ( G(( ( ~(( deq )) ) | ( ~(( empty )) ) )) ) & ( ( G(( ( X(( ~(( enq )) )) ) | ( ( ( ~(( btos_ack0 )) ) & ( X(( btos_ack0 )) ) ) | ( ( ~(( btos_ack1 )) ) & ( X(( btos_ack1 )) ) ) ) )) ) & ( ( ~(( enq )) ) & ( ( G(( ( X(( ( ~(( stateg7_1 )) ) & ( stateg7_0 ) )) ) | ( ( stateg7_1 ) | ( ( btor_req0 ) | ( btor_req1 ) ) ) )) ) & ( ( G(( ( X(( deq )) ) | ( ( ~(( rtob_ack0 )) ) | ( X(( rtob_ack0 )) ) ) )) ) & ( ( G(( ( X(( deq )) ) | ( ( ~(( rtob_ack1 )) ) | ( X(( rtob_ack1 )) ) ) )) ) & ( ( G(( ( X(( ( stateg7_1 ) & ( stateg7_0 ) )) ) | ( ( ~(( stateg7_1 )) ) | ( ( btor_req0 ) | ( btor_req1 ) ) ) )) ) & ( ( G(( ( X(( ~(( btor_req1 )) )) ) | ( ~(( rtob_ack1 )) ) )) ) & ( ( G(( ( ( (( full ) & ( X(( full )) )) | (~( full ) & ~( X(( full )) )) ) & ( (( empty ) & ( X(( empty )) )) | (~( empty ) & ~( X(( empty )) )) ) ) | ( ( ( enq ) & ( ~(( deq )) ) ) | ( ( deq ) & ( ~(( enq )) ) ) ) )) ) & ( ( G(( ( X(( ~(( btor_req0 )) )) ) | ( ~(( rtob_ack0 )) ) )) ) & ( ( G(( ( False ) | ( ( stateg7_1 ) | ( ( ~(( stateg7_0 )) ) | ( ~(( btor_req0 )) ) ) ) )) ) & ( ( ~(( stob_req1 )) ) & ( ( G(( ( X(( ~(( btos_ack1 )) )) ) | ( ( btos_ack1 ) | ( stob_req1 ) ) )) ) & ( ( G(( ( X(( ~(( btos_ack0 )) )) ) | ( ( btos_ack0 ) | ( stob_req0 ) ) )) ) & ( ( ~(( stob_req0 )) ) & ( ( ~(~( ( X(( ~(( btos_ack0 )) )) ) U ( ( X(( ( stateg7_0 ) & ( ~(( stateg12 )) ) )) ) & ( X(( ~(( btos_ack0 )) )) ) ) ) U ~( ( X(( ~(( btos_ack0 )) )) ) U ( ( X(( ( stateg7_0 ) & ( ~(( stateg12 )) ) )) ) & ( X(( ~(( btos_ack0 )) )) ) ) )) ) & ( ( G(( ( False ) | ( ( ~(( btor_req0 )) ) | ( ~(( btor_req1 )) ) ) )) ) & ( ( ~(( slc0 )) ) & ( ( G(( ( X(( ~(( full )) )) ) | ( ( enq ) | ( ~(( deq )) ) ) )) ) & ( ( stateg7_1 ) & ( ( G(( ( ~(( enq )) ) | ( ( deq ) | ( ~(( full )) ) ) )) ) & ( ( ~(( btos_ack0 )) ) & ( ( G(( ( X(( stob_req1 )) ) | ( ( btos_ack1 ) | ( ~(( stob_req1 )) ) ) )) ) & ( ( ~(( stateg12 )) ) & ( ( ~(( btos_ack1 )) ) & ( ( G(( ( X(( stob_req0 )) ) | ( ( btos_ack0 ) | ( ~(( stob_req0 )) ) ) )) ) & ( ( ~(( btor_req1 )) ) & ( ( ~(( btor_req0 )) ) & ( ( G(( F(( (( stob_req0 ) & ( btos_ack0 )) | (~( stob_req0 ) & ~( btos_ack0 )) )) )) ) & ( ( G(( F(( (( stob_req1 ) & ( btos_ack1 )) | (~( stob_req1 ) & ~( btos_ack1 )) )) )) ) & ( ( G(( ( X(( ~(( stateg12 )) )) ) | ( ( ~(( stateg12 )) ) | ( ~(( deq )) ) ) )) ) & ( ( G(( ( X(( ~(( deq )) )) ) | ( ( ( rtob_ack0 ) & ( X(( ~(( rtob_ack0 )) )) ) ) | ( ( rtob_ack1 ) & ( X(( ~(( rtob_ack1 )) )) ) ) ) )) ) & ( ( G(( ( X(( stateg12 )) ) | ( ( deq ) | ( ~(( stateg12 )) ) ) )) ) & ( ( G(( ( X(( enq )) ) | ( ( btos_ack0 ) | ( X(( ~(( btos_ack0 )) )) ) ) )) ) & ( ( G(( ( X(( enq )) ) | ( ( btos_ack1 ) | ( X(( ~(( btos_ack1 )) )) ) ) )) ) & ( ( G(( ( X(( stateg12 )) ) | ( ( stateg12 ) | ( ( empty ) | ( deq ) ) ) )) ) & ( ( G(( ( X(( rtob_ack1 )) ) | ( ( ~(( btor_req1 )) ) | ( ~(( rtob_ack1 )) ) ) )) ) & ( ( G(( ( X(( rtob_ack0 )) ) | ( ( ~(( btor_req0 )) ) | ( ~(( rtob_ack0 )) ) ) )) ) & ( ( G(( ( X(( ( ~(( stateg7_1 )) ) & ( ~(( stateg7_0 )) ) )) ) | ( ( stateg7_1 ) | ( ( stateg7_0 ) | ( ( btor_req1 ) | ( ~(( btor_req0 )) ) ) ) ) )) ) & ( ( G(( ( X(( ( stateg7_1 ) & ( ~(( stateg7_0 )) ) )) ) | ( ( ~(( stateg7_1 )) ) | ( ( stateg7_0 ) | ( ( btor_req0 ) | ( ~(( btor_req1 )) ) ) ) ) )) ) & ( ( G(( ( X(( ~(( stateg12 )) )) ) | ( ( stateg12 ) | ( ~(( deq )) ) ) )) ) & ( ( empty ) & ( ( G(( ( X(( ~(( stateg12 )) )) ) | ( ( stateg12 ) | ( ~(( empty )) ) ) )) ) & ( ( ~(( full )) ) & ( ( G(( F(( ~(( stateg12 )) )) )) ) & ( ( G(( F(( (( btor_req1 ) & ( rtob_ack1 )) | (~( btor_req1 ) & ~( rtob_ack1 )) )) )) ) & ( G(( F(( (( btor_req0 ) & ( rtob_ack0 )) | (~( btor_req0 ) & ~( rtob_ack0 )) )) )) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) )
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+
+Best fitness value: ( ( X ( X ( btor_req1 ) ) ) W ( ( X ( ( stateg12 ) \/ ( btor_req1 ) ) ) W ( X ( ( btos_ack0 ) U ( btor_req1 ) ) ) ) ) 1.75
+Generation Time :261
+Accumulated Learning Time :3600
+CALLs: 1880    TIMEOUTs: 39    ERRORs: 1
+REEVALUATIONS: 503 OF 1639
+
+
+TOTAL Learing Time :3600
+
+Solutions: 0
+
+Solutions: 0, Total Solution(with duplicate solution): 0
+Best Solution time: -1.577346611794E9
+Best Solution: 
+TOTAL Time :3600, Evaluate Time: 3597.25
+CALLs: 48444    TIMEOUTs: 39    ERRORs: 1
+CONFIGURATION
+Initial population size: 438
+#Population: 100    #Iterations: 15    #ChromSize: 50
+REEVALUATIONS: 503 OF 1639

@@ -1,0 +1,7 @@
+( F(( ( call ) & ( G(( !(( (( !(( atfloor )) ) U ( open )) | G(( !(( atfloor )) )) )) )) ) )) )
+( F(( ( call ) & ( !(( (( atfloor ) U ( F(( open )) )) | G(( atfloor )) )) ) )) )
+( ( F(( call )) ) & ( (( !(( call )) ) U ( !(( F(( F(( open )) )) )) )) | G(( !(( call )) )) ) )
+( ( call ) & ( F(( !(( (( !(( call )) ) U ( F(( open )) )) | G(( !(( call )) )) )) )) ) )
+( F(( ( (( F(( call )) ) U ( open )) | G(( F(( call )) )) ) & ( !(( F(( open )) )) ) )) )
+( F(( ( F(( call )) ) & ( !(( (( call ) U ( F(( open )) )) | G(( call )) )) ) )) )
+( F(( ( F(( call )) ) & ( !(( ( atfloor ) | ( F(( open )) ) )) ) )) )

@@ -1,0 +1,9 @@
+Generals: 7
+Total: 2254
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( ( !(( ack )) ) & ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) ) )
+( (( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) U ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) )) | G(( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) )) )
+( ( F(( ( send ) & ( !(!( ( !(( send )) ) & ( ack ) ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( X(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) )) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( ( ack ) & ( !(( delivered )) ) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( (( !(( delivered )) ) U ( ack )) | G(( !(( delivered )) )) )) )) ) )) ) )

@@ -1,0 +1,282 @@
+DOM: [[]((b2 && f2) -> X(!b2)), []((b3 && !f3) -> X(b3)), !b1 && !b2 && !b3, []((b1 && !f1) -> X(b1)), []((b3 && f3) -> X(!b3)), []((b1 && f1) -> X(!b1)), []((b2 && !f2) -> X(b2))]
+GOALS: [[](!(f1 && f2) && !(f1 && f3) && !(f2 && f3)), [](<>(f1)), [](f3 -> X (f2 || f3)), [](<>(f3)), f1 && !f2 && !f3, [](f1 -> X (f1 || f2)), [](((f1 && X(f2)) || (f2 && X(f3))) -> X (b1 || b2 || b3)), [](f2 -> X (f1 || f2 || f3))]
+Initial population size: 144
+Total population size: 100
+LTL Satisfiability Check: Aalta
+Drop time(second): [10800, 21600]
+
+GENERATION 1/50
+
+Best fitness value: ( X ( f3 ) ) 1.875
+Generation Time :521
+Accumulated Learning Time :521
+CALLs: 2086    TIMEOUTs: 51    ERRORs: 0
+REEVALUATIONS: 44 OF 229
+
+GENERATION 2/50
+
+Best fitness value: ( X ( f3 ) ) 1.875
+Generation Time :62
+Accumulated Learning Time :584
+CALLs: 550    TIMEOUTs: 57    ERRORs: 0
+REEVALUATIONS: 70 OF 315
+
+GENERATION 3/50
+
+Best fitness value: ( X ( f3 ) ) 1.875
+Generation Time :103
+Accumulated Learning Time :688
+CALLs: 569    TIMEOUTs: 67    ERRORs: 0
+REEVALUATIONS: 94 OF 398
+
+GENERATION 4/50
+
+Best fitness value: ( X ( f3 ) ) 1.875
+Generation Time :102
+Accumulated Learning Time :790
+CALLs: 430    TIMEOUTs: 77    ERRORs: 0
+REEVALUATIONS: 126 OF 479
+
+GENERATION 5/50
+
+Best fitness value: ( X ( f3 ) ) 1.875
+Generation Time :72
+Accumulated Learning Time :863
+CALLs: 449    TIMEOUTs: 84    ERRORs: 0
+REEVALUATIONS: 161 OF 564
+
+GENERATION 6/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :52
+Accumulated Learning Time :915
+CALLs: 371    TIMEOUTs: 89    ERRORs: 0
+REEVALUATIONS: 205 OF 646
+
+GENERATION 7/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :82
+Accumulated Learning Time :997
+CALLs: 425    TIMEOUTs: 97    ERRORs: 0
+REEVALUATIONS: 249 OF 734
+
+GENERATION 8/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :42
+Accumulated Learning Time :1040
+CALLs: 424    TIMEOUTs: 101    ERRORs: 0
+REEVALUATIONS: 297 OF 819
+
+GENERATION 9/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :62
+Accumulated Learning Time :1103
+CALLs: 419    TIMEOUTs: 107    ERRORs: 0
+REEVALUATIONS: 339 OF 902
+
+GENERATION 10/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :42
+Accumulated Learning Time :1145
+CALLs: 351    TIMEOUTs: 111    ERRORs: 0
+REEVALUATIONS: 380 OF 981
+
+GENERATION 11/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :93
+Accumulated Learning Time :1238
+CALLs: 460    TIMEOUTs: 120    ERRORs: 0
+REEVALUATIONS: 422 OF 1064
+
+GENERATION 12/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :22
+Accumulated Learning Time :1260
+CALLs: 295    TIMEOUTs: 122    ERRORs: 0
+REEVALUATIONS: 475 OF 1147
+
+GENERATION 13/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :42
+Accumulated Learning Time :1303
+CALLs: 293    TIMEOUTs: 126    ERRORs: 0
+REEVALUATIONS: 528 OF 1227
+
+GENERATION 14/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :92
+Accumulated Learning Time :1395
+CALLs: 354    TIMEOUTs: 135    ERRORs: 0
+REEVALUATIONS: 572 OF 1304
+
+GENERATION 15/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :32
+Accumulated Learning Time :1427
+CALLs: 303    TIMEOUTs: 138    ERRORs: 0
+REEVALUATIONS: 625 OF 1384
+
+GENERATION 16/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :23
+Accumulated Learning Time :1451
+CALLs: 307    TIMEOUTs: 140    ERRORs: 0
+REEVALUATIONS: 673 OF 1462
+
+GENERATION 17/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.0
+Generation Time :214
+Accumulated Learning Time :1665
+CALLs: 456    TIMEOUTs: 161    ERRORs: 0
+REEVALUATIONS: 712 OF 1545
+
+GENERATION 18/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.125
+Generation Time :83
+Accumulated Learning Time :1748
+CALLs: 318    TIMEOUTs: 169    ERRORs: 0
+REEVALUATIONS: 759 OF 1621
+
+GENERATION 19/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.125
+Generation Time :133
+Accumulated Learning Time :1882
+CALLs: 375    TIMEOUTs: 182    ERRORs: 0
+REEVALUATIONS: 795 OF 1690
+
+GENERATION 20/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.125
+Generation Time :43
+Accumulated Learning Time :1925
+CALLs: 436    TIMEOUTs: 186    ERRORs: 0
+REEVALUATIONS: 828 OF 1766
+
+GENERATION 21/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.125
+Generation Time :33
+Accumulated Learning Time :1958
+CALLs: 329    TIMEOUTs: 189    ERRORs: 0
+REEVALUATIONS: 857 OF 1826
+
+GENERATION 22/50
+
+Best fitness value: ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) 2.125
+Generation Time :134
+Accumulated Learning Time :2093
+CALLs: 477    TIMEOUTs: 202    ERRORs: 0
+REEVALUATIONS: 889 OF 1902
+
+GENERATION 23/50
+
+Best fitness value: ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) W ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) ) 2.25
+Generation Time :206
+Accumulated Learning Time :2300
+CALLs: 489    TIMEOUTs: 222    ERRORs: 0
+REEVALUATIONS: 922 OF 1980
+
+GENERATION 24/50
+
+Best fitness value: ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) W ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) ) 2.25
+Generation Time :176
+Accumulated Learning Time :2477
+CALLs: 370    TIMEOUTs: 239    ERRORs: 0
+REEVALUATIONS: 963 OF 2057
+
+GENERATION 25/50
+
+Best fitness value: ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) W ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) ) 2.25
+Generation Time :105
+Accumulated Learning Time :2582
+CALLs: 370    TIMEOUTs: 249    ERRORs: 0
+REEVALUATIONS: 1000 OF 2131
+
+GENERATION 26/50
+
+Best fitness value: ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) W ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) ) 2.25
+Generation Time :117
+Accumulated Learning Time :2700
+CALLs: 467    TIMEOUTs: 260    ERRORs: 0
+REEVALUATIONS: 1036 OF 2211
+
+GENERATION 27/50
+
+Fittest value: 2.566666666666667 for chromosome ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) \/ ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) )
+( F(( ( ( X(( f3 )) ) | ( F(( ( f3 ) & ( X(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) ) )) ) ) | ( ( X(( f3 )) ) | ( F(( (( f3 ) U ( G(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) )) | G(( f3 )) )) ) ) )) )
+Solutions (1): 
+Generation Time :188
+Accumulated Learning Time :2888
+CALLs: 413    TIMEOUTs: 278    ERRORs: 0
+REEVALUATIONS: 1071 OF 2288
+
+GENERATION 28/50
+
+Fittest value: 2.566666666666667 for chromosome ( <> ( ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) /\ ( X ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) \/ ( ( X ( f3 ) ) \/ ( <> ( ( f3 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) ) ) )
+Solutions (3): 
+Generation Time :172
+Accumulated Learning Time :3060
+CALLs: 443    TIMEOUTs: 294    ERRORs: 0
+REEVALUATIONS: 1096 OF 2356
+
+GENERATION 29/50
+
+Fittest value: 2.611111111111111 for chromosome ( ( X ( b2 ) ) \/ ( <> ( ( b2 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) )
+( ( X(( b2 )) ) | ( F(( (( b2 ) U ( G(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) )) | G(( b2 )) )) ) )
+Solutions (9): 
+Generation Time :165
+Accumulated Learning Time :3226
+CALLs: 492    TIMEOUTs: 309    ERRORs: 0
+REEVALUATIONS: 1124 OF 2430
+
+GENERATION 30/50
+
+Fittest value: 2.611111111111111 for chromosome ( ( X ( b2 ) ) \/ ( <> ( ( b2 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) )
+Solutions (21): 
+Generation Time :366
+Accumulated Learning Time :3592
+CALLs: 629    TIMEOUTs: 344    ERRORs: 0
+REEVALUATIONS: 1143 OF 2509
+
+GENERATION 31/50
+exit value = 143
+( ( ( X(( b2 )) ) | ( F(( (( b2 ) U ( G(( ( ~(( f2 )) ) & ( True ) )) )) | G(( b2 )) )) ) ) & ( ( G(( F(( f3 )) )) ) & ( ( G(( F(( f1 )) )) ) & ( ( G(( ( X(( ( f1 ) | ( ( f2 ) | ( f3 ) ) )) ) | ( ~(( f2 )) ) )) ) & ( ( ( ~(( b1 )) ) & ( ( ~(( b2 )) ) & ( ~(( b3 )) ) ) ) & ( ( G(( ( X(( ( b1 ) | ( ( b2 ) | ( b3 ) ) )) ) | ( ( ( ~(( f1 )) ) | ( X(( ~(( f2 )) )) ) ) & ( ( ~(( f2 )) ) | ( X(( ~(( f3 )) )) ) ) ) )) ) & ( ( ( f1 ) & ( ( ~(( f2 )) ) & ( ~(( f3 )) ) ) ) & ( ( G(( ( ( ~(( f1 )) ) | ( ~(( f2 )) ) ) & ( ( ( ~(( f1 )) ) | ( ~(( f3 )) ) ) & ( ( ~(( f2 )) ) | ( ~(( f3 )) ) ) ) )) ) & ( ( G(( ( X(( ( f1 ) | ( f2 ) )) ) | ( ~(( f1 )) ) )) ) & ( ( G(( ( X(( ( f2 ) | ( f3 ) )) ) | ( ~(( f3 )) ) )) ) & ( ( G(( ( X(( b2 )) ) | ( ( f2 ) | ( ~(( b2 )) ) ) )) ) & ( ( G(( ( X(( ~(( b2 )) )) ) | ( ( ~(( b2 )) ) | ( ~(( f2 )) ) ) )) ) & ( ( G(( ( X(( ~(( b3 )) )) ) | ( ( ~(( b3 )) ) | ( ~(( f3 )) ) ) )) ) & ( ( G(( ( X(( b3 )) ) | ( ( f3 ) | ( ~(( b3 )) ) ) )) ) & ( ( G(( ( X(( b1 )) ) | ( ( f1 ) | ( ~(( b1 )) ) ) )) ) & ( G(( ( X(( ~(( b1 )) )) ) | ( ( ~(( b1 )) ) | ( ~(( f1 )) ) ) )) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) )
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+
+Fittest value: 2.611111111111111 for chromosome ( ( X ( b2 ) ) \/ ( <> ( ( b2 ) W ( [] ( ( ! ( f2 ) ) /\ ( ! ( f3 ) ) ) ) ) ) )
+Solutions (39): 
+Generation Time :20
+Accumulated Learning Time :3613
+CALLs: 4    TIMEOUTs: 345    ERRORs: 1
+REEVALUATIONS: 1143 OF 2510
+
+
+TOTAL Learing Time :3613
+
+Solutions: 2
+( ( X(( b2 )) ) | ( F(( (( b2 ) U ( G(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) )) | G(( b2 )) )) ) )
+( F(( ( ( X(( f3 )) ) | ( F(( ( f3 ) & ( X(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) ) )) ) ) | ( ( X(( f3 )) ) | ( F(( (( f3 ) U ( G(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) )) | G(( f3 )) )) ) ) )) )
+
+Solutions: 2, Total Solution(with duplicate solution): 39
+First Solution Time: 2888.52 sec, First Solution Iteration: 27
+Best Solution time: 3159.235
+Best Solution: ( ( X(( b2 )) ) | ( F(( (( b2 ) U ( G(( ( ~(( f2 )) ) & ( ~(( f3 )) ) )) )) | G(( b2 )) )) ) )
+TOTAL Time :3613, Evaluate Time: 3600.35
+CALLs: 14154    TIMEOUTs: 345    ERRORs: 1
+CONFIGURATION
+Initial population size: 144
+#Population: 100    #Iterations: 31    #ChromSize: 50
+REEVALUATIONS: 1143 OF 2510

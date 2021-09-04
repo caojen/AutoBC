@@ -1,0 +1,793 @@
+DOM: [[] (idle && X (! grant_0 && ! grant_1) -> X idle), [] (<> idle), [] (X (! grant_0) || X ((! request_0 && ! idle) U (! request_0 && idle)))]
+GOALS: [[](X grant_1 -> request_1), ! <> ([] (request_1 && X (! grant_1))), [] (X (! grant_0 && true || (true && (! grant_1)))), [](request_0 && X request_1 -> X (X (grant_0 && grant_1))), [](! idle -> X (! grant_0 && ! grant_1)), [](request_0 -> grant_1), [](X grant_0 -> request_0)]
+Initial population size: 106
+Total population size: 100
+LTL Satisfiability Check: Aalta
+Drop time(second): [10800, 21600]
+
+GENERATION 1/50
+
+Best fitness value: ( ( request_0 ) /\ ( X ( request_1 ) ) ) 1.7857142857142856
+Generation Time :77
+Accumulated Learning Time :77
+CALLs: 1499    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 42 OF 192
+
+GENERATION 2/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :79
+CALLs: 502    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 72 OF 279
+
+GENERATION 3/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :82
+CALLs: 543    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 95 OF 366
+
+GENERATION 4/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :84
+CALLs: 553    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 116 OF 447
+
+GENERATION 5/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :87
+CALLs: 497    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 140 OF 528
+
+GENERATION 6/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :90
+CALLs: 565    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 168 OF 617
+
+GENERATION 7/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :92
+CALLs: 422    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 200 OF 699
+
+GENERATION 8/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :95
+CALLs: 493    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 226 OF 783
+
+GENERATION 9/50
+
+Best fitness value: ( [] ( ( request_0 ) /\ ( true ) ) ) 1.9285714285714286
+Generation Time :2
+Accumulated Learning Time :98
+CALLs: 457    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 258 OF 862
+
+GENERATION 10/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :32
+Accumulated Learning Time :130
+CALLs: 329    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 308 OF 948
+
+GENERATION 11/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :132
+CALLs: 376    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 343 OF 1030
+
+GENERATION 12/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :1
+Accumulated Learning Time :133
+CALLs: 306    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 390 OF 1111
+
+GENERATION 13/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :1
+Accumulated Learning Time :135
+CALLs: 290    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 427 OF 1189
+
+GENERATION 14/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :1
+Accumulated Learning Time :137
+CALLs: 296    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 471 OF 1265
+
+GENERATION 15/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :139
+CALLs: 395    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 512 OF 1347
+
+GENERATION 16/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :1
+Accumulated Learning Time :141
+CALLs: 278    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 550 OF 1417
+
+GENERATION 17/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :143
+CALLs: 346    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 582 OF 1489
+
+GENERATION 18/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :146
+CALLs: 419    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 616 OF 1567
+
+GENERATION 19/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :1
+Accumulated Learning Time :148
+CALLs: 356    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 655 OF 1640
+
+GENERATION 20/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :150
+CALLs: 390    TIMEOUTs: 10    ERRORs: 0
+REEVALUATIONS: 687 OF 1710
+
+GENERATION 21/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :12
+Accumulated Learning Time :163
+CALLs: 456    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 716 OF 1783
+
+GENERATION 22/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :165
+CALLs: 426    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 752 OF 1862
+
+GENERATION 23/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :53
+Accumulated Learning Time :219
+CALLs: 536    TIMEOUTs: 16    ERRORs: 0
+REEVALUATIONS: 781 OF 1943
+
+GENERATION 24/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :13
+Accumulated Learning Time :232
+CALLs: 505    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 812 OF 2024
+
+GENERATION 25/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :2
+Accumulated Learning Time :234
+CALLs: 392    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 845 OF 2096
+
+GENERATION 26/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :22
+Accumulated Learning Time :257
+CALLs: 449    TIMEOUTs: 19    ERRORs: 0
+REEVALUATIONS: 877 OF 2173
+
+GENERATION 27/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :22
+Accumulated Learning Time :280
+CALLs: 353    TIMEOUTs: 21    ERRORs: 0
+REEVALUATIONS: 915 OF 2248
+
+GENERATION 28/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :12
+Accumulated Learning Time :293
+CALLs: 398    TIMEOUTs: 22    ERRORs: 0
+REEVALUATIONS: 945 OF 2315
+
+GENERATION 29/50
+
+Best fitness value: ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) 2.071428571428571
+Generation Time :21
+Accumulated Learning Time :314
+CALLs: 322    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 981 OF 2387
+
+GENERATION 30/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :22
+Accumulated Learning Time :337
+CALLs: 381    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 1019 OF 2463
+
+GENERATION 31/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :2
+Accumulated Learning Time :340
+CALLs: 366    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 1066 OF 2549
+
+GENERATION 32/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :3
+Accumulated Learning Time :343
+CALLs: 425    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 1098 OF 2624
+
+GENERATION 33/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :3
+Accumulated Learning Time :347
+CALLs: 346    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 1138 OF 2698
+
+GENERATION 34/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :15
+Accumulated Learning Time :362
+CALLs: 415    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 1170 OF 2771
+
+GENERATION 35/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :25
+Accumulated Learning Time :388
+CALLs: 396    TIMEOUTs: 28    ERRORs: 0
+REEVALUATIONS: 1209 OF 2851
+
+GENERATION 36/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :36
+Accumulated Learning Time :425
+CALLs: 554    TIMEOUTs: 30    ERRORs: 0
+REEVALUATIONS: 1238 OF 2932
+
+GENERATION 37/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :21
+Accumulated Learning Time :446
+CALLs: 474    TIMEOUTs: 31    ERRORs: 0
+REEVALUATIONS: 1263 OF 3001
+
+GENERATION 38/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :31
+Accumulated Learning Time :477
+CALLs: 441    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 1295 OF 3078
+
+GENERATION 39/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :26
+Accumulated Learning Time :504
+CALLs: 478    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 1326 OF 3155
+
+GENERATION 40/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :63
+Accumulated Learning Time :567
+CALLs: 548    TIMEOUTs: 33    ERRORs: 0
+REEVALUATIONS: 1351 OF 3234
+
+GENERATION 41/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :36
+Accumulated Learning Time :603
+CALLs: 570    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 1370 OF 3309
+
+GENERATION 42/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :103
+Accumulated Learning Time :707
+CALLs: 574    TIMEOUTs: 35    ERRORs: 0
+REEVALUATIONS: 1392 OF 3384
+
+GENERATION 43/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :39
+Accumulated Learning Time :746
+CALLs: 624    TIMEOUTs: 36    ERRORs: 0
+REEVALUATIONS: 1411 OF 3463
+
+GENERATION 44/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :74
+Accumulated Learning Time :821
+CALLs: 571    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 1435 OF 3543
+
+GENERATION 45/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :38
+Accumulated Learning Time :859
+CALLs: 561    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 1457 OF 3616
+
+GENERATION 46/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :36
+Accumulated Learning Time :896
+CALLs: 506    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 1488 OF 3693
+
+GENERATION 47/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :26
+Accumulated Learning Time :922
+CALLs: 574    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 1515 OF 3773
+
+GENERATION 48/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :35
+Accumulated Learning Time :957
+CALLs: 517    TIMEOUTs: 42    ERRORs: 0
+REEVALUATIONS: 1549 OF 3854
+
+GENERATION 49/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :42
+Accumulated Learning Time :1000
+CALLs: 554    TIMEOUTs: 43    ERRORs: 0
+REEVALUATIONS: 1576 OF 3933
+
+GENERATION 50/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :51
+Accumulated Learning Time :1051
+CALLs: 501    TIMEOUTs: 45    ERRORs: 0
+REEVALUATIONS: 1606 OF 4011
+
+GENERATION 51/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :39
+Accumulated Learning Time :1091
+CALLs: 444    TIMEOUTs: 45    ERRORs: 0
+REEVALUATIONS: 1644 OF 4091
+
+GENERATION 52/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :104
+Accumulated Learning Time :1195
+CALLs: 407    TIMEOUTs: 47    ERRORs: 0
+REEVALUATIONS: 1677 OF 4166
+
+GENERATION 53/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :43
+Accumulated Learning Time :1239
+CALLs: 510    TIMEOUTs: 50    ERRORs: 0
+REEVALUATIONS: 1697 OF 4234
+
+GENERATION 54/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :35
+Accumulated Learning Time :1275
+CALLs: 435    TIMEOUTs: 51    ERRORs: 0
+REEVALUATIONS: 1730 OF 4309
+
+GENERATION 55/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :36
+Accumulated Learning Time :1312
+CALLs: 426    TIMEOUTs: 52    ERRORs: 0
+REEVALUATIONS: 1763 OF 4384
+
+GENERATION 56/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :30
+Accumulated Learning Time :1342
+CALLs: 554    TIMEOUTs: 53    ERRORs: 0
+REEVALUATIONS: 1789 OF 4462
+
+GENERATION 57/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :53
+Accumulated Learning Time :1395
+CALLs: 431    TIMEOUTs: 56    ERRORs: 0
+REEVALUATIONS: 1820 OF 4533
+
+GENERATION 58/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :41
+Accumulated Learning Time :1437
+CALLs: 433    TIMEOUTs: 57    ERRORs: 0
+REEVALUATIONS: 1847 OF 4601
+
+GENERATION 59/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :38
+Accumulated Learning Time :1475
+CALLs: 468    TIMEOUTs: 58    ERRORs: 0
+REEVALUATIONS: 1874 OF 4673
+
+GENERATION 60/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :60
+Accumulated Learning Time :1535
+CALLs: 402    TIMEOUTs: 58    ERRORs: 0
+REEVALUATIONS: 1915 OF 4753
+
+GENERATION 61/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :47
+Accumulated Learning Time :1582
+CALLs: 422    TIMEOUTs: 58    ERRORs: 0
+REEVALUATIONS: 1954 OF 4832
+
+GENERATION 62/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :25
+Accumulated Learning Time :1608
+CALLs: 477    TIMEOUTs: 59    ERRORs: 0
+REEVALUATIONS: 1987 OF 4910
+
+GENERATION 63/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :90
+Accumulated Learning Time :1699
+CALLs: 457    TIMEOUTs: 64    ERRORs: 0
+REEVALUATIONS: 2022 OF 4989
+
+GENERATION 64/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :82
+Accumulated Learning Time :1781
+CALLs: 503    TIMEOUTs: 65    ERRORs: 0
+REEVALUATIONS: 2050 OF 5066
+
+GENERATION 65/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :52
+Accumulated Learning Time :1834
+CALLs: 381    TIMEOUTs: 66    ERRORs: 0
+REEVALUATIONS: 2082 OF 5136
+
+GENERATION 66/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :69
+Accumulated Learning Time :1904
+CALLs: 411    TIMEOUTs: 71    ERRORs: 0
+REEVALUATIONS: 2122 OF 5215
+
+GENERATION 67/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :57
+Accumulated Learning Time :1961
+CALLs: 398    TIMEOUTs: 73    ERRORs: 0
+REEVALUATIONS: 2165 OF 5295
+
+GENERATION 68/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :87
+Accumulated Learning Time :2049
+CALLs: 501    TIMEOUTs: 75    ERRORs: 0
+REEVALUATIONS: 2199 OF 5377
+
+GENERATION 69/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :30
+Accumulated Learning Time :2080
+CALLs: 466    TIMEOUTs: 75    ERRORs: 0
+REEVALUATIONS: 2233 OF 5455
+
+GENERATION 70/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :15
+Accumulated Learning Time :2095
+CALLs: 347    TIMEOUTs: 75    ERRORs: 0
+REEVALUATIONS: 2276 OF 5532
+
+GENERATION 71/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :47
+Accumulated Learning Time :2142
+CALLs: 329    TIMEOUTs: 76    ERRORs: 0
+REEVALUATIONS: 2311 OF 5601
+
+GENERATION 72/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :81
+Accumulated Learning Time :2224
+CALLs: 467    TIMEOUTs: 77    ERRORs: 0
+REEVALUATIONS: 2342 OF 5677
+
+GENERATION 73/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :104
+Accumulated Learning Time :2328
+CALLs: 336    TIMEOUTs: 81    ERRORs: 0
+REEVALUATIONS: 2384 OF 5752
+
+GENERATION 74/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :43
+Accumulated Learning Time :2372
+CALLs: 414    TIMEOUTs: 84    ERRORs: 0
+REEVALUATIONS: 2413 OF 5822
+
+GENERATION 75/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :66
+Accumulated Learning Time :2439
+CALLs: 351    TIMEOUTs: 86    ERRORs: 0
+REEVALUATIONS: 2452 OF 5897
+
+GENERATION 76/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :130
+Accumulated Learning Time :2569
+CALLs: 385    TIMEOUTs: 88    ERRORs: 0
+REEVALUATIONS: 2489 OF 5969
+
+GENERATION 77/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :45
+Accumulated Learning Time :2615
+CALLs: 402    TIMEOUTs: 89    ERRORs: 0
+REEVALUATIONS: 2535 OF 6054
+
+GENERATION 78/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :8
+Accumulated Learning Time :2623
+CALLs: 319    TIMEOUTs: 89    ERRORs: 0
+REEVALUATIONS: 2572 OF 6120
+
+GENERATION 79/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :48
+Accumulated Learning Time :2671
+CALLs: 389    TIMEOUTs: 91    ERRORs: 0
+REEVALUATIONS: 2603 OF 6188
+
+GENERATION 80/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :134
+Accumulated Learning Time :2806
+CALLs: 514    TIMEOUTs: 93    ERRORs: 0
+REEVALUATIONS: 2637 OF 6272
+
+GENERATION 81/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :73
+Accumulated Learning Time :2879
+CALLs: 406    TIMEOUTs: 94    ERRORs: 0
+REEVALUATIONS: 2667 OF 6343
+
+GENERATION 82/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :40
+Accumulated Learning Time :2919
+CALLs: 376    TIMEOUTs: 95    ERRORs: 0
+REEVALUATIONS: 2706 OF 6417
+
+GENERATION 83/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :126
+Accumulated Learning Time :3046
+CALLs: 290    TIMEOUTs: 95    ERRORs: 0
+REEVALUATIONS: 2749 OF 6488
+
+GENERATION 84/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :31
+Accumulated Learning Time :3078
+CALLs: 314    TIMEOUTs: 95    ERRORs: 0
+REEVALUATIONS: 2803 OF 6573
+
+GENERATION 85/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :62
+Accumulated Learning Time :3141
+CALLs: 330    TIMEOUTs: 97    ERRORs: 0
+REEVALUATIONS: 2849 OF 6649
+
+GENERATION 86/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :39
+Accumulated Learning Time :3180
+CALLs: 367    TIMEOUTs: 97    ERRORs: 0
+REEVALUATIONS: 2894 OF 6729
+
+GENERATION 87/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :33
+Accumulated Learning Time :3213
+CALLs: 305    TIMEOUTs: 97    ERRORs: 0
+REEVALUATIONS: 2934 OF 6800
+
+GENERATION 88/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :31
+Accumulated Learning Time :3245
+CALLs: 349    TIMEOUTs: 99    ERRORs: 0
+REEVALUATIONS: 2979 OF 6880
+
+GENERATION 89/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :110
+Accumulated Learning Time :3356
+CALLs: 358    TIMEOUTs: 101    ERRORs: 0
+REEVALUATIONS: 3016 OF 6952
+
+GENERATION 90/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :25
+Accumulated Learning Time :3381
+CALLs: 314    TIMEOUTs: 102    ERRORs: 0
+REEVALUATIONS: 3060 OF 7027
+
+GENERATION 91/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :81
+Accumulated Learning Time :3463
+CALLs: 281    TIMEOUTs: 103    ERRORs: 0
+REEVALUATIONS: 3102 OF 7097
+
+GENERATION 92/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :22
+Accumulated Learning Time :3485
+CALLs: 354    TIMEOUTs: 103    ERRORs: 0
+REEVALUATIONS: 3141 OF 7169
+
+GENERATION 93/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :27
+Accumulated Learning Time :3513
+CALLs: 321    TIMEOUTs: 103    ERRORs: 0
+REEVALUATIONS: 3184 OF 7242
+
+GENERATION 94/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :35
+Accumulated Learning Time :3548
+CALLs: 411    TIMEOUTs: 103    ERRORs: 0
+REEVALUATIONS: 3223 OF 7320
+
+GENERATION 95/50
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :32
+Accumulated Learning Time :3581
+CALLs: 455    TIMEOUTs: 103    ERRORs: 0
+REEVALUATIONS: 3256 OF 7396
+
+GENERATION 96/50
+exit value = 143
+( ( G(( X(( ( ( ~(( grant_0 )) ) & ( True ) ) | ( ( True ) & ( ~(( grant_1 )) ) ) )) )) ) & ( ( G(( ( X(( ~(( grant_0 )) )) ) | ( X(( ( ( ~(( request_0 )) ) & ( ~(( idle )) ) ) U ( ( ~(( request_0 )) ) & ( idle ) ) )) ) )) ) & ( ( G(( ( X(( X(( ( grant_0 ) & ( grant_1 ) )) )) ) | ( ( ~(( request_0 )) ) | ( X(( ~(( request_1 )) )) ) ) )) ) & ( ( ( ( X(( F(( ( grant_0 ) & ( grant_1 ) )) )) ) | ( G(( request_0 )) ) ) | ( ( G(( ( grant_0 ) & ( request_1 ) )) ) | ( G(( request_0 )) ) ) ) & ( ( G(( ( idle ) | ( X(( ( ~(( grant_0 )) ) & ( ~(( grant_1 )) ) )) ) )) ) & ( ( G(( F(( ( ~(( request_1 )) ) | ( X(( grant_1 )) ) )) )) ) & ( ( G(( ( X(( idle )) ) | ( ( ~(( idle )) ) | ( X(( ( grant_0 ) | ( grant_1 ) )) ) ) )) ) & ( ( G(( ( request_1 ) | ( X(( ~(( grant_1 )) )) ) )) ) & ( ( G(( F(( idle )) )) ) & ( G(( ( grant_1 ) | ( ~(( request_0 )) ) )) ) ) ) ) ) ) ) ) ) )
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+
+Best fitness value: ( ( ( X ( X ( ( grant_0 ) /\ ( grant_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) \/ ( X ( ( [] ( <> ( ( grant_0 ) /\ ( request_1 ) ) ) ) \/ ( [] ( request_0 ) ) ) ) ) 2.2142857142857144
+Generation Time :19
+Accumulated Learning Time :3600
+CALLs: 120    TIMEOUTs: 104    ERRORs: 1
+REEVALUATIONS: 3264 OF 7416
+
+
+TOTAL Learing Time :3600
+
+Solutions: 0
+
+Solutions: 0, Total Solution(with duplicate solution): 0
+Best Solution time: -1.578049353368E9
+Best Solution: 
+TOTAL Time :3600, Evaluate Time: 3218.88
+CALLs: 41655    TIMEOUTs: 104    ERRORs: 1
+CONFIGURATION
+Initial population size: 106
+#Population: 100    #Iterations: 96    #ChromSize: 50
+REEVALUATIONS: 3264 OF 7416

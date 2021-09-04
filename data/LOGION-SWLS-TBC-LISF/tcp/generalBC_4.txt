@@ -1,0 +1,7 @@
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( G(( !(!( send ) U !( !(( ack )) )) )) ) )) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( G(( !(( delivered )) )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( ( !(( ack )) ) & ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) ) )
+( ( ( !(( ack )) ) & ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( F(( ( G(( send )) ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) )
+( ( send ) & ( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( F(( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) )) ) ) )
+( ( F(( ( send ) & ( !(!( ack ) U !( !(( delivered )) )) ) )) ) | ( ( ack ) U ( ( delivered ) & ( !(!( send ) U !( !(( ack )) )) ) ) ) )

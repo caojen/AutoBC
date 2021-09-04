@@ -1,0 +1,1430 @@
+DOM: [[](o -> ! c), [](c -> ! f), [](o -> ! f)]
+GOALS: [[](c  -> (c  U (f || d)) ), [](c  -> (c  U (o || d)) )]
+Initial population size: 42
+Total population size: 100
+LTL Satisfiability Check: Aalta
+
+GENERATION 1/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :1
+Accumulated Learning Time :1
+CALLs: 437    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 46 OF 132
+
+GENERATION 2/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :1
+CALLs: 239    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 91 OF 222
+
+GENERATION 3/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 173    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 143 OF 308
+
+GENERATION 4/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 242    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 186 OF 400
+
+GENERATION 5/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 198    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 237 OF 491
+
+GENERATION 6/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 211    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 290 OF 585
+
+GENERATION 7/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 200    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 341 OF 675
+
+GENERATION 8/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :4
+CALLs: 169    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 392 OF 764
+
+GENERATION 9/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :4
+CALLs: 199    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 445 OF 854
+
+GENERATION 10/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 153    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 507 OF 945
+
+GENERATION 11/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 115    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 565 OF 1028
+
+GENERATION 12/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 128    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 633 OF 1122
+
+GENERATION 13/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 136    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 698 OF 1214
+
+GENERATION 14/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 120    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 767 OF 1308
+
+GENERATION 15/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 135    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 830 OF 1395
+
+GENERATION 16/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 165    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 892 OF 1488
+
+GENERATION 17/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 116    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 960 OF 1579
+
+GENERATION 18/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 107    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1031 OF 1671
+
+GENERATION 19/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 108    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1102 OF 1762
+
+GENERATION 20/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 138    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1171 OF 1857
+
+GENERATION 21/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 157    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1229 OF 1944
+
+GENERATION 22/50
+
+Best fitness value: ( ( ( ( ! ( o ) ) /\ ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( o ) ) /\ ( ! ( d ) ) ) ) ) /\ ( c ) ) 2.0
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 158    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1291 OF 2034
+
+GENERATION 23/50
+
+Best fitness value: ( ( ( ( ! ( o ) ) /\ ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( o ) ) /\ ( ! ( d ) ) ) ) ) /\ ( c ) ) 2.0
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 106    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1355 OF 2122
+
+GENERATION 24/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (1): 
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 114    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1426 OF 2212
+
+GENERATION 25/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (4): 
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 159    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1486 OF 2305
+
+GENERATION 26/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (12): 
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 112    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1552 OF 2395
+
+GENERATION 27/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (27): 
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 173    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1605 OF 2483
+
+GENERATION 28/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (50): 
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 173    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1652 OF 2568
+
+GENERATION 29/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (84): 
+Generation Time :0
+Accumulated Learning Time :11
+CALLs: 195    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1705 OF 2659
+
+GENERATION 30/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (128): 
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 192    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1743 OF 2741
+
+GENERATION 31/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (183): 
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 185    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1782 OF 2819
+
+GENERATION 32/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (255): 
+Generation Time :1
+Accumulated Learning Time :14
+CALLs: 211    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1819 OF 2900
+
+GENERATION 33/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (344): 
+Generation Time :1
+Accumulated Learning Time :15
+CALLs: 232    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1846 OF 2977
+
+GENERATION 34/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (448): 
+Generation Time :1
+Accumulated Learning Time :16
+CALLs: 224    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1881 OF 3059
+
+GENERATION 35/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (560): 
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 177    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1915 OF 3136
+
+GENERATION 36/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (675): 
+Generation Time :1
+Accumulated Learning Time :18
+CALLs: 196    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1957 OF 3219
+
+GENERATION 37/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (788): 
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 173    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1993 OF 3295
+
+GENERATION 38/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (902): 
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 187    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2034 OF 3374
+
+GENERATION 39/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (1016): 
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 180    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2072 OF 3454
+
+GENERATION 40/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (1129): 
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 121    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2119 OF 3527
+
+GENERATION 41/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (1242): 
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 148    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2155 OF 3591
+
+GENERATION 42/50
+
+Fittest value: 2.642857142857143 for chromosome ( ( ( ( ! ( d ) ) V ( ! ( d ) ) ) U ( ( ! ( c ) ) /\ ( ( ! ( d ) ) V ( ! ( d ) ) ) ) ) /\ ( c ) )
+Solutions (1352): 
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 158    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2206 OF 3675
+
+GENERATION 43/50
+
+TOTAL Learing Time :26
+
+Solutions: 30
+( ( ( ( ~(( d )) ) U ( ( ~(( o )) ) & ( ~(( d )) ) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) U ( ( ~(( o )) ) & ( ~(( d )) ) ) ) ) ) & ( c ) )
+( (( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) U ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) | G(( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) )
+( X(( ( ( ~(( d )) ) U ( ( ~(( c )) ) & ( ~(( d )) ) ) ) & ( c ) )) )
+( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) & ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) )
+( (( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) U ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) | G(( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) )
+( ( ( ( False ) | ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( False ) | ( ~(( d )) ) ) ) ) & ( c ) )
+( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )
+( (( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( f ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) U ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( f ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) | G(( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( f ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) )
+( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) | ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) )
+( F(( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) )
+( ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) | ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) )
+( ( ( ( True ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( True ) & ( ~(( d )) ) ) ) ) & ( c ) )
+( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) & ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) )
+( F(( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( o ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) )
+( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) & ( G(( ( ~(( f )) ) | ( ~(( o )) ) )) ) )
+( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) | ( ( ( ( ~(( o )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( o )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) )
+( ( ( ( ~(( d )) ) & ( True ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( True ) ) ) ) & ( c ) )
+( ( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) | ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) )
+( ( ( ( ~(( d )) ) U ( ( o ) & ( ~(( d )) ) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) U ( ( o ) & ( ~(( d )) ) ) ) ) ) & ( c ) )
+( X(( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) )
+( X(( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) )
+( (( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) ) U ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) | G(( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) )
+( ( ( ~(( d )) ) U ( ( ~(( c )) ) & ( ~(( d )) ) ) ) & ( c ) )
+( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )
+( (( ( ( ~(( d )) ) U ( ( ~(( c )) ) & ( ~(( d )) ) ) ) & ( c ) ) U ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) | G(( ( ( ~(( d )) ) U ( ( ~(( c )) ) & ( ~(( d )) ) ) ) & ( c ) )) )
+( (( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) U ( ( ( ~(( d )) ) U ( ( ~(( c )) ) & ( ~(( d )) ) ) ) & ( c ) )) | G(( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )) )
+( (( ( ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) U ( ( f ) & ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) ) ) & ( c ) ) U ( ( ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) U ( ( f ) & ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) ) ) & ( c ) )) | G(( ( ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) U ( ( f ) & ( (( ~(( d )) ) U ( ~(( d )) )) | G(( ~(( d )) )) ) ) ) & ( c ) )) )
+( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ( ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) U ( ( ~(( c )) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) ) & ( ~(~( ~(( d )) ) U ~( ~(( d )) )) ) ) ) & ( c ) )
+( F(( ( ( ( ~(( d )) ) & ( ~(( d )) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) & ( c ) )) )
+( ( ( ( ~(( d )) ) U ( ( ~(( d )) ) & ( ~(( d )) ) ) ) U ( ( ~(( c )) ) & ( ( ~(( d )) ) U ( ( ~(( d )) ) & ( ~(( d )) ) ) ) ) ) & ( c ) )
+
+Solutions: 30, Total Solution(with duplicate solution): 1352
+First Solution Time: 8.80 sec, First Solution Iteration: 24
+TOTAL Time :26, Evaluate Time: 16.81
+CALLs: 7220    TIMEOUTs: 0    ERRORs: 0
+CONFIGURATION
+Initial population size: 42
+#Population: 100    #Iterations: 42    #ChromSize: 50
+REEVALUATIONS: 2206 OF 3675
+Exception in thread "main" java.lang.StackOverflowError
+	at java.util.HashMap.put(HashMap.java:612)
+	at java.util.HashSet.add(HashSet.java:220)
+	at ltlparse.Parser.parse(Parser.java:190)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:102)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:309)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:75)
+	at ltlparse.Formula.clone(Formula.java:796)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:260)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:264)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)

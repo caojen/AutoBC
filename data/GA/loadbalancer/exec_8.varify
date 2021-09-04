@@ -1,0 +1,4 @@
+Is BC: 0
+Total: 1
+FALSE-     0: ( F(( (( (( X(( F(( grant_0 )) )) ) U ( G(( request_0 )) )) | G(( X(( F(( grant_0 )) )) )) ) U ( (( G(( F(( ( !(( request_0 )) ) & ( X(( grant_0 )) ) )) )) ) U ( G(( request_0 )) )) | G(( G(( F(( ( !(( request_0 )) ) & ( X(( grant_0 )) ) )) )) )) )) | G(( (( X(( F(( grant_0 )) )) ) U ( G(( request_0 )) )) | G(( X(( F(( grant_0 )) )) )) )) )) )
+    -> wrong at property 1

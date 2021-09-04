@@ -1,0 +1,4 @@
+( F(( ( call ) & ( G(( ( !(( atfloor )) ) & ( !(( open )) ) )) ) )) )
+( F(( ( call ) & ( ( atfloor ) & ( G(( !(( open )) )) ) ) )) )
+( G(( F(( ( call ) & ( G(( !(( open )) )) ) )) )) )
+( ( call ) & ( G(( !(( open )) )) ) )

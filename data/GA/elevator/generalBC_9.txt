@@ -1,0 +1,3 @@
+( X(( F(( ( call ) & ( G(( ~(( open )) )) ) )) )) )
+( ( ( call ) & ( G(( ~(( open )) )) ) ) | ( ( ~(( atfloor )) ) & ( X(( open )) ) ) )
+( ( call ) & ( F(( F(( ( call ) & ( G(( ~(( open )) )) ) )) )) ) )

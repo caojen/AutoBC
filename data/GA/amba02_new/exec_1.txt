@@ -1,0 +1,72 @@
+DOM: [!hlock1, !hlock0, []( hlock0 -> hbusreq0 ), !hready, !hburst0, !hburst1, [](<>(!stateA1)), !hbusreq0, !hbusreq1, []( hlock1 -> hbusreq1 ), [](<>(hready))]
+GOALS: [[]((!hmaster0) -> (!hbusreq0 <-> !busreq)), []((hready) -> ((hgrant1) <-> (X(hmaster0)))), []((decide  &&  !hlock0  &&  X(hgrant0))->X(!locked)), []((!hready) -> X(!start)), []((!decide)->(((!hgrant1)<->X(!hgrant1)))), decide, []((hready) -> ((hgrant0) <-> (X(!hmaster0)))), [](<>(!stateG2)), !stateG3_2, [](((X(!start))) -> ((hmastlock) <-> X(hmastlock))), [](((stateG10_1) && (hbusreq1))->X(!stateG10_1)), [](((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((!hmastlock) || (!start) || ((hburst0) || (!hburst1)))) ->  (X(!stateG3_0) && X(!stateG3_1) && X(!stateG3_2))), [](((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((start))) -> false), [](((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->    (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2))), !hmaster0, [](((stateG2) && (!start) && (!busreq)) -> X(!stateG2)), !locked, [](<>(((!hmaster0))  ||  !hbusreq0)), [](((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((hmastlock) && (start) && ((!hburst0) && (hburst1)) && (!hready))) ->    (X(stateG3_0) && X(!stateG3_1) && X(!stateG3_2))), []((!decide)->(!locked <-> X(!locked))), [](((!stateG2) && ((!hmastlock) || (!start) || (hburst0) || (hburst1))) -> X(!stateG2)), [](((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((start))) -> false), [](((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((!start) && (hready))) ->    (X(!stateG3_0) && X(!stateG3_1) && X(!stateG3_2))), [](((!stateG10_1) && ((!hgrant1) && (!hbusreq1)))->X(stateG10_1)), [](((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->    (X(stateG3_0) && X(!stateG3_1) && X(!stateG3_2))), !stateG10_1, [](((!stateG3_0) && (!stateG3_1) && (!stateG3_2) &&   ((hmastlock) && (start) && ((!hburst0) && (hburst1)) && (hready))) ->    (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2))), []((!decide)->(((!hgrant0)<->X(!hgrant0)))), !hmastlock, [](((stateG2) && (start)) -> false), [](((stateG2) && (!start) && (busreq)) -> X(stateG2)), hgrant0, [](((!stateG10_1) && (((hgrant1) || (hbusreq1))))->X(!stateG10_1)), [](((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->    (X(stateG3_0) && X(stateG3_1) && X(!stateG3_2))), !stateA1_0, !stateA1_1, !stateG2_0, !stateG2_1, !stateA1, [](X(!start) -> (((hmaster0)) <-> (X(hmaster0)))), [](<>(((hmaster0))  ||  !hbusreq1)), [](((stateA1) && (!busreq)) -> X(!stateA1)), [](((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->    (X(stateG3_0) && X(stateG3_1) && X(!stateG3_2))), []((hmaster0) -> (!hbusreq1 <-> !busreq)), [](((!stateA1) && ((!hmastlock) || (hburst0) || (hburst1))) -> X(!stateA1)), [](((stateG10_1) && ((!hgrant1) && (!hbusreq1)))->X(stateG10_1)), [](((!stateA1) &&  (hmastlock) && (!hburst0) && (!hburst1))  -> X(stateA1)), start, [](((!stateG3_0) && (!stateG3_1) && (stateG3_2) && ((!start) && (!hready))) ->    (X(!stateG3_0) && X(!stateG3_1) && X(stateG3_2))), []((decide  &&  hlock0  &&  X(hgrant0))->X(locked)), [](((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((start))) -> false), [](((!stateG2) &&  (hmastlock) && (start) && (!hburst0) && (!hburst1))  -> X(stateG2)), []((decide  &&  hlock1  &&  X(hgrant1))->X(locked)), []((decide  &&  !hlock1  &&  X(hgrant1))->X(!locked)), [](((stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (hready))) ->    (X(!stateG3_0) && X(!stateG3_1) && X(stateG3_2))), !hgrant1, [](((stateG10_1) && (((hgrant1)) && (!hbusreq1)))->false), []((hready) -> (!locked <-> X(!hmastlock))), [](((stateA1) && (busreq)) -> X(stateA1)), [](((stateG3_0) && (!stateG3_1) && (!stateG3_2) && ((start))) -> false), [](((!stateG3_0) && (stateG3_1) && (!stateG3_2) && ((!start) && (!hready))) ->    (X(!stateG3_0) && X(stateG3_1) && X(!stateG3_2))), []((decide  &&  !hbusreq0  &&  !hbusreq1) -> X(hgrant0))]
+Initial population size: 566
+Total population size: 100
+LTL Satisfiability Check: Aalta
+Drop time(second): []
+
+GENERATION 1/50
+
+Best fitness value: ( ( ( X ( ! ( stateG3_0 ) ) ) /\ ( ( X ( stateG3_1 ) ) /\ ( X ( ! ( stateG3_2 ) ) ) ) ) \/ ( <> ( ( ( X ( stateG3_0 ) ) \/ ( ( X ( ! ( stateG3_1 ) ) ) \/ ( X ( stateG3_2 ) ) ) ) /\ ( ( ! ( stateG3_0 ) ) /\ ( ( stateG3_1 ) /\ ( ( ! ( stateG3_2 ) ) /\ ( ( ! ( start ) ) /\ ( ! ( hready ) ) ) ) ) ) ) ) ) 1.6129032258064515
+Generation Time :904
+Accumulated Learning Time :904
+CALLs: 34802    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 107 OF 646
+
+GENERATION 2/50
+
+Best fitness value: ( ( ( X ( ! ( stateG3_0 ) ) ) /\ ( ( X ( stateG3_1 ) ) /\ ( X ( ! ( stateG3_2 ) ) ) ) ) \/ ( <> ( ( ( X ( stateG3_0 ) ) \/ ( ( X ( ! ( stateG3_1 ) ) ) \/ ( X ( stateG3_2 ) ) ) ) /\ ( ( ! ( stateG3_0 ) ) /\ ( ( stateG3_1 ) /\ ( ( ! ( stateG3_2 ) ) /\ ( ( ! ( start ) ) /\ ( ! ( hready ) ) ) ) ) ) ) ) ) 1.6129032258064515
+Generation Time :295
+Accumulated Learning Time :1200
+CALLs: 3308    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 136 OF 730
+
+GENERATION 3/50
+
+Best fitness value: ( ( X ( ! ( stateG3_1 ) ) ) U ( X ( stateG3_2 ) ) ) 1.6451612903225807
+Generation Time :149
+Accumulated Learning Time :1349
+CALLs: 3304    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 165 OF 813
+
+GENERATION 4/50
+
+Best fitness value: ( ( X ( ! ( stateG3_1 ) ) ) U ( X ( stateG3_2 ) ) ) 1.6451612903225807
+Generation Time :380
+Accumulated Learning Time :1729
+CALLs: 3182    TIMEOUTs: 44    ERRORs: 0
+REEVALUATIONS: 187 OF 892
+
+GENERATION 5/50
+
+Best fitness value: ( ( ( X ( ! ( stateG3_0 ) ) ) /\ ( ( X ( stateG3_1 ) ) /\ ( X ( stateG3_2 ) ) ) ) \/ ( <> ( ( ( X ( stateG3_0 ) ) \/ ( ( X ( ! ( stateG3_1 ) ) ) \/ ( X ( stateG3_2 ) ) ) ) /\ ( ( ! ( stateG3_0 ) ) /\ ( ( stateG3_1 ) /\ ( ( stateG3_2 ) /\ ( ( ! ( start ) ) /\ ( ! ( hready ) ) ) ) ) ) ) ) ) 1.7580645161290323
+Generation Time :1756
+Accumulated Learning Time :3486
+CALLs: 3248    TIMEOUTs: 193    ERRORs: 0
+REEVALUATIONS: 208 OF 971
+
+GENERATION 6/50
+exit value = 143
+( ( G(( ( X(( ~(( locked )) )) ) | ( ( ~(( decide )) ) | ( ( hlock1 ) | ( X(( ~(( hgrant1 )) )) ) ) ) )) ) & ( ( G(( ( X(( locked )) ) | ( ( ~(( decide )) ) | ( ( ~(( hlock1 )) ) | ( X(( ~(( hgrant1 )) )) ) ) ) )) ) & ( ( G(( ( X(( locked )) ) | ( ( ~(( decide )) ) | ( ( ~(( hlock0 )) ) | ( X(( ~(( hgrant0 )) )) ) ) ) )) ) & ( ( G(( ( X(( ~(( locked )) )) ) | ( ( ~(( decide )) ) | ( ( hlock0 ) | ( X(( ~(( hgrant0 )) )) ) ) ) )) ) & ( ( ~(( hgrant1 )) ) & ( ( G(( ( X(( stateG10_1 )) ) | ( ( stateG10_1 ) | ( ( hgrant1 ) | ( hbusreq1 ) ) ) )) ) & ( ( G(( ( (( ~(( locked )) ) & ( X(( ~(( hmastlock )) )) )) | (~( ~(( locked )) ) & ~( X(( ~(( hmastlock )) )) )) ) | ( ~(( hready )) ) )) ) & ( ( G(( ( X(( hgrant0 )) ) | ( ( ~(( decide )) ) | ( ( hbusreq0 ) | ( hbusreq1 ) ) ) )) ) & ( ( G(( ( X(( stateA1 )) ) | ( ( ~(( stateA1 )) ) | ( ~(( busreq )) ) ) )) ) & ( ( G(( ( X(( ~(( stateA1 )) )) ) | ( ( busreq ) | ( ~(( stateA1 )) ) ) )) ) & ( ( start ) & ( ( ~(( hready )) ) & ( ( ~(( stateG2_1 )) ) & ( ( ~(( stateG2_0 )) ) & ( ( G(( F(( hready )) )) ) & ( ( G(( ( False ) | ( ( ~(( stateG2 )) ) | ( ~(( start )) ) ) )) ) & ( ( ~(( hlock1 )) ) & ( ( ~(( hlock0 )) ) & ( ( G(( ( X(( stateG2 )) ) | ( ( stateG2 ) | ( ( ~(( hmastlock )) ) | ( ( ~(( start )) ) | ( ( hburst0 ) | ( hburst1 ) ) ) ) ) )) ) & ( ( ~(( stateA1_0 )) ) & ( ( ~(( stateA1_1 )) ) & ( ( G(( ( X(( stateG10_1 )) ) | ( ( ~(( stateG10_1 )) ) | ( ( hgrant1 ) | ( hbusreq1 ) ) ) )) ) & ( ( hgrant0 ) & ( ( G(( F(( ~(( stateG2 )) )) )) ) & ( ( ~(( stateA1 )) ) & ( ( G(( ( X(( ~(( stateG2 )) )) ) | ( ( stateG2 ) | ( ( hmastlock ) & ( ( start ) & ( ( ~(( hburst0 )) ) & ( ~(( hburst1 )) ) ) ) ) ) )) ) & ( ( G(( F(( ~(( stateA1 )) )) )) ) & ( ( G(( ( hmaster0 ) | ( (( ~(( hbusreq0 )) ) & ( ~(( busreq )) )) | (~( ~(( hbusreq0 )) ) & ~( ~(( busreq )) )) ) )) ) & ( ( G(( ( (( hmaster0 ) & ( X(( hmaster0 )) )) | (~( hmaster0 ) & ~( X(( hmaster0 )) )) ) | ( X(( start )) ) )) ) & ( ( G(( ( (( hmastlock ) & ( X(( hmastlock )) )) | (~( hmastlock ) & ~( X(( hmastlock )) )) ) | ( X(( start )) ) )) ) & ( ( G(( ( False ) | ( ( ~(( stateG10_1 )) ) | ( ( hbusreq1 ) | ( ~(( hgrant1 )) ) ) ) )) ) & ( ( G(( ( decide ) | ( (( ~(( locked )) ) & ( X(( ~(( locked )) )) )) | (~( ~(( locked )) ) & ~( X(( ~(( locked )) )) )) ) )) ) & ( ( G(( ( decide ) | ( (( ~(( hgrant1 )) ) & ( X(( ~(( hgrant1 )) )) )) | (~( ~(( hgrant1 )) ) & ~( X(( ~(( hgrant1 )) )) )) ) )) ) & ( ( ~(( stateG10_1 )) ) & ( ( G(( ( ( X(( stateG3_0 )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ( ~(( hmastlock )) ) | ( ( ~(( start )) ) | ( ( hready ) | ( ( hburst0 ) | ( ~(( hburst1 )) ) ) ) ) ) ) ) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( ~(( stateG3_0 )) ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ( start ) | ( ~(( hready )) ) ) ) ) ) )) ) & ( ( G(( ( (( hgrant1 ) & ( X(( hmaster0 )) )) | (~( hgrant1 ) & ~( X(( hmaster0 )) )) ) | ( ~(( hready )) ) )) ) & ( ( ~(( locked )) ) & ( ( ~(( hburst1 )) ) & ( ( G(( F(( ( hmaster0 ) | ( ~(( hbusreq1 )) ) )) )) ) & ( ( ~(( hburst0 )) ) & ( ( G(( ( False ) | ( ( ~(( stateG3_0 )) ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ~(( start )) ) ) ) ) )) ) & ( ( G(( ( (( hgrant0 ) & ( X(( ~(( hmaster0 )) )) )) | (~( hgrant0 ) & ~( X(( ~(( hmaster0 )) )) )) ) | ( ~(( hready )) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ( ~(( hmastlock )) ) | ( ( ~(( start )) ) | ( ( ( hburst0 ) | ( ~(( hburst1 )) ) ) | ( ~(( hready )) ) ) ) ) ) ) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ( start ) | ( hready ) ) ) ) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( stateG3_2 )) ) ) ) | ( ( ~(( stateG3_0 )) ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ( start ) | ( ~(( hready )) ) ) ) ) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( stateG3_2 )) ) ) ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( ~(( stateG3_2 )) ) | ( ( start ) | ( hready ) ) ) ) ) )) ) & ( ( G(( ( ( X(( stateG3_0 )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ( start ) | ( ~(( hready )) ) ) ) ) ) )) ) & ( ( G(( ( ( X(( stateG3_0 )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( ~(( stateG3_0 )) ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ( start ) | ( hready ) ) ) ) ) )) ) & ( ( G(( ( ( X(( stateG3_0 )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( ~(( stateG3_0 )) ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ( start ) | ( hready ) ) ) ) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( ~(( stateG3_2 )) ) | ( ( start ) | ( ~(( hready )) ) ) ) ) ) )) ) & ( ( G(( ( hready ) | ( X(( ~(( start )) )) ) )) ) & ( ( G(( ( False ) | ( ( ~(( stateG3_0 )) ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ~(( start )) ) ) ) ) )) ) & ( ( G(( ( False ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( ~(( stateG3_2 )) ) | ( ~(( start )) ) ) ) ) )) ) & ( ( G(( ( False ) | ( ( stateG3_0 ) | ( ( ~(( stateG3_1 )) ) | ( ( stateG3_2 ) | ( ~(( start )) ) ) ) ) )) ) & ( ( ~(( hbusreq1 )) ) & ( ( ~(( hbusreq0 )) ) & ( ( G(( ( X(( stateA1 )) ) | ( ( stateA1 ) | ( ( ~(( hmastlock )) ) | ( ( hburst0 ) | ( hburst1 ) ) ) ) )) ) & ( ( G(( ( X(( ~(( stateA1 )) )) ) | ( ( stateA1 ) | ( ( hmastlock ) & ( ( ~(( hburst0 )) ) & ( ~(( hburst1 )) ) ) ) ) )) ) & ( ( G(( F(( ( ~(( hmaster0 )) ) | ( ~(( hbusreq0 )) ) )) )) ) & ( ( G(( ( hbusreq0 ) | ( ~(( hlock0 )) ) )) ) & ( ( G(( ( hbusreq1 ) | ( ~(( hlock1 )) ) )) ) & ( ( G(( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( ~(( stateG3_1 )) )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( ( stateG3_0 ) | ( ( stateG3_1 ) | ( ( stateG3_2 ) | ( ( hmastlock ) & ( ( start ) & ( ( hburst1 ) & ( ~(( hburst0 )) ) ) ) ) ) ) ) )) ) & ( ( decide ) & ( ( ( ( X(( ~(( stateG3_0 )) )) ) & ( ( X(( stateG3_1 )) ) & ( X(( ~(( stateG3_2 )) )) ) ) ) | ( F(( ( ( X(( stateG3_0 )) ) | ( ( X(( ~(( stateG3_1 )) )) ) | ( X(( stateG3_2 )) ) ) ) & ( ( ~(( stateG3_0 )) ) U ( ( stateG3_1 ) & ( ( ~(( stateG3_2 )) ) & ( ( ~(( start )) ) & ( ~(( hready )) ) ) ) ) ) )) ) ) & ( ( G(( ( (( ~(( hbusreq1 )) ) & ( ~(( busreq )) )) | (~( ~(( hbusreq1 )) ) & ~( ~(( busreq )) )) ) | ( ~(( hmaster0 )) ) )) ) & ( ( G(( ( X(( ~(( stateG10_1 )) )) ) | ( ( stateG10_1 ) | ( ( ~(( hgrant1 )) ) & ( ~(( hbusreq1 )) ) ) ) )) ) & ( ( G(( ( X(( stateG2 )) ) | ( ( ~(( stateG2 )) ) | ( ( start ) | ( ~(( busreq )) ) ) ) )) ) & ( ( G(( ( X(( ~(( stateG2 )) )) ) | ( ( ~(( stateG2 )) ) | ( ( start ) | ( busreq ) ) ) )) ) & ( ( G(( ( X(( ~(( stateG10_1 )) )) ) | ( ( ~(( stateG10_1 )) ) | ( ~(( hbusreq1 )) ) ) )) ) & ( ( ~(( hmastlock )) ) & ( ( ~(( stateG3_2 )) ) & ( ~(( hmaster0 )) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) )
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+
+Best fitness value: ( ( ( X ( ! ( stateG3_0 ) ) ) /\ ( ( X ( stateG3_1 ) ) /\ ( X ( true ) ) ) ) \/ ( <> ( ( ( X ( stateG3_0 ) ) \/ ( ( X ( ! ( stateG3_1 ) ) ) \/ ( X ( stateG3_2 ) ) ) ) /\ ( ( ! ( stateG3_0 ) ) /\ ( ( stateG3_1 ) /\ ( ( true ) /\ ( ( ! ( start ) ) /\ ( ! ( hready ) ) ) ) ) ) ) ) ) 1.7741935483870968
+Generation Time :117
+Accumulated Learning Time :3603
+CALLs: 375    TIMEOUTs: 193    ERRORs: 1
+REEVALUATIONS: 209 OF 982
+
+
+TOTAL Learing Time :3603
+
+Solutions: 0
+
+Solutions: 0, Total Solution(with duplicate solution): 0
+Best Solution time: -1.578065840889E9
+Best Solution: 
+TOTAL Time :3603, Evaluate Time: 3551.12
+CALLs: 48219    TIMEOUTs: 193    ERRORs: 1
+CONFIGURATION
+Initial population size: 566
+#Population: 100    #Iterations: 6    #ChromSize: 50
+REEVALUATIONS: 209 OF 982

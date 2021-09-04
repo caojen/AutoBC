@@ -1,0 +1,3396 @@
+DOM: [[](o -> ! c), [](c -> ! f), [](o -> ! f)]
+GOALS: [[](c  -> (c  U (f || d)) ), [](c  -> (c  U (o || d)) )]
+Initial population size: 42
+Total population size: 100
+LTL Satisfiability Check: Aalta
+
+GENERATION 1/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :0
+CALLs: 425    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 44 OF 131
+
+GENERATION 2/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :1
+CALLs: 227    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 95 OF 222
+
+GENERATION 3/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :1
+CALLs: 238    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 141 OF 312
+
+GENERATION 4/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 179    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 191 OF 402
+
+GENERATION 5/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 169    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 243 OF 488
+
+GENERATION 6/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 186    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 300 OF 578
+
+GENERATION 7/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 162    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 356 OF 669
+
+GENERATION 8/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 204    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 412 OF 764
+
+GENERATION 9/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :4
+CALLs: 190    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 471 OF 856
+
+GENERATION 10/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :4
+CALLs: 187    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 530 OF 951
+
+GENERATION 11/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 168    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 582 OF 1036
+
+GENERATION 12/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 169    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 638 OF 1126
+
+GENERATION 13/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :5
+CALLs: 154    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 697 OF 1213
+
+GENERATION 14/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 171    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 754 OF 1302
+
+GENERATION 15/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 85    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 822 OF 1389
+
+GENERATION 16/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 117    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 886 OF 1476
+
+GENERATION 17/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :6
+CALLs: 153    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 951 OF 1571
+
+GENERATION 18/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 79    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1015 OF 1651
+
+GENERATION 19/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 123    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1086 OF 1747
+
+GENERATION 20/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 147    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1146 OF 1838
+
+GENERATION 21/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :7
+CALLs: 128    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1210 OF 1927
+
+GENERATION 22/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 136    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1270 OF 2015
+
+GENERATION 23/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 85    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1343 OF 2107
+
+GENERATION 24/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 101    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1411 OF 2197
+
+GENERATION 25/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :8
+CALLs: 79    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1478 OF 2281
+
+GENERATION 26/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 122    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1547 OF 2374
+
+GENERATION 27/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 102    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1615 OF 2459
+
+GENERATION 28/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 101    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1679 OF 2542
+
+GENERATION 29/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 63    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1750 OF 2627
+
+GENERATION 30/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :9
+CALLs: 117    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1818 OF 2716
+
+GENERATION 31/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 64    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1888 OF 2801
+
+GENERATION 32/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 84    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 1962 OF 2892
+
+GENERATION 33/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 88    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2040 OF 2986
+
+GENERATION 34/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 96    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2111 OF 3076
+
+GENERATION 35/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 57    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2189 OF 3165
+
+GENERATION 36/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :10
+CALLs: 77    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2257 OF 3248
+
+GENERATION 37/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :11
+CALLs: 106    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2329 OF 3342
+
+GENERATION 38/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :11
+CALLs: 96    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2401 OF 3433
+
+GENERATION 39/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :11
+CALLs: 79    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2471 OF 3519
+
+GENERATION 40/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :11
+CALLs: 97    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2543 OF 3608
+
+GENERATION 41/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 100    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2612 OF 3695
+
+GENERATION 42/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 76    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2684 OF 3784
+
+GENERATION 43/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 79    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2755 OF 3869
+
+GENERATION 44/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2828 OF 3954
+
+GENERATION 45/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 47    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2905 OF 4041
+
+GENERATION 46/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :12
+CALLs: 97    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 2973 OF 4129
+
+GENERATION 47/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 75    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3050 OF 4221
+
+GENERATION 48/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 61    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3119 OF 4303
+
+GENERATION 49/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 93    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3184 OF 4385
+
+GENERATION 50/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 91    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3255 OF 4475
+
+GENERATION 51/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 57    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3333 OF 4564
+
+GENERATION 52/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :13
+CALLs: 92    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3407 OF 4654
+
+GENERATION 53/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 81    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3478 OF 4740
+
+GENERATION 54/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 88    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3550 OF 4831
+
+GENERATION 55/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 81    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3625 OF 4921
+
+GENERATION 56/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 76    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3705 OF 5018
+
+GENERATION 57/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 70    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3785 OF 5113
+
+GENERATION 58/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :14
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3864 OF 5204
+
+GENERATION 59/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :15
+CALLs: 70    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 3943 OF 5296
+
+GENERATION 60/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :15
+CALLs: 93    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4014 OF 5384
+
+GENERATION 61/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :15
+CALLs: 115    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4085 OF 5477
+
+GENERATION 62/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :15
+CALLs: 75    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4158 OF 5566
+
+GENERATION 63/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :15
+CALLs: 64    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4234 OF 5655
+
+GENERATION 64/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4313 OF 5745
+
+GENERATION 65/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 80    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4388 OF 5834
+
+GENERATION 66/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4463 OF 5922
+
+GENERATION 67/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 82    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4536 OF 6012
+
+GENERATION 68/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 51    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4619 OF 6105
+
+GENERATION 69/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :16
+CALLs: 76    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4694 OF 6194
+
+GENERATION 70/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4776 OF 6287
+
+GENERATION 71/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 60    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4849 OF 6372
+
+GENERATION 72/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 4929 OF 6463
+
+GENERATION 73/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5001 OF 6546
+
+GENERATION 74/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5078 OF 6638
+
+GENERATION 75/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 74    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5150 OF 6724
+
+GENERATION 76/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5227 OF 6812
+
+GENERATION 77/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :17
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5302 OF 6898
+
+GENERATION 78/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 47    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5383 OF 6991
+
+GENERATION 79/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5460 OF 7080
+
+GENERATION 80/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 65    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5539 OF 7172
+
+GENERATION 81/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 96    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5610 OF 7262
+
+GENERATION 82/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 72    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5685 OF 7349
+
+GENERATION 83/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :18
+CALLs: 79    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5761 OF 7439
+
+GENERATION 84/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 61    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5839 OF 7530
+
+GENERATION 85/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5917 OF 7619
+
+GENERATION 86/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 5997 OF 7709
+
+GENERATION 87/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6086 OF 7802
+
+GENERATION 88/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 61    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6163 OF 7893
+
+GENERATION 89/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 57    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6244 OF 7985
+
+GENERATION 90/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 64    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6324 OF 8078
+
+GENERATION 91/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :19
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6404 OF 8166
+
+GENERATION 92/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6477 OF 8251
+
+GENERATION 93/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6553 OF 8337
+
+GENERATION 94/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 55    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6633 OF 8427
+
+GENERATION 95/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6718 OF 8525
+
+GENERATION 96/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 49    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6792 OF 8611
+
+GENERATION 97/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 60    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6872 OF 8703
+
+GENERATION 98/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 6957 OF 8798
+
+GENERATION 99/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :20
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7033 OF 8886
+
+GENERATION 100/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7114 OF 8976
+
+GENERATION 101/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 76    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7193 OF 9069
+
+GENERATION 102/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 82    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7268 OF 9159
+
+GENERATION 103/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 29    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7350 OF 9248
+
+GENERATION 104/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7432 OF 9341
+
+GENERATION 105/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7512 OF 9432
+
+GENERATION 106/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 41    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7595 OF 9525
+
+GENERATION 107/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :21
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7673 OF 9615
+
+GENERATION 108/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 52    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7752 OF 9704
+
+GENERATION 109/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7835 OF 9795
+
+GENERATION 110/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7913 OF 9883
+
+GENERATION 111/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 7997 OF 9973
+
+GENERATION 112/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 66    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8070 OF 10057
+
+GENERATION 113/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8150 OF 10147
+
+GENERATION 114/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 62    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8227 OF 10235
+
+GENERATION 115/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 49    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8300 OF 10317
+
+GENERATION 116/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :22
+CALLs: 35    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8386 OF 10411
+
+GENERATION 117/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8470 OF 10503
+
+GENERATION 118/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8552 OF 10596
+
+GENERATION 119/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8630 OF 10684
+
+GENERATION 120/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 84    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8703 OF 10774
+
+GENERATION 121/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8785 OF 10864
+
+GENERATION 122/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8863 OF 10948
+
+GENERATION 123/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 8945 OF 11037
+
+GENERATION 124/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 37    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9027 OF 11126
+
+GENERATION 125/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :23
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9110 OF 11214
+
+GENERATION 126/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 45    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9188 OF 11301
+
+GENERATION 127/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 63    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9270 OF 11395
+
+GENERATION 128/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 72    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9345 OF 11485
+
+GENERATION 129/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9429 OF 11576
+
+GENERATION 130/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9514 OF 11668
+
+GENERATION 131/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9591 OF 11757
+
+GENERATION 132/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 25    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9667 OF 11840
+
+GENERATION 133/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9751 OF 11931
+
+GENERATION 134/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 21    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9834 OF 12021
+
+GENERATION 135/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :24
+CALLs: 33    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 9918 OF 12112
+
+GENERATION 136/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10000 OF 12201
+
+GENERATION 137/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 46    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10077 OF 12287
+
+GENERATION 138/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 99    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10154 OF 12382
+
+GENERATION 139/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 60    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10233 OF 12473
+
+GENERATION 140/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10316 OF 12567
+
+GENERATION 141/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 40    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10399 OF 12659
+
+GENERATION 142/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 12    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10489 OF 12751
+
+GENERATION 143/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :25
+CALLs: 43    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10573 OF 12845
+
+GENERATION 144/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 57    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10659 OF 12944
+
+GENERATION 145/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 64    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10736 OF 13034
+
+GENERATION 146/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 52    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10812 OF 13122
+
+GENERATION 147/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 47    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10893 OF 13213
+
+GENERATION 148/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 68    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 10972 OF 13304
+
+GENERATION 149/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 84    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11048 OF 13394
+
+GENERATION 150/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :26
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11133 OF 13485
+
+GENERATION 151/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11209 OF 13570
+
+GENERATION 152/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 51    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11292 OF 13663
+
+GENERATION 153/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 74    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11372 OF 13756
+
+GENERATION 154/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 52    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11454 OF 13848
+
+GENERATION 155/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11535 OF 13939
+
+GENERATION 156/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 40    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11620 OF 14032
+
+GENERATION 157/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 33    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11705 OF 14124
+
+GENERATION 158/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :27
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11784 OF 14211
+
+GENERATION 159/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 74    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11864 OF 14304
+
+GENERATION 160/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 11942 OF 14391
+
+GENERATION 161/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12027 OF 14481
+
+GENERATION 162/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12103 OF 14565
+
+GENERATION 163/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 64    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12178 OF 14653
+
+GENERATION 164/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12262 OF 14744
+
+GENERATION 165/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 47    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12347 OF 14840
+
+GENERATION 166/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 27    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12433 OF 14932
+
+GENERATION 167/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 41    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12513 OF 15021
+
+GENERATION 168/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :28
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12591 OF 15107
+
+GENERATION 169/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12668 OF 15191
+
+GENERATION 170/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 51    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12752 OF 15285
+
+GENERATION 171/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12835 OF 15376
+
+GENERATION 172/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 14    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 12916 OF 15460
+
+GENERATION 173/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13004 OF 15553
+
+GENERATION 174/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13096 OF 15654
+
+GENERATION 175/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13177 OF 15742
+
+GENERATION 176/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 41    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13258 OF 15832
+
+GENERATION 177/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 35    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13341 OF 15923
+
+GENERATION 178/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13421 OF 16015
+
+GENERATION 179/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :29
+CALLs: 24    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13504 OF 16102
+
+GENERATION 180/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 45    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13583 OF 16190
+
+GENERATION 181/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13668 OF 16280
+
+GENERATION 182/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 24    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13746 OF 16366
+
+GENERATION 183/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13828 OF 16456
+
+GENERATION 184/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 28    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13911 OF 16545
+
+GENERATION 185/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 13993 OF 16635
+
+GENERATION 186/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 27    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14073 OF 16721
+
+GENERATION 187/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14158 OF 16812
+
+GENERATION 188/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14243 OF 16904
+
+GENERATION 189/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14326 OF 16993
+
+GENERATION 190/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :30
+CALLs: 39    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14404 OF 17079
+
+GENERATION 191/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14486 OF 17167
+
+GENERATION 192/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 27    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14575 OF 17262
+
+GENERATION 193/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 37    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14653 OF 17349
+
+GENERATION 194/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14730 OF 17433
+
+GENERATION 195/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14814 OF 17525
+
+GENERATION 196/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14890 OF 17608
+
+GENERATION 197/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 14972 OF 17697
+
+GENERATION 198/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15052 OF 17782
+
+GENERATION 199/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15127 OF 17862
+
+GENERATION 200/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 63    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15202 OF 17949
+
+GENERATION 201/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :31
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15285 OF 18039
+
+GENERATION 202/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 24    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15375 OF 18133
+
+GENERATION 203/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15463 OF 18231
+
+GENERATION 204/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15537 OF 18316
+
+GENERATION 205/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15629 OF 18416
+
+GENERATION 206/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15712 OF 18507
+
+GENERATION 207/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 43    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15784 OF 18587
+
+GENERATION 208/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15864 OF 18673
+
+GENERATION 209/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 15953 OF 18767
+
+GENERATION 210/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16034 OF 18856
+
+GENERATION 211/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16113 OF 18942
+
+GENERATION 212/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :32
+CALLs: 29    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16193 OF 19029
+
+GENERATION 213/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16272 OF 19118
+
+GENERATION 214/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 28    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16356 OF 19208
+
+GENERATION 215/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 63    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16437 OF 19301
+
+GENERATION 216/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16523 OF 19392
+
+GENERATION 217/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16597 OF 19472
+
+GENERATION 218/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16680 OF 19563
+
+GENERATION 219/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 29    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16766 OF 19656
+
+GENERATION 220/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16851 OF 19748
+
+GENERATION 221/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 16934 OF 19836
+
+GENERATION 222/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 29    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17018 OF 19927
+
+GENERATION 223/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 40    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17102 OF 20019
+
+GENERATION 224/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17186 OF 20107
+
+GENERATION 225/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17273 OF 20201
+
+GENERATION 226/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :33
+CALLs: 28    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17350 OF 20285
+
+GENERATION 227/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 48    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17431 OF 20374
+
+GENERATION 228/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17516 OF 20466
+
+GENERATION 229/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 28    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17606 OF 20562
+
+GENERATION 230/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17689 OF 20651
+
+GENERATION 231/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17764 OF 20736
+
+GENERATION 232/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17852 OF 20830
+
+GENERATION 233/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 17934 OF 20924
+
+GENERATION 234/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 53    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18015 OF 21016
+
+GENERATION 235/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18106 OF 21111
+
+GENERATION 236/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 27    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18189 OF 21200
+
+GENERATION 237/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :34
+CALLs: 29    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18270 OF 21289
+
+GENERATION 238/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18355 OF 21383
+
+GENERATION 239/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 51    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18434 OF 21472
+
+GENERATION 240/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 12    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18522 OF 21562
+
+GENERATION 241/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18603 OF 21651
+
+GENERATION 242/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18685 OF 21739
+
+GENERATION 243/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 37    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18764 OF 21825
+
+GENERATION 244/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 22    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18847 OF 21913
+
+GENERATION 245/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 18936 OF 22007
+
+GENERATION 246/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 45    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19017 OF 22097
+
+GENERATION 247/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 25    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19094 OF 22179
+
+GENERATION 248/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 18    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19184 OF 22272
+
+GENERATION 249/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 25    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19258 OF 22351
+
+GENERATION 250/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :35
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19342 OF 22439
+
+GENERATION 251/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 59    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19423 OF 22532
+
+GENERATION 252/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19500 OF 22618
+
+GENERATION 253/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 38    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19586 OF 22711
+
+GENERATION 254/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 14    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19677 OF 22805
+
+GENERATION 255/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19768 OF 22902
+
+GENERATION 256/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19853 OF 22994
+
+GENERATION 257/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 73    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 19935 OF 23089
+
+GENERATION 258/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 18    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20021 OF 23178
+
+GENERATION 259/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20109 OF 23273
+
+GENERATION 260/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :36
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20189 OF 23357
+
+GENERATION 261/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 54    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20272 OF 23449
+
+GENERATION 262/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20353 OF 23536
+
+GENERATION 263/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 45    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20432 OF 23624
+
+GENERATION 264/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 40    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20515 OF 23715
+
+GENERATION 265/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 30    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20597 OF 23802
+
+GENERATION 266/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20682 OF 23894
+
+GENERATION 267/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 42    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20771 OF 23990
+
+GENERATION 268/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 47    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20853 OF 24082
+
+GENERATION 269/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 20    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 20936 OF 24170
+
+GENERATION 270/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 72    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21015 OF 24261
+
+GENERATION 271/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 24    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21094 OF 24346
+
+GENERATION 272/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 14    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21182 OF 24437
+
+GENERATION 273/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :37
+CALLs: 18    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21267 OF 24525
+
+GENERATION 274/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 33    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21358 OF 24623
+
+GENERATION 275/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 26    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21435 OF 24705
+
+GENERATION 276/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 28    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21511 OF 24787
+
+GENERATION 277/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 36    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21594 OF 24878
+
+GENERATION 278/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 52    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21680 OF 24974
+
+GENERATION 279/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 7    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21771 OF 25067
+
+GENERATION 280/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 23    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21855 OF 25157
+
+GENERATION 281/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 37    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 21937 OF 25246
+
+GENERATION 282/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22023 OF 25338
+
+GENERATION 283/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 44    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22109 OF 25432
+
+GENERATION 284/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 34    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22193 OF 25523
+
+GENERATION 285/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :38
+CALLs: 32    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22268 OF 25604
+
+GENERATION 286/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 51    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22351 OF 25698
+
+GENERATION 287/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 56    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22428 OF 25785
+
+GENERATION 288/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 58    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22508 OF 25877
+
+GENERATION 289/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 46    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22588 OF 25966
+
+GENERATION 290/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22660 OF 26044
+
+GENERATION 291/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 50    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22743 OF 26138
+
+GENERATION 292/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22828 OF 26229
+
+GENERATION 293/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 31    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22909 OF 26316
+
+GENERATION 294/50
+
+Best fitness value: ( ( ! ( c ) ) \/ ( ! ( o ) ) ) 1.5
+Generation Time :0
+Accumulated Learning Time :39
+CALLs: 18    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 22997 OF 26407
+
+GENERATION 295/50
+
+TOTAL Learing Time :42
+
+Solutions: 0
+
+Solutions: 0, Total Solution(with duplicate solution): 0
+TOTAL Time :42, Evaluate Time: 36.39
+CALLs: 17175    TIMEOUTs: 0    ERRORs: 0
+CONFIGURATION
+Initial population size: 42
+#Population: 100    #Iterations: 294    #ChromSize: 50
+REEVALUATIONS: 22997 OF 26407
+Exception in thread "main" java.lang.StackOverflowError
+	at java.util.HashMap.put(HashMap.java:612)
+	at java.util.HashSet.add(HashSet.java:220)
+	at ltlparse.Parser.parse(Parser.java:190)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:102)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:138)
+	at ltlparse.Parser.parse(Parser.java:75)
+	at ltlparse.Formula.clone(Formula.java:796)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:260)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:264)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)
+	at ltlparse.Formula.replaceSubFormula(Formula.java:270)

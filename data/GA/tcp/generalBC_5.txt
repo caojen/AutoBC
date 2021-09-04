@@ -1,0 +1,3 @@
+( ( ( ( send ) & ( ~(( ack )) ) ) & ( delivered ) ) | ( F(( ( send ) & ( ( ack ) & ( ~(( delivered )) ) ) )) ) )
+( (( X(( ( send ) & ( ~(( ack )) ) )) ) U ( ( ( send ) & ( ~(( ack )) ) ) & ( delivered ) )) | G(( X(( ( send ) & ( ~(( ack )) ) )) )) )
+( F(( G(( ( send ) & ( ~(( ack )) ) )) )) )

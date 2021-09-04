@@ -1,0 +1,2 @@
+( X(( ( F(( ( call ) & ( G(( ~(( open )) )) ) )) ) U ( F(( ( call ) & ( G(( ~(( open )) )) ) )) ) )) )
+( ( ( call ) & ( G(( ~(( open )) )) ) ) U ( ( call ) & ( G(( ~(( open )) )) ) ) )

@@ -1,0 +1,1811 @@
+DOM: []
+GOALS: [[](a -> m), []((c && (! n)) -> (! d)), []((! n) -> (! i)), []((c && m && n) -> d), []((! h) -> (! n))]
+Initial population size: 52
+Total population size: 100
+LTL Satisfiability Check: Aalta
+
+GENERATION 1/50
+
+Best fitness value: ( ( n ) /\ ( ! ( h ) ) ) 1.7
+Generation Time :1
+Accumulated Learning Time :1
+CALLs: 707    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 65 OF 151
+
+GENERATION 2/50
+
+Best fitness value: ( ( n ) /\ ( ! ( h ) ) ) 1.7
+Generation Time :0
+Accumulated Learning Time :2
+CALLs: 367    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 110 OF 245
+
+GENERATION 3/50
+
+Best fitness value: ( ( n ) /\ ( ! ( h ) ) ) 1.7
+Generation Time :0
+Accumulated Learning Time :3
+CALLs: 422    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 151 OF 338
+
+GENERATION 4/50
+
+Best fitness value: ( ( i ) /\ ( ! ( h ) ) ) 1.9
+Generation Time :0
+Accumulated Learning Time :4
+CALLs: 390    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 186 OF 424
+
+GENERATION 5/50
+
+Best fitness value: ( ( i ) /\ ( ! ( h ) ) ) 1.9
+Generation Time :1
+Accumulated Learning Time :5
+CALLs: 410    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 217 OF 510
+
+GENERATION 6/50
+
+Best fitness value: ( ( i ) /\ ( ! ( h ) ) ) 1.9
+Generation Time :1
+Accumulated Learning Time :6
+CALLs: 403    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 244 OF 592
+
+GENERATION 7/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :1
+Accumulated Learning Time :7
+CALLs: 405    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 270 OF 669
+
+GENERATION 8/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :1
+Accumulated Learning Time :9
+CALLs: 462    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 281 OF 740
+
+GENERATION 9/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :2
+Accumulated Learning Time :12
+CALLs: 445    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 306 OF 823
+
+GENERATION 10/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :2
+Accumulated Learning Time :14
+CALLs: 430    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 332 OF 903
+
+GENERATION 11/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :3
+Accumulated Learning Time :17
+CALLs: 482    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 350 OF 979
+
+GENERATION 12/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :3
+Accumulated Learning Time :21
+CALLs: 412    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 374 OF 1053
+
+GENERATION 13/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :4
+Accumulated Learning Time :26
+CALLs: 489    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 398 OF 1133
+
+GENERATION 14/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :5
+Accumulated Learning Time :32
+CALLs: 515    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 420 OF 1214
+
+GENERATION 15/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :7
+Accumulated Learning Time :40
+CALLs: 471    TIMEOUTs: 0    ERRORs: 0
+REEVALUATIONS: 438 OF 1287
+
+GENERATION 16/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :15
+Accumulated Learning Time :55
+CALLs: 447    TIMEOUTs: 1    ERRORs: 0
+REEVALUATIONS: 458 OF 1360
+
+GENERATION 17/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :27
+Accumulated Learning Time :83
+CALLs: 473    TIMEOUTs: 3    ERRORs: 0
+REEVALUATIONS: 482 OF 1439
+
+GENERATION 18/50
+
+Best fitness value: ( ( ( ( [] ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( a ) /\ ( ! ( m ) ) ) ) W ( ( n ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.1
+Generation Time :27
+Accumulated Learning Time :111
+CALLs: 483    TIMEOUTs: 5    ERRORs: 0
+REEVALUATIONS: 501 OF 1514
+
+GENERATION 19/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :121
+CALLs: 393    TIMEOUTs: 5    ERRORs: 0
+REEVALUATIONS: 534 OF 1593
+
+GENERATION 20/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :7
+Accumulated Learning Time :128
+CALLs: 420    TIMEOUTs: 5    ERRORs: 0
+REEVALUATIONS: 565 OF 1673
+
+GENERATION 21/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :6
+Accumulated Learning Time :135
+CALLs: 376    TIMEOUTs: 5    ERRORs: 0
+REEVALUATIONS: 594 OF 1747
+
+GENERATION 22/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :145
+CALLs: 475    TIMEOUTs: 5    ERRORs: 0
+REEVALUATIONS: 617 OF 1826
+
+GENERATION 23/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :174
+CALLs: 409    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 640 OF 1896
+
+GENERATION 24/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :192
+CALLs: 530    TIMEOUTs: 7    ERRORs: 0
+REEVALUATIONS: 669 OF 1987
+
+GENERATION 25/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :36
+Accumulated Learning Time :228
+CALLs: 461    TIMEOUTs: 8    ERRORs: 0
+REEVALUATIONS: 692 OF 2062
+
+GENERATION 26/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :242
+CALLs: 405    TIMEOUTs: 8    ERRORs: 0
+REEVALUATIONS: 711 OF 2126
+
+GENERATION 27/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :31
+Accumulated Learning Time :274
+CALLs: 394    TIMEOUTs: 8    ERRORs: 0
+REEVALUATIONS: 735 OF 2197
+
+GENERATION 28/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :289
+CALLs: 399    TIMEOUTs: 8    ERRORs: 0
+REEVALUATIONS: 754 OF 2262
+
+GENERATION 29/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :26
+Accumulated Learning Time :315
+CALLs: 454    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 772 OF 2332
+
+GENERATION 30/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :340
+CALLs: 463    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 795 OF 2408
+
+GENERATION 31/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :23
+Accumulated Learning Time :364
+CALLs: 479    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 819 OF 2486
+
+GENERATION 32/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :21
+Accumulated Learning Time :385
+CALLs: 468    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 835 OF 2554
+
+GENERATION 33/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :24
+Accumulated Learning Time :410
+CALLs: 424    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 861 OF 2628
+
+GENERATION 34/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :435
+CALLs: 396    TIMEOUTs: 9    ERRORs: 0
+REEVALUATIONS: 890 OF 2701
+
+GENERATION 35/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :38
+Accumulated Learning Time :474
+CALLs: 377    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 921 OF 2777
+
+GENERATION 36/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :494
+CALLs: 355    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 944 OF 2841
+
+GENERATION 37/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :511
+CALLs: 398    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 973 OF 2915
+
+GENERATION 38/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :21
+Accumulated Learning Time :533
+CALLs: 443    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 994 OF 2986
+
+GENERATION 39/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :26
+Accumulated Learning Time :560
+CALLs: 292    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1028 OF 3054
+
+GENERATION 40/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :26
+Accumulated Learning Time :586
+CALLs: 346    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1063 OF 3129
+
+GENERATION 41/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :605
+CALLs: 363    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1095 OF 3203
+
+GENERATION 42/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :631
+CALLs: 346    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1123 OF 3271
+
+GENERATION 43/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :650
+CALLs: 450    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1151 OF 3349
+
+GENERATION 44/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :21
+Accumulated Learning Time :672
+CALLs: 370    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1187 OF 3427
+
+GENERATION 45/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :689
+CALLs: 310    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1222 OF 3498
+
+GENERATION 46/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :718
+CALLs: 291    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1265 OF 3578
+
+GENERATION 47/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :32
+Accumulated Learning Time :750
+CALLs: 398    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1294 OF 3652
+
+GENERATION 48/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :765
+CALLs: 353    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1329 OF 3727
+
+GENERATION 49/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :38
+Accumulated Learning Time :803
+CALLs: 316    TIMEOUTs: 11    ERRORs: 0
+REEVALUATIONS: 1366 OF 3800
+
+GENERATION 50/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :832
+CALLs: 308    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1405 OF 3874
+
+GENERATION 51/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :27
+Accumulated Learning Time :859
+CALLs: 396    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1431 OF 3944
+
+GENERATION 52/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :872
+CALLs: 326    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1462 OF 4012
+
+GENERATION 53/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :887
+CALLs: 324    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1500 OF 4086
+
+GENERATION 54/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :904
+CALLs: 344    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1531 OF 4156
+
+GENERATION 55/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :915
+CALLs: 281    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1569 OF 4226
+
+GENERATION 56/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :929
+CALLs: 348    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1603 OF 4301
+
+GENERATION 57/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :942
+CALLs: 264    TIMEOUTs: 12    ERRORs: 0
+REEVALUATIONS: 1635 OF 4364
+
+GENERATION 58/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :22
+Accumulated Learning Time :964
+CALLs: 344    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1663 OF 4431
+
+GENERATION 59/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :23
+Accumulated Learning Time :988
+CALLs: 429    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1690 OF 4508
+
+GENERATION 60/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :1004
+CALLs: 308    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1724 OF 4577
+
+GENERATION 61/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1022
+CALLs: 289    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1762 OF 4651
+
+GENERATION 62/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1034
+CALLs: 344    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1793 OF 4721
+
+GENERATION 63/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :1050
+CALLs: 353    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1828 OF 4796
+
+GENERATION 64/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :1067
+CALLs: 308    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1869 OF 4872
+
+GENERATION 65/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1085
+CALLs: 432    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1899 OF 4950
+
+GENERATION 66/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :1102
+CALLs: 317    TIMEOUTs: 13    ERRORs: 0
+REEVALUATIONS: 1942 OF 5029
+
+GENERATION 67/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :1127
+CALLs: 299    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 1982 OF 5103
+
+GENERATION 68/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :1147
+CALLs: 335    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 2023 OF 5182
+
+GENERATION 69/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1165
+CALLs: 327    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 2061 OF 5258
+
+GENERATION 70/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1177
+CALLs: 252    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 2104 OF 5329
+
+GENERATION 71/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :24
+Accumulated Learning Time :1201
+CALLs: 335    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 2147 OF 5410
+
+GENERATION 72/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :1217
+CALLs: 346    TIMEOUTs: 14    ERRORs: 0
+REEVALUATIONS: 2187 OF 5490
+
+GENERATION 73/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :1246
+CALLs: 355    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2218 OF 5562
+
+GENERATION 74/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1263
+CALLs: 310    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2254 OF 5634
+
+GENERATION 75/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :1273
+CALLs: 355    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2285 OF 5706
+
+GENERATION 76/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1285
+CALLs: 328    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2323 OF 5782
+
+GENERATION 77/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :1301
+CALLs: 312    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2362 OF 5858
+
+GENERATION 78/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :1316
+CALLs: 299    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2401 OF 5931
+
+GENERATION 79/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :1330
+CALLs: 329    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2440 OF 6009
+
+GENERATION 80/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :1345
+CALLs: 298    TIMEOUTs: 15    ERRORs: 0
+REEVALUATIONS: 2478 OF 6081
+
+GENERATION 81/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :1370
+CALLs: 319    TIMEOUTs: 16    ERRORs: 0
+REEVALUATIONS: 2510 OF 6150
+
+GENERATION 82/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :1399
+CALLs: 360    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2550 OF 6234
+
+GENERATION 83/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1410
+CALLs: 265    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2593 OF 6308
+
+GENERATION 84/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :1424
+CALLs: 317    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2637 OF 6388
+
+GENERATION 85/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1442
+CALLs: 258    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2688 OF 6470
+
+GENERATION 86/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :1456
+CALLs: 398    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2724 OF 6551
+
+GENERATION 87/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1474
+CALLs: 270    TIMEOUTs: 17    ERRORs: 0
+REEVALUATIONS: 2765 OF 6622
+
+GENERATION 88/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :21
+Accumulated Learning Time :1496
+CALLs: 245    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 2807 OF 6692
+
+GENERATION 89/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :1509
+CALLs: 288    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 2848 OF 6769
+
+GENERATION 90/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1521
+CALLs: 252    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 2898 OF 6847
+
+GENERATION 91/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :1541
+CALLs: 261    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 2939 OF 6917
+
+GENERATION 92/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1559
+CALLs: 306    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 2980 OF 6992
+
+GENERATION 93/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1577
+CALLs: 285    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 3022 OF 7068
+
+GENERATION 94/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :1587
+CALLs: 261    TIMEOUTs: 18    ERRORs: 0
+REEVALUATIONS: 3062 OF 7137
+
+GENERATION 95/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :1613
+CALLs: 249    TIMEOUTs: 19    ERRORs: 0
+REEVALUATIONS: 3103 OF 7208
+
+GENERATION 96/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :1625
+CALLs: 310    TIMEOUTs: 19    ERRORs: 0
+REEVALUATIONS: 3130 OF 7271
+
+GENERATION 97/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :27
+Accumulated Learning Time :1652
+CALLs: 290    TIMEOUTs: 20    ERRORs: 0
+REEVALUATIONS: 3177 OF 7351
+
+GENERATION 98/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :1664
+CALLs: 269    TIMEOUTs: 20    ERRORs: 0
+REEVALUATIONS: 3215 OF 7422
+
+GENERATION 99/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :1674
+CALLs: 290    TIMEOUTs: 20    ERRORs: 0
+REEVALUATIONS: 3248 OF 7488
+
+GENERATION 100/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :35
+Accumulated Learning Time :1710
+CALLs: 276    TIMEOUTs: 22    ERRORs: 0
+REEVALUATIONS: 3292 OF 7565
+
+GENERATION 101/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :1726
+CALLs: 310    TIMEOUTs: 22    ERRORs: 0
+REEVALUATIONS: 3333 OF 7642
+
+GENERATION 102/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :8
+Accumulated Learning Time :1735
+CALLs: 272    TIMEOUTs: 22    ERRORs: 0
+REEVALUATIONS: 3376 OF 7716
+
+GENERATION 103/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :22
+Accumulated Learning Time :1757
+CALLs: 290    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 3415 OF 7788
+
+GENERATION 104/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :1772
+CALLs: 326    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 3451 OF 7861
+
+GENERATION 105/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :1785
+CALLs: 272    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 3502 OF 7943
+
+GENERATION 106/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :1806
+CALLs: 371    TIMEOUTs: 23    ERRORs: 0
+REEVALUATIONS: 3532 OF 8015
+
+GENERATION 107/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :23
+Accumulated Learning Time :1829
+CALLs: 253    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 3574 OF 8089
+
+GENERATION 108/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1847
+CALLs: 281    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 3611 OF 8158
+
+GENERATION 109/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1866
+CALLs: 317    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 3655 OF 8238
+
+GENERATION 110/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :1879
+CALLs: 326    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 3698 OF 8318
+
+GENERATION 111/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :1896
+CALLs: 290    TIMEOUTs: 24    ERRORs: 0
+REEVALUATIONS: 3748 OF 8401
+
+GENERATION 112/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :22
+Accumulated Learning Time :1919
+CALLs: 229    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 3794 OF 8474
+
+GENERATION 113/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :1931
+CALLs: 243    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 3844 OF 8551
+
+GENERATION 114/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :1943
+CALLs: 243    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 3887 OF 8621
+
+GENERATION 115/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1962
+CALLs: 337    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 3924 OF 8697
+
+GENERATION 116/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :1981
+CALLs: 290    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 3970 OF 8776
+
+GENERATION 117/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :1994
+CALLs: 288    TIMEOUTs: 25    ERRORs: 0
+REEVALUATIONS: 4004 OF 8842
+
+GENERATION 118/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :24
+Accumulated Learning Time :2019
+CALLs: 249    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4043 OF 8911
+
+GENERATION 119/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :2039
+CALLs: 301    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4087 OF 8990
+
+GENERATION 120/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2053
+CALLs: 252    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4127 OF 9058
+
+GENERATION 121/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2067
+CALLs: 326    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4168 OF 9136
+
+GENERATION 122/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2081
+CALLs: 213    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4209 OF 9203
+
+GENERATION 123/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2096
+CALLs: 281    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4249 OF 9275
+
+GENERATION 124/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :8
+Accumulated Learning Time :2104
+CALLs: 288    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4292 OF 9350
+
+GENERATION 125/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2119
+CALLs: 222    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4343 OF 9428
+
+GENERATION 126/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2130
+CALLs: 342    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4382 OF 9505
+
+GENERATION 127/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :2150
+CALLs: 342    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4423 OF 9584
+
+GENERATION 128/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2165
+CALLs: 299    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4460 OF 9655
+
+GENERATION 129/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2178
+CALLs: 261    TIMEOUTs: 26    ERRORs: 0
+REEVALUATIONS: 4500 OF 9724
+
+GENERATION 130/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :2198
+CALLs: 253    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 4540 OF 9796
+
+GENERATION 131/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2210
+CALLs: 279    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 4581 OF 9868
+
+GENERATION 132/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2225
+CALLs: 290    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 4623 OF 9943
+
+GENERATION 133/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :2241
+CALLs: 209    TIMEOUTs: 27    ERRORs: 0
+REEVALUATIONS: 4668 OF 10012
+
+GENERATION 134/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :31
+Accumulated Learning Time :2272
+CALLs: 221    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4714 OF 10085
+
+GENERATION 135/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2286
+CALLs: 209    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4761 OF 10156
+
+GENERATION 136/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2298
+CALLs: 247    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4805 OF 10229
+
+GENERATION 137/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2313
+CALLs: 280    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4839 OF 10295
+
+GENERATION 138/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :2331
+CALLs: 303    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4877 OF 10369
+
+GENERATION 139/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :2342
+CALLs: 263    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4917 OF 10439
+
+GENERATION 140/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :2352
+CALLs: 292    TIMEOUTs: 29    ERRORs: 0
+REEVALUATIONS: 4946 OF 10502
+
+GENERATION 141/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :2372
+CALLs: 220    TIMEOUTs: 30    ERRORs: 0
+REEVALUATIONS: 4992 OF 10574
+
+GENERATION 142/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2387
+CALLs: 299    TIMEOUTs: 30    ERRORs: 0
+REEVALUATIONS: 5035 OF 10651
+
+GENERATION 143/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2399
+CALLs: 236    TIMEOUTs: 30    ERRORs: 0
+REEVALUATIONS: 5091 OF 10734
+
+GENERATION 144/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :2416
+CALLs: 301    TIMEOUTs: 30    ERRORs: 0
+REEVALUATIONS: 5136 OF 10814
+
+GENERATION 145/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :2434
+CALLs: 220    TIMEOUTs: 31    ERRORs: 0
+REEVALUATIONS: 5182 OF 10886
+
+GENERATION 146/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2446
+CALLs: 245    TIMEOUTs: 31    ERRORs: 0
+REEVALUATIONS: 5231 OF 10963
+
+GENERATION 147/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :8
+Accumulated Learning Time :2454
+CALLs: 261    TIMEOUTs: 31    ERRORs: 0
+REEVALUATIONS: 5268 OF 11029
+
+GENERATION 148/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :2482
+CALLs: 323    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 5308 OF 11108
+
+GENERATION 149/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :2498
+CALLs: 283    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 5351 OF 11184
+
+GENERATION 150/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2513
+CALLs: 236    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 5402 OF 11262
+
+GENERATION 151/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2526
+CALLs: 270    TIMEOUTs: 32    ERRORs: 0
+REEVALUATIONS: 5444 OF 11334
+
+GENERATION 152/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :21
+Accumulated Learning Time :2547
+CALLs: 202    TIMEOUTs: 33    ERRORs: 0
+REEVALUATIONS: 5497 OF 11411
+
+GENERATION 153/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :2567
+CALLs: 247    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5543 OF 11486
+
+GENERATION 154/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :2577
+CALLs: 270    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5586 OF 11559
+
+GENERATION 155/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :2594
+CALLs: 310    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5630 OF 11639
+
+GENERATION 156/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2605
+CALLs: 209    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5684 OF 11717
+
+GENERATION 157/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :2615
+CALLs: 218    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5735 OF 11793
+
+GENERATION 158/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :2625
+CALLs: 238    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5778 OF 11864
+
+GENERATION 159/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :2641
+CALLs: 294    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5821 OF 11942
+
+GENERATION 160/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2655
+CALLs: 243    TIMEOUTs: 34    ERRORs: 0
+REEVALUATIONS: 5872 OF 12020
+
+GENERATION 161/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :2683
+CALLs: 272    TIMEOUTs: 35    ERRORs: 0
+REEVALUATIONS: 5917 OF 12096
+
+GENERATION 162/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :2703
+CALLs: 252    TIMEOUTs: 35    ERRORs: 0
+REEVALUATIONS: 5963 OF 12170
+
+GENERATION 163/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :2714
+CALLs: 236    TIMEOUTs: 35    ERRORs: 0
+REEVALUATIONS: 6014 OF 12248
+
+GENERATION 164/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :2734
+CALLs: 254    TIMEOUTs: 36    ERRORs: 0
+REEVALUATIONS: 6068 OF 12331
+
+GENERATION 165/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2747
+CALLs: 227    TIMEOUTs: 36    ERRORs: 0
+REEVALUATIONS: 6119 OF 12408
+
+GENERATION 166/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2761
+CALLs: 228    TIMEOUTs: 36    ERRORs: 0
+REEVALUATIONS: 6170 OF 12486
+
+GENERATION 167/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :2778
+CALLs: 306    TIMEOUTs: 36    ERRORs: 0
+REEVALUATIONS: 6220 OF 12570
+
+GENERATION 168/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :28
+Accumulated Learning Time :2806
+CALLs: 218    TIMEOUTs: 37    ERRORs: 0
+REEVALUATIONS: 6267 OF 12642
+
+GENERATION 169/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :2817
+CALLs: 245    TIMEOUTs: 37    ERRORs: 0
+REEVALUATIONS: 6317 OF 12720
+
+GENERATION 170/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :2829
+CALLs: 229    TIMEOUTs: 37    ERRORs: 0
+REEVALUATIONS: 6363 OF 12793
+
+GENERATION 171/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :23
+Accumulated Learning Time :2853
+CALLs: 238    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6411 OF 12869
+
+GENERATION 172/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2864
+CALLs: 216    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6450 OF 12932
+
+GENERATION 173/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2879
+CALLs: 219    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6496 OF 13004
+
+GENERATION 174/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2890
+CALLs: 234    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6543 OF 13077
+
+GENERATION 175/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2904
+CALLs: 245    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6589 OF 13151
+
+GENERATION 176/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :2918
+CALLs: 256    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6636 OF 13228
+
+GENERATION 177/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :2928
+CALLs: 273    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6680 OF 13304
+
+GENERATION 178/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :2942
+CALLs: 252    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6732 OF 13384
+
+GENERATION 179/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2954
+CALLs: 180    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6777 OF 13449
+
+GENERATION 180/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :2969
+CALLs: 252    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6822 OF 13522
+
+GENERATION 181/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :2981
+CALLs: 216    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6870 OF 13594
+
+GENERATION 182/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :2997
+CALLs: 229    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6919 OF 13670
+
+GENERATION 183/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3012
+CALLs: 279    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 6962 OF 13744
+
+GENERATION 184/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :3022
+CALLs: 128    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7010 OF 13807
+
+GENERATION 185/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3034
+CALLs: 236    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7055 OF 13879
+
+GENERATION 186/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :3045
+CALLs: 191    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7101 OF 13947
+
+GENERATION 187/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :16
+Accumulated Learning Time :3061
+CALLs: 245    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7144 OF 14018
+
+GENERATION 188/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3072
+CALLs: 281    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7187 OF 14093
+
+GENERATION 189/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :8
+Accumulated Learning Time :3081
+CALLs: 222    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7226 OF 14159
+
+GENERATION 190/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3093
+CALLs: 198    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7274 OF 14229
+
+GENERATION 191/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3109
+CALLs: 265    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7320 OF 14306
+
+GENERATION 192/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :3128
+CALLs: 306    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7364 OF 14384
+
+GENERATION 193/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :3140
+CALLs: 234    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7410 OF 14456
+
+GENERATION 194/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3152
+CALLs: 254    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7455 OF 14530
+
+GENERATION 195/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :3161
+CALLs: 198    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7503 OF 14600
+
+GENERATION 196/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :3173
+CALLs: 265    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7550 OF 14678
+
+GENERATION 197/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3189
+CALLs: 146    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7603 OF 14748
+
+GENERATION 198/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :10
+Accumulated Learning Time :3200
+CALLs: 200    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7657 OF 14825
+
+GENERATION 199/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :3217
+CALLs: 231    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7706 OF 14902
+
+GENERATION 200/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :19
+Accumulated Learning Time :3237
+CALLs: 315    TIMEOUTs: 38    ERRORs: 0
+REEVALUATIONS: 7751 OF 14982
+
+GENERATION 201/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :3257
+CALLs: 214    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 7795 OF 15053
+
+GENERATION 202/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :17
+Accumulated Learning Time :3274
+CALLs: 267    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 7840 OF 15130
+
+GENERATION 203/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :3287
+CALLs: 227    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 7885 OF 15201
+
+GENERATION 204/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :3301
+CALLs: 262    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 7929 OF 15275
+
+GENERATION 205/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :3314
+CALLs: 302    TIMEOUTs: 39    ERRORs: 0
+REEVALUATIONS: 7967 OF 15349
+
+GENERATION 206/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :27
+Accumulated Learning Time :3342
+CALLs: 172    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8016 OF 15421
+
+GENERATION 207/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3354
+CALLs: 171    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8067 OF 15491
+
+GENERATION 208/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :3372
+CALLs: 263    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8115 OF 15569
+
+GENERATION 209/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :18
+Accumulated Learning Time :3391
+CALLs: 266    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8171 OF 15657
+
+GENERATION 210/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :25
+Accumulated Learning Time :3417
+CALLs: 243    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8218 OF 15731
+
+GENERATION 211/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :3430
+CALLs: 283    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8263 OF 15809
+
+GENERATION 212/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :3443
+CALLs: 218    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8311 OF 15882
+
+GENERATION 213/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3458
+CALLs: 272    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8366 OF 15968
+
+GENERATION 214/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :12
+Accumulated Learning Time :3471
+CALLs: 227    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8415 OF 16043
+
+GENERATION 215/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :3485
+CALLs: 256    TIMEOUTs: 40    ERRORs: 0
+REEVALUATIONS: 8467 OF 16125
+
+GENERATION 216/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :20
+Accumulated Learning Time :3506
+CALLs: 213    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8515 OF 16199
+
+GENERATION 217/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3521
+CALLs: 241    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8566 OF 16280
+
+GENERATION 218/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :15
+Accumulated Learning Time :3536
+CALLs: 267    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8609 OF 16355
+
+GENERATION 219/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :7
+Accumulated Learning Time :3544
+CALLs: 191    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8662 OF 16430
+
+GENERATION 220/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :8
+Accumulated Learning Time :3552
+CALLs: 234    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8712 OF 16506
+
+GENERATION 221/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :11
+Accumulated Learning Time :3563
+CALLs: 225    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8760 OF 16579
+
+GENERATION 222/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :14
+Accumulated Learning Time :3577
+CALLs: 237    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8812 OF 16659
+
+GENERATION 223/50
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :13
+Accumulated Learning Time :3591
+CALLs: 171    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8870 OF 16736
+
+GENERATION 224/50
+[Thread:SIGTERM handler] receved signal: TERM, number: 15
+
+Best fitness value: ( ( ( ( a ) /\ ( ! ( m ) ) ) W ( ( i ) /\ ( ! ( h ) ) ) ) W ( ( d ) /\ ( ( c ) /\ ( ! ( n ) ) ) ) ) 2.3
+Generation Time :9
+Accumulated Learning Time :3600
+CALLs: 119    TIMEOUTs: 41    ERRORs: 0
+REEVALUATIONS: 8904 OF 16785
+
+
+TOTAL Learing Time :3600
+
+Solutions: 0
+
+Solutions: 0, Total Solution(with duplicate solution): 0
+TOTAL Time :3600, Evaluate Time: 2611.57
+CALLs: 67828    TIMEOUTs: 41    ERRORs: 0
+CONFIGURATION
+Initial population size: 52
+#Population: 100    #Iterations: 224    #ChromSize: 50
+REEVALUATIONS: 8904 OF 16785
