@@ -3,7 +3,7 @@
 ## Environment Setup
 
 ### Use Docker
-If you have install docker, use `Dockerfile` directory is recommanded. Try to build the image:
+If you have install docker, use `Dockerfile` directly is recommanded. Try to build the image:
 ```bash
 docker build . -t autobc:latest
 ```
